@@ -19509,6 +19509,10 @@ msgid ""
 "part of your library URL, so no spaces or special characters are "
 "allowed.{strong_end} This cannot be changed."
 msgstr ""
+"Código único que identifica esta biblioteca. {strong_start}Nota: Esto forma "
+"parte de la URL de la biblioteca, por lo que no está permitido emplear "
+"espacios en blanco ni caracteres especiales.{strong_end} Esto no se puede "
+"cambiar."
 
 #: cms/templates/index.html
 msgid "Courses Being Processed"
