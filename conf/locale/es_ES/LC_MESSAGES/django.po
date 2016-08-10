@@ -19681,6 +19681,8 @@ msgid ""
 "The library creator must give you access to the library. Contact the library"
 " creator or administrator for the library you are helping to author."
 msgstr ""
+"El creador de la biblioteca debe darte acceso a la biblioteca. Contacta con "
+"el creador o administrador de la biblioteca que estás ayudando a elaborar."
 
 #: cms/templates/index.html
 msgid "Create Your First Library"
