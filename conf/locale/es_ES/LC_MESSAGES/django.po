@@ -14054,7 +14054,7 @@ msgid ""
 "by a member of the course staff."
 msgstr ""
 "Has sido invitado para las pruebas beta del curso {course_name} en "
-"{site_name} por un miembro del personal del curso."
+"{site_name} como miembro del personal del curso."
 
 #: lms/templates/emails/add_beta_tester_email_message.txt
 #: lms/templates/emails/enroll_email_enrolledmessage.txt
@@ -14312,7 +14312,7 @@ msgid ""
 "You have been invited to join {course_name} at {site_name} by a member of "
 "the course staff."
 msgstr ""
-"Has sido invitado a unirte al  {course_name} en {site_name} por un miembro del"
+"Has sido invitado a unirte al  {course_name} en {site_name} como miembro del"
 " personal del curso."
 
 #: lms/templates/emails/enroll_email_allowedmessage.txt
@@ -14363,7 +14363,7 @@ msgid ""
 "You have been enrolled in {course_name} at {site_name} by a member of the "
 "course staff. The course should now appear on your {site_name} dashboard."
 msgstr ""
-"Has sido dado de alta en {course_name} en {site_name} por un miembro del "
+"Has sido dado de alta en {course_name} en {site_name} como miembro del "
 "personal del curso. El curso debería aparecer ahora en tu tablón: "
 "{site_name}"
 
@@ -14630,7 +14630,7 @@ msgid ""
 "You have been un-enrolled from course {course_name} by a member of the "
 "course staff. Please disregard the invitation previously sent."
 msgstr ""
-"Has sido dado de baja del curso {course_name} por un miembro del personal del "
+"Has sido dado de baja del curso {course_name} como miembro del personal del "
 "curso. Por favor, no hagas caso de la invitación que se te envió "
 "anteriormente."
 
@@ -14640,7 +14640,7 @@ msgid ""
 " course staff. The course will no longer appear on your {site_name} "
 "dashboard."
 msgstr ""
-"Has sido dado de baja de {course_name} en {site_name} por un miembro del "
+"Has sido dado de baja de {course_name} en {site_name} como miembro del "
 "personal del curso. El curso no aparecerá más en tu tablón de {site_name}"
 
 #: lms/templates/emails/unenroll_email_subject.txt
