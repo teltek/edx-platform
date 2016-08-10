@@ -22,7 +22,7 @@
 # luistrenado <inactive+luistrenado@transifex.com>, 2014
 # Maria J Crespo, 2014
 # Mariangeles Fernandez <mariangelesfm@gmail.com>, 2015
-# Marta, 2014
+# Marta Cuesta, 2014
 # Maxfer <maxfer@gmail.com>, 2014
 # mcolomer <mcmlilhity@gmail.com>, 2014
 # Miguel Angel Cordova <miguel.angel.cordova.uned@gmail.com>, 2014-2015
@@ -49,7 +49,7 @@
 # juditseb <juditseb@hotmail.com>, 2014
 # leosamu <leosamu@gmail.com>, 2014
 # Mariangeles Fernandez <mariangelesfm@gmail.com>, 2015
-# Marta, 2014
+# Marta Cuesta, 2014
 # Rubén Torres <r.torres@usal.es>, 2015
 # UAMx <uamx.dev@gmail.com>, 2014
 # UC3M <edx@uc3m.es>, 2014
@@ -90,7 +90,7 @@
 # Juan Rodríguez de Vera Mouliaá <jrodriguez@um.es>, 2016
 # Luis Ricardo Ruiz <luislicardo1307@gmail.com>, 2013
 # Mariangeles Fernandez <mariangelesfm@gmail.com>, 2015
-# Marta, 2014
+# Marta Cuesta, 2014
 # Maxfer <maxfer@gmail.com>, 2015
 # Miguel Ángel Candel <mcandel@upvnet.upv.es>, 2015
 # Miguel Angel Cordova <miguel.angel.cordova.uned@gmail.com>, 2014
@@ -136,8 +136,9 @@
 # Luis Ricardo Ruiz <luislicardo1307@gmail.com>, 2013
 # manolograma <manolograma@gmail.com>, 2014
 # Mariangeles Fernandez <mariangelesfm@gmail.com>, 2015
-# Marta, 2014
+# Marta Cuesta, 2014
 # mcolomer <mcmlilhity@gmail.com>, 2014
+# mercefan <mercefan@gmail.com>, 2016
 # Miguel Angel Cordova <miguel.angel.cordova.uned@gmail.com>, 2014
 # Nacho Díaz <nachotheix@gmail.com>, 2015
 # Natalia, 2013
@@ -163,7 +164,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2016-07-22 17:38+0000\n"
+"POT-Creation-Date: 2016-08-04 18:45+0000\n"
 "PO-Revision-Date: 2016-05-09 11:27+0000\n"
 "Last-Translator: Juan Rodríguez de Vera Mouliaá <jrodriguez@um.es>\n"
 "Language-Team: Spanish (Spain) (http://www.transifex.com/open-edx/edx-platform/language/es_ES/)\n"
@@ -481,6 +482,26 @@ msgid "No selected price or selected price is too low."
 msgstr ""
 "No se ha seleccionado precio o el precio seleccionado es demasiado bajo"
 
+#: common/djangoapps/dark_lang/views.py
+msgid "Preview Language is currently disabled"
+msgstr ""
+
+#: common/djangoapps/dark_lang/views.py
+msgid "Language code not provided"
+msgstr ""
+
+#: common/djangoapps/dark_lang/views.py
+msgid "Language set to language code: {preview_language_code}"
+msgstr ""
+
+#: common/djangoapps/dark_lang/views.py
+msgid "Language reset to the default language code"
+msgstr ""
+
+#: common/djangoapps/dark_lang/views.py
+msgid "Language reset to user's preference: {preview_language_code}"
+msgstr ""
+
 #: common/djangoapps/django_comment_common/models.py
 msgid "Administrator"
 msgstr "Administrador"
@@ -557,6 +578,14 @@ msgstr ""
 msgid ""
 "You have already created an account using an external login like WebAuth or "
 "Shibboleth. Please contact {tech_support_email} for support."
+msgstr ""
+
+#: common/djangoapps/external_auth/views.py
+msgid ""
+"\n"
+"        Your university identity server did not return your ID information to us.\n"
+"        Please try logging in again.  (You may need to restart your browser.)\n"
+"        "
 msgstr ""
 
 #: common/djangoapps/student/admin.py
@@ -1548,15 +1577,6 @@ msgid ""
 "Enabled XBlock/template combinations with full or provisional support can "
 "always be created in Studio. Unsupported XBlock/template combinations "
 "require course author opt-in."
-msgstr ""
-
-#: common/djangoapps/xblock_django/models.py
-msgid "Space-separated list of XBlocks which should not render."
-msgstr ""
-
-#: common/djangoapps/xblock_django/models.py
-msgid ""
-"Space-separated list of XBlock types whose creation to disable in Studio."
 msgstr ""
 
 #: common/djangoapps/xblock_django/models.py
@@ -3142,6 +3162,16 @@ msgid ""
 msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
+msgid "Enable Subsection Grades Saved"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/course_module.py
+msgid ""
+"Enter true or false. If this value is true, the robust grades feature of "
+"saving subsection grades is enabled for this course."
+msgstr ""
+
+#: common/lib/xmodule/xmodule/course_module.py
 msgid "Course Learning Information"
 msgstr ""
 
@@ -3963,6 +3993,12 @@ msgstr "subdivisión"
 msgid ""
 "Because the due date has passed, this {subsection_format} is hidden from the"
 " learner."
+msgstr ""
+
+#: common/lib/xmodule/xmodule/seq_module.py
+msgid ""
+"This subsection is unlocked for learners when they meet the prerequisite "
+"requirements."
 msgstr ""
 
 #: common/lib/xmodule/xmodule/split_test_module.py
@@ -8023,10 +8059,6 @@ msgid "You do not have permission to view this page."
 msgstr "No tienes permisos para ver esta página."
 
 #: lms/djangoapps/student_account/views.py
-msgid "No user with the provided email address exists."
-msgstr ""
-
-#: lms/djangoapps/student_account/views.py
 msgid "No email address provided."
 msgstr ""
 
@@ -9166,6 +9198,10 @@ msgid "API Version"
 msgstr ""
 
 #: openedx/core/djangoapps/programs/models.py
+msgid "Path used to construct URLs to programs marketing pages (e.g., \"/foo\")."
+msgstr ""
+
+#: openedx/core/djangoapps/programs/models.py
 msgid "Path to authoring app's JS"
 msgstr ""
 
@@ -10114,6 +10150,12 @@ msgstr "Detalles"
 msgid "View"
 msgstr "Ver"
 
+#: cms/templates/darklang/preview_lang.html
+#: common/templates/darklang/preview_lang_include.html
+#: lms/templates/darklang/preview_lang.html
+msgid "Preview Language Setting"
+msgstr ""
+
 #: cms/templates/registration/activation_complete.html
 #: lms/templates/registration/activation_complete.html
 msgid "Thanks for activating your account."
@@ -10248,6 +10290,32 @@ msgstr ""
 #: common/templates/license.html
 msgid "Some Rights Reserved"
 msgstr "Algunos derechos reservados"
+
+#: common/templates/darklang/preview_lang_include.html
+msgid "Language Code"
+msgstr ""
+
+#: common/templates/darklang/preview_lang_include.html
+msgid "For example use en for English"
+msgstr ""
+
+#: common/templates/darklang/preview_lang_include.html
+#: lms/templates/help_modal.html lms/templates/manage_user_standing.html
+#: lms/templates/register-shib.html
+#: lms/templates/peer_grading/peer_grading_problem.html
+#: lms/templates/survey/survey.html
+#: themes/stanford-style/lms/templates/register-shib.html
+msgid "Submit"
+msgstr "Enviar"
+
+#: common/templates/darklang/preview_lang_include.html
+#: lms/templates/problem.html lms/templates/shoppingcart/shopping_cart.html
+msgid "Reset"
+msgstr "Reiniciar"
+
+#: common/templates/darklang/preview_lang_include.html
+msgid "Please refresh the page to see the changes applied."
+msgstr ""
 
 #: lms/templates/annotatable.html lms/templates/imageannotation.html
 #: lms/templates/textannotation.html lms/templates/videoannotation.html
@@ -10536,14 +10604,6 @@ msgid "Include error messages, steps which lead to the issue, etc"
 msgstr ""
 "Incluye los mensajes de error, los pasos realizados que llevaron al "
 "inconveniente, etcétera."
-
-#: lms/templates/help_modal.html lms/templates/manage_user_standing.html
-#: lms/templates/register-shib.html
-#: lms/templates/peer_grading/peer_grading_problem.html
-#: lms/templates/survey/survey.html
-#: themes/stanford-style/lms/templates/register-shib.html
-msgid "Submit"
-msgstr "Enviar"
 
 #: lms/templates/help_modal.html
 msgid "Thank You!"
@@ -10967,10 +11027,6 @@ msgstr "Tu respuesta"
 msgid "Hint"
 msgstr "Pista"
 
-#: lms/templates/problem.html lms/templates/shoppingcart/shopping_cart.html
-msgid "Reset"
-msgstr "Reiniciar"
-
 #: lms/templates/problem.html lms/templates/word_cloud.html
 msgid "Save"
 msgstr "Guardar"
@@ -11252,7 +11308,7 @@ msgstr "Previo"
 
 #: lms/templates/seq_module.html
 msgid "Bookmarked"
-msgstr ""
+msgstr "Marcado como favorito"
 
 #: lms/templates/seq_module.html
 msgid "Next"
@@ -13717,6 +13773,20 @@ msgid ""
 "An error occurred with this transaction. For help, contact {support_email}."
 msgstr ""
 
+#: lms/templates/dashboard/_dashboard_program_info.html
+msgid "{category} Program: Interested in more courses in this subject?"
+msgstr ""
+
+#: lms/templates/dashboard/_dashboard_program_info.html
+msgid ""
+"This course is 1 of {course_count} courses in the "
+"{link_start}{program_display_name}{link_end} {program_category}."
+msgstr ""
+
+#: lms/templates/dashboard/_dashboard_program_info.html
+msgid "View {category} Details"
+msgstr "Ver detalles de {category} "
+
 #: lms/templates/dashboard/_dashboard_status_verification.html
 msgid "Verification Status: Approved"
 msgstr ""
@@ -13770,20 +13840,6 @@ msgid ""
 msgstr ""
 "La cuenta de {provider_name} que seleccionaste ya está vinculada a otra "
 "cuenta de {platform_name}."
-
-#: lms/templates/dashboard/_dashboard_xseries_info.html
-msgid "{category} Program: Interested in more courses in this subject?"
-msgstr ""
-
-#: lms/templates/dashboard/_dashboard_xseries_info.html
-msgid ""
-"This course is 1 of {course_count} courses in the "
-"{link_start}{program_display_name}{link_end} {program_category}."
-msgstr ""
-
-#: lms/templates/dashboard/_dashboard_xseries_info.html
-msgid "View {category} Details"
-msgstr "Ver detalles de {category} "
 
 #: lms/templates/debug/run_python_form.html
 msgid "Results:"
@@ -14650,6 +14706,9 @@ msgstr "Has sido dado de baja de {course_name}"
 #: lms/templates/embargo/default_courseware.html
 #: lms/templates/embargo/default_enrollment.html
 #: lms/templates/static_templates/embargo.html
+#: themes/stanford-style/lms/templates/embargo/default_courseware.html
+#: themes/stanford-style/lms/templates/embargo/default_enrollment.html
+#: themes/stanford-style/lms/templates/static_templates/embargo.html
 msgid "This Course Unavailable In Your Country"
 msgstr "Este curso no está disponible en tu país."
 
@@ -19370,6 +19429,10 @@ msgid ""
 "changed, but you can set a different display name in Advanced Settings "
 "later."
 msgstr ""
+"Nombre de la organización patrocinadora del curso. {strong_start}Nota: El "
+"nombre de la organización forma parte de la URL del curso.{strong_end} Esto "
+"no puede cambiarse, pero puedes asignar un nombre distinto a mostrar desde "
+"ajustes avanzados más adelante."
 
 #: cms/templates/index.html
 msgid ""
@@ -19377,6 +19440,10 @@ msgid ""
 "{strong_start}Note: This is part of your course URL, so no spaces or special"
 " characters are allowed and it cannot be changed.{strong_end}"
 msgstr ""
+"Número único que identifica el curso dentro de la organización. "
+"{strong_start}Nota: Esto forma parte de la URL del curso, por lo que no se "
+"permiten espacios en blanco ni caracteres especiales y no puede ser "
+"cambiado.{strong_end}"
 
 #: cms/templates/index.html
 msgid ""
@@ -19384,6 +19451,9 @@ msgid ""
 "your course URL, so no spaces or special characters are allowed and it "
 "cannot be changed.{strong_end}"
 msgstr ""
+"Periodo en el que se desarrollará el curso. {strong_start}Nota: Esto forma "
+"parte de la URL del curso, por lo que no se permiten espacios en blanco ni "
+"caracteres especiales y no puede ser cambiado.{strong_end}"
 
 #: cms/templates/index.html
 msgid "Create"
