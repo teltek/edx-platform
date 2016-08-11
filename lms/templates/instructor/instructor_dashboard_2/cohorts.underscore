@@ -41,7 +41,7 @@
             <p class="">
                 <i class="icon fa fa-info-circle" aria-hidden="true"></i>
                 <%= interpolate(
-                gettext('To review student cohort assignments or see the results of uploading a CSV file, download course profile information or cohort results on %(link_start)s the Data Download page. %(link_end)s'),
+                gettext('Para revisar la asignación de grupo de estudiante o ver los resultados de subir un archivo CSV, descarga la información de perfil del curso o los resultados de grupos en %(link_start)s la página de Descarga de datos. %(link_end)s'),
                     {link_start: '<a href="" class="link-cross-reference" data-section="data_download">', link_end: '</a>'},
                     true
                 ) %>
