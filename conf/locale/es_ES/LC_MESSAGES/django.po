@@ -2028,7 +2028,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/capa_base.py
 msgid "Blank Advanced Problem"
-msgstr ""
+msgstr "Problema avanzado en blanco"
 
 #: common/lib/xmodule/xmodule/capa_base.py
 msgid "Number of attempts taken by the student on this problem"
@@ -4249,6 +4249,10 @@ msgid ""
 " Not supported in the native mobile app: the full video file will play. "
 "Formatted as HH:MM:SS. The maximum value is 23:59:59."
 msgstr ""
+"Momento en el que quieres que comience el vídeo si no deseas que se "
+"reproduzca el vídeo completamente. No disponible para la aplicación nativa "
+"de móvil: el vídeo entero se reproducirá. El formato es HH:MM:SS. El valor "
+"máximo es 23:59:59."
 
 #: common/lib/xmodule/xmodule/video_module/video_xfields.py
 msgid "Video Start Time"
@@ -4260,6 +4264,10 @@ msgid ""
 "Not supported in the native mobile app: the full video file will play. "
 "Formatted as HH:MM:SS. The maximum value is 23:59:59."
 msgstr ""
+"Momento en el que quieres que se pare el vídeo si no deseas que se "
+"reproduzca el vídeo completamente. No disponible para la aplicación nativa "
+"de móvil: el vídeo entero se reproducirá. El formato es HH:MM:SS. El valor "
+"máximo es 23:59:59."
 
 #: common/lib/xmodule/xmodule/video_module/video_xfields.py
 msgid "Video Stop Time"
@@ -4434,10 +4442,13 @@ msgid ""
 "Specify whether access to this video is limited to browsers only, or if it "
 "can be accessed from other applications including mobile apps."
 msgstr ""
+"Específica si el acceso a este vídeo está limitado a los navegadores "
+"solamente, o si puede ser accesible desde otras aplicaciones incluyendo las "
+"aplicaciones móviles."
 
 #: common/lib/xmodule/xmodule/video_module/video_xfields.py
 msgid "Video Available on Web Only"
-msgstr ""
+msgstr "Vídeo disponible solamente en navegadores"
 
 #: common/lib/xmodule/xmodule/video_module/video_xfields.py
 msgid ""
@@ -4447,6 +4458,11 @@ msgid ""
 "were not assigned a Video ID, enter values in those other fields and ignore "
 "this field."
 msgstr ""
+"Si te ha sido asignado un ID de vídeo por edX para el vídeo a reproducir en "
+"este componente, introduce el ID aquí. En este caso, no introduzcas valores "
+"en los campos de la URL de vídeo por defecto, las URLs de archivo de vídeo y"
+" el ID de YouTube. Si no te ha sido asignado ningún ID de vídeo, introduce "
+"valores en esos otros campos e ignora este campo."
 
 #: common/lib/xmodule/xmodule/video_module/video_xfields.py
 msgid "Date of the last view of the bumper"
@@ -18612,6 +18628,10 @@ msgid ""
 "Zip) that contains the library structure and content. You can also re-import"
 " libraries that you've exported."
 msgstr ""
+"Puedes exportar bibliotecas y editarlas fuera de {studio_name}. El fichero "
+"exportado es un archivo .tar.gz (esto es, un fichero .tar comprimido con GNU"
+" Zip) que contiene la estructura y contenido de la biblioteca. También "
+"puedes reimportar las bibliotecas que hayas exportado."
 
 #: cms/templates/export.html
 msgid "About Exporting Courses"
@@ -18718,6 +18738,10 @@ msgid ""
 " may want to create a copy of your library that you can later import into "
 "another library instance and customize."
 msgstr ""
+"Quizá quieras editar el XML directamente en tu biblioteca, fuera de "
+"{studio_name}. Puede que quieras crear una copia de seguridad de tu "
+"biblioteca. O tal vez quieras crear una copia de tu biblioteca que puedas "
+"importar más tarde en otra instancia de biblioteca y personalizarla."
 
 #: cms/templates/export.html
 msgid "Opening the downloaded file"
@@ -18730,6 +18754,9 @@ msgid ""
 "data includes the library.xml file, as well as subfolders that contain "
 "library content."
 msgstr ""
+"Usa un programa de compresión/descompresión para extraer los datos del "
+"fichero .tar.gz. Los datos extraídos incluyen el fichero library.xml además "
+"de las carpetas con el contenido de la biblioteca."
 
 #: cms/templates/export.html
 msgid "Learn more about exporting a library"
@@ -19151,6 +19178,12 @@ msgid ""
 "recommend that you export the current library, so that you have a backup "
 "copy of it."
 msgstr ""
+"Asegúrate de que quieres importar una biblioteca antes de continuar. El "
+"contenido de la biblioteca a importar reemplazará el contenido de la "
+"biblioteca existente. {em_start}No se puede deshacer la operación de "
+"importación de biblioteca{em_end}. Antes de proceder, te recomendamos que "
+"exportes la biblioteca actual, de modo que dispongas de una copia de "
+"seguridad."
 
 #: cms/templates/import.html
 msgid ""
@@ -19158,6 +19191,9 @@ msgid ""
 "compressed with GNU Zip). This .tar.gz file must contain a library.xml file."
 " It may also contain other files."
 msgstr ""
+"La biblioteca que importes debe estar en un archivo .tar.gz (esto es, un "
+"archivo .tar comprimido con GNU Zip). Este archivo .tar.gz debe contener un "
+"archivo library.xml. También puede contener otros archivos."
 
 #: cms/templates/import.html
 msgid ""
@@ -19166,6 +19202,11 @@ msgid ""
 "completed. We recommend, however, that you don't make important changes to "
 "your library until the import operation has completed."
 msgstr ""
+"El proceso de importación consta de cinco etapas. Durante las dos primeras, "
+"debes permanecer en esta página. Puedes abandonarla una vez que la fase de "
+"desempaquetado haya sido completada. Te recomendamos, sin embargo, que no "
+"realices cambios importantes en tu biblioteca hasta que la operación de "
+"importación se haya completado."
 
 #: cms/templates/import.html
 msgid ""
@@ -19311,6 +19352,9 @@ msgid ""
 " existing library entirely. You might also have developed a library outside "
 "of {studio_name}."
 msgstr ""
+"Quizás quieras actualizar una biblioteca existente a una nueva versión, o "
+"reemplazar una biblioteca por completo. También puede que hayas desarrollado"
+" una biblioteca fuera de {studio_name}."
 
 #: cms/templates/import.html
 msgid "Note: Library content is not automatically updated in courses"
@@ -19325,6 +19369,11 @@ msgid ""
 "updated content. You must manually refresh the randomized content blocks to "
 "bring them up to date with the latest library content."
 msgstr ""
+"Si cambias e importas una biblioteca de la que se ha hecho referencia en "
+"bloques de contenido aleatorios en uno o más cursos, esos cursos no "
+"emplearán automáticamente el contenido actualizado. Debes actualizar "
+"manualmente los bloques de contenidos aleatorios para actualizarlos con el "
+"último contenido de la biblioteca."
 
 #: cms/templates/import.html
 msgid "Learn more about importing a library"
@@ -19973,12 +20022,17 @@ msgid ""
 "Library Users can view library content and can reference or use library "
 "components in their courses, but they cannot edit the contents of a library."
 msgstr ""
+"Los usuarios de la biblioteca pueden ver el contenido de la biblioteca y "
+"pueden usar o hacer referencia a los componentes de la biblioteca en sus "
+"cursos, pero no pueden editar los contenidos de una biblioteca."
 
 #: cms/templates/manage_users_lib.html
 msgid ""
 "Library Staff are content co-authors. They have full editing privileges on "
 "the contents of a library."
 msgstr ""
+"Los miembros del equipo de la biblioteca son coautores de contenido. Tienen "
+"completos privilegios de edición de contenidos de una librería."
 
 #: cms/templates/manage_users_lib.html
 msgid ""
@@ -19986,6 +20040,9 @@ msgid ""
 "other team members. There must be at least one user with the Admin role in a"
 " library."
 msgstr ""
+"Los administradores de la biblioteca tienen completos privilegios de edición"
+" y también pueden añadir y eliminar a otros miembros del equipo. Debe haber "
+"al menos un usuario con el rol de administrador en la biblioteca."
 
 #: cms/templates/program_authoring.html cms/templates/widgets/header.html
 msgid "Program Administration"

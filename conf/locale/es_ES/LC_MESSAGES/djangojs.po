@@ -63,6 +63,7 @@
 # leosamu <leosamu@gmail.com>, 2014
 # Mariangeles Fernandez <mariangelesfm@gmail.com>, 2015
 # mcolomer <mcmlilhity@gmail.com>, 2014
+# mercefan <mercefan@gmail.com>, 2016
 # Miguel Angel Cordova <miguel.angel.cordova.uned@gmail.com>, 2014
 # Raúl Aguilera Ortega <raguiler@db.uc3m.es>, 2014
 # Rosa Sanchez Hernandez <rosa@db.uc3m.es>, 2014
@@ -5837,6 +5838,8 @@ msgid ""
 "Showing {currentItemRange} out of {totalItemsCount}, filtered by "
 "{assetType}, sorted by {sortName} ascending"
 msgstr ""
+"Mostrando {currentItemRange} de un total de {totalItemsCound}, filtrado por "
+"{assetType} en orden ascendente de {sortName}"
 
 #. Translators: sample result:
 #. "Showing 0-9 out of 25 total, filtered by Images, sorted by Date Added
@@ -5846,6 +5849,8 @@ msgid ""
 "Showing {currentItemRange} out of {totalItemsCount}, filtered by "
 "{assetType}, sorted by {sortName} descending"
 msgstr ""
+"Mostrando {currentItemRange} de un total de {totalItemsCount}, filtrado por "
+"{assetType} en orden descendente de {sortName}"
 
 #. Translators: sample result:
 #. "Showing 0-9 out of 25 total, sorted by Date Added ascending"
@@ -5854,6 +5859,8 @@ msgid ""
 "Showing {currentItemRange} out of {totalItemsCount}, sorted by {sortName} "
 "ascending"
 msgstr ""
+"Mostrando {currentItemRange} de un total de {totalItemsCount}, en orden "
+"ascendente de {sortName}"
 
 #. Translators: sample result:
 #. "Showing 0-9 out of 25 total, sorted by Date Added descending"
@@ -5862,6 +5869,8 @@ msgid ""
 "Showing {currentItemRange} out of {totalItemsCount}, sorted by {sortName} "
 "descending"
 msgstr ""
+"Mostrando {currentItemRange} de un total de {totalItemsCount}, en orden "
+"descendente de {sortName}"
 
 #. Translators: turns into "25 total" to be used in other sentences, e.g.
 #. "Showing 0-9 out of 25 total".
