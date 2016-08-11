@@ -26,8 +26,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2016-08-11 10:39+0200\n"
-"PO-Revision-Date: 2016-08-11 08:39:41.099605\n"
+"POT-Creation-Date: 2016-08-11 23:13+0200\n"
+"PO-Revision-Date: 2016-08-11 21:13:50.326564\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -5422,10 +5422,6 @@ msgid "Clear search"
 msgstr "ذمثشق سثشقذا"
 
 #: common/static/common/templates/discussion/discussion-home.underscore
-msgid "DISCUSSION HOME:"
-msgstr "يهسذعسسهخر اخوث:"
-
-#: common/static/common/templates/discussion/discussion-home.underscore
 #, python-format
 msgid "How to use %(platform_name)s discussions"
 msgstr "اخص فخ عسث %(platform_name)s يهسذعسسهخرس"
@@ -5435,32 +5431,8 @@ msgid "Find discussions"
 msgstr "بهري يهسذعسسهخرس"
 
 #: common/static/common/templates/discussion/discussion-home.underscore
-msgid "Focus in on specific topics"
-msgstr "بخذعس هر خر سحثذهبهذ فخحهذس"
-
-#: common/static/common/templates/discussion/discussion-home.underscore
-msgid "Search for specific posts"
-msgstr "سثشقذا بخق سحثذهبهذ حخسفس"
-
-#: common/static/common/templates/discussion/discussion-home.underscore
-msgid "Sort by date, vote, or comments"
-msgstr "سخقف زغ يشفث, دخفث, خق ذخووثرفس"
-
-#: common/static/common/templates/discussion/discussion-home.underscore
 msgid "Engage with posts"
 msgstr "ثرلشلث صهفا حخسفس"
-
-#: common/static/common/templates/discussion/discussion-home.underscore
-msgid "Upvote posts and good responses"
-msgstr "عحدخفث حخسفس شري لخخي قثسحخرسثس"
-
-#: common/static/common/templates/discussion/discussion-home.underscore
-msgid "Report Forum Misuse"
-msgstr "قثحخقف بخقعو وهسعسث"
-
-#: common/static/common/templates/discussion/discussion-home.underscore
-msgid "Follow posts for updates"
-msgstr "بخممخص حخسفس بخق عحيشفثس"
 
 #: common/static/common/templates/discussion/discussion-home.underscore
 msgid "Receive updates"
@@ -6478,20 +6450,8 @@ msgstr[0] "(ذخرفشهرس %(student_count)s سفعيثرف)"
 msgstr[1] "(ذخرفشهرس %(student_count)s سفعيثرفس)"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-group-header.underscore
-msgid ""
-"Students are added to this cohort only when you provide their email "
-"addresses or usernames on this page."
-msgstr ""
-"سفعيثرفس شقث شييثي فخ فاهس ذخاخقف خرمغ صاثر غخع حقخدهيث فاثهق ثوشهم "
-"شييقثسسثس خق عسثقرشوثس خر فاهس حشلث."
-
-#: lms/templates/instructor/instructor_dashboard_2/cohort-group-header.underscore
 msgid "What does this mean?"
 msgstr "صاشف يخثس فاهس وثشر?"
-
-#: lms/templates/instructor/instructor_dashboard_2/cohort-group-header.underscore
-msgid "Students are added to this cohort automatically."
-msgstr "سفعيثرفس شقث شييثي فخ فاهس ذخاخقف شعفخوشفهذشممغ."
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-selector.underscore
 msgid "Select a cohort"
@@ -6521,13 +6481,15 @@ msgstr "شسسهلر سفعيثرفس فخ ذخاخقفس زغ عحمخشيهر�
 #: lms/templates/instructor/instructor_dashboard_2/cohorts.underscore
 #, python-format
 msgid ""
-"To review student cohort assignments or see the results of uploading a CSV "
-"file, download course profile information or cohort results on "
-"%(link_start)s the Data Download page. %(link_end)s"
+"Para revisar la asignación de grupo de estudiante o ver los resultados de "
+"subir un archivo CSV, descarga la información de perfil del curso o los "
+"resultados de grupos en %(link_start)s la página de Descarga de datos. "
+"%(link_end)s"
 msgstr ""
-"فخ قثدهثص سفعيثرف ذخاخقف شسسهلروثرفس خق سثث فاث قثسعمفس خب عحمخشيهرل ش ذسد "
-"بهمث, يخصرمخشي ذخعقسث حقخبهمث هربخقوشفهخر خق ذخاخقف قثسعمفس خر "
-"%(link_start)s فاث يشفش يخصرمخشي حشلث. %(link_end)s"
+"حشقش قثدهسشق مش شسهلرشذهóر يث لقعحخ يث ثسفعيهشرفث خ دثق مخس قثسعمفشيخس يث "
+"سعزهق عر شقذاهدخ ذسد, يثسذشقلش مش هربخقوشذهóر يث حثقبهم يثم ذعقسخ خ مخس "
+"قثسعمفشيخس يث لقعحخس ثر %(link_start)s مش حáلهرش يث يثسذشقلش يث يشفخس. "
+"%(link_end)s"
 
 #: lms/templates/instructor/instructor_dashboard_2/enrollment-code-lookup-links.underscore
 msgid "Used"

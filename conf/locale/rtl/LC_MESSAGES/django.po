@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2016-08-11 10:39+0200\n"
-"PO-Revision-Date: 2016-08-11 08:39:40.781915\n"
+"POT-Creation-Date: 2016-08-11 23:13+0200\n"
+"PO-Revision-Date: 2016-08-11 21:13:50.036958\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -6343,7 +6343,8 @@ msgstr "مشسف رشوث"
 msgid "Company Name"
 msgstr "ذخوحشرغ رشوث"
 
-#: lms/djangoapps/instructor_task/tasks_helper.py wiki/forms.py
+#: lms/djangoapps/instructor_task/tasks_helper.py lms/templates/wiki/dir.html
+#: wiki/forms.py
 msgid "Title"
 msgstr "فهفمث"
 
@@ -8414,6 +8415,53 @@ msgstr "...شري وخقث!"
 #: lms/templates/wiki/delete.html
 msgid "You are deleting an article. Please confirm."
 msgstr "غخع شقث يثمثفهرل شر شقفهذمث. حمثشسث ذخربهقو."
+
+#: lms/templates/wiki/dir.html
+msgid "Listing articles in"
+msgstr "مهسفهرل شقفهذمثس هر"
+
+#: lms/templates/wiki/dir.html
+msgid "Subir un nivel"
+msgstr "سعزهق عر رهدثم"
+
+#: lms/templates/wiki/dir.html lms/templates/wiki/includes/breadcrumbs.html
+msgid "Add article"
+msgstr "شيي شقفهذمث"
+
+#: lms/templates/wiki/dir.html
+msgid "clear"
+msgstr "ذمثشق"
+
+#: lms/templates/wiki/dir.html
+msgid "article,articles"
+msgstr "شقفهذمث,شقفهذمثس"
+
+#: lms/templates/wiki/dir.html
+msgid "is,are"
+msgstr "هس,شقث"
+
+#: lms/templates/wiki/dir.html
+#, python-format
+msgid ""
+"\n"
+"      Navegando por <strong><a href=\"%(self_url)s\">/%(path)s</a></strong>. Hay <strong>%(cnt)s artículos</strong> en este nivel.\n"
+"    "
+msgstr ""
+"\n"
+"      رشدثلشريخ حخق <strong><a href=\"%(self_url)s\">/%(path)s</a></strong>. اشغ <strong>%(cnt)s شقفíذعمخس</strong> ثر ثسفث رهدثم.\n"
+"    "
+
+#: lms/templates/wiki/dir.html wiki/forms.py
+msgid "Slug"
+msgstr "سمعل"
+
+#: lms/templates/wiki/dir.html
+msgid "Last modified"
+msgstr "مشسف وخيهبهثي"
+
+#: lms/templates/wiki/dir.html
+msgid "No hay artículos en este nivel"
+msgstr "رخ اشغ شقفíذعمخس ثر ثسفث رهدثم"
 
 #: lms/templates/wiki/edit.html cms/templates/component.html
 #: cms/templates/container.html cms/templates/studio_xblock_wrapper.html
@@ -16750,10 +16798,6 @@ msgstr "ذاشرلثس"
 msgid "{span_start}active{span_end}"
 msgstr "{span_start}شذفهدث{span_end}"
 
-#: lms/templates/wiki/includes/breadcrumbs.html
-msgid "Add article"
-msgstr "شيي شقفهذمث"
-
 #. Translators: 'EdX', 'edX', and 'Open edX' are trademarks of 'edX Inc.'.
 #. Please do not translate any of these trademarks and company names.
 #: themes/red-theme/lms/templates/footer.html
@@ -20320,10 +20364,6 @@ msgstr "رخ ذاشرلثس وشيث. رخفاهرل فخ سشدث."
 #: wiki/forms.py
 msgid "Select an option"
 msgstr "سثمثذف شر خحفهخر"
-
-#: wiki/forms.py
-msgid "Slug"
-msgstr "سمعل"
 
 #: wiki/forms.py
 msgid ""

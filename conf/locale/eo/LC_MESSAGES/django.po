@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2016-08-11 10:39+0200\n"
-"PO-Revision-Date: 2016-08-11 08:39:40.781915\n"
+"POT-Creation-Date: 2016-08-11 23:13+0200\n"
+"PO-Revision-Date: 2016-08-11 21:13:50.036958\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -7401,7 +7401,8 @@ msgstr "Läst Nämé Ⱡ'σяєм ιρѕυм ∂σł#"
 msgid "Company Name"
 msgstr "Çömpäný Nämé Ⱡ'σяєм ιρѕυм ∂σłσя ѕ#"
 
-#: lms/djangoapps/instructor_task/tasks_helper.py wiki/forms.py
+#: lms/djangoapps/instructor_task/tasks_helper.py lms/templates/wiki/dir.html
+#: wiki/forms.py
 msgid "Title"
 msgstr "Tïtlé Ⱡ'σяєм ιρѕ#"
 
@@ -9724,6 +9725,53 @@ msgid "You are deleting an article. Please confirm."
 msgstr ""
 "Ýöü äré délétïng än ärtïçlé. Pléäsé çönfïrm. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
 "¢σηѕє¢тєтυя #"
+
+#: lms/templates/wiki/dir.html
+msgid "Listing articles in"
+msgstr "Lïstïng ärtïçlés ïn Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт,#"
+
+#: lms/templates/wiki/dir.html
+msgid "Subir un nivel"
+msgstr "Süßïr ün nïvél Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт#"
+
+#: lms/templates/wiki/dir.html lms/templates/wiki/includes/breadcrumbs.html
+msgid "Add article"
+msgstr "Àdd ärtïçlé Ⱡ'σяєм ιρѕυм ∂σłσя #"
+
+#: lms/templates/wiki/dir.html
+msgid "clear"
+msgstr "çléär Ⱡ'σяєм ιρѕ#"
+
+#: lms/templates/wiki/dir.html
+msgid "article,articles"
+msgstr "ärtïçlé,ärtïçlés Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αм#"
+
+#: lms/templates/wiki/dir.html
+msgid "is,are"
+msgstr "ïs,äré Ⱡ'σяєм ιρѕυ#"
+
+#: lms/templates/wiki/dir.html
+#, python-format
+msgid ""
+"\n"
+"      Navegando por <strong><a href=\"%(self_url)s\">/%(path)s</a></strong>. Hay <strong>%(cnt)s artículos</strong> en este nivel.\n"
+"    "
+msgstr ""
+"\n"
+"      Nävégändö pör <strong><a href=\"%(self_url)s\">/%(path)s</a></strong>. Häý <strong>%(cnt)s ärtíçülös</strong> én ésté nïvél.\n"
+"     Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тє#"
+
+#: lms/templates/wiki/dir.html wiki/forms.py
+msgid "Slug"
+msgstr "Slüg Ⱡ'σяєм ι#"
+
+#: lms/templates/wiki/dir.html
+msgid "Last modified"
+msgstr "Läst mödïfïéd Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
+
+#: lms/templates/wiki/dir.html
+msgid "No hay artículos en este nivel"
+msgstr "Nö häý ärtíçülös én ésté nïvél Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢т#"
 
 #: lms/templates/wiki/edit.html cms/templates/component.html
 #: cms/templates/container.html cms/templates/studio_xblock_wrapper.html
@@ -19300,10 +19348,6 @@ msgstr "Çhängés Ⱡ'σяєм ιρѕυм #"
 msgid "{span_start}active{span_end}"
 msgstr "{span_start}äçtïvé{span_end} Ⱡ'σяєм ιρѕυм ∂σłσя ѕ#"
 
-#: lms/templates/wiki/includes/breadcrumbs.html
-msgid "Add article"
-msgstr "Àdd ärtïçlé Ⱡ'σяєм ιρѕυм ∂σłσя #"
-
 #. Translators: 'EdX', 'edX', and 'Open edX' are trademarks of 'edX Inc.'.
 #. Please do not translate any of these trademarks and company names.
 #: themes/red-theme/lms/templates/footer.html
@@ -23508,10 +23552,6 @@ msgstr ""
 #: wiki/forms.py
 msgid "Select an option"
 msgstr "Séléçt än öptïön Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αм#"
-
-#: wiki/forms.py
-msgid "Slug"
-msgstr "Slüg Ⱡ'σяєм ι#"
 
 #: wiki/forms.py
 msgid ""

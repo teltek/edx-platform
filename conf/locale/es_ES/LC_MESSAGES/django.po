@@ -92,6 +92,7 @@
 # Mariangeles Fernandez <mariangelesfm@gmail.com>, 2015
 # Marta Cuesta, 2014
 # Maxfer <maxfer@gmail.com>, 2015
+# mercefan <mercefan@gmail.com>, 2016
 # Miguel Ángel Candel <mcandel@upvnet.upv.es>, 2015
 # Miguel Angel Cordova <miguel.angel.cordova.uned@gmail.com>, 2014
 # Natalia, 2013
@@ -164,7 +165,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2016-08-04 18:45+0000\n"
+"POT-Creation-Date: 2016-08-11 16:22+0000\n"
 "PO-Revision-Date: 2016-05-09 11:27+0000\n"
 "Last-Translator: Juan Rodríguez de Vera Mouliaá <jrodriguez@um.es>\n"
 "Language-Team: Spanish (Spain) (http://www.transifex.com/open-edx/edx-platform/language/es_ES/)\n"
@@ -6524,7 +6525,7 @@ msgstr "Información del curso"
 
 #: lms/djangoapps/instructor/views/instructor_dashboard.py
 msgid "No end date set"
-msgstr ""
+msgstr "Fecha de finalización no establecida"
 
 #: lms/djangoapps/instructor/views/instructor_dashboard.py
 msgid "Enrollment data is now available in {dashboard_link}."
@@ -6536,7 +6537,7 @@ msgstr "Afiliación"
 
 #: lms/djangoapps/instructor/views/instructor_dashboard.py
 msgid "Cohorts"
-msgstr ""
+msgstr "Grupos"
 
 #: lms/djangoapps/instructor/views/instructor_dashboard.py
 #: lms/templates/ccx/coach_dashboard.html
@@ -8106,6 +8107,7 @@ msgid "Email Address"
 msgstr "Dirección de correo electrónico"
 
 #: lms/djangoapps/support/views/refund.py
+#: cms/templates/maintenance/_force_publish_course.html
 #: lms/templates/sysadmin_dashboard_gitlogs.html
 #: lms/templates/instructor/instructor_dashboard_2/add_coupon_modal.html
 #: lms/templates/instructor/instructor_dashboard_2/edit_coupon_modal.html
@@ -9988,6 +9990,39 @@ msgstr ""
 "Notas opcionales sobre este usuario (por ejemplo, por qué se ha denegado el "
 "acceso a crear cursos). "
 
+#: cms/djangoapps/maintenance/views.py
+#: cms/templates/maintenance/_force_publish_course.html
+msgid "Force Publish Course"
+msgstr ""
+
+#: cms/djangoapps/maintenance/views.py
+msgid ""
+"Sometimes the draft and published branches of a course can get out of sync. "
+"Force publish course command resets the published branch of a course to "
+"point to the draft branch, effectively force publishing the course. This "
+"view dry runs the force publish command"
+msgstr ""
+
+#: cms/djangoapps/maintenance/views.py
+msgid "Please provide course id."
+msgstr ""
+
+#: cms/djangoapps/maintenance/views.py
+msgid "Invalid course key."
+msgstr ""
+
+#: cms/djangoapps/maintenance/views.py
+msgid "No matching course found."
+msgstr ""
+
+#: cms/djangoapps/maintenance/views.py
+msgid "Force publishing course is not supported with old mongo courses."
+msgstr ""
+
+#: cms/djangoapps/maintenance/views.py
+msgid "Course is already in published state."
+msgstr ""
+
 #: cms/djangoapps/models/settings/course_metadata.py
 msgid "Incorrect format for field '{name}'. {detailed_message}"
 msgstr "Formato incorreto para el campo '{name}'. {detailed_message}"
@@ -10172,6 +10207,12 @@ msgstr "Ver"
 msgid "Preview Language Setting"
 msgstr ""
 
+#: cms/templates/maintenance/_force_publish_course.html
+#: common/templates/darklang/preview_lang_include.html
+#: lms/templates/problem.html lms/templates/shoppingcart/shopping_cart.html
+msgid "Reset"
+msgstr "Reiniciar"
+
 #: cms/templates/registration/activation_complete.html
 #: lms/templates/registration/activation_complete.html
 msgid "Thanks for activating your account."
@@ -10323,11 +10364,6 @@ msgstr ""
 #: themes/stanford-style/lms/templates/register-shib.html
 msgid "Submit"
 msgstr "Enviar"
-
-#: common/templates/darklang/preview_lang_include.html
-#: lms/templates/problem.html lms/templates/shoppingcart/shopping_cart.html
-msgid "Reset"
-msgstr "Reiniciar"
 
 #: common/templates/darklang/preview_lang_include.html
 msgid "Please refresh the page to see the changes applied."
@@ -13554,10 +13590,6 @@ msgstr ""
 "{cert_name_short}."
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
-msgid "{category} Program Course"
-msgstr "{category} Itinerario del curso"
-
-#: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Course details"
 msgstr ""
 
@@ -13615,6 +13647,8 @@ msgid ""
 "Are you sure you want to unenroll from the purchased course %(course_name)s "
 "(%(course_number)s)?"
 msgstr ""
+"¿Seguro que quieres borrarte del curso pagado %(course_name)s "
+"(%(course_number)s)?"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "You will be refunded the amount you paid."
@@ -13629,6 +13663,7 @@ msgstr ""
 msgid ""
 "Are you sure you want to unenroll from %(course_name)s (%(course_number)s)?"
 msgstr ""
+"¿Seguro que quieres borrarte del curso %(course_name)s (%(course_number)s)?"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 #, python-format
@@ -13636,6 +13671,8 @@ msgid ""
 "Are you sure you want to unenroll from the verified %(cert_name_long)s track"
 " of %(course_name)s (%(course_number)s)?"
 msgstr ""
+"¿Seguro que quieres borrarte del certificado verificado %(cert_name_long)s "
+"de %(course_name)s (%(course_number)s)?"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid ""
@@ -13646,6 +13683,10 @@ msgstr ""
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Email Settings"
 msgstr "Configuración de e-mail"
+
+#: lms/templates/dashboard/_dashboard_course_listing.html
+msgid "Related Programs"
+msgstr ""
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Verification not yet complete."
@@ -13788,20 +13829,6 @@ msgstr ""
 msgid ""
 "An error occurred with this transaction. For help, contact {support_email}."
 msgstr ""
-
-#: lms/templates/dashboard/_dashboard_program_info.html
-msgid "{category} Program: Interested in more courses in this subject?"
-msgstr ""
-
-#: lms/templates/dashboard/_dashboard_program_info.html
-msgid ""
-"This course is 1 of {course_count} courses in the "
-"{link_start}{program_display_name}{link_end} {program_category}."
-msgstr ""
-
-#: lms/templates/dashboard/_dashboard_program_info.html
-msgid "View {category} Details"
-msgstr "Ver detalles de {category} "
 
 #: lms/templates/dashboard/_dashboard_status_verification.html
 msgid "Verification Status: Approved"
@@ -14990,6 +15017,7 @@ msgstr "Información de inscripción"
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
 msgid "Number of enrollees (admins, staff, and students) by track"
 msgstr ""
+"Número de inscritos (administradores, profesores y estudiantes) por tipo"
 
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
 msgid "Professional"
@@ -15119,6 +15147,8 @@ msgid ""
 "Click to generate a CSV file that lists learners who can enroll in the "
 "course but have not yet done so."
 msgstr ""
+"Haz click para generar un archivo CSV que liste los alumnos que pueden "
+"registrarse en el curso pero que todavía no lo han hecho."
 
 #: lms/templates/instructor/instructor_dashboard_2/data_download.html
 msgid "Download a CSV of learners who can enroll"
@@ -15146,6 +15176,9 @@ msgid ""
 "To generate a CSV file that lists all student answers to a given problem, "
 "enter the location of the problem (from its Staff Debug Info)."
 msgstr ""
+"Para generar un archivo CSV que liste todas las respuestas dadas por los "
+"alumnos para un problema dado, introduce la localización del problema (desde"
+" su Información de depuración para los profesores)."
 
 #: lms/templates/instructor/instructor_dashboard_2/data_download.html
 msgid "Problem location: "
@@ -15158,14 +15191,15 @@ msgstr "Descarga las respuestas en un CSV"
 #: lms/templates/instructor/instructor_dashboard_2/data_download.html
 msgid "Click to list certificates that are issued for this course:"
 msgstr ""
+"Haz click para listar los certificados que se han generado para este curso:"
 
 #: lms/templates/instructor/instructor_dashboard_2/data_download.html
 msgid "View Certificates Issued"
-msgstr ""
+msgstr "Ver certificados generados"
 
 #: lms/templates/instructor/instructor_dashboard_2/data_download.html
 msgid "Download CSV of Certificates Issued"
-msgstr ""
+msgstr "Descargar CSV de los certificados generados"
 
 #: lms/templates/instructor/instructor_dashboard_2/data_download.html
 msgid ""
@@ -15233,6 +15267,10 @@ msgid ""
 " or email these links for direct access. Copies of links expire within 5 "
 "minutes."
 msgstr ""
+"{strong_start}Nota{strong_end}: Para mantener seguros los datos del alumno, "
+"no se pueden guardar o enviar por correo electrónico estos enlaces para "
+"acceder directamente. Las copias de los enlaces expiran pasados los 5 "
+"minutos."
 
 #: lms/templates/instructor/instructor_dashboard_2/e-commerce.html
 msgid "Enrollment Codes"
@@ -15810,6 +15848,8 @@ msgid ""
 "For analytics about your course, go to "
 "{link_start}{analytics_dashboard_name}{link_end}."
 msgstr ""
+"Para las estadísticas de tu curso, ve a "
+"{link_start}{analytics_dashboard_name}{link_end}."
 
 #: lms/templates/instructor/instructor_dashboard_2/instructor_dashboard_2.html
 msgid "Instructor Dashboard"
@@ -15914,6 +15954,8 @@ msgid ""
 "Note: Users must have an activated {platform_name} account before they can "
 "be enrolled as beta testers."
 msgstr ""
+"Nota: Los usuarios deben tener una cuenta de {platform_name} activada antes "
+"de poder ser registrados como usuarios de prueba beta."
 
 #: lms/templates/instructor/instructor_dashboard_2/membership.html
 msgid ""
@@ -15968,6 +16010,11 @@ msgid ""
 "all course data. Staff also have access to your course in Studio and "
 "Insights. You can only give course team roles to enrolled users."
 msgstr ""
+"Los miembros del equipo del curso con el rol de profesor te ayudan a "
+"gestionar el curso. Los profesores pueden registrar y dar de baja a "
+"estudiantes, así como modificar sus notas y acceder a todos los datos del "
+"curso. Los profesores también tienen acceso al curso en Studio e Insights. "
+"Solamente puedes asignar roles al equipo del curso para registrar usuarios."
 
 #: lms/templates/instructor/instructor_dashboard_2/membership.html
 msgid "Add Staff"
@@ -15985,6 +16032,12 @@ msgid ""
 " to manage course team membership. You can only give course team roles to "
 "enrolled users."
 msgstr ""
+"Los miembros del equipo del curso con el rol de administrador te ayudan a "
+"gestionar el curso. Pueden realizar las mismas tareas que los profesores, y "
+"también pueden añadir y quitar los roles de profesor y administrador, los "
+"roles de moderación del foro, y el rol de prueba beta para gestionar la "
+"pertenencia al equipo del curso. Solamente puedes asignar roles al equipo "
+"del curso para registrar usuarios."
 
 #: lms/templates/instructor/instructor_dashboard_2/membership.html
 msgid "Add Admin"
@@ -16342,6 +16395,10 @@ msgid ""
 " the 'Pending Tasks' table. To see status for all tasks submitted for this "
 "problem and student, click on this button:"
 msgstr ""
+"La re-calificación se ejecuta en segundo plano, y el estado de las tareas "
+"activas aparecerá en la tabla de 'Tareas pendientes del profesor'. Para ver "
+"el estado de todas las tareas enviadas para este problema y alumno, pulsa "
+"este botón:"
 
 #: lms/templates/instructor/instructor_dashboard_2/student_admin.html
 msgid "Show Background Task History for Student"
@@ -19945,6 +20002,9 @@ msgid ""
 "Course team members with the Staff role are course co-authors. They have "
 "full writing and editing privileges on all course content."
 msgstr ""
+"Los miembros del equipo del curso con el rol de profesor son coautores del "
+"curso. Tienen completos privilegios de escritura y edición de todo el "
+"contenido del curso."
 
 #: cms/templates/manage_users.html
 msgid ""
@@ -21054,6 +21114,22 @@ msgstr ""
 msgid "Your course creator status for {studio_name}"
 msgstr "Tu estado de creador de curso en {studio_name}"
 
+#: cms/templates/maintenance/_force_publish_course.html
+msgid "Required data to force publish course."
+msgstr ""
+
+#: cms/templates/maintenance/_force_publish_course.html
+msgid "course-v1:edX+DemoX+Demo_Course"
+msgstr ""
+
+#: cms/templates/maintenance/_force_publish_course.html
+msgid "Reset values"
+msgstr ""
+
+#: cms/templates/maintenance/base.html cms/templates/maintenance/index.html
+msgid "Maintenance Dashboard"
+msgstr ""
+
 #: cms/templates/registration/reg_complete.html
 msgid ""
 "We've sent an email message to {email} with instructions for activating your"
@@ -21178,6 +21254,10 @@ msgstr "nombre"
 #: cms/templates/widgets/user_dropdown.html
 msgid "Currently signed in as:"
 msgstr "Has iniciado sesión como:"
+
+#: cms/templates/widgets/user_dropdown.html
+msgid "Maintenance"
+msgstr ""
 
 #: wiki/forms.py
 msgid "Only localhost... muahahaha"
