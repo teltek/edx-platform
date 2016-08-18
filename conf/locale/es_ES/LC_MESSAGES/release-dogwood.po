@@ -18851,6 +18851,10 @@ msgid ""
 " make another user the Admin, then ask that user to remove you from the "
 "Course Team list."
 msgstr ""
+"Cada curso debe tener un administrador. Si eres el administrador y quieres "
+"transferir la propiedad del curso, haz click en <strong>Añadir acceso de "
+"administrador</strong> para hacer administrador a otro usuario, luego pide a"
+" ese usuario que te elimine de la lista del Equipo del curso."
 
 #: cms/templates/manage_users_lib.html
 msgid "Library User Access"

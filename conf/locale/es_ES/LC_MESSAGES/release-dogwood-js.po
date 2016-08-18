@@ -7944,7 +7944,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/team-member.a88bb640fd1c.underscore
 #: test_root/staticfiles/cms/templates/team-member.underscore
 msgid "Add {role} Access"
-msgstr ""
+msgstr "Añadir acceso de {role}"
 
 #: cms/templates/js/team-member.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/team-member.a88bb640fd1c.underscore
@@ -7952,7 +7952,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/team-member.a88bb640fd1c.underscore
 #: test_root/staticfiles/cms/templates/team-member.underscore
 msgid "Remove {role} Access"
-msgstr ""
+msgstr "Eliminar acceso de {role}"
 
 #: cms/templates/js/team-member.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/team-member.a88bb640fd1c.underscore
