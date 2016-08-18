@@ -18684,6 +18684,13 @@ msgid ""
 "this library as the source library, and specify the number of problems to be"
 " randomly selected and displayed to each student."
 msgstr ""
+"Utiliza el contenido de la biblioteca en los cursos añadiendo la clave de "
+"política {em_start}library_content{em_end} al Listado de módulos avanzados "
+"en la Configuración Avanzada del curso, luego añade un Bloque de contenido "
+"aleatorio al contenido del curso. En la configuración de cada Bloque de "
+"contenido aleatorio, selecciona esta biblioteca como la biblioteca fuente, y"
+" especifica el número de problemas a ser seleccionados aleatoriamente y "
+"visualizados a cada alumno."
 
 #: cms/templates/library.html
 msgid "Learn more about content libraries"
