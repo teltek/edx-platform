@@ -95,6 +95,7 @@
 # Jack R. <dny1020@aol.com>, 2016
 # Iago Enjo <enjo@ub.edu>, 2016
 # Daniel Vazquez <daniel@alabs.es>, 2016
+# mercefan <mercefan@gmail.com>, 2016
 # Steven McArthur <inactive+legallyunemployed@transifex.com>, 2016
 # Manuel García <inactive+man.garcia.p@transifex.com>, 2016
 # Elena Clavijo Vicent <elena.onil@gmail.com>, 2016
@@ -114,7 +115,6 @@
 # juditseb <juditseb@hotmail.com>, 2016
 # karl_kox <chus_vader@hotmail.com>, 2016
 # Tesaur <pablo15892@hotmail.com>, 2016
-# mercefan <mercefan@gmail.com>, 2016
 # #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 # edX translation file.
 # Copyright (C) 2016 EdX
@@ -247,7 +247,7 @@ msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
 "POT-Creation-Date: 2016-08-16 19:39+0000\n"
-"PO-Revision-Date: 2016-08-18 16:07+0000\n"
+"PO-Revision-Date: 2016-08-18 16:40+0000\n"
 "Last-Translator: Ned Batchelder <ned@edx.org>\n"
 "Language-Team: Spanish (Spain) (http://www.transifex.com/open-edx/edx-platform/language/es_ES/)\n"
 "MIME-Version: 1.0\n"
@@ -6032,7 +6032,7 @@ msgstr "Publicar"
 #. Translators: "title" is the name of the current component being edited.
 #: cms/static/js/views/modals/edit_xblock.js
 msgid "Editing: %(title)s"
-msgstr "Editiando: %(title)s"
+msgstr "Editando: %(title)s"
 
 #: cms/static/js/views/modals/edit_xblock.js
 msgid "Component"
@@ -7145,7 +7145,7 @@ msgstr "Ejemplo: Tarea, examen parcial "
 #: test_root/staticfiles/cms/templates/course_grade_policy.62f954876128.underscore
 #: test_root/staticfiles/cms/templates/course_grade_policy.underscore
 msgid "Weight of Total Grade"
-msgstr "ponderación del la nota final"
+msgstr "ponderación de la nota final"
 
 #: cms/templates/js/course_grade_policy.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course_grade_policy.62f954876128.underscore
@@ -7177,7 +7177,7 @@ msgstr "total de ejercicios asignados"
 #: test_root/staticfiles/cms/templates/course_grade_policy.62f954876128.underscore
 #: test_root/staticfiles/cms/templates/course_grade_policy.underscore
 msgid "Number of Droppable"
-msgstr "Número de soltables"
+msgstr "Número de saltables"
 
 #: cms/templates/js/course_grade_policy.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course_grade_policy.62f954876128.underscore

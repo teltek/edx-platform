@@ -18443,6 +18443,8 @@ msgid ""
 "It's more than just multiple choice. {studio_name} supports more than a "
 "dozen types of problems to challenge your learners."
 msgstr ""
+"Es más que elección múltiple. {studio_name} soporta más de una docena de "
+"tipos de ejercicios para retar a tus alumnos."
 
 #: cms/templates/howitworks.html
 msgid ""
@@ -18620,6 +18622,11 @@ msgid ""
 "recommend that you export the current course, so that you have a backup copy"
 " of it."
 msgstr ""
+"Asegúrate de que quieres importar un curso antes de continuar. El contenido "
+"del curso a importar reemplazará el contenido del curso existente. "
+"{em_start}No se puede deshacer la operación de importación de curso{em_end}."
+" Antes de proceder, te recomendamos que exportes el curso actual, de modo "
+"que dispongas de una copia de seguridad."
 
 #: cms/templates/import.html
 msgid ""
@@ -18725,6 +18732,8 @@ msgid ""
 "Integrating your imported content into this course. This process might take "
 "longer with larger courses."
 msgstr ""
+"Integrando tu contenido importado en este curso. Este proceso podría durar "
+"más con cursos más grandes."
 
 #: cms/templates/import.html
 msgid "Success"
@@ -20523,7 +20532,7 @@ msgstr "Acceda a la documentación en http://docs.edx.org"
 #: cms/templates/widgets/sock.html
 #: themes/edx.org/cms/templates/widgets/sock.html
 msgid "edX Documentation"
-msgstr ""
+msgstr "Documentación Open edX"
 
 #: cms/templates/widgets/sock.html
 #: themes/edx.org/cms/templates/widgets/sock.html
@@ -20539,11 +20548,11 @@ msgstr ""
 
 #: cms/templates/widgets/sock.html
 msgid "Access the Open edX Portal"
-msgstr ""
+msgstr "Accede al portal de Open edX"
 
 #: cms/templates/widgets/sock.html
 msgid "Open edX Portal"
-msgstr ""
+msgstr "Portal Open edX"
 
 #: cms/templates/widgets/sock.html
 #: themes/edx.org/cms/templates/widgets/sock.html
@@ -20558,12 +20567,12 @@ msgstr "Inscríbete a edX101"
 #: cms/templates/widgets/sock.html
 #: themes/edx.org/cms/templates/widgets/sock.html
 msgid "Enroll in StudioX: Creating a Course with edX Studio"
-msgstr ""
+msgstr "Inscríbete en StudioX: Creando un curso con Studio"
 
 #: cms/templates/widgets/sock.html
 #: themes/edx.org/cms/templates/widgets/sock.html
 msgid "Enroll in StudioX"
-msgstr ""
+msgstr "Inscríbete en StudioX"
 
 #: cms/templates/widgets/sock.html
 #: themes/edx.org/cms/templates/widgets/sock.html
