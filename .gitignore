@@ -38,6 +38,10 @@ codekit-config.json
 !django.mo
 !djangojs.po
 !djangojs.mo
+!release-dogwood.po
+!release-dogwood.mo
+!release-dogwood-js.po
+!release-dogwood-js.mo
 conf/locale/en/LC_MESSAGES/*.po
 conf/locale/en/LC_MESSAGES/*.mo
 conf/locale/fake*/LC_MESSAGES/*.po

@@ -145,6 +145,7 @@ segment:
 # How should the generate step merge files?
 generate_merge:
     django.po:
+        - release-dogwood.po
         - django-partial.po
         - django-studio.po
         - mako.po
@@ -152,6 +153,7 @@ generate_merge:
         #- messages.po
         - wiki.po
     djangojs.po:
+        - release-dogwood-js.po
         - djangojs-partial.po
         - djangojs-studio.po
         - underscore.po
