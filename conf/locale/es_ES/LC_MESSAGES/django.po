@@ -2308,7 +2308,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Cosmetic Course Display Price"
-msgstr ""
+msgstr "Precio del curso a mostrar"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid ""
@@ -2316,6 +2316,9 @@ msgid ""
 " registration price is set by an administrator in the database, that price "
 "will be displayed instead of this one."
 msgstr ""
+"El coste mostrado a los alumnos al registrarse en el curso. Si el precio de "
+"registro del curso de pago es establecido por un administrador en la base de"
+" datos, ese precio será mostrado en lugar de éste."
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Course Advertised Start Date"
@@ -2406,6 +2409,16 @@ msgid ""
 "brackets: [[\"2015-09-15\", \"2015-09-21\"], [\"2015-10-01\", "
 "\"2015-10-08\"]] "
 msgstr ""
+"Introduce un par de fechas entre las cuales los estudiantes no pueden "
+"publicar en los foros de discusión. Dentro de los corchetes proporcionados, "
+"introduce un conjunto adicional de corchetes delimitando cada par de fechas "
+"que añadas. El formato de cada fecha debe ser [\"YYYY-MM-DD\", \"YYYY-MM-"
+"DD\"]. Para especificar horas además de fechas, el formato de cada par debe "
+"ser [\"YYYY-MM-DDTHH:MM\", \"YYYY-MM-DDTHH:MM\"]. Asegúrate de incluir la "
+"\"T\" entre la fecha y la hora. Por ejemplo, una entrada definiendo dos "
+"periodos de censura se parecería a esto, incluyendo el par de corchetes "
+"externos: [[\"2015-09-15\", \"2015-09-21\"], [\"2015-10-01\", "
+"\"2015-10-08\"]]"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Discussion Topic Mapping"
@@ -2420,6 +2433,12 @@ msgid ""
 "must be unique. In \"id\" values, the only special characters that are "
 "supported are underscore, hyphen, and period."
 msgstr ""
+"Introduce categorías de foro en el siguiente formato: \"NombreCategoría\": "
+"{\"id\": \"i4x-NombreInstitución-NúmeroCurso-course-TérminoCurso\"}.  Por "
+"ejemplo, una categoría de foro podría ser \"Modo Lydian\": {\"id\": \"i4x-"
+"UniversidadX-MUS101-course-2015_T1\"}. El valor \"id\" de cada categoría "
+"debe ser único. En los valores \"id\", los únicos caracteres especiales "
+"soportados son guión bajo, guión y punto."
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Discussion Sorting Alphabetical"
@@ -2643,6 +2662,9 @@ msgid ""
 "\"%m-%d-%Y\" for MM-DD-YYYY, \"%d-%m-%Y\" for DD-MM-YYYY, \"%Y-%m-%d\" for "
 "YYYY-MM-DD, or \"%Y-%d-%m\" for YYYY-DD-MM."
 msgstr ""
+"Introduce el formato para las fechas de entrega. El valor por defecto es Mon"
+" DD, YYYY. Introduce \"%m-%d-%Y\" for MM-DD-YYYY, \"%d-%m-%Y\" para DD-MM-"
+"YYYY, \"%Y-%m-%d\" para YYYY-MM-DD, o \"%Y-%d-%m\" para YYYY-DD-MM."
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "External Login Domain"
@@ -2682,6 +2704,16 @@ msgid ""
 "early_with_info. To display only the links to passing students as soon as "
 "certificates are generated, enter early_no_info."
 msgstr ""
+"Introduce end, early_with_info o early_no_info. Después de la generación de "
+"los certificados, los alumnos que han aprobado ven un enlace a su "
+"certificado en el tablón y los estudiantes que no han aprobado ven "
+"información sobre la configuración de calificaciones. Por defecto el valor "
+"es end, que muestra la información de certificados a todos los alumnos "
+"después de la fecha de finalización del curso. Para mostrar esta información"
+" de certificados a todos los alumnos tan pronto como se generen los "
+"certificados, introduce early_with_info. Para mostrar solo los enlaces a los"
+" alumnos que hayan aprobado tan pronto como se hayan generado los "
+"certificados, introduce early_no_info."
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Course About Page Image"
@@ -2699,13 +2731,15 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Issue Open Badges"
-msgstr ""
+msgstr "Emite insignias abiertas"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid ""
 "Issue Open Badges badges for this course. Badges are generated when "
 "certificates are created."
 msgstr ""
+"Emite insignias abiertas para este curso. Las insignias son generadas cuando"
+" los certificados son creados."
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid ""
@@ -2713,6 +2747,9 @@ msgid ""
 "marks, enter the short name of the course to use on the certificate that "
 "students receive when they complete the course."
 msgstr ""
+"Emplea este parámetro solo cuando generes certificados PDF. Entre las "
+"comillas dobles, introduce el nombre corto del curso para utilizar en el "
+"certificado que reciben los alumnos cuando completan el curso."
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Certificate Name (Short)"
@@ -2724,6 +2761,9 @@ msgid ""
 "marks, enter the long name of the course to use on the certificate that "
 "students receive when they complete the course."
 msgstr ""
+"Emplea este parámetro solo cuando generes certificados PDF. Entre las "
+"comillas dobles, introduce el nombre largo del curso para utilizar en el "
+"certificado que reciben los alumnos cuando completan el curso."
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Certificate Name (Long)"
@@ -2731,17 +2771,17 @@ msgstr "Nombre (largo) del Certificado"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Certificate Web/HTML View Enabled"
-msgstr ""
+msgstr "Vista habilitada para certificados Web/HTML"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "If true, certificate Web/HTML views are enabled for the course."
-msgstr ""
+msgstr "Si vale \"true\", las vistas de certificados Web/HTML son habilitadas."
 
 #. Translators: This field is the container for course-specific certifcate
 #. configuration values
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Certificate Web/HTML View Overrides"
-msgstr ""
+msgstr "Sobreescritura de la vista de certificados Web/HTML"
 
 #. Translators: These overrides allow for an alternative configuration of the
 #. certificate web view
@@ -2750,6 +2790,8 @@ msgid ""
 "Enter course-specific overrides for the Web/HTML template parameters here "
 "(JSON format)"
 msgstr ""
+"Introduce aquí los valores sobreescritos específicos del curso para los "
+"parámetros de la plantilla Web/HTML (formato JSON)"
 
 #. Translators: This field is the container for course-specific certifcate
 #. configuration values
@@ -2854,7 +2896,7 @@ msgstr "Sólo por invitación"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Whether to restrict enrollment to invitation by the course staff."
-msgstr ""
+msgstr "Restringir o no el registro a ser invitado por el personal del curso."
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Pre-Course Survey Name"
@@ -2975,7 +3017,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Enable Proctored Exams"
-msgstr ""
+msgstr "Habilitar exámenes supervisados"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid ""
@@ -2983,16 +3025,21 @@ msgid ""
 "your course. Note that enabling proctored exams will also enable timed "
 "exams."
 msgstr ""
+"Introduce true o false. Si este valor es true, los exámenes supervisados son"
+" habilitados en tu curso. Ten en cuenta que habilitar los exámenes "
+"supervisados también habilitará los exámenes cronometrados."
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Enable Timed Exams"
-msgstr ""
+msgstr "Habilitar exámenes cronometrados"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid ""
 "Enter true or false. If this value is true, timed exams are enabled in your "
 "course."
 msgstr ""
+"Introduce true o false. Si este valor es true, los exámenes cronometrados "
+"son habilitados en tu curso."
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Minimum Grade for Credit"
@@ -3603,6 +3650,12 @@ msgid ""
 "problems in your course. Valid values are \"always\", \"onreset\", "
 "\"never\", and \"per_student\"."
 msgstr ""
+"Especifica el valor por defecto para definir con qué frecuencia los valores "
+"variables de un problema son aleatorios. Este parámetro debería valer "
+"\"never\" a no se que tengas pensado proporcionar un script de Python para "
+"indentificar y aleatorizar los valores en la mayoría de los problemas del "
+"curso. Valores válidos son \"always\", \"onreset\", \"never\" y "
+"\"per_student\"."
 
 #: common/lib/xmodule/xmodule/modulestore/inheritance.py
 msgid "Days Early for Beta Users"
