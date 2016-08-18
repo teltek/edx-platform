@@ -7328,7 +7328,7 @@ msgstr "%(new_item_message)s"
 #: test_root/staticfiles/cms/templates/list.underscore
 #, python-format
 msgid "New %(item_type)s"
-msgstr ""
+msgstr "Nuevo %(item_type)s"
 
 #: cms/templates/js/metadata-dict-entry.underscore
 #: cms/templates/js/metadata-list-entry.underscore
