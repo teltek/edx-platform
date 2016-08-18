@@ -14054,6 +14054,8 @@ msgid ""
 "View detailed Git import logs for this course {link_start}by clicking "
 "here{link_end}."
 msgstr ""
+"Ver el registro detallado de las importaciones de Git para este curso "
+"{link_start} haciendo click aquí{link_end}."
 
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
 msgid "Course Warnings"
@@ -14167,7 +14169,7 @@ msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/data_download.html
 msgid "Problem location: "
-msgstr ""
+msgstr "Ruta del ejercicio:"
 
 #: lms/templates/instructor/instructor_dashboard_2/data_download.html
 msgid "Download a CSV of problem responses"
@@ -14211,7 +14213,7 @@ msgstr "Generar Informe de calificación"
 
 #: lms/templates/instructor/instructor_dashboard_2/data_download.html
 msgid "Generate Problem Grade Report"
-msgstr ""
+msgstr "Generar informe de calificación de problemas"
 
 #: lms/templates/instructor/instructor_dashboard_2/data_download.html
 msgid "Reports Available for Download"
@@ -14928,7 +14930,7 @@ msgstr "Eliminar usuario de pruebas beta"
 #. users can be added to.
 #: lms/templates/instructor/instructor_dashboard_2/membership.html
 msgid "Course Team Management"
-msgstr ""
+msgstr "Gestión del equipo del curso"
 
 #. Translators: an "Administrator Group" is a group, such as Course Staff,
 #. that
