@@ -72,10 +72,10 @@
 # Rocío Pérez Venero <perezvenero.rocio@gmail.com>, 2016
 # sandra bonillo <sandraboni13@gmail.com>, 2016
 # Jack R. <dny1020@aol.com>, 2016
+# mercefan <mercefan@gmail.com>, 2016
 # jorge jorge marrero <jjorgewill@gmail.com>, 2016
 # Daniel Vazquez <daniel@alabs.es>, 2016
 # LUCIA GOMEZ TEIJEIRO <lucy._.y@hotmail.com>, 2016
-# Javier Segura <reciprocidad@gmail.com>, 2016
 # Marta Cuesta <marta.cuesta@gmail.com>, 2016
 # eevidal <inactive+eevidal@transifex.com>, 2016
 # Ignacio Piqueras <igpisa@upv.es>, 2016
@@ -83,12 +83,12 @@
 # AWS <aws@posiziona.eu>, 2016
 # UC3M <edx@uc3m.es>, 2016
 # leosamu <leosamu@gmail.com>, 2016
+# Javier Segura <reciprocidad@gmail.com>, 2016
 # Ángel Paredes <angel.p.barato@gmail.com>, 2016
 # Valeria Freire <valtodopds@hotmail.com>, 2016
 # Francisco Cruz <paco@di.uc3m.es>, 2016
 # RUTH QUINTANA <rqvaquero@gmail.com>, 2016
 # Guillermo Peñarando Sánchez <guillerpsanchez@gmail.com>, 2016
-# mercefan <mercefan@gmail.com>, 2016
 # #-#-#-#-#  django-partial.po (edx-platform)  #-#-#-#-#
 # edX translation file.
 # Copyright (C) 2016 EdX
@@ -256,7 +256,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2016-08-16 19:40+0000\n"
+"POT-Creation-Date: 2016-08-18 18:02+0000\n"
 "PO-Revision-Date: 2016-05-09 11:27+0000\n"
 "Last-Translator: Juan Rodríguez de Vera Mouliaá <jrodriguez@um.es>\n"
 "Language-Team: Spanish (Spain) (http://www.transifex.com/open-edx/edx-platform/language/es_ES/)\n"
@@ -267,11 +267,17 @@ msgstr ""
 "Language: es_ES\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#. #-#-#-#-#  release-dogwood.po (edx-platform)  #-#-#-#-#
+#. Translators: 'Discussion' refers to the tab in the courseware that leads to
+#. the discussion forums
+#. #-#-#-#-#  django-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: 'Discussion' refers to the tab in the courseware that leads to
 #. the discussion forums
 #: cms/djangoapps/contentstore/views/component.py
 #: lms/djangoapps/courseware/tabs.py
 #: lms/djangoapps/django_comment_client/forum/views.py
+#: lms/djangoapps/discussion/plugins.py
+#: lms/djangoapps/discussion/templates/discussion/discussion_profile_page.html
 msgid "Discussion"
 msgstr "Foro"
 
@@ -13522,14 +13528,19 @@ msgstr[1] "%s comentarios"
 
 #: lms/templates/discussion/index.html
 #: lms/templates/discussion/user_profile.html
+#: lms/djangoapps/discussion/templates/discussion/discussion_board.html
+#: lms/djangoapps/discussion/templates/discussion/discussion_profile_page.html
 msgid "Discussion - {course_number}"
 msgstr "Discusión - {course_number}"
 
 #: lms/templates/discussion/index.html
+#: lms/djangoapps/discussion/templates/discussion/discussion_board.html
+#: lms/djangoapps/discussion/templates/discussion/discussion_profile_page.html
 msgid "Discussion thread list"
 msgstr "Lista de hilos de discusión"
 
 #: lms/templates/discussion/index.html
+#: lms/djangoapps/discussion/templates/discussion/discussion_board.html
 msgid "New topic form"
 msgstr "Nuevo tema de"
 
@@ -13546,6 +13557,7 @@ msgstr ""
 "línea!"
 
 #: lms/templates/discussion/user_profile.html
+#: lms/djangoapps/discussion/templates/discussion/discussion_profile_page.html
 msgid "User Profile"
 msgstr "Perfil de usuario"
 
@@ -13702,7 +13714,7 @@ msgstr "Activa tu cuenta de {platform_name}"
 #: lms/templates/emails/remove_beta_tester_email_message.txt
 #: lms/templates/emails/unenroll_email_enrolledmessage.txt
 msgid "Dear {full_name}"
-msgstr "Estimado {full_name}"
+msgstr "Estimado/a {full_name}"
 
 #: lms/templates/emails/add_beta_tester_email_message.txt
 msgid ""
@@ -13971,7 +13983,7 @@ msgstr ""
 
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid "Dear student,"
-msgstr "Estimado alumno,"
+msgstr "Estimado/a alumno/a,"
 
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid ""
@@ -14381,7 +14393,7 @@ msgstr ""
 
 #: lms/templates/financial-assistance/financial-assistance.html
 msgid "Dear edX Learner,"
-msgstr "Querido estudiante de edX"
+msgstr "Querido/a estudiante de edX"
 
 #: lms/templates/financial-assistance/financial-assistance.html
 msgid ""
@@ -22584,6 +22596,21 @@ msgstr ""
 msgid "Please refresh the page to see the changes applied."
 msgstr ""
 
+#: lms/djangoapps/discussion/templates/discussion/discussion_board.html
+#: lms/templates/discussion/_discussion_inline.html
+msgid "Add a Post"
+msgstr ""
+
+#: lms/djangoapps/discussion/templates/discussion/maintenance.html
+msgid "Discussion unavailable"
+msgstr ""
+
+#: lms/djangoapps/discussion/templates/discussion/maintenance.html
+msgid ""
+"The discussions are currently undergoing maintenance. We'll have them back "
+"up shortly!"
+msgstr ""
+
 #: lms/templates/bookmark_button.html
 msgid "Click to remove"
 msgstr "Haz clic para mover"
@@ -23415,15 +23442,6 @@ msgid ""
 "Your edX Verification has expired. To receive a verified certificate, you "
 "have to submit a new photo of yourself and your government-issued photo ID "
 "before the course ends."
-msgstr ""
-
-#: lms/templates/discussion/_discussion_course_navigation.html
-#: lms/templates/discussion/_discussion_inline.html
-msgid "Add a Post"
-msgstr ""
-
-#: lms/templates/discussion/_thread_list_template.html
-msgid "Discussion topics; currently listing: "
 msgstr ""
 
 #: lms/templates/emails/activation_email.txt
