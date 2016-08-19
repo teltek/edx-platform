@@ -199,6 +199,22 @@ class Users(SysadminDashboardView):
                 uname = email.replace('@', '_')
             new_password = password
 
+        user_email = User.objects.get(email=email)
+        if user_email:
+            msg += _('Oops, failed to create user {user}, {error}').format(
+                user=email,
+                error="IntegrityError: email exists"
+            )
+            return msg
+
+        user_username = User.objects.get(username=uname)
+        if user_username:
+            msg += _('Oops, failed to create user {user}, {error}').format(
+                user=email,
+                error="IntegrityError: username exists"
+            )
+            return msg
+
         user = User(username=uname, email=email, is_active=True)
         user.set_password(new_password)
         try:
