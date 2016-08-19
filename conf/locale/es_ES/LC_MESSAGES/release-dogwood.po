@@ -71,10 +71,10 @@
 # Rocío Pérez Venero <perezvenero.rocio@gmail.com>, 2016
 # sandra bonillo <sandraboni13@gmail.com>, 2016
 # Jack R. <dny1020@aol.com>, 2016
+# mercefan <mercefan@gmail.com>, 2016
 # jorge jorge marrero <jjorgewill@gmail.com>, 2016
 # Daniel Vazquez <daniel@alabs.es>, 2016
 # LUCIA GOMEZ TEIJEIRO <lucy._.y@hotmail.com>, 2016
-# Javier Segura <reciprocidad@gmail.com>, 2016
 # Marta Cuesta <marta.cuesta@gmail.com>, 2016
 # eevidal <inactive+eevidal@transifex.com>, 2016
 # Ignacio Piqueras <igpisa@upv.es>, 2016
@@ -82,19 +82,19 @@
 # AWS <aws@posiziona.eu>, 2016
 # UC3M <edx@uc3m.es>, 2016
 # leosamu <leosamu@gmail.com>, 2016
+# Javier Segura <reciprocidad@gmail.com>, 2016
 # Ángel Paredes <angel.p.barato@gmail.com>, 2016
 # Valeria Freire <valtodopds@hotmail.com>, 2016
 # Francisco Cruz <paco@di.uc3m.es>, 2016
 # RUTH QUINTANA <rqvaquero@gmail.com>, 2016
 # Guillermo Peñarando Sánchez <guillerpsanchez@gmail.com>, 2016
-# mercefan <mercefan@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
 "POT-Creation-Date: 2016-05-09 11:27+0000\n"
 "PO-Revision-Date: 2016-08-09 20:07+0000\n"
-"Last-Translator: mercefan <mercefan@gmail.com>, 2016\n"
+"Last-Translator: Guillermo Peñarando Sánchez <guillerpsanchez@gmail.com>, 2016\n"
 "Language-Team: Spanish (Spain) (https://www.transifex.com/open-edx/teams/6205/es_ES/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13179,7 +13179,7 @@ msgstr "Activa tu cuenta de {platform_name}"
 #: lms/templates/emails/remove_beta_tester_email_message.txt
 #: lms/templates/emails/unenroll_email_enrolledmessage.txt
 msgid "Dear {full_name}"
-msgstr "Estimado {full_name}"
+msgstr "Estimado/a {full_name}"
 
 #: lms/templates/emails/add_beta_tester_email_message.txt
 msgid ""
@@ -13448,7 +13448,7 @@ msgstr ""
 
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid "Dear student,"
-msgstr "Estimado alumno,"
+msgstr "Estimado/a alumno/a,"
 
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid ""
@@ -13855,7 +13855,7 @@ msgstr ""
 
 #: lms/templates/financial-assistance/financial-assistance.html
 msgid "Dear edX Learner,"
-msgstr "Querido estudiante de edX"
+msgstr "Querido/a estudiante de edX"
 
 #: lms/templates/financial-assistance/financial-assistance.html
 msgid ""
