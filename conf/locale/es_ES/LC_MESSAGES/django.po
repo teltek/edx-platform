@@ -19429,6 +19429,8 @@ msgid ""
 "All course team members can access content in Studio, the LMS, and Insights,"
 " but are not automatically enrolled in the course."
 msgstr ""
+"Todos los miembros del equipo pueden acceder al contenido de Studio, el LMS "
+"e Insights, pero no se inscriben automáticamente en el curso."
 
 #: cms/templates/manage_users.html
 msgid "Transferring Ownership"
