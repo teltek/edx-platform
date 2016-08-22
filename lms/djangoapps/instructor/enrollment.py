@@ -167,6 +167,8 @@ def unenroll_email(course_id, student_email, email_students=False, email_params=
 
     if previous_state.allowed:
         CourseEnrollmentAllowed.objects.get(course_id=course_id, email=student_email).delete()
+
+    if previous_state.allowed and not previous_state.enrollment:
         if email_students:
             email_params['message'] = 'allowed_unenroll'
             email_params['email_address'] = student_email
@@ -427,6 +429,8 @@ def render_message_to_string(subject_template, message_template, param_dict, lan
     Returns two strings that correspond to the rendered, translated email
     subject and message.
     """
+    if language is None:
+        language = settings.LANGUAGE_CODE
     with override_language(language):
         return get_subject_and_message(subject_template, message_template, param_dict)
 

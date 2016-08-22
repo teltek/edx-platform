@@ -104,7 +104,8 @@ class SysadminDashboardView(TemplateView):
         def csv_data():
             """Generator for handling potentially large CSVs"""
             for row in data:
-                writer.writerow(row)
+                encoded_row = [unicode(s).encode('utf-8') for s in row]
+                writer.writerow(encoded_row)
             csv_data = read_and_flush()
             yield csv_data
         response = HttpResponse(csv_data(), content_type='text/csv')
@@ -194,7 +195,25 @@ class Users(SysadminDashboardView):
             if '@' not in email:
                 msg += _('email address required (not username)')
                 return msg
+            else:
+                uname = email.replace('@', '_')
             new_password = password
+
+        user_email = User.objects.get(email=email)
+        if user_email:
+            msg += _('Oops, failed to create user {user}, {error}').format(
+                user=email,
+                error="IntegrityError: email exists"
+            )
+            return msg
+
+        user_username = User.objects.get(username=uname)
+        if user_username:
+            msg += _('Oops, failed to create user {user}, {error}').format(
+                user=email,
+                error="IntegrityError: username exists"
+            )
+            return msg
 
         user = User(username=uname, email=email, is_active=True)
         user.set_password(new_password)

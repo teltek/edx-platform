@@ -11,10 +11,10 @@
 <div class="cohort-management-group-setup">
     <div class="setup-value">
         <% if (cohort.get('assignment_type') == "manual") { %>
-            <%- gettext("Students are added to this cohort only when you provide their email addresses or usernames on this page.") %>
+            Los estudiantes son añadidos a este grupo solo cuando proporcionas sus direcciones de correo electrónico o nombres de usuario en esta página.
             <a href="http://edx.readthedocs.org/projects/edx-partner-course-staff/en/latest/cohorts/cohort_config.html#assign-students-to-cohort-groups-manually" class="incontext-help action-secondary action-help"><%= gettext("What does this mean?") %></a>
         <% } else { %>
-            <%- gettext("Students are added to this cohort automatically.") %>
+            Los estudiantes son añadidos a este grupo automáticamente.
             <a href="http://edx.readthedocs.org/projects/edx-partner-course-staff/en/latest/cohorts/cohorts_overview.html#all-automated-assignment" class="incontext-help action-secondary action-help"><%- gettext("What does this mean?") %></a>
         <% } %>
     </div>
