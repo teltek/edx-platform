@@ -197,18 +197,20 @@ class Users(SysadminDashboardView):
                 return msg
             else:
                 uname = email.replace('@', '_')
+            if '+' in email:
+                uname = uname.replace('+', '_')
+            if '.' in email:
+                uname = uname.replace('.', '_')
             new_password = password
 
-        user_email = User.objects.get(email=email)
-        if user_email:
+        if User.objects.filter(email=email):
             msg += _('Oops, failed to create user {user}, {error}').format(
                 user=email,
                 error="IntegrityError: email exists"
             )
             return msg
 
-        user_username = User.objects.get(username=uname)
-        if user_username:
+        if User.objects.filter(username=uname):
             msg += _('Oops, failed to create user {user}, {error}').format(
                 user=email,
                 error="IntegrityError: username exists"
