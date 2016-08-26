@@ -741,6 +741,22 @@ def checkout_with_shoppingcart(request, user, course_key, course_mode, amount):
         reverse("shoppingcart.views.postpay_callback")
     )
 
+    ################################# WORKAROUND #########################################
+    ## Proxy makes this to show http instead of https
+    import os
+    import re
+    from urlparse import urljoin
+    from django.utils.encoding import iri_to_uri
+    absolute_http_url_re = re.compile(r"^https?://", re.I)
+    location = reverse("shoppingcart.views.postpay_callback")
+    if not location:
+        location = request.get_full_path()
+    if not absolute_http_url_re.match(location):
+        current_uri = '%s://%s%s' % ('https', request.get_host(), request.path)
+        location = urljoin(current_uri, location)
+    callback_url = iri_to_uri(location)
+    ################################# WORKAROUND #########################################
+
     payment_data = {
         'payment_processor_name': settings.CC_PROCESSOR_NAME,
         'payment_page_url': get_purchase_endpoint(),

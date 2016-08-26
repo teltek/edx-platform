@@ -806,6 +806,7 @@ CMS_BASE = 'localhost:8001'
 SITE_ID = 1
 SITE_NAME = "example.com"
 HTTPS = 'on'
+os.environ['HTTPS'] = HTTPS
 ROOT_URLCONF = 'lms.urls'
 # NOTE: Please set ALLOWED_HOSTS to some sane value, as we do not allow the default '*'
 
