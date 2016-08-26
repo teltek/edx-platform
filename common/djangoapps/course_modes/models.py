@@ -40,14 +40,14 @@ class CourseMode(models.Model):
     # The 'pretty' name that can be translated and displayed
     mode_display_name = models.CharField(max_length=255, verbose_name=_("Display Name"))
 
-    # The price in USD that we would like to charge for this mode of the course
+    # The price in EUR that we would like to charge for this mode of the course
     # Historical note: We used to allow users to choose from several prices, but later
     # switched to using a single price.  Although this field is called `min_price`, it is
     # really just the price of the course.
     min_price = models.IntegerField(default=0, verbose_name=_("Price"))
 
     # the currency these prices are in, using lower case ISO currency codes
-    currency = models.CharField(default="usd", max_length=8)
+    currency = models.CharField(default="EUR", max_length=8)
 
     # The datetime at which the course mode will expire.
     # This is used to implement "upgrade" deadlines.
@@ -100,7 +100,7 @@ class CourseMode(models.Model):
     NO_ID_PROFESSIONAL_MODE = "no-id-professional"
     CREDIT_MODE = "credit"
 
-    DEFAULT_MODE = Mode(AUDIT, _('Audit'), 0, '', 'usd', None, None, None)
+    DEFAULT_MODE = Mode(AUDIT, _('Audit'), 0, '', 'EUR', None, None, None)
     DEFAULT_MODE_SLUG = AUDIT
 
     # Modes that allow a student to pursue a verified certificate
@@ -120,7 +120,7 @@ class CourseMode(models.Model):
     # "honor" to "audit", we still need to have the shoppingcart
     # use "honor"
     DEFAULT_SHOPPINGCART_MODE_SLUG = HONOR
-    DEFAULT_SHOPPINGCART_MODE = Mode(HONOR, _('Honor'), 0, '', 'usd', None, None, None)
+    DEFAULT_SHOPPINGCART_MODE = Mode(HONOR, _('Honor'), 0, '', 'EUR', None, None, None)
 
     class Meta(object):
         unique_together = ('course_id', 'mode_slug', 'currency')
@@ -646,14 +646,14 @@ class CourseModesArchive(models.Model):
     # The 'pretty' name that can be translated and displayed
     mode_display_name = models.CharField(max_length=255)
 
-    # minimum price in USD that we would like to charge for this mode of the course
+    # minimum price in EUR that we would like to charge for this mode of the course
     min_price = models.IntegerField(default=0)
 
     # the suggested prices for this mode
     suggested_prices = models.CommaSeparatedIntegerField(max_length=255, blank=True, default='')
 
     # the currency these prices are in, using lower case ISO currency codes
-    currency = models.CharField(default="usd", max_length=8)
+    currency = models.CharField(default="EUR", max_length=8)
 
     # turn this mode off after the given expiration date
     expiration_date = models.DateField(default=None, null=True, blank=True)
