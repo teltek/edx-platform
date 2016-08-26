@@ -255,7 +255,7 @@ class PDFInvoice(object):
         Draws the main table containing the data items.
         """
         course_items_data = [
-            ['', (_('Description')), (_('Quantity')), (_('List Price\nper item')), (_('Discount\nper item')),
+            ['', (_('Description')), (_('Quantity')), (('Precio\npor curso')), (_('Discount\nper item')),
              (_('Amount')), '']
         ]
         for row_item in self.items_data:
