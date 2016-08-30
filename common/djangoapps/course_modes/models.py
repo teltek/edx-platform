@@ -533,7 +533,12 @@ class CourseMode(models.Model):
             return False
 
         # Check that a free mode is available.
-        return cls.AUDIT in modes_dict or cls.HONOR in modes_dict
+        is_honor_free = False
+        if cls.HONOR in modes_dict:
+            if modes_dict["honor"].min_price == 0:
+                is_honor_free = True
+
+        return cls.AUDIT in modes_dict or is_honor_free
 
     @classmethod
     def auto_enroll_mode(cls, course_id, modes_dict=None):

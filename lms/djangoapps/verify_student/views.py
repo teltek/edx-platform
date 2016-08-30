@@ -208,7 +208,8 @@ class PayAndVerifyView(View):
         self, request, course_id,
         always_show_payment=False,
         current_step=None,
-        message=FIRST_TIME_VERIFY_MSG
+        message=FIRST_TIME_VERIFY_MSG,
+        course_mode_slug=CourseMode.VERIFIED
     ):
         """
         Render the payment and verification flow.
@@ -278,7 +279,7 @@ class PayAndVerifyView(View):
         #
         # Nonetheless, for the time being we continue to make the really ugly assumption
         # that at some point there was a paid course mode we can query for the price.
-        relevant_course_mode = self._get_paid_mode(course_key)
+        relevant_course_mode = self._get_paid_mode(course_key, course_mode_slug)
 
         # If we can find a relevant course mode, then log that we're entering the flow
         # Otherwise, this course does not support payment/verification, so respond with a 404.
@@ -329,6 +330,8 @@ class PayAndVerifyView(View):
             else True
         )
         already_paid, is_enrolled = self._check_enrollment(request.user, course_key)
+        already_paid_upgrade = self._check_paid_upgrade_enrollment(request.user, course_key, relevant_course_mode, already_paid, message)
+        already_paid = already_paid_upgrade
 
         # Redirect the user to a more appropriate page if the
         # messaging won't make sense based on the user's
@@ -497,7 +500,7 @@ class PayAndVerifyView(View):
         if url is not None:
             return redirect(url)
 
-    def _get_paid_mode(self, course_key):
+    def _get_paid_mode(self, course_key, course_mode_slug=CourseMode.VERIFIED):
         """
         Retrieve the paid course mode for a course.
 
@@ -506,6 +509,7 @@ class PayAndVerifyView(View):
 
         Arguments:
             course_key (CourseKey): The location of the course.
+            course_mode_slug (string): The slug of the course mode.
 
         Returns:
             CourseMode tuple
@@ -519,11 +523,11 @@ class PayAndVerifyView(View):
         #  * Price > 0
         #  * Not credit
         for mode in unexpired_modes[course_key]:
-            if mode.min_price > 0 and not CourseMode.is_credit_mode(mode):
+            if mode.min_price > 0 and not CourseMode.is_credit_mode(mode) and mode.slug == course_mode_slug:
                 return mode
 
         # Otherwise, find the first expired mode
-        for mode in all_modes[course_key]:
+        for mode in all_modes[course_key] and mode.slug == course_mode_slug:
             if mode.min_price > 0:
                 return mode
 
@@ -660,6 +664,61 @@ class PayAndVerifyView(View):
             has_paid = (course_mode and course_mode.min_price > 0)
 
         return (has_paid, bool(is_active))
+
+    def _check_paid_upgrade_enrollment(self, user, course_key, upgrade_course_mode, already_paid, current_step_message):
+        """Check whether the user has paid for upgrade.
+
+        If a user is enrolled in a paid course mode, we assume
+        that the user has paid.
+
+        Arguments:
+            user (User): The user to check.
+            course_key (CourseKey): The key of the course to check.
+            upgrade_course_mode (CourseMode): The course mode the
+            user is trying to pay for.
+            already_paid (boolean): if the user is enrolled in a
+            paid course
+
+        Returns:
+            `has_paid` indicating whether the user
+            has paid_upgrade
+
+        """
+        has_paid_upgrade = False
+
+        enrollment_mode, is_active = CourseEnrollment.enrollment_mode_for_user(user, course_key)
+        has_paid = False
+        course_mode = None
+        if enrollment_mode is not None and is_active:
+            all_modes = CourseMode.modes_for_course_dict(course_key, include_expired=True)
+            course_mode = all_modes.get(enrollment_mode)
+            has_paid = (course_mode and course_mode.min_price > 0)
+
+        if current_step_message != self.UPGRADE_MSG or upgrade_course_mode.slug == course_mode.slug:
+            return has_paid
+
+        if course_mode.slug == CourseMode.HONOR and upgrade_course_mode.slug == CourseMode.VERIFIED:
+            #return False
+            orders = Order.objects.filter(user_id=user.id)
+            for order in orders:
+                status = order.status
+                processor_reply_dump = order.processor_reply_dump
+                reply_course_id = None
+                reply_mode_slug = None
+                if processor_reply_dump:
+                    processor_reply = json.loads(processor_reply_dump)
+                    if 'req_merchant_defined_data1' in processor_reply:
+                        reply_course_id = processor_reply['req_merchant_defined_data1']
+                    if 'req_merchant_defined_data2' in processor_reply:
+                        reply_mode_slug = processor_reply['req_merchant_defined_data2']
+                if status == 'purchased' and course_key == reply_course_id and upgrade_course_mode.slug == reply_mode_slug:
+                    has_paid_upgrade = (upgrade_course_mode.min_price > 0)
+                if has_paid_upgrade:
+                    return has_paid_upgrade
+        else:
+            return has_paid
+
+        return has_paid_upgrade
 
     def _response_if_deadline_passed(self, course, deadline_name, deadline_datetime):
         """
@@ -802,7 +861,13 @@ def create_order(request):
         if paid_modes:
             if len(paid_modes) > 1:
                 log.warn(u"Multiple paid course modes found for course '%s' for create order request", course_id)
-            current_mode = paid_modes[0]
+                course_mode_slug = request.POST.get("slug", None)
+                for paid_mode in paid_modes:
+                    if paid_mode.slug == course_mode_slug:
+                        current_mode = paid_mode
+                        break
+            else:
+                current_mode = paid_modes[0]
 
     # Make sure this course has a paid mode
     if not current_mode:

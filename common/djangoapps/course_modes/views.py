@@ -181,8 +181,27 @@ class ChooseModeView(View):
             return redirect(reverse('dashboard'))
 
         if requested_mode == 'honor':
-            CourseEnrollment.enroll(user, course_key, mode=requested_mode)
-            return redirect(reverse('dashboard'))
+            amount = request.POST.get("contribution-honor")
+            try:
+                # Validate the amount passed in and force it into two digits
+                amount_value = decimal.Decimal(amount).quantize(decimal.Decimal('.01'), rounding=decimal.ROUND_DOWN)
+            except decimal.InvalidOperation:
+                error_msg = _("Invalid amount selected.")
+                return self.get(request, course_id, error=error_msg)
+
+            if amount_value > 0:
+                donation_for_course = request.session.get("donation_for_course", {})
+                donation_for_course[unicode(course_key)] = amount_value
+                request.session["donation_for_course"] = donation_for_course
+                return redirect(
+                    reverse(
+                        'verify_student_start_honor_flow',
+                        kwargs={'course_id': unicode(course_key)}
+                    )
+                )
+            else:
+                CourseEnrollment.enroll(user, course_key, mode=requested_mode)
+                return redirect(reverse('dashboard'))
 
         mode_info = allowed_modes[requested_mode]
 

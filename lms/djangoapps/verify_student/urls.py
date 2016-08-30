@@ -4,7 +4,7 @@ from django.conf import settings
 from django.conf.urls import patterns, url
 
 from lms.djangoapps.verify_student import views
-
+from course_modes.models import CourseMode
 
 urlpatterns = patterns(
     '',
@@ -20,6 +20,23 @@ urlpatterns = patterns(
         name="verify_student_start_flow",
         kwargs={
             'message': views.PayAndVerifyView.FIRST_TIME_VERIFY_MSG
+        }
+    ),
+
+    # The user is starting the payment process for certificate not verified,
+    # most likely after enrolling in a course and selecting
+    # a "honor" track.
+    url(
+        r'^start-honor-flow/{course}/$'.format(course=settings.COURSE_ID_PATTERN),
+        # Pylint seems to dislike the as_view() method because as_view() is
+        # decorated with `classonlymethod` instead of `classmethod`.
+        views.PayAndVerifyView.as_view(),
+        name="verify_student_start_honor_flow",
+        kwargs={
+            'always_show_payment': True,
+            'message': views.PayAndVerifyView.UPGRADE_MSG,
+            'current_step': views.PayAndVerifyView.MAKE_PAYMENT_STEP,
+            'course_mode_slug': CourseMode.HONOR
         }
     ),
 

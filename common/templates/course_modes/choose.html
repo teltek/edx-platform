@@ -123,7 +123,7 @@ from django.core.urlresolvers import reverse
                                                     <ul class="list-actions">
                                                         <li class="action action-select">
                                                             <input type="hidden" name="contribution" value="${min_price}" />
-                                                            <input type="submit" name="verified_mode" value="${_('Pursue a Verified Certificate')} ($${min_price} USD)" />
+                                                            <input type="submit" name="verified_mode" value="${_('Pursue a Verified Certificate')} (${settings.PAID_COURSE_REGISTRATION_CURRENCY[1]}${min_price} ${settings.PAID_COURSE_REGISTRATION_CURRENCY[0]})" />
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -143,15 +143,20 @@ from django.core.urlresolvers import reverse
                             <div class="register-choice register-choice-audit">
                                 <div class="wrapper-copy">
                                     <span class="deco-ribbon"></span>
-                                    <h4 class="title">${_("Audit This Course")}</h4>
+                                    <h4 class="title">Consigue un Certificado No Verificado</h4>
                                     <div class="copy">
+				      % if modes["honor"].min_price == 0:
                                         <p>${_("Audit this course for free and have complete access to all the course material, activities, tests, and forums.")}</p>
+			              % else:
+                                        <p>${_("Audit this course for a fee and have complete access to all the course material, activities, tests, and forums.")}</p>
+                                      % endif
                                     </div>
                                 </div>
 
                                 <ul class="list-actions">
                                     <li class="action action-select">
-                                        <input type="submit" name="honor_mode" value="${_('Audit This Course')}" />
+                                        <input type="hidden" name="contribution-honor" value="${modes["honor"].min_price}" />
+                                        <input type="submit" name="honor_mode" value="Consigue un Certificado No Verificado (${settings.PAID_COURSE_REGISTRATION_CURRENCY[1]}${modes["honor"].min_price} ${settings.PAID_COURSE_REGISTRATION_CURRENCY[0]})" />
                                     </li>
                                 </ul>
                             </div>
