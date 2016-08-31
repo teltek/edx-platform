@@ -866,6 +866,8 @@ def course_about(request, course_id):
         # get prerequisite courses display names
         pre_requisite_courses = get_prerequisite_courses_display(course)
 
+        all_modes = CourseMode.modes_for_course_dict(course_key, include_expired=True)
+
         return render_to_response('courseware/course_about.html', {
             'course': course,
             'staff_access': staff_access,
@@ -887,7 +889,8 @@ def course_about(request, course_id):
             'disable_courseware_header': True,
             'can_add_course_to_cart': can_add_course_to_cart,
             'cart_link': reverse('shoppingcart.views.show_cart'),
-            'pre_requisite_courses': pre_requisite_courses
+            'pre_requisite_courses': pre_requisite_courses,
+            'all_modes': all_modes
         })
 
 
