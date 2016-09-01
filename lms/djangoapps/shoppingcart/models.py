@@ -305,7 +305,7 @@ class Order(models.Model):
         for item in order_items:
             item_total = item.qty * item.unit_cost
             items_data.append({
-                'item_description': item.pdf_receipt_display_name,
+                'item_description': item.line_desc,
                 'quantity': item.qty,
                 'list_price': item.get_list_price(),
                 'discount': item.get_list_price() - item.unit_cost,
@@ -875,7 +875,7 @@ class Invoice(TimeStampedModel):
         discount_per_item = float(course_price) - sale_price / quantity
         list_price = course_price - discount_per_item
         items_data = [{
-            'item_description': course.display_name,
+            'item_description': item.line_desc,
             'quantity': quantity,
             'list_price': list_price,
             'discount': discount_per_item,
