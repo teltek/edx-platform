@@ -1349,7 +1349,7 @@ class CourseEnrollment(models.Model):
     def refundable(self):
         """
         For paid/verified certificates, students may receive a refund if they have
-        a verified certificate and the deadline for refunds has not yet passed.
+        a honor or verified certificate and the deadline for refunds has not yet passed.
         """
         # In order to support manual refunds past the deadline, set can_refund on this object.
         # On unenrolling, the "UNENROLL_DONE" signal calls CertificateItem.refund_cert_callback(),
@@ -1358,6 +1358,10 @@ class CourseEnrollment(models.Model):
         # (side-effects are bad)
         if getattr(self, 'can_refund', None) is not None:
             return True
+
+        # Check if this mode is verified or honor
+        if self.mode != CourseMode.VERIFIED and self.mode != CourseMode.HONOR:
+            return False
 
         # If the student has already been given a certificate they should not be refunded
         if GeneratedCertificate.certificate_for_student(self.user, self.course_id) is not None:
@@ -1368,8 +1372,13 @@ class CourseEnrollment(models.Model):
         if refund_cutoff_date and datetime.now(UTC) > refund_cutoff_date:
             return False
 
-        course_mode = CourseMode.mode_for_course(self.course_id, 'verified')
-        if course_mode is None:
+        course_mode_verified = CourseMode.mode_for_course(self.course_id, CourseMode.VERIFIED)
+        course_mode_honor = CourseMode.mode_for_course(self.course_id, CourseMode.HONOR)
+        if course_mode_verified is None:
+            return False
+        elif course_mode_honor is None:
+            return False
+        elif course_mode_honor.min_price == 0:
             return False
         else:
             return True

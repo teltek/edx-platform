@@ -1876,10 +1876,11 @@ class CertificateItem(OrderItem):
         """
 
         # Only refund verified cert unenrollments that are within bounds of the expiration date
+        # Refund also paid honor cert unenrollments that are within bounds of the expiration date
         if (not course_enrollment.refundable()) or skip_refund:
             return
 
-        target_certs = CertificateItem.objects.filter(course_id=course_enrollment.course_id, user_id=course_enrollment.user, status='purchased', mode='verified')
+        target_certs = CertificateItem.objects.filter(course_id=course_enrollment.course_id, user_id=course_enrollment.user, status='purchased', mode=course_enrollment.mode)
         try:
             target_cert = target_certs[0]
         except IndexError:
