@@ -688,17 +688,18 @@ class PayAndVerifyView(View):
 
         enrollment_mode, is_active = CourseEnrollment.enrollment_mode_for_user(user, course_key)
         has_paid = False
-        course_mode = None
         if enrollment_mode is not None and is_active:
             all_modes = CourseMode.modes_for_course_dict(course_key, include_expired=True)
             course_mode = all_modes.get(enrollment_mode)
             has_paid = (course_mode and course_mode.min_price > 0)
+            course_mode_slug = course_mode.slug
+        else:
+            course_mode_slug = None
 
-        if current_step_message != self.UPGRADE_MSG or upgrade_course_mode.slug == course_mode.slug:
+        if current_step_message != self.UPGRADE_MSG or upgrade_course_mode.slug == course_mode_slug:
             return has_paid
 
-        if course_mode.slug == CourseMode.HONOR and upgrade_course_mode.slug == CourseMode.VERIFIED:
-            #return False
+        if course_mode_slug == CourseMode.HONOR and upgrade_course_mode.slug == CourseMode.VERIFIED:
             orders = Order.objects.filter(user_id=user.id)
             for order in orders:
                 status = order.status
