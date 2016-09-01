@@ -527,11 +527,6 @@ class CourseMode(models.Model):
         if cls.has_professional_mode(modes_dict):
             return False
 
-        # White-label uses course mode honor with a price
-        # to indicate that the course is behind a paywall.
-        if cls.is_white_label(course_id, modes_dict=modes_dict):
-            return False
-
         # Check that a free mode is available.
         is_honor_free = False
         if cls.HONOR in modes_dict:
