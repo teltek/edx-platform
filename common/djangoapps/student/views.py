@@ -127,6 +127,8 @@ from notification_prefs.views import enable_notifications
 from openedx.core.djangoapps.user_api.preferences import api as preferences_api
 from openedx.core.djangoapps.programs.utils import get_programs_for_dashboard
 
+from courseware import grades
+from django.db import transaction
 
 log = logging.getLogger("edx.student")
 AUDIT_LOG = logging.getLogger("audit")
@@ -514,6 +516,7 @@ def is_course_blocked(request, redeemed_registration_codes, course_key):
     return blocked
 
 
+@transaction.non_atomic_requests
 @login_required
 @ensure_csrf_cookie
 def dashboard(request):
@@ -677,6 +680,8 @@ def dashboard(request):
     else:
         redirect_message = ''
 
+    courses_progress = _get_courses_progress(request, course_enrollments)
+
     context = {
         'enrollment_message': enrollment_message,
         'redirect_message': redirect_message,
@@ -707,9 +712,43 @@ def dashboard(request):
         'courses_requirements_not_met': courses_requirements_not_met,
         'nav_hidden': True,
         'course_programs': course_programs,
+        'courses_progress': courses_progress,
     }
 
     return render_to_response('dashboard.html', context)
+
+
+def _get_courses_progress(request, course_enrollments):
+    """
+    Builds a dict with the list of courses given the student grade,
+    the course lowest passing grade and if the student passes the course.
+
+    Args:
+        request (Request): the request that has called this function
+        course_enrollments (list[CourseEnrollment]): a list of course enrollments.
+
+    Returns:
+        A dictionary with the student grade, the course lowest passing grade
+        and if the student passes the course per course enrollment of the student.
+    """
+    courses_progress = dict()
+    for enrollment in course_enrollments:
+        course = modulestore().get_course(enrollment.course_id, depth=0)
+        courses_progress[enrollment.course_id] = {
+            'student_grade': 0.0,
+            'course_lowest_passing_grade': 1.0,
+            'pass': False
+            }
+        try:
+            grade = grades.grade(request.user, request, course)
+            courses_progress[enrollment.course_id]['student_grade'] = grade['percent']
+            courses_progress[enrollment.course_id]['course_lowest_passing_grade'] = course.lowest_passing_grade
+            if grade['percent'] >= course.lowest_passing_grade:
+                courses_progress[enrollment.course_id]['pass'] = True
+        except transaction.TransactionManagementError as e:
+            log.error('There was an error calculating the grade of the student {0} in course {1}: {2}'.format(request.user, enrollment.course_id, e))
+            pass
+    return courses_progress
 
 
 def _create_recent_enrollment_message(course_enrollments, course_modes):  # pylint: disable=invalid-name
