@@ -65,6 +65,8 @@ from django.core.urlresolvers import reverse
                         <h3 class="title">
                             ${_("Congratulations!  You are now enrolled in {course_name}").format(course_name=course_name)}
                         </h3>
+			<% dashboard_url = reverse('dashboard') %>
+			<a href="${dashboard_url}" class="blue pull-right dashboard-button">${_("View Dashboard")} <i class="icon fa fa-caret-right"></i></a>
                     </header>
 
                     <form class="form-register-choose" method="post" name="enrollment_mode_form" id="enrollment_mode_form">
