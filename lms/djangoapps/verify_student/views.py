@@ -62,6 +62,7 @@ from util.db import outer_atomic
 from xmodule.modulestore.django import modulestore
 from django.contrib.staticfiles.storage import staticfiles_storage
 
+from util.student_course_grades import get_course_progress
 
 log = logging.getLogger(__name__)
 
@@ -203,6 +204,7 @@ class PayAndVerifyView(View):
     VERIFICATION_DEADLINE = "verification"
     UPGRADE_DEADLINE = "upgrade"
 
+    @transaction.non_atomic_requests
     @method_decorator(login_required)
     def get(
         self, request, course_id,
@@ -254,6 +256,13 @@ class PayAndVerifyView(View):
         )
         if redirect_url:
             return redirect(redirect_url)
+
+        # Check whether the user has pass the course
+        if settings.FEATURES.get('ENABLE_PASS_GRADE_PAYMENT', False):
+            course_progress = get_course_progress(request, request.user, course_key)
+            student_course_grade = '1' if course_progress['pass'] else '0'
+        else:
+            student_course_grade = '1'
 
         # If the verification deadline has passed
         # then show the user a message that he/she can't verify.
@@ -409,6 +418,7 @@ class PayAndVerifyView(View):
             'checkpoint_location': request.GET.get('checkpoint'),
             'course_mode': relevant_course_mode,
             'courseware_url': courseware_url,
+            'student_course_grade': student_course_grade,
             'current_step': current_step,
             'disable_courseware_js': True,
             'display_steps': display_steps,
@@ -839,6 +849,13 @@ def create_order(request):
     """
     course_id = request.POST['course_id']
     course_id = CourseKey.from_string(course_id)
+
+    # Check whether the user has pass the course
+    if settings.FEATURES.get('ENABLE_PASS_GRADE_PAYMENT', False):
+        course_progress = get_course_progress(request, request.user, course_id)
+        if not course_progress['pass']:
+            return HttpResponseBadRequest("Solamente cuando supere la nota de corte del curso.")
+
     donation_for_course = request.session.get('donation_for_course', {})
     contribution = request.POST.get("contribution", donation_for_course.get(unicode(course_id), 0))
     try:

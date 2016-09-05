@@ -397,6 +397,9 @@ FEATURES = {
 
     # Enable LTI Provider feature.
     'ENABLE_LTI_PROVIDER': False,
+
+    # Enable payment only when the user has passed the lowest course grade
+    'ENABLE_PASS_GRADE_PAYMENT': False,
 }
 
 # Ignore static asset files on import which match this pattern

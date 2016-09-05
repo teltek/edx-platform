@@ -115,6 +115,10 @@
       <div class="field required" id="field-tos-message">
         <p id="tos-message"></p>
       </div>
+      <input type="hidden" id="student_course_grade" value="<%- studentCourseGrade %>"/>
+      <div class="field required" id="field-student-grade-message">
+        <p id="student-grade-message" class="student-grade-message"></p>
+      </div>
     </div>
   </div>
   <% } %>
