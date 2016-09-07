@@ -204,7 +204,6 @@ class PayAndVerifyView(View):
     VERIFICATION_DEADLINE = "verification"
     UPGRADE_DEADLINE = "upgrade"
 
-    @transaction.non_atomic_requests
     @method_decorator(login_required)
     def get(
         self, request, course_id,
