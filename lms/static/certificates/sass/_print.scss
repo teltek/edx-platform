@@ -73,7 +73,7 @@
 
     body {
         height: auto;
-        margin: spacing-vertical(mid-large) spacing-vertical(mid-small) 0 spacing-vertical(mid-small) !important;
+        margin: spacing-vertical(mid-small) spacing-vertical(mid-small) 0 spacing-vertical(mid-small) !important;
         padding: 0;
     }
 
@@ -105,7 +105,9 @@
     .accomplishment-metadata-title,
     .accomplishment-metadata .accomplishment-recipient,
     .deco-corner,
-    .accomplishment-date .label {
+    .accomplishment-date .label,
+    .copy-meta,
+    .copy-base {
         @extend %print-hide;
     }
 
@@ -194,15 +196,18 @@
         border: rem(1) solid palette(grayscale, light);
         border-top: rem(2) solid $cert-base-color;
         box-shadow: none;
-        padding: spacing-vertical(small) spacing-horizontal(mid-large);
-
+        padding: spacing-vertical(small) spacing-horizontal(small);
+	//background-size: 500px 500px;
 
         .accomplishment-type {
-            margin-top: -(spacing-vertical(mid-large));
+            margin-top: -(spacing-vertical(small));
         }
 
         .accomplishment-type-symbol {
-            @include size(rem(75));
+	    max-height: 100px;
+	    max-width: 208px;
+            width: 208px;
+            height: 100px;
             border: none !important;
         }
 
@@ -212,8 +217,6 @@
 
         .accomplishment-statement {
             @extend %print-rendering-section;
-            width: span(8);
-            margin: 0 auto;
         }
 
         .accomplishment-summary,
