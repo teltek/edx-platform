@@ -213,10 +213,13 @@
 
         .wrapper-statement-and-signatories {
             border-bottom: rem(2) solid palette(grayscale-cool, x-light);
+	    padding-top: 0 !important;
         }
 
         .accomplishment-statement {
             @extend %print-rendering-section;
+	    padding-top: 10px !important;
+	    padding-bottom: 5px !important;
         }
 
         .accomplishment-summary,
@@ -255,11 +258,10 @@
             }
 
             .signatory-signature {
-                height: spacing-vertical(small);
+                height: 6.25rem;
+                max-height: 6.25rem;
                 max-width: 100%;
                 margin-top: 0;
-                padding-top: 0 !important;
-                padding-bottom: 0 !important;
             }
 
             .signatory-name {
