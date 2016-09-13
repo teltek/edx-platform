@@ -125,7 +125,7 @@ class Order(models.Model):
     bill_to_street1 = models.CharField(max_length=128, blank=True)
     bill_to_street2 = models.CharField(max_length=128, blank=True)
     bill_to_city = models.CharField(max_length=64, blank=True)
-    bill_to_state = models.CharField(max_length=8, blank=True)
+    bill_to_state = models.CharField(max_length=64, blank=True)
     bill_to_postalcode = models.CharField(max_length=16, blank=True)
     bill_to_country = models.CharField(max_length=64, blank=True)
     bill_to_ccnum = models.CharField(max_length=8, blank=True)  # last 4 digits
