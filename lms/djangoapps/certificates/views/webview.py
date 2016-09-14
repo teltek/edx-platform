@@ -9,7 +9,7 @@ import urllib
 
 from django.conf import settings
 from django.contrib.auth.models import User
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.template import RequestContext
 from django.utils.translation import ugettext as _
 from django.utils.encoding import smart_str
@@ -486,6 +486,29 @@ def render_cert_by_uuid(request, certificate_uuid):
         return render_html_view(request, certificate.user.id, unicode(certificate.course_id))
     except GeneratedCertificate.DoesNotExist:
         raise Http404
+
+
+def render_cert_by_download_uuid(request, download_uuid):
+    """
+    This public view generates an HTML representation of the specified certificate
+    WORKAROUND to render already generated Certificates from Birch version
+    """
+    try:
+        certificate = GeneratedCertificate.eligible_certificates.get(
+            download_uuid=download_uuid,
+            status=CertificateStatuses.downloadable
+        )
+        return HttpResponseRedirect('/certificates/' + certificate.verify_uuid)
+    except GeneratedCertificate.DoesNotExist:
+        raise Http404
+
+
+def render_cert_by_verify_uuid(request, verify_uuid):
+    """
+    This public view generates an HTML representation of the specified certificate
+    WORKAROUND to render already generated Certificates from Birch version
+    """
+    return HttpResponseRedirect('/certificates/' + verify_uuid)
 
 
 @handle_500(
