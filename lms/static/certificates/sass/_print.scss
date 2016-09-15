@@ -197,7 +197,7 @@
         border-top: rem(2) solid $cert-base-color;
         box-shadow: none;
         padding: spacing-vertical(small) spacing-horizontal(small);
-	//background-size: 500px 500px;
+	background-size: 550px 550px !important;
 
         .accomplishment-type {
             margin-top: -(spacing-vertical(small));
@@ -210,6 +210,14 @@
             height: 100px;
             border: none !important;
         }
+
+        .accomplishment-type-label {
+            padding-right: 100px !important;
+	}
+
+        .accomplishment-type-date {
+            padding-left: 450px !important;
+	}
 
         .wrapper-statement-and-signatories {
             border-bottom: rem(2) solid palette(grayscale-cool, x-light);
