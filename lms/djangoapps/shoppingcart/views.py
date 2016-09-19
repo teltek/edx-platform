@@ -637,6 +637,9 @@ def _get_verify_flow_redirect(order):
                 order.id, cert_items[0].course_id
             )
 
+        if cert_items[0].mode == CourseMode.HONOR:
+            return None
+
         course_id = cert_items[0].course_id
         url = reverse(
             'verify_student_payment_confirmation',
@@ -908,6 +911,10 @@ def _show_receipt_html(request, order):
 
     appended_recipient_emails = ", ".join(recipient_list)
 
+    processor_reply_dump = json.loads(order.processor_reply_dump)
+    course_id = processor_reply_dump['req_merchant_defined_data1']
+    enrollment_mode =  processor_reply_dump['req_merchant_defined_data2']
+
     context = {
         'order': order,
         'shoppingcart_items': shoppingcart_items,
@@ -922,6 +929,8 @@ def _show_receipt_html(request, order):
         'total_registration_codes': total_registration_codes,
         'reg_code_info_list': reg_code_info_list,
         'order_purchase_date': order.purchase_time.strftime("%B %d, %Y"),
+        'course_id': course_id,
+        'enrollment_mode': enrollment_mode
     }
 
     # We want to have the ability to override the default receipt page when

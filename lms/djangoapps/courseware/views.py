@@ -980,6 +980,9 @@ def _progress(request, course_key, student_id):
         context.update(cert_status)
         # showing the certificate web view button if feature flags are enabled.
         if certs_api.has_html_certificates_enabled(course_key, course):
+            enrollment = CourseEnrollment.objects.get(user_id=student.id, course_id=course_key)
+            if enrollment:
+                context.update({'enrollment_mode': enrollment.mode})
             if certs_api.get_active_web_certificate(course) is not None:
                 context.update({
                     'show_cert_web_view': True,

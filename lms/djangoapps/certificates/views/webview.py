@@ -9,7 +9,7 @@ import urllib
 
 from django.conf import settings
 from django.contrib.auth.models import User
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.template import RequestContext
 from django.utils.translation import ugettext as _
 from django.utils.encoding import smart_str
@@ -87,6 +87,7 @@ def _update_certificate_context(context, user_certificate, platform_name):
 
     # Override the defaults with any mode-specific static values
     context['certificate_id_number'] = user_certificate.verify_uuid
+    context['certificate_id_url'] = 'https://' + settings.SITE_NAME + '/certificates/' + user_certificate.verify_uuid
     context['certificate_verify_url'] = "{prefix}{uuid}{suffix}".format(
         prefix=context.get('certificate_verify_url_prefix'),
         uuid=user_certificate.verify_uuid,
@@ -94,8 +95,23 @@ def _update_certificate_context(context, user_certificate, platform_name):
     )
 
     # Translators:  The format of the date includes the full name of the month
-    context['certificate_date_issued'] = _('{month} {day}, {year}').format(
-        month=user_certificate.modified_date.strftime("%B"),
+    # Workaround to have months in Spanish (improve in the future)
+    spanish_months = {
+        'January': 'enero',
+        'February': 'febrero',
+        'March': 'marzo',
+        'April': 'abril',
+        'May': 'mayo',
+        'June': 'junio',
+        'July': 'julio',
+        'August': 'agosto',
+        'September': 'septiembre',
+        'October': 'octubre',
+        'November': 'noviembre',
+        'December': 'december'
+        }
+    context['certificate_date_issued'] = _('{day} {month} {year}').format(
+        month=spanish_months.get(user_certificate.modified_date.strftime("%B")),
         day=user_certificate.modified_date.day,
         year=user_certificate.modified_date.year
     )
@@ -470,6 +486,29 @@ def render_cert_by_uuid(request, certificate_uuid):
         return render_html_view(request, certificate.user.id, unicode(certificate.course_id))
     except GeneratedCertificate.DoesNotExist:
         raise Http404
+
+
+def render_cert_by_download_uuid(request, download_uuid):
+    """
+    This public view generates an HTML representation of the specified certificate
+    WORKAROUND to render already generated Certificates from Birch version
+    """
+    try:
+        certificate = GeneratedCertificate.eligible_certificates.get(
+            download_uuid=download_uuid,
+            status=CertificateStatuses.downloadable
+        )
+        return HttpResponseRedirect('/certificates/' + certificate.verify_uuid)
+    except GeneratedCertificate.DoesNotExist:
+        raise Http404
+
+
+def render_cert_by_verify_uuid(request, verify_uuid):
+    """
+    This public view generates an HTML representation of the specified certificate
+    WORKAROUND to render already generated Certificates from Birch version
+    """
+    return HttpResponseRedirect('/certificates/' + verify_uuid)
 
 
 @handle_500(

@@ -73,7 +73,7 @@
 
     body {
         height: auto;
-        margin: spacing-vertical(mid-large) spacing-vertical(mid-small) 0 spacing-vertical(mid-small) !important;
+        margin: spacing-vertical(mid-small) spacing-vertical(mid-small) 0 spacing-vertical(mid-small) !important;
         padding: 0;
     }
 
@@ -105,7 +105,10 @@
     .accomplishment-metadata-title,
     .accomplishment-metadata .accomplishment-recipient,
     .deco-corner,
-    .accomplishment-date .label {
+    .accomplishment-date .label,
+    .copy-meta,
+    .copy-base,
+    .cert-first-level {
         @extend %print-hide;
     }
 
@@ -194,26 +197,38 @@
         border: rem(1) solid palette(grayscale, light);
         border-top: rem(2) solid $cert-base-color;
         box-shadow: none;
-        padding: spacing-vertical(small) spacing-horizontal(mid-large);
-
+        padding: spacing-vertical(small) spacing-horizontal(small);
+	background-size: 550px 550px !important;
 
         .accomplishment-type {
-            margin-top: -(spacing-vertical(mid-large));
+            margin-top: -(spacing-vertical(small));
         }
 
         .accomplishment-type-symbol {
-            @include size(rem(75));
+	    max-height: 100px;
+	    max-width: 208px;
+            width: 208px;
+            height: 100px;
             border: none !important;
         }
 
+        .accomplishment-type-label {
+            padding-right: 100px !important;
+	}
+
+        .accomplishment-type-date {
+            padding-left: 450px !important;
+	}
+
         .wrapper-statement-and-signatories {
             border-bottom: rem(2) solid palette(grayscale-cool, x-light);
+	    padding-top: 0 !important;
         }
 
         .accomplishment-statement {
             @extend %print-rendering-section;
-            width: span(8);
-            margin: 0 auto;
+	    padding-top: 10px !important;
+	    padding-bottom: 5px !important;
         }
 
         .accomplishment-summary,
@@ -252,11 +267,10 @@
             }
 
             .signatory-signature {
-                height: spacing-vertical(small);
+                height: 6.25rem;
+                max-height: 6.25rem;
                 max-width: 100%;
                 margin-top: 0;
-                padding-top: 0 !important;
-                padding-bottom: 0 !important;
             }
 
             .signatory-name {

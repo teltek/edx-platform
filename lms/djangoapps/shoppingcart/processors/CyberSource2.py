@@ -296,7 +296,7 @@ def get_purchase_params(cart, callback_url=None, extra_data=None):
     params['reference_number'] = cart.id
     params['transaction_type'] = 'sale'
 
-    params['locale'] = 'en'
+    params['locale'] = 'es-ES'
     params['signed_date_time'] = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
     params['signed_field_names'] = 'access_key,profile_id,amount,currency,transaction_type,reference_number,signed_date_time,locale,transaction_uuid,signed_field_names,unsigned_field_names,orderNumber'
     params['unsigned_field_names'] = ''
