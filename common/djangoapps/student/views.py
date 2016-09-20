@@ -481,7 +481,13 @@ def complete_course_mode_info(course_id, enrollment, modes=None):
     mode_info = {'show_upsell': False, 'days_for_upsell': None}
     # we want to know if the user is already enrolled as verified or credit and
     # if verified is an option.
-    if CourseMode.VERIFIED in modes and enrollment.mode in CourseMode.UPSELL_TO_VERIFIED_MODES:
+    if CourseMode.HONOR in modes and enrollment.mode in CourseMode.UPSELL_TO_VERIFIED_MODES:
+        mode_info['show_upsell'] = True
+        # if there is an expiration date, find out how long from now it is
+        if modes[CourseMode.HONOR].expiration_datetime:
+            today = datetime.datetime.now(UTC).date()
+            mode_info['days_for_upsell'] = (modes[CourseMode.HONOR].expiration_datetime.date() - today).days
+    elif CourseMode.VERIFIED in modes and enrollment.mode in CourseMode.UPSELL_TO_VERIFIED_MODES:
         mode_info['show_upsell'] = True
         # if there is an expiration date, find out how long from now it is
         if modes['verified'].expiration_datetime:
@@ -679,6 +685,7 @@ def dashboard(request):
         redirect_message = ''
 
     courses_progress = get_courses_progress(request, course_enrollments)
+    available_courses_modes = _get_available_courses_modes(course_enrollments)
 
     context = {
         'enrollment_message': enrollment_message,
@@ -711,10 +718,20 @@ def dashboard(request):
         'nav_hidden': True,
         'course_programs': course_programs,
         'courses_progress': courses_progress,
+        'available_courses_modes': available_courses_modes
     }
 
     return render_to_response('dashboard.html', context)
 
+
+def _get_available_courses_modes(course_enrollments):
+    """
+    Builds a dict with all the available courses modes for each course
+    """
+    available_courses_modes = dict()
+    for enrollment in course_enrollments:
+        available_courses_modes[enrollment.course_id] = CourseMode.modes_for_course_dict(enrollment.course_id)
+    return available_courses_modes
 
 def _create_recent_enrollment_message(course_enrollments, course_modes):  # pylint: disable=invalid-name
     """
