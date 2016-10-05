@@ -6920,7 +6920,7 @@ msgstr "Vista previa del certificado"
 #: test_root/staticfiles/cms/templates/certificate-web-preview.dad990257520.underscore
 #: test_root/staticfiles/cms/templates/certificate-web-preview.underscore
 msgid "Activate"
-msgstr "Activado"
+msgstr "Activar"
 
 #: cms/templates/js/certificate-web-preview.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/certificate-web-preview.dad990257520.underscore
@@ -6928,7 +6928,7 @@ msgstr "Activado"
 #: test_root/staticfiles/cms/templates/certificate-web-preview.dad990257520.underscore
 #: test_root/staticfiles/cms/templates/certificate-web-preview.underscore
 msgid "Deactivate"
-msgstr "Desactivado"
+msgstr "Desactivar"
 
 #: cms/templates/js/container-message.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/container-message.cc1224413644.underscore
