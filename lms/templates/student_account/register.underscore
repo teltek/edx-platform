@@ -62,7 +62,7 @@
     <p class="note">* <%- gettext("Required field") %></p>
 </form>
 
-<div class="toggle-form">
+<div class="toggle-form tablet-mobile">
     <div class="section-title">
         <h2>
             <span class="text"><%- gettext("Already have an account?") %></span>
