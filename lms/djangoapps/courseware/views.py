@@ -97,6 +97,8 @@ from eventtracking import tracker
 import analytics
 from courseware.url_helpers import get_redirect_url
 
+from courses import UserNotEnrolled
+
 log = logging.getLogger("edx.courseware")
 
 template_imports = {'urllib': urllib}
@@ -640,6 +642,7 @@ def jump_to(_request, course_id, location):
     return redirect(redirect_url)
 
 
+@login_required
 @ensure_csrf_cookie
 @ensure_valid_course_key
 def course_info(request, course_id):
@@ -649,6 +652,11 @@ def course_info(request, course_id):
     Assumes the course_id is in a valid format.
     """
     course_key = SlashSeparatedCourseKey.from_deprecated_string(course_id)
+    if not CourseEnrollment.is_enrolled(request.user, course_key):
+        # If user is not enrolled, raise UserNotEnrolled exception that will
+        # be caught by middleware
+        raise UserNotEnrolled(course_key)
+
     with modulestore().bulk_operations(course_key):
         course = get_course_by_id(course_key, depth=2)
         access_response = has_access(request.user, 'load', course, course_key)
@@ -711,6 +719,7 @@ def course_info(request, course_id):
         return render_to_response('courseware/info.html', context)
 
 
+@login_required
 @ensure_csrf_cookie
 @ensure_valid_course_key
 def static_tab(request, course_id, tab_slug):
@@ -721,6 +730,10 @@ def static_tab(request, course_id, tab_slug):
     """
 
     course_key = SlashSeparatedCourseKey.from_deprecated_string(course_id)
+    if not CourseEnrollment.is_enrolled(request.user, course_key):
+        # If user is not enrolled, raise UserNotEnrolled exception that will
+        # be caught by middleware
+        raise UserNotEnrolled(course_key)
 
     course = get_course_with_access(request.user, 'load', course_key)
 
