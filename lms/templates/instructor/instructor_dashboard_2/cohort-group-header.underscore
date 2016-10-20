@@ -12,10 +12,10 @@
     <div class="setup-value">
         <% if (cohort.get('assignment_type') == "manual") { %>
             Los estudiantes son añadidos a este grupo solo cuando proporcionas sus direcciones de correo electrónico o nombres de usuario en esta página.
-            <a href="http://edx.readthedocs.org/projects/edx-partner-course-staff/en/latest/cohorts/cohort_config.html#assign-students-to-cohort-groups-manually" class="incontext-help action-secondary action-help"><%= gettext("What does this mean?") %></a>
+            <a href="http://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/course_features/cohorts/cohorts_overview.html#all-manual-assignment" class="incontext-help action-secondary action-help"><%= gettext("What does this mean?") %></a>
         <% } else { %>
             Los estudiantes son añadidos a este grupo automáticamente.
-            <a href="http://edx.readthedocs.org/projects/edx-partner-course-staff/en/latest/cohorts/cohorts_overview.html#all-automated-assignment" class="incontext-help action-secondary action-help"><%- gettext("What does this mean?") %></a>
+            <a href="http://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/course_features/cohorts/cohorts_overview.html#all-automated-assignment" class="incontext-help action-secondary action-help"><%- gettext("What does this mean?") %></a>
         <% } %>
     </div>
 </div>
