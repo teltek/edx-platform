@@ -256,7 +256,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2016-10-13 18:43+0000\n"
+"POT-Creation-Date: 2016-10-20 15:57+0000\n"
 "PO-Revision-Date: 2016-05-09 11:27+0000\n"
 "Last-Translator: Juan Rodríguez de Vera Mouliaá <jrodriguez@um.es>\n"
 "Language-Team: Spanish (Spain) (http://www.transifex.com/open-edx/edx-platform/language/es_ES/)\n"
@@ -277,6 +277,7 @@ msgstr ""
 #: lms/djangoapps/courseware/tabs.py
 #: lms/djangoapps/django_comment_client/forum/views.py
 #: lms/djangoapps/discussion/plugins.py
+#: openedx/core/lib/xblock_builtin/xblock_discussion/xblock_discussion.py
 #: lms/djangoapps/discussion/templates/discussion/discussion_profile_page.html
 msgid "Discussion"
 msgstr "Foro"
@@ -377,6 +378,7 @@ msgid "Enabled"
 msgstr "Activado"
 
 #: common/djangoapps/cors_csrf/models.py
+#: openedx/core/djangoapps/cors_csrf/models.py
 msgid ""
 "List of domains that are allowed to make cross-domain requests to this site."
 "  Please list each domain on its own line."
@@ -1766,6 +1768,8 @@ msgstr "error"
 #. in
 #. to the site.
 #. #-#-#-#-#  django-partial.po (edx-platform)  #-#-#-#-#
+#. Translators: Separator used in NumericalResponse to display multiple
+#. answers.
 #. Translators: Separator used in StringResponse to display multiple answers.
 #. Example: "Answer: Answer_1 or Answer_2 or Answer_3".
 #. #-#-#-#-#  mako.po (edx-platform)  #-#-#-#-#
@@ -9852,6 +9856,7 @@ msgstr "Ajustes"
 #: cms/templates/manage_users.html cms/templates/manage_users_lib.html
 #: lms/templates/modal/accessible_confirm.html
 #: lms/templates/verify_student/face_upload.html
+#: lms/templates/oauth2_provider/authorize.html
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -10472,7 +10477,6 @@ msgstr ""
 #: lms/templates/register-shib.html
 #: lms/templates/peer_grading/peer_grading_problem.html
 #: lms/templates/survey/survey.html common/lib/xmodule/xmodule/capa_base.py
-#: common/templates/darklang/preview_lang_include.html
 #: themes/stanford-style/lms/templates/register-shib.html
 msgid "Submit"
 msgstr "Enviar"
@@ -10943,7 +10947,6 @@ msgstr "Pista"
 
 #: lms/templates/problem.html lms/templates/shoppingcart/shopping_cart.html
 #: cms/templates/maintenance/_force_publish_course.html
-#: common/templates/darklang/preview_lang_include.html
 msgid "Reset"
 msgstr "Reiniciar"
 
@@ -11533,6 +11536,7 @@ msgstr "Actividad reciente en git del curso {course_id}"
 
 #: lms/templates/sysadmin_dashboard_gitlogs.html
 #: lms/templates/ccx/schedule.html
+#: lms/templates/oauth2_provider/authorize.html
 msgid "Error"
 msgstr "Error"
 
@@ -21341,26 +21345,6 @@ msgstr ""
 msgid "Verified modes cannot be free."
 msgstr ""
 
-#: common/djangoapps/dark_lang/views.py
-msgid "Preview Language is currently disabled"
-msgstr ""
-
-#: common/djangoapps/dark_lang/views.py
-msgid "Language code not provided"
-msgstr ""
-
-#: common/djangoapps/dark_lang/views.py
-msgid "Language set to language code: {preview_language_code}"
-msgstr ""
-
-#: common/djangoapps/dark_lang/views.py
-msgid "Language reset to the default language code"
-msgstr ""
-
-#: common/djangoapps/dark_lang/views.py
-msgid "Language reset to user's preference: {preview_language_code}"
-msgstr ""
-
 #: common/djangoapps/student/admin.py
 msgid "User profile"
 msgstr "Perfil de usuario."
@@ -21883,6 +21867,16 @@ msgid ""
 "for use in courses due to non-compliance with one or more of the base "
 "requirements, such as testing, accessibility, internationalization, and "
 "documentation."
+msgstr ""
+
+#: common/lib/xmodule/xmodule/html_module.py
+msgid "Hide Page From Learners"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/html_module.py
+msgid ""
+"If you select this option, only course team members with the Staff or Admin "
+"role see this page."
 msgstr ""
 
 #: common/lib/xmodule/xmodule/modulestore/inheritance.py
@@ -22472,6 +22466,26 @@ msgid ""
 "        "
 msgstr ""
 
+#: lms/templates/oauth2_provider/authorize.html
+msgid "Authorize"
+msgstr ""
+
+#: lms/templates/oauth2_provider/authorize.html
+msgid ""
+"The above application requests the following permissions from your account:"
+msgstr ""
+
+#: lms/templates/oauth2_provider/authorize.html
+msgid ""
+"Please click the 'Allow' button to grant these permissions to the above "
+"application. Otherwise, to withhold these permissions, please click the "
+"'Cancel' button."
+msgstr ""
+
+#: lms/templates/oauth2_provider/authorize.html
+msgid "Allow"
+msgstr "Permitir"
+
 #: openedx/core/djangoapps/api_admin/admin.py
 msgid ""
 "Once you have approved this request, go to {catalog_admin_url} to set up a "
@@ -22631,6 +22645,26 @@ msgstr ""
 
 #: openedx/core/djangoapps/credit/models.py
 msgid "Credit requirement statuses"
+msgstr ""
+
+#: openedx/core/djangoapps/dark_lang/views.py
+msgid "Preview Language is currently disabled"
+msgstr ""
+
+#: openedx/core/djangoapps/dark_lang/views.py
+msgid "Language code not provided"
+msgstr ""
+
+#: openedx/core/djangoapps/dark_lang/views.py
+msgid "Language set to language code: {preview_language_code}"
+msgstr ""
+
+#: openedx/core/djangoapps/dark_lang/views.py
+msgid "Language reset to the default language code"
+msgstr ""
+
+#: openedx/core/djangoapps/dark_lang/views.py
+msgid "Language reset to user's preference: {preview_language_code}"
 msgstr ""
 
 #: openedx/core/djangoapps/external_auth/views.py
@@ -22811,7 +22845,6 @@ msgid "Dictionary with the available tags"
 msgstr ""
 
 #: cms/templates/darklang/preview_lang.html
-#: common/templates/darklang/preview_lang_include.html
 #: lms/templates/darklang/preview_lang.html
 msgid "Preview Language Setting"
 msgstr ""
@@ -22833,24 +22866,11 @@ msgstr ""
 msgid "Usermenu dropdown"
 msgstr ""
 
-#: common/templates/darklang/preview_lang_include.html
-msgid "Language Code"
-msgstr ""
-
-#: common/templates/darklang/preview_lang_include.html
-msgid "For example use en for English"
-msgstr ""
-
-#: common/templates/darklang/preview_lang_include.html
-msgid "Please refresh the page to see the changes applied."
-msgstr ""
-
 #: lms/djangoapps/discussion/templates/discussion/discussion_board.html
 msgid "Discussions"
 msgstr "Foros"
 
 #: lms/djangoapps/discussion/templates/discussion/discussion_board.html
-#: lms/templates/discussion/_discussion_inline.html
 msgid "Add a Post"
 msgstr ""
 
@@ -23796,6 +23816,10 @@ msgid ""
 "Your verification has expired. To receive a verified certificate, you must "
 "submit a new photo of yourself and your government-issued photo ID before "
 "the verification deadline for your course."
+msgstr ""
+
+#: lms/templates/discussion/_discussion_inline.html
+msgid "Topic:"
 msgstr ""
 
 #: lms/templates/discussion/_filter_dropdown.html

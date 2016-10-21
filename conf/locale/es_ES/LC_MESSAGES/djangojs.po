@@ -246,7 +246,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2016-10-13 18:42+0000\n"
+"POT-Creation-Date: 2016-10-20 15:55+0000\n"
 "PO-Revision-Date: 2016-10-05 11:28+0000\n"
 "Last-Translator: Ned Batchelder <ned@edx.org>\n"
 "Language-Team: Spanish (Spain) (http://www.transifex.com/open-edx/edx-platform/language/es_ES/)\n"
@@ -12957,6 +12957,7 @@ msgstr "Activar tu cuenta"
 #: test_root/staticfiles/lms/templates/verify_student/intro_step.underscore
 #: test_root/staticfiles/lms/templates/verify_student/make_payment_step.ea97a4892f47.underscore
 #: test_root/staticfiles/lms/templates/verify_student/make_payment_step.underscore
+#: lms/templates/student_account/login.underscore
 #: test_root/staticfiles/templates/verify_student/intro_step.underscore
 msgid "Check Your Email"
 msgstr "Verifica tu correo electrónico."
@@ -13629,7 +13630,34 @@ msgid_plural "%(num_points)s points possible (ungraded)"
 msgstr[0] ""
 msgstr[1] ""
 
-#. Translators: This is only translated to allow for reording of label and
+#: common/lib/xmodule/xmodule/js/src/capa/display.js
+msgid "Could not grade your answer. The submission was aborted."
+msgstr ""
+
+#: common/lib/xmodule/xmodule/js/src/capa/display.js
+msgid ""
+"Submission aborted! Sorry, your browser does not support file uploads. If "
+"you can, please use Chrome or Safari which have been verified to support "
+"file uploads."
+msgstr ""
+
+#: common/lib/xmodule/xmodule/js/src/capa/display.js
+msgid "You submitted {filename}; only {allowedFiles} are allowed."
+msgstr ""
+
+#: common/lib/xmodule/xmodule/js/src/capa/display.js
+msgid "Your file {filename} is too large (max size: {maxSize}MB)."
+msgstr ""
+
+#: common/lib/xmodule/xmodule/js/src/capa/display.js
+msgid "You did not submit the required files: {requiredFiles}."
+msgstr ""
+
+#: common/lib/xmodule/xmodule/js/src/capa/display.js
+msgid "You did not select any files to submit."
+msgstr ""
+
+#. Translators: This is only translated to allow for reordering of label and
 #. associated status.;
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "{label}: {status}"
@@ -14105,9 +14133,9 @@ msgstr ""
 
 #: lms/static/js/student_account/views/LoginView.js
 msgid ""
-"We have sent an email message with password reset instructions to the email "
-"address you provided.  If you do not receive this message, "
-"{anchorStart}contact technical support{anchorEnd}."
+"{paragraphStart}You entered {boldStart}{email}{boldEnd}. If this email "
+"address is associated with an edX account, we will send a message with "
+"password reset instructions to this email address.{paragraphEnd}"
 msgstr ""
 
 #: lms/static/js/student_account/views/account_settings_factory.js
@@ -14692,11 +14720,6 @@ msgstr ""
 msgid "Change Enrollment"
 msgstr ""
 
-#: lms/djangoapps/teams/static/teams/templates/team-profile.underscore
-#: test_root/staticfiles/teams/templates/team-profile.underscore
-msgid "Add a Post"
-msgstr ""
-
 #: lms/templates/api_admin/catalog-error.underscore
 #: test_root/staticfiles/templates/api_admin/catalog-error.underscore
 msgid ""
@@ -15175,6 +15198,10 @@ msgstr ""
 
 #: test_root/staticfiles/proctoring/templates/add-new-allowance.underscore
 msgid "minutes"
+msgstr ""
+
+#: test_root/staticfiles/teams/templates/team-profile.underscore
+msgid "Add a Post"
 msgstr ""
 
 #: test_root/staticfiles/templates/courseware/proctored-exam-status.underscore
