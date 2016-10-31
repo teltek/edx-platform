@@ -7,7 +7,7 @@
 </div>
 
 <div class="js-reset-success status submission-success hidden">
-    <h4 class="message-title"><%- gettext("Password Reset Email Sent") %></h4>
+    <p class="message-title"><%- gettext("Password Reset Email Sent") %></p>
     <div class="message-copy">
         <p>
             <%- gettext("We've sent instructions for resetting your password to the email address you provided.") %>
@@ -16,13 +16,13 @@
 </div>
 
 <div class="status submission-error hidden" aria-live="polite">
-    <h4 class="message-title"><%- gettext("We couldn't sign you in.") %></h4>
+    <p class="message-title"><%- gettext("We couldn't sign you in.") %></p>
     <ul class="message-copy"></ul>
 </div>
 
 <% if (context.errorMessage) { %>
     <div class="status submission-error">
-        <h4 class="message-title"><%- _.sprintf( gettext("An error occurred when signing you in to %(platformName)s."), context ) %></h4>
+        <p class="message-title"><%- _.sprintf( gettext("An error occurred when signing you in to %(platformName)s."), context ) %></p>
         <ul class="message-copy"><%- context.errorMessage %></ul>
     </div>
 <% } %>
