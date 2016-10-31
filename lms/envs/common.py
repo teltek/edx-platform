@@ -400,6 +400,9 @@ FEATURES = {
 
     # Enable payment only when the user has passed the lowest course grade
     'ENABLE_PASS_GRADE_PAYMENT': False,
+
+    # Ignore verification deadline for paying for course
+    'IGNORE_VERIFICATION_DEADLINE_FOR_PAY': True,
 }
 
 # Ignore static asset files on import which match this pattern
