@@ -7,7 +7,7 @@
 
     <% if (context.errorMessage) { %>
         <div class="status submission-error">
-            <h4 class="message-title"><%- gettext("An error occurred.") %></h4>
+            <p class="message-title"><%- gettext("An error occurred.") %></p>
             <ul class="message-copy"><%- context.errorMessage %></ul>
         </div>
     <% } %>
