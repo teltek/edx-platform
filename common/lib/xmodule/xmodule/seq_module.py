@@ -194,7 +194,7 @@ class SequenceModule(SequenceFields, ProctoringFields, XModule):
             titles = [title.strip() for title in child.get_content_titles() if title.strip()]
             childinfo = {
                 'content': rendered_child.content,
-                'title': "\n".join(titles),
+                'title': titles,
                 'page_title': titles[0] if titles else '',
                 'progress_status': Progress.to_js_status_str(progress),
                 'progress_detail': Progress.to_js_detail_str(progress),
