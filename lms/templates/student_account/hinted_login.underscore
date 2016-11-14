@@ -1,8 +1,8 @@
 <div class="wrapper-other-login">
     <div class="section-title lines">
-        <h2>
+        <h1>
             <span class="text"><%- gettext("Sign in") %></span>
-        </h2>
+        </h1>
     </div>
 
     <p class="instructions"><%- _.sprintf( gettext("Would you like to sign in using your %(providerName)s credentials?"), { providerName: hintedProvider.name } ) %></p>
@@ -13,9 +13,9 @@
     </button>
 
     <div class="section-title lines">
-        <h2>
+        <h1>
             <span class="text"><%- gettext("or") %></span>
-        </h2>
+        </h1>
     </div>
 
     <div class="toggle-form">

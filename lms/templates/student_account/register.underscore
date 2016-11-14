@@ -22,9 +22,9 @@
     <% } else if ( context.providers.length > 0 || context.hasSecondaryProviders ) {  %>
         <div class="login-providers">
             <div class="section-title lines">
-                <h2>
+                <h1>
                     <span class="text"><%- gettext("Create an account using") %></span>
-                </h2>
+                </h1>
             </div>
             <%
             _.each( context.providers, function( provider) {
@@ -44,15 +44,15 @@
             <% } %>
         </div>
         <div class="section-title lines">
-            <h2>
+            <h1>
                 <span class="text"><%- gettext("or create a new one here") %></span>
-            </h2>
+            </h1>
         </div>
     <% } else { %>
         <div class="section-title lines">
-            <h2>
+            <h1>
                 <span class="text"><%- gettext("Create a new account") %></span>
-            </h2>
+            </h1>
         </div>
     <% } %>
 
@@ -64,9 +64,9 @@
 
 <div class="toggle-form tablet-mobile">
     <div class="section-title">
-        <h2>
+        <h1>
             <span class="text"><%- gettext("Already have an account?") %></span>
-        </h2>
+        </h1>
     </div>
     <button class="nav-btn form-toggle" data-type="login"><%- gettext("Sign in") %></button>
 </div>
