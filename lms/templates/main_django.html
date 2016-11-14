@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% load sekizai_tags i18n microsite pipeline optional_include %}
 {% load url from future %}
-<html lang="{{LANGUAGE_CODE}}">
+<html lang="es-ES">
 <head>
   <meta charset="UTF-8">
   {% block title %}<title>{% platform_name %}</title>{% endblock %}
@@ -24,7 +24,7 @@
   <meta name="path_prefix" content="{{EDX_ROOT_URL}}">
 </head>
 
-<body class="{% block bodyclass %}{% endblock %} lang_{{LANGUAGE_CODE}}">
+<body class="{% block bodyclass %}{% endblock %} lang_es-ES">
   <div class="window-wrap" dir="${static.dir_rtl()}">
     <a class="nav-skip" href="{% block nav_skip %}#content{% endblock %}">{% trans "Skip to main content" %}</a>
     {% with course=request.course %}
