@@ -1,6 +1,6 @@
 <div class="wrapper-other-login">
     <div class="section-title lines">
-        <h1>
+        <h1 class="sim-header-2">
             <span class="text">
                 <%- gettext("Sign in with Institution/Campus Credentials") %>
             </span>
@@ -20,7 +20,7 @@
     </ul>
 
     <div class="section-title lines">
-        <h1>
+        <h1 class="sim-header-2">
             <span class="text"><%- gettext("or") %></span>
         </h1>
     </div>
