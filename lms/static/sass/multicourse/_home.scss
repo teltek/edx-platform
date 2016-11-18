@@ -332,7 +332,7 @@ $course-search-input-height: ($button-size);
         @include transition(all $tmg-f2 ease-in-out 0s);
 
         &::before {
-          @include background-image(radial-gradient(50% 50%, circle closest-side, rgba(255,255,255, 1) 0%, rgba(255,255,255, 0) 100%));
+          @include background-image(radial-gradient(circle closest-side at 50% 50%, rgba(255,255,255, 1) 0%, rgba(255,255,255, 0) 100%));
           content: "";
           display: block;
           height: 200px;
