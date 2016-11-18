@@ -50,7 +50,7 @@ ADDED BY afontgarde.js:
     display: inline-block;
 }
 
-// Necessary for xblocks and xmodules, but works across the board
+/* Necessary for xblocks and xmodules, but works across the board */
 html:not('.afontgarde') .icon-fallback-img .icon:before {
     content: "";
 }
