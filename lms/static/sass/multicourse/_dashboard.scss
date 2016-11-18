@@ -292,7 +292,7 @@
 
   // UI: individual course item
   .course {
-    @include box-sizing(box);
+    @include box-sizing(border-box);
     @include transition(all 0.15s linear 0s);
     @include clearfix();
     @extend %ui-depth2;
