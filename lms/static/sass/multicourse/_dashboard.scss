@@ -647,7 +647,7 @@
           }
 
           .wrapper-extended {
-            @include transition(opacity $tmg-f2 ease-in-out 0);
+            @include transition(opacity $tmg-f2 ease-in-out 0s);
             display: none;
             opacity: 0.0;
           }
