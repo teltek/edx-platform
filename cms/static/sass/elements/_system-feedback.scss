@@ -340,7 +340,7 @@
       @include clearfix();
       width: 100%;
       max-width: none;
-      min-width: none;
+      min-width: unset;
 
       .feedback-symbol, .copy {
         float: none;
@@ -375,7 +375,7 @@
       @include clearfix();
       width: 100%;
       max-width: none;
-      min-width: none;
+      min-width: unset;
 
       .feedback-symbol {
         width: $baseline;
