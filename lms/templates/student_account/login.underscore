@@ -51,9 +51,9 @@
     <% if ( context.providers.length > 0 && !context.currentProvider || context.hasSecondaryProviders ) { %>
     <div class="login-providers">
         <div class="section-title lines">
-            <h1 class="sim-header-2">
+            <p class="sim-header-2">
                 <span class="text"><%- gettext("or sign in with") %></span>
-            </h1>
+            </p>
         </div>
 
         <% _.each( context.providers, function( provider ) {
@@ -77,9 +77,9 @@
 
 <div class="toggle-form tablet-mobile">
     <div class="section-title">
-        <h1 class="sim-header-2">
+        <p class="sim-header-2">
             <span class="text"><%- _.sprintf( gettext("New to %(platformName)s?"), context ) %></span>
-        </h1>
+        </p>
     </div>
     <button class="nav-btn form-toggle" data-type="register"><%- gettext("Create an account") %></button>
 </div>
