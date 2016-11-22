@@ -75,7 +75,7 @@
       position: relative;
 
       &::before {
-        @include background-image(radial-gradient(50% 50%, circle closest-side, rgba(255,255,255, 0.8) 0%, rgba(255,255,255, 0) 100%));
+        @include background-image(radial-gradient(circle closest-side at 50% 50%, rgba(255,255,255, 0.8) 0%, rgba(255,255,255, 0) 100%));
         content: "";
         display: block;
         height: 400px;

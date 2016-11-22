@@ -292,7 +292,7 @@
 
   // UI: individual course item
   .course {
-    @include box-sizing(box);
+    @include box-sizing(border-box);
     @include transition(all 0.15s linear 0s);
     @include clearfix();
     @extend %ui-depth2;
@@ -647,7 +647,7 @@
           }
 
           .wrapper-extended {
-            @include transition(opacity $tmg-f2 ease-in-out 0);
+            @include transition(opacity $tmg-f2 ease-in-out 0s);
             display: none;
             opacity: 0.0;
           }
@@ -1284,6 +1284,7 @@
   }
 }
 
+/* NOT USED IN TEMPLATES
 // status - verification
 .status--verification {
 
@@ -1305,6 +1306,7 @@
     }
   }
 }
+*/
 
 // message
 .msg {
