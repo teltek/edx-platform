@@ -58,7 +58,8 @@
 
     <%= context.fields %>
 
-    <button type="submit" class="action action-primary action-update js-confirm-register register-button"><%- gettext("Review your info") %></button>
+    <button type="submit" class="action action-primary action-update js-confirm-register register-button" id="review-your-info" data-toggle="modal" data-target="#myModal"><%- gettext("Review your info") %></button>
+    <button type="submit" class="action action-primary action-update js-register register-button"><%- gettext("Create your account") %></button>
     <p class="note">* <%- gettext("Required field") %></p>
 </form>
 
@@ -69,4 +70,24 @@
         </h2>
     </div>
     <button class="nav-btn form-toggle" data-type="login"><%- gettext("Sign in") %></button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade register-modal register-modal-window" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog register-modal" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="myModalLabel"><%- gettext("Review your info") %></h2>
+      </div>
+      <div class="modal-body">
+        <ul id="form-data-fields">
+	</ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" data-dismiss="modal">Close</button>
+	<button type="submit" class="action action-primary action-update js-register register-button"><%- gettext("Create your account") %></button>
+      </div>
+    </div>
+  </div>
 </div>
