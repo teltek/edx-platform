@@ -77,16 +77,16 @@
   <div class="modal-dialog register-modal" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h2 class="modal-title" id="myModalLabel"><%- gettext("Review your info") %></h2>
+        <button type="button" class="close-button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title review-title review-font" id="myModalLabel"><%- gettext("Review your info") %></h2>
       </div>
       <div class="modal-body">
         <ul id="form-data-fields">
 	</ul>
       </div>
-      <div class="modal-footer">
-        <button type="button" data-dismiss="modal">Close</button>
-	<button type="submit" class="action action-primary action-update js-register register-button"><%- gettext("Create your account") %></button>
+      <div class="modal-footer review-info">
+        <button type="button" class="action-primary review-button" data-dismiss="modal"><%- gettext("Edit") %></button>
+	<button type="submit" class="action action-primary action-update js-register register-button review-button"><%- gettext("Create your account") %></button>
       </div>
     </div>
   </div>
