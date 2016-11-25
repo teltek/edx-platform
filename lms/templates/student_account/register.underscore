@@ -58,8 +58,7 @@
 
     <%= context.fields %>
 
-    <button type="submit" class="action action-primary action-update js-confirm-register register-button" id="review-your-info" data-toggle="modal" data-target="#myModal"><%- gettext("Review your info") %></button>
-    <button type="submit" class="action action-primary action-update js-register register-button"><%- gettext("Create your account") %></button>
+    <button type="submit" class="action action-primary action-update js-confirm-register register-button" id="review-your-info" data-toggle="modal" data-target="#myModal"><%- gettext("Create your account") %></button>
     <p class="note">* <%- gettext("Required field") %></p>
 </form>
 
