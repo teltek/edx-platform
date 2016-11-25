@@ -80,7 +80,7 @@
         <h2 class="modal-title review-title review-font" id="myModalLabel"><%- gettext("Review your info") %></h2>
       </div>
       <div class="modal-body">
-        <ul id="form-data-fields">
+        <ul id="form-data-fields" class="review-info-ul">
 	</ul>
       </div>
       <div class="modal-footer review-info">
