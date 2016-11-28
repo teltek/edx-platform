@@ -93,9 +93,9 @@
 # MiguelSdP <miguelsdp@gmail.com>, 2016
 # Rosa Sanchez Hernandez <rosa@db.uc3m.es>, 2016
 # Jack R. <dny1020@aol.com>, 2016
+# mercefan <mercefan@gmail.com>, 2016
 # Iago Enjo <enjo@ub.edu>, 2016
 # Daniel Vazquez <daniel@alabs.es>, 2016
-# mercefan <mercefan@gmail.com>, 2016
 # Steven McArthur <inactive+legallyunemployed@transifex.com>, 2016
 # Manuel García <inactive+man.garcia.p@transifex.com>, 2016
 # Elena Clavijo Vicent <elena.onil@gmail.com>, 2016
@@ -697,16 +697,16 @@ msgstr "Responder a anotación"
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "(%(earned)s/%(possible)s point)"
 msgid_plural "(%(earned)s/%(possible)s points)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "(%(earned)s/%(possible)s punto)"
+msgstr[1] "(%(earned)s/%(possible)s puntos)"
 
 #. Translators: %(num_points)s is the number of points possible (examples: 1,
 #. 3, 10). There will always be at least 1 point possible.;
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "(%(num_points)s point possible)"
 msgid_plural "(%(num_points)s points possible)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "(%(num_points)s punto posible)"
+msgstr[1] "(%(num_points)s puntos posibles)"
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "The grading process is still running. Refresh the page to see updates."
@@ -2503,14 +2503,14 @@ msgstr "..."
 #: common/static/coffee/src/discussion/views/discussion_content_view.js
 msgid "there is currently %(numVotes)s vote"
 msgid_plural "there are currently %(numVotes)s votes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "actualmente hay %(numVotes)s voto"
+msgstr[1] "actualmente hay %(numVotes)s votos"
 
 #: common/static/coffee/src/discussion/views/discussion_content_view.js
 msgid "%(numVotes)s Vote"
 msgid_plural "%(numVotes)s Votes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(numVotes)s Voto"
+msgstr[1] "%(numVotes)s Votos"
 
 #: common/static/coffee/src/discussion/views/discussion_content_view.js
 #: common/static/common/js/discussion/views/discussion_content_view.js
@@ -2694,14 +2694,14 @@ msgstr ""
 #: common/static/coffee/src/discussion/views/discussion_thread_view.js
 msgid "%(numResponses)s other response"
 msgid_plural "%(numResponses)s other responses"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(numResponses)s otra respuesta"
+msgstr[1] "%(numResponses)s otras respuestas"
 
 #: common/static/coffee/src/discussion/views/discussion_thread_view.js
 msgid "%(numResponses)s response"
 msgid_plural "%(numResponses)s responses"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(numResponses)s respuesta"
+msgstr[1] "%(numResponses)s respuestas"
 
 #: common/static/coffee/src/discussion/views/discussion_thread_view.js
 #: common/static/common/js/discussion/views/discussion_thread_view.js
@@ -2709,11 +2709,10 @@ msgid "Showing all responses"
 msgstr "Mostrando todas las respuestas"
 
 #: common/static/coffee/src/discussion/views/discussion_thread_view.js
-#: common/static/common/js/discussion/views/discussion_thread_view.js
 msgid "Showing first response"
 msgid_plural "Showing first %(numResponses)s responses"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Mostrando la primera respuesta"
+msgstr[1] "Mostrando las primeras %(numResponses)s respuestas"
 
 #: common/static/coffee/src/discussion/views/discussion_thread_view.js
 #: common/static/common/js/discussion/views/discussion_thread_view.js
@@ -5372,7 +5371,8 @@ msgstr "El nombre del certificado es obligatorio"
 
 #: cms/static/js/certificates/models/certificate.js
 msgid "Signatory field(s) has invalid data."
-msgstr "El/Los campo(s) de firma no son válidos."
+msgstr ""
+"El campo del firmante no es válido (Los campos de firmas no son válidos)."
 
 #: cms/static/js/certificates/views/certificate_details.js
 msgid "Edit this certificate?"
@@ -5407,7 +5407,7 @@ msgstr "Todavía no has creado ningún certificado."
 
 #: cms/static/js/certificates/views/signatory_editor.js
 msgid "Delete \"<%= signatoryName %>\" from the list of signatories?"
-msgstr "¿Borrar \"<%= signatoryName %>\" de la lista de firmas?"
+msgstr "¿Borrar \"<%= signatoryName %>\" de la lista de firmantes?"
 
 #: cms/static/js/certificates/views/signatory_editor.js
 #: cms/static/js/views/course_info_update.js
@@ -8019,6 +8019,10 @@ msgid "Staff Only"
 msgstr "Solo personal"
 
 #: cms/templates/js/publish-xblock.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/publish-xblock.43027925c89a.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/publish-xblock.underscore
+#: test_root/staticfiles/cms/templates/publish-xblock.43027925c89a.underscore
+#: test_root/staticfiles/cms/templates/publish-xblock.underscore
 #, python-format
 msgid "with %(section_or_subsection)s"
 msgstr "con  %(section_or_subsection)s"
@@ -8105,8 +8109,12 @@ msgid "Organization"
 msgstr "Organización"
 
 #: cms/templates/js/signatory-editor.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/signatory-editor.c4ba81e005e3.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/signatory-editor.underscore
+#: test_root/staticfiles/cms/templates/signatory-editor.c4ba81e005e3.underscore
+#: test_root/staticfiles/cms/templates/signatory-editor.underscore
 msgid "Certificate Signatory Configuration"
-msgstr "Configuración de firma de certificado"
+msgstr "Configuración del firmante de certificado"
 
 #: cms/templates/js/signatory-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/signatory-editor.c4ba81e005e3.underscore
@@ -8117,6 +8125,10 @@ msgid "Name "
 msgstr "Nombre"
 
 #: cms/templates/js/signatory-editor.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/signatory-editor.c4ba81e005e3.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/signatory-editor.underscore
+#: test_root/staticfiles/cms/templates/signatory-editor.c4ba81e005e3.underscore
+#: test_root/staticfiles/cms/templates/signatory-editor.underscore
 msgid "Name of the signatory"
 msgstr "Nombre del firmante"
 
@@ -8137,6 +8149,10 @@ msgid "Title "
 msgstr "Título"
 
 #: cms/templates/js/signatory-editor.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/signatory-editor.c4ba81e005e3.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/signatory-editor.underscore
+#: test_root/staticfiles/cms/templates/signatory-editor.c4ba81e005e3.underscore
+#: test_root/staticfiles/cms/templates/signatory-editor.underscore
 msgid "Title of the signatory"
 msgstr "Título del firmante"
 
@@ -10023,8 +10039,16 @@ msgid "username or email"
 msgstr "nombre de usuario o correo electrónico"
 
 #: lms/djangoapps/support/static/support/templates/certificates_results.underscore
-#: lms/templates/instructor/instructor_dashboard_2/certificate-invalidation.underscore
 #: lms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
+#: test_root/staticfiles/cms/support/templates/certificates_results.06ad39b2b464.underscore
+#: test_root/staticfiles/cms/support/templates/certificates_results.underscore
+#: test_root/staticfiles/cms/templates/instructor/instructor_dashboard_2/certificate-white-list.d79a92475d37.underscore
+#: test_root/staticfiles/cms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
+#: test_root/staticfiles/lms/support/templates/certificates_results.06ad39b2b464.underscore
+#: test_root/staticfiles/lms/support/templates/certificates_results.underscore
+#: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-white-list.d79a92475d37.underscore
+#: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
+#: lms/templates/instructor/instructor_dashboard_2/certificate-invalidation.underscore
 msgid "No results"
 msgstr "Sin resultados"
 
@@ -10867,10 +10891,18 @@ msgid ""
 msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/certificate-bulk-white-list.underscore
+#: test_root/staticfiles/cms/templates/instructor/instructor_dashboard_2/certificate-bulk-white-list.966e52b857b6.underscore
+#: test_root/staticfiles/cms/templates/instructor/instructor_dashboard_2/certificate-bulk-white-list.underscore
+#: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-bulk-white-list.966e52b857b6.underscore
+#: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-bulk-white-list.underscore
 msgid "Bulk Exceptions"
 msgstr "Excepciones en lote"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificate-bulk-white-list.underscore
+#: test_root/staticfiles/cms/templates/instructor/instructor_dashboard_2/certificate-bulk-white-list.966e52b857b6.underscore
+#: test_root/staticfiles/cms/templates/instructor/instructor_dashboard_2/certificate-bulk-white-list.underscore
+#: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-bulk-white-list.966e52b857b6.underscore
+#: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-bulk-white-list.underscore
 msgid ""
 "Upload a comma separated values (.csv) file that contains the usernames or "
 "email addresses of learners who have been given exceptions. Include the "
@@ -10896,10 +10928,22 @@ msgstr "Navegar"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificate-bulk-white-list.underscore
 #: lms/templates/instructor/instructor_dashboard_2/certificate-white-list-editor.underscore
+#: test_root/staticfiles/cms/templates/instructor/instructor_dashboard_2/certificate-bulk-white-list.966e52b857b6.underscore
+#: test_root/staticfiles/cms/templates/instructor/instructor_dashboard_2/certificate-bulk-white-list.underscore
+#: test_root/staticfiles/cms/templates/instructor/instructor_dashboard_2/certificate-white-list-editor.e6fe6c123bce.underscore
+#: test_root/staticfiles/cms/templates/instructor/instructor_dashboard_2/certificate-white-list-editor.underscore
+#: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-bulk-white-list.966e52b857b6.underscore
+#: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-bulk-white-list.underscore
+#: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-white-list-editor.e6fe6c123bce.underscore
+#: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-white-list-editor.underscore
 msgid "Add to Exception List"
 msgstr "Añadir a la lista de excepción"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificate-white-list-editor.underscore
+#: test_root/staticfiles/cms/templates/instructor/instructor_dashboard_2/certificate-white-list-editor.e6fe6c123bce.underscore
+#: test_root/staticfiles/cms/templates/instructor/instructor_dashboard_2/certificate-white-list-editor.underscore
+#: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-white-list-editor.e6fe6c123bce.underscore
+#: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-white-list-editor.underscore
 msgid "Individual Exceptions"
 msgstr "Excepciones individuales"
 
@@ -10916,6 +10960,10 @@ msgstr ""
 "quieras añadir como excepción."
 
 #: lms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
+#: test_root/staticfiles/cms/templates/instructor/instructor_dashboard_2/certificate-white-list.d79a92475d37.underscore
+#: test_root/staticfiles/cms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
+#: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-white-list.d79a92475d37.underscore
+#: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
 msgid "Generate Exception Certificates"
 msgstr "Generar certificados de excepción"
 
@@ -10941,7 +10989,7 @@ msgstr "Nuevo"
 #: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-white-list.d79a92475d37.underscore
 #: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
 msgid "additions to the Exception list"
-msgstr ""
+msgstr "incorporaciones a la lista de excepción"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
 #: test_root/staticfiles/cms/templates/instructor/instructor_dashboard_2/certificate-white-list.d79a92475d37.underscore

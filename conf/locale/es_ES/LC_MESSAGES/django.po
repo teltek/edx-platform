@@ -70,9 +70,9 @@
 # Enrique Centelles <ecentelles2003@yahoo.es>, 2016
 # Carlos Guzman <guzmca@gmail.com>, 2016
 # Rocío Pérez Venero <perezvenero.rocio@gmail.com>, 2016
+# mercefan <mercefan@gmail.com>, 2016
 # sandra bonillo <sandraboni13@gmail.com>, 2016
 # Jack R. <dny1020@aol.com>, 2016
-# mercefan <mercefan@gmail.com>, 2016
 # jorge jorge marrero <jjorgewill@gmail.com>, 2016
 # Daniel Vazquez <daniel@alabs.es>, 2016
 # LUCIA GOMEZ TEIJEIRO <lucy._.y@hotmail.com>, 2016
@@ -89,6 +89,7 @@
 # Francisco Cruz <paco@di.uc3m.es>, 2016
 # RUTH QUINTANA <rqvaquero@gmail.com>, 2016
 # Guillermo Peñarando Sánchez <guillerpsanchez@gmail.com>, 2016
+# Mercedes Rey <mrey@teltek.es>, 2016
 # #-#-#-#-#  django-partial.po (edx-platform)  #-#-#-#-#
 # edX translation file.
 # Copyright (C) 2016 EdX
@@ -1430,8 +1431,10 @@ msgstr "Diciembre"
 msgid "The file must end with the extension '{file_types}'."
 msgid_plural ""
 "The file must end with one of the following extensions: '{file_types}'."
-msgstr[0] ""
+msgstr[0] "El archivo debe finalizar con la extensión '{file_types'}."
 msgstr[1] ""
+"El archivo debe finalizar con una de las siguientes extensiones: "
+"'{file_types}'."
 
 #: common/djangoapps/util/file.py
 msgid "Maximum upload file size is {file_size} bytes."
@@ -3058,6 +3061,9 @@ msgid ""
 "Enter configuration for the teams feature. Expects two entries: "
 "max_team_size and topics, where topics is a list of topics."
 msgstr ""
+"Introduzca la configuración para la funcionalidad de los equipos. Espera "
+"recibir dos entradas: max_team_size y topics, donde topics es una lista de "
+"temas."
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Enable Proctored Exams"
@@ -6332,8 +6338,8 @@ msgstr "0 enviados"
 #: lms/djangoapps/instructor/views/instructor_task_helpers.py
 msgid "{num_emails} sent"
 msgid_plural "{num_emails} sent"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{num_emails} enviado"
+msgstr[1] "{num_emails} enviados"
 
 #: lms/djangoapps/instructor/views/instructor_task_helpers.py
 msgid "{num_emails} failed"
@@ -7099,9 +7105,7 @@ msgstr "Cantidad"
 msgid ""
 "List Price\n"
 "per item"
-msgstr ""
-"Listado de precios\n"
-"por artículo"
+msgstr "Precio\\npor curso"
 
 #: lms/djangoapps/shoppingcart/pdf.py
 msgid ""
@@ -7998,7 +8002,7 @@ msgstr "No tienes permisos para ver esta página."
 
 #: lms/djangoapps/student_account/views.py
 msgid "No user with the provided email address exists."
-msgstr ""
+msgstr "No existe ningún usuario con el correo electrónico facilitado."
 
 #: lms/djangoapps/student_account/views.py
 msgid "No email address provided."
@@ -13175,7 +13179,7 @@ msgstr ""
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Course options dropdown"
-msgstr ""
+msgstr "Menú desplegable de las opciones del curso"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Additional Actions Menu"
@@ -13280,8 +13284,8 @@ msgid ""
 "Pursue a {cert_name_long} to highlight the knowledge and skills you gain in "
 "this course."
 msgstr ""
-"Consigue un {cert_name_long} para resaltar el conocimiento y las aptitudes "
-"que adquieras en este curso."
+"Consigue una acreditación verificada {cert_name_long} para resaltar el "
+"conocimiento y las aptitudes que adquieras en este curso."
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid ""
@@ -13289,6 +13293,9 @@ msgid ""
 "the course. <br>{link_start}Learn more about the verified "
 "{cert_name_long}{link_end}."
 msgstr ""
+"Es oficial. Es fácil de compartir. Prueba ser motivador para completar el "
+"curso. <br>{link_start}Aprende más sobre la acreditación verificada "
+"{cert_name_long}{link_end}."
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Upgrade to Verified"
@@ -13575,8 +13582,16 @@ msgstr "por más votadas"
 #, python-format
 msgid "%s discussion started"
 msgid_plural "%s discussions started"
-msgstr[0] "Iniciada %s discusión"
-msgstr[1] "%s discusiones iniciadas "
+msgstr[0] ""
+"#-#-#-#-#  release-dogwood.po (edx-platform)  #-#-#-#-#\n"
+"%s debate empezado\n"
+"#-#-#-#-#  mako.po (edx-platform)  #-#-#-#-#\n"
+"Iniciada %s discusión"
+msgstr[1] ""
+"#-#-#-#-#  release-dogwood.po (edx-platform)  #-#-#-#-#\n"
+"%s debates empezados\n"
+"#-#-#-#-#  mako.po (edx-platform)  #-#-#-#-#\n"
+"%s discusiones iniciadas "
 
 #: lms/templates/discussion/_user_profile.html
 #, python-format
@@ -14615,6 +14630,8 @@ msgid ""
 "To regenerate certificates for your course, chose the learners who will "
 "receive regenerated certificates and click <br/> Regenerate Certificates."
 msgstr ""
+"Para regenerar certificados de tu curso, elige los estudiantes que recibirán"
+" certificados regenerados y haz click en <br/> Regenerar certificados."
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid ""
@@ -14798,7 +14815,7 @@ msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/data_download.html
 msgid "Download a CSV of learners who can enroll"
-msgstr "Descarga el listado de estudiantes matriculados en CSV"
+msgstr "Descarga en CSV el listado de estudiantes que pueden matricularse"
 
 #: lms/templates/instructor/instructor_dashboard_2/data_download.html
 msgid ""
@@ -17418,6 +17435,10 @@ msgid ""
 "selects {em_start}Activate{em_end}. Course team members without the Admin "
 "role cannot edit or delete an activated certificate."
 msgstr ""
+"Para empezar a emitir certificados, un miembro del equipo del curso con el "
+"rol de administrador debe seleccionar {em_start}Activar{em_end}. Los "
+"miembros del equipo del curso sin rol de administrador no pueden editar o "
+"borrar un certificado activado."
 
 #: cms/templates/certificates.html
 msgid ""
