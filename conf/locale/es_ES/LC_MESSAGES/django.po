@@ -70,9 +70,9 @@
 # Enrique Centelles <ecentelles2003@yahoo.es>, 2016
 # Carlos Guzman <guzmca@gmail.com>, 2016
 # Rocío Pérez Venero <perezvenero.rocio@gmail.com>, 2016
+# mercefan <mercefan@gmail.com>, 2016
 # sandra bonillo <sandraboni13@gmail.com>, 2016
 # Jack R. <dny1020@aol.com>, 2016
-# mercefan <mercefan@gmail.com>, 2016
 # jorge jorge marrero <jjorgewill@gmail.com>, 2016
 # Daniel Vazquez <daniel@alabs.es>, 2016
 # LUCIA GOMEZ TEIJEIRO <lucy._.y@hotmail.com>, 2016
@@ -89,6 +89,7 @@
 # Francisco Cruz <paco@di.uc3m.es>, 2016
 # RUTH QUINTANA <rqvaquero@gmail.com>, 2016
 # Guillermo Peñarando Sánchez <guillerpsanchez@gmail.com>, 2016
+# Mercedes Rey <mrey@teltek.es>, 2016
 # #-#-#-#-#  django-partial.po (edx-platform)  #-#-#-#-#
 # edX translation file.
 # Copyright (C) 2016 EdX
@@ -116,6 +117,7 @@
 # Marta Cuesta, 2014
 # Maxfer <maxfer@gmail.com>, 2014
 # mcolomer <mcmlilhity@gmail.com>, 2014
+# Mercedes Rey <mrey@teltek.es>, 2016
 # Miguel Angel Cordova <miguel.angel.cordova.uned@gmail.com>, 2014-2015
 # RUTH QUINTANA <rqvaquero@gmail.com>, 2014
 # Tesaur <pablo15892@hotmail.com>, 2014
@@ -256,7 +258,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2016-10-20 15:57+0000\n"
+"POT-Creation-Date: 2016-11-22 16:37+0000\n"
 "PO-Revision-Date: 2016-05-09 11:27+0000\n"
 "Last-Translator: Juan Rodríguez de Vera Mouliaá <jrodriguez@um.es>\n"
 "Language-Team: Spanish (Spain) (http://www.transifex.com/open-edx/edx-platform/language/es_ES/)\n"
@@ -439,7 +441,6 @@ msgstr "Te has apuntado a este curso como alumno Código de Honor"
 #: common/djangoapps/course_modes/helpers.py lms/djangoapps/branding/api.py
 #: openedx/core/djangoapps/user_api/views.py
 #: lms/templates/static_templates/honor.html
-#: themes/example/lms/templates/static_templates/honor.html
 #: themes/stanford-style/lms/templates/footer.html
 #: themes/stanford-style/lms/templates/static_templates/tos.html
 msgid "Honor Code"
@@ -566,35 +567,42 @@ msgstr "Alumno"
 
 #: common/djangoapps/embargo/forms.py
 #: lms/djangoapps/verified_track_content/forms.py
+#: openedx/core/djangoapps/embargo/forms.py
 msgid "COURSE NOT FOUND.  Please check that the course ID is valid."
 msgstr ""
 "Curso no encontrado. Por favor, comprueba que el identificador del curso es "
 "correcto."
 
 #: common/djangoapps/embargo/models.py
+#: openedx/core/djangoapps/embargo/models.py
 msgid "The course key for the restricted course."
 msgstr "La clave del curso para el curso restringido."
 
 #: common/djangoapps/embargo/models.py
+#: openedx/core/djangoapps/embargo/models.py
 msgid "The message to show when a user is blocked from enrollment."
 msgstr "Mensaje que se muestra cuando a un usuario se le impide matricularse."
 
 #: common/djangoapps/embargo/models.py
+#: openedx/core/djangoapps/embargo/models.py
 msgid "The message to show when a user is blocked from accessing a course."
 msgstr ""
 "Mensaje que se muestra cuando a un usuario se le impide acceder a un curso."
 
 #: common/djangoapps/embargo/models.py
+#: openedx/core/djangoapps/embargo/models.py
 msgid ""
 "Allow users who enrolled in an allowed country to access restricted courses "
 "from excluded countries."
 msgstr ""
 
 #: common/djangoapps/embargo/models.py
+#: openedx/core/djangoapps/embargo/models.py
 msgid "Two character ISO country code."
 msgstr "Código de país ISO de dos caracteres."
 
 #: common/djangoapps/embargo/models.py
+#: openedx/core/djangoapps/embargo/models.py
 msgid ""
 "Whether to include or exclude the given course. If whitelist countries are "
 "specified, then ONLY users from whitelisted countries will be able to access"
@@ -603,18 +611,22 @@ msgid ""
 msgstr ""
 
 #: common/djangoapps/embargo/models.py
+#: openedx/core/djangoapps/embargo/models.py
 msgid "The course to which this rule applies."
 msgstr "Curso al que se aplica esta norma."
 
 #: common/djangoapps/embargo/models.py
+#: openedx/core/djangoapps/embargo/models.py
 msgid "The country to which this rule applies."
 msgstr "País al que se aplica esta norma."
 
 #: common/djangoapps/embargo/models.py
+#: openedx/core/djangoapps/embargo/models.py
 msgid "Whitelist {country} for {course}"
 msgstr ""
 
 #: common/djangoapps/embargo/models.py
+#: openedx/core/djangoapps/embargo/models.py
 msgid "Blacklist {country} for {course}"
 msgstr ""
 
@@ -1419,8 +1431,10 @@ msgstr "Diciembre"
 msgid "The file must end with the extension '{file_types}'."
 msgid_plural ""
 "The file must end with one of the following extensions: '{file_types}'."
-msgstr[0] ""
+msgstr[0] "El archivo debe finalizar con la extensión '{file_types'}."
 msgstr[1] ""
+"El archivo debe finalizar con una de las siguientes extensiones: "
+"'{file_types}'."
 
 #: common/djangoapps/util/file.py
 msgid "Maximum upload file size is {file_size} bytes."
@@ -2049,6 +2063,9 @@ msgid ""
 "Defines when to randomize the variables specified in the associated Python "
 "script. For problems that do not randomize values, specify \"Never\". "
 msgstr ""
+"Define cuando aleatorizar las variables especificadas en el script de Python"
+" asociado. Para los problemas que no aleatorizan los valores, especificar "
+"\"Nunca\"."
 
 #: common/lib/xmodule/xmodule/capa_base.py
 msgid "On Reset"
@@ -2146,6 +2163,13 @@ msgid ""
 "compromised. To obtain a key for your course, or to report an issue, please "
 "contact moocsupport@mathworks.com"
 msgstr ""
+"Introduzca la clave de la API proporcionada por MathWorks para acceder al "
+"servicio de MATLAB. Esta clave es otorgada para usar de forma exclusiva por "
+"este curso para la duración especificada. Por favor no comparta la clave de "
+"la API con otros cursos y notifique inmediatamente a MathWorks si cree que "
+"la clave ha sido expuesta o comprometida. Para obtener una clave para tu "
+"curso, o para reportar una incidencia, por favor contacte con "
+"moocsupport@mathworks.com"
 
 #: common/lib/xmodule/xmodule/capa_base.py
 msgid "Check"
@@ -3030,13 +3054,16 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Teams Configuration"
-msgstr ""
+msgstr "Configuración de equipos"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid ""
 "Enter configuration for the teams feature. Expects two entries: "
 "max_team_size and topics, where topics is a list of topics."
 msgstr ""
+"Introduzca la configuración para la funcionalidad de los equipos. Espera "
+"recibir dos entradas: max_team_size y topics, donde topics es una lista de "
+"temas."
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Enable Proctored Exams"
@@ -4502,7 +4529,6 @@ msgstr "Condiciones del servicio y Código de Honor"
 #: cms/templates/widgets/footer.html
 #: lms/templates/static_templates/privacy.html
 #: themes/red-theme/lms/templates/footer.html
-#: themes/example/lms/templates/static_templates/privacy.html
 #: themes/stanford-style/lms/templates/footer.html
 #: themes/stanford-style/lms/templates/static_templates/tos.html
 msgid "Privacy Policy"
@@ -4522,7 +4548,6 @@ msgstr ""
 #: lms/djangoapps/branding/api.py openedx/core/djangoapps/user_api/views.py
 #: cms/templates/widgets/footer.html lms/templates/static_templates/tos.html
 #: themes/red-theme/lms/templates/footer.html
-#: themes/example/lms/templates/static_templates/tos.html
 #: themes/stanford-style/lms/templates/footer.html
 #: themes/stanford-style/lms/templates/static_templates/tos.html
 msgid "Terms of Service"
@@ -4575,6 +4600,8 @@ msgid ""
 "A human-readable description of the example certificate.  For example, "
 "'verified' or 'honor' to differentiate between two types of certificates."
 msgstr ""
+"Una descripción legible del certificado de ejemplo. Por ejemplo, "
+"'verificado' u 'honor' para diferenciar entre dos tipos de certificados."
 
 #: lms/djangoapps/certificates/models.py
 msgid ""
@@ -5069,6 +5096,7 @@ msgid "UTC"
 msgstr "UTC"
 
 #: lms/djangoapps/courseware/date_summary.py
+#: lms/templates/courseware/info.html
 msgid "Today is {date}"
 msgstr ""
 
@@ -6104,6 +6132,8 @@ msgid ""
 "Certificate regeneration task has been started. You can view the status of "
 "the generation task in the \"Pending Tasks\" section."
 msgstr ""
+"La tarea de regeneración de certificados ha comenzado. Puedes ver el estado "
+"de la tarea de generación en la sección de \"Tareas pendientes\"."
 
 #: lms/djangoapps/instructor/views/api.py
 msgid "Student (username/email={user}) already in certificate exception list."
@@ -6126,6 +6156,9 @@ msgid ""
 "Student username/email field is required and can not be empty. Kindly fill "
 "in username/email and then press \"Add to Exception List\" button."
 msgstr ""
+"El campo de nombre de usuario/email del estudiante es obligatorio y no puede"
+" estar vacío. Por favor, escriba el nombre de usuario/email y  pulse el "
+"botón \"Añadir a la lista de excepción\"."
 
 #: lms/djangoapps/instructor/views/api.py
 msgid ""
@@ -6254,6 +6287,7 @@ msgid "CourseMode price updated successfully"
 msgstr "Se actualizó el precio del modo de curso con éxito."
 
 #: lms/djangoapps/instructor/views/instructor_dashboard.py
+#: lms/templates/instructor/instructor_dashboard_2/course_info.html
 msgid "No end date set"
 msgstr "Fecha de finalización no establecida"
 
@@ -6304,8 +6338,8 @@ msgstr "0 enviados"
 #: lms/djangoapps/instructor/views/instructor_task_helpers.py
 msgid "{num_emails} sent"
 msgid_plural "{num_emails} sent"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{num_emails} enviado"
+msgstr[1] "{num_emails} enviados"
 
 #: lms/djangoapps/instructor/views/instructor_task_helpers.py
 msgid "{num_emails} failed"
@@ -7071,9 +7105,7 @@ msgstr "Cantidad"
 msgid ""
 "List Price\n"
 "per item"
-msgstr ""
-"Listado de precios\n"
-"por artículo"
+msgstr "Precio\\npor curso"
 
 #: lms/djangoapps/shoppingcart/pdf.py
 msgid ""
@@ -7970,7 +8002,7 @@ msgstr "No tienes permisos para ver esta página."
 
 #: lms/djangoapps/student_account/views.py
 msgid "No user with the provided email address exists."
-msgstr ""
+msgstr "No existe ningún usuario con el correo electrónico facilitado."
 
 #: lms/djangoapps/student_account/views.py
 msgid "No email address provided."
@@ -7978,7 +8010,7 @@ msgstr ""
 
 #: lms/djangoapps/support/views/index.py
 msgid "View and regenerate certificates."
-msgstr ""
+msgstr "Ver y regenerar certificados."
 
 #: lms/djangoapps/support/views/index.py lms/templates/support/refund.html
 msgid "Manual Refund"
@@ -9890,7 +9922,6 @@ msgstr "Código del curso:"
 #: lms/templates/courseware/courses.html
 #: themes/red-theme/lms/templates/header.html
 #: themes/edx.org/lms/templates/header.html
-#: themes/example/lms/templates/header.html
 msgid "Courses"
 msgstr "Cursos"
 
@@ -9991,7 +10022,7 @@ msgstr "Visita tu {link_start}Panel de control{link_end} para ver tus cursos."
 
 #: cms/templates/widgets/header.html lms/templates/navigation-edx.html
 #: lms/templates/navigation.html themes/edx.org/lms/templates/header.html
-#: lms/templates/user_dropdown.html themes/example/lms/templates/header.html
+#: lms/templates/user_dropdown.html
 msgid "Account"
 msgstr "Cuenta"
 
@@ -10005,7 +10036,6 @@ msgstr "Ayuda"
 #: lms/templates/navigation.html themes/edx.org/lms/templates/header.html
 #: themes/red-theme/lms/templates/header.html
 #: cms/templates/widgets/user_dropdown.html lms/templates/user_dropdown.html
-#: themes/example/lms/templates/header.html
 msgid "Sign Out"
 msgstr "Cerrar sesión"
 
@@ -10216,11 +10246,11 @@ msgstr "Discusión guiada"
 msgid "Hide Annotations"
 msgstr "Ocultar anotaciones"
 
-#: lms/templates/course.html themes/example/lms/templates/course.html
+#: lms/templates/course.html
 msgid "LEARN MORE"
 msgstr "APRENDE MÁS"
 
-#: lms/templates/course.html themes/example/lms/templates/course.html
+#: lms/templates/course.html
 msgid "Starts"
 msgstr "Inicio"
 
@@ -10228,7 +10258,6 @@ msgstr "Inicio"
 #: lms/templates/navigation.html themes/edx.org/lms/templates/header.html
 #: lms/templates/user_dropdown.html
 #: themes/edx.org/lms/templates/dashboard.html
-#: themes/example/lms/templates/header.html
 msgid "Dashboard"
 msgstr "Panel de control"
 
@@ -10883,7 +10912,6 @@ msgstr "Desplegar más opciones"
 
 #: lms/templates/navigation-edx.html lms/templates/navigation.html
 #: themes/edx.org/lms/templates/header.html lms/templates/user_dropdown.html
-#: themes/example/lms/templates/header.html
 msgid "Profile"
 msgstr "Perfil"
 
@@ -10897,7 +10925,6 @@ msgstr "Carrito de compra"
 #: lms/templates/navigation-edx.html lms/templates/navigation.html
 #: themes/edx.org/lms/templates/header.html
 #: themes/red-theme/lms/templates/header.html
-#: themes/example/lms/templates/header.html
 msgid "Sign in"
 msgstr "Iniciar sesión"
 
@@ -10919,7 +10946,6 @@ msgstr ""
 "recomendamos encarecidamente que utilices {chrome_link} o {ff_link}."
 
 #: lms/templates/navigation.html themes/red-theme/lms/templates/header.html
-#: themes/example/lms/templates/header.html
 msgid "Global"
 msgstr "Global"
 
@@ -11967,7 +11993,6 @@ msgstr ""
 #: lms/templates/courseware/course_about.html
 #: lms/templates/instructor/instructor_dashboard_2/membership.html
 #: lms/templates/enroll_staff.html
-#: themes/example/lms/templates/courseware/course_about.html
 msgid "Enroll"
 msgstr "Inscribirse"
 
@@ -12238,12 +12263,10 @@ msgid "This content is graded"
 msgstr "Este contenido está calificado"
 
 #: lms/templates/courseware/course_about.html
-#: themes/example/lms/templates/courseware/course_about.html
 msgid "An error occurred. Please try again later."
 msgstr "Se ha producido un error. Por favor, inténtalo de nuevo más tarde."
 
 #: lms/templates/courseware/course_about.html
-#: themes/example/lms/templates/courseware/course_about.html
 msgid ""
 "The currently logged-in user account does not have permission to enroll in "
 "this course. You may need to {start_logout_tag}log out{end_tag} then try the"
@@ -12366,7 +12389,6 @@ msgid "Additional Resources"
 msgstr "Recursos adicionales"
 
 #: lms/templates/courseware/course_about.html
-#: themes/example/lms/templates/courseware/course_about.html
 msgid "enroll"
 msgstr "Inscribirse"
 
@@ -13157,7 +13179,7 @@ msgstr ""
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Course options dropdown"
-msgstr ""
+msgstr "Menú desplegable de las opciones del curso"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Additional Actions Menu"
@@ -13262,8 +13284,8 @@ msgid ""
 "Pursue a {cert_name_long} to highlight the knowledge and skills you gain in "
 "this course."
 msgstr ""
-"Consigue un {cert_name_long} para resaltar el conocimiento y las aptitudes "
-"que adquieras en este curso."
+"Consigue una acreditación verificada {cert_name_long} para resaltar el "
+"conocimiento y las aptitudes que adquieras en este curso."
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid ""
@@ -13271,6 +13293,9 @@ msgid ""
 "the course. <br>{link_start}Learn more about the verified "
 "{cert_name_long}{link_end}."
 msgstr ""
+"Es oficial. Es fácil de compartir. Prueba ser motivador para completar el "
+"curso. <br>{link_start}Aprende más sobre la acreditación verificada "
+"{cert_name_long}{link_end}."
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Upgrade to Verified"
@@ -13557,8 +13582,16 @@ msgstr "por más votadas"
 #, python-format
 msgid "%s discussion started"
 msgid_plural "%s discussions started"
-msgstr[0] "Iniciada %s discusión"
-msgstr[1] "%s discusiones iniciadas "
+msgstr[0] ""
+"#-#-#-#-#  release-dogwood.po (edx-platform)  #-#-#-#-#\n"
+"%s debate empezado\n"
+"#-#-#-#-#  mako.po (edx-platform)  #-#-#-#-#\n"
+"Iniciada %s discusión"
+msgstr[1] ""
+"#-#-#-#-#  release-dogwood.po (edx-platform)  #-#-#-#-#\n"
+"%s debates empezados\n"
+"#-#-#-#-#  mako.po (edx-platform)  #-#-#-#-#\n"
+"%s discusiones iniciadas "
 
 #: lms/templates/discussion/_user_profile.html
 #, python-format
@@ -14535,21 +14568,23 @@ msgstr "Refrescar estado"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid "Student-Generated Certificates"
-msgstr ""
+msgstr "Certificados generados por el alumno"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid "Disable Student-Generated Certificates"
-msgstr ""
+msgstr "Deshabilitar los certificados generados por el alumno"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid "Enable Student-Generated Certificates"
-msgstr ""
+msgstr "Habilitar los certificados generados por el alumno"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid ""
 "You must successfully generate example certificates before you enable "
 "student-generated certificates."
 msgstr ""
+"Debes generar certificados de ejemplo exitosos antes de habilitar los "
+"certificados generados por el alumno."
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid "Generate Certificates"
@@ -14588,34 +14623,38 @@ msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid "Regenerate Certificates"
-msgstr ""
+msgstr "Regenerar certificados"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid ""
 "To regenerate certificates for your course, chose the learners who will "
 "receive regenerated certificates and click <br/> Regenerate Certificates."
 msgstr ""
+"Para regenerar certificados de tu curso, elige los estudiantes que recibirán"
+" certificados regenerados y haz click en <br/> Regenerar certificados."
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid ""
 "Regenerate for learners who have already received certificates. ({count})"
 msgstr ""
+"Regenerar para estudiantes que ya han recibido certificados. ({count})"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid "Regenerate for learners who have not received certificates. ({count})"
 msgstr ""
+"Regenerar para estudiantes que no han recibido certificados. ({count})"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid "Regenerate for learners in an error state. ({count})"
-msgstr ""
+msgstr "Regenerar para estudiantes en estado de error. ({count})"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid "Certificate Generation History"
-msgstr ""
+msgstr "Historial de la generación de certificados"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid "SET CERTIFICATE EXCEPTIONS"
-msgstr ""
+msgstr "ESTABLECER EXCEPCIONES DE CERTIFICADO"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid ""
@@ -14624,6 +14663,10 @@ msgid ""
 "you add learners to the exception list, click Generate Exception "
 "Certificates below."
 msgstr ""
+"Establecer excepciones para generar certificados de alumnos que no pasen la "
+"nota de corte para recibir un certificado pero que han sido marcados con una"
+" excepción por el equipo del curso. Después de añadir estudiantes a la lista"
+" de excepción, haz click en Generar certificados de excepción debajo."
 
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
 msgid "Enrollment Information"
@@ -14772,7 +14815,7 @@ msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/data_download.html
 msgid "Download a CSV of learners who can enroll"
-msgstr "Descarga el listado de estudiantes matriculados en CSV"
+msgstr "Descarga en CSV el listado de estudiantes que pueden matricularse"
 
 #: lms/templates/instructor/instructor_dashboard_2/data_download.html
 msgid ""
@@ -17032,10 +17075,12 @@ msgid "Enroll In {course_name}"
 msgstr "Inscribirse en {course_name}"
 
 #: lms/templates/verify_student/pay_and_verify.html
+#: lms/templates/verify_student/_verification_help.html
 msgid "Have questions?"
 msgstr "¿Tienes preguntas?"
 
 #: lms/templates/verify_student/pay_and_verify.html
+#: lms/templates/verify_student/_verification_help.html
 msgid ""
 "Please read {a_start}our FAQs to view common questions about our "
 "certificates{a_end}."
@@ -17368,12 +17413,17 @@ msgid ""
 "right corner of the form and select {em_start}Edit{em_end} or the delete "
 "icon."
 msgstr ""
+"Para editar o borrar un certificado antes de ser activado, ponga el puntero "
+"del ratón sobre la esquina superior derecha del formulario y seleccione "
+"{em_start}Edit{em_end} o el icono de borrado."
 
 #: cms/templates/certificates.html
 msgid ""
 "To view a sample certificate, choose a course mode and select "
 "{em_start}Preview Certificate{em_end}."
 msgstr ""
+"Para ver un certificado de muestra, elija un modo de curso y seleccione "
+"{em_start}Previsualizar certificado{em_end}."
 
 #: cms/templates/certificates.html
 msgid "Issuing Certificates to Learners"
@@ -17385,6 +17435,10 @@ msgid ""
 "selects {em_start}Activate{em_end}. Course team members without the Admin "
 "role cannot edit or delete an activated certificate."
 msgstr ""
+"Para empezar a emitir certificados, un miembro del equipo del curso con el "
+"rol de administrador debe seleccionar {em_start}Activar{em_end}. Los "
+"miembros del equipo del curso sin rol de administrador no pueden editar o "
+"borrar un certificado activado."
 
 #: cms/templates/certificates.html
 msgid ""
@@ -17392,6 +17446,9 @@ msgid ""
 "learners who have already earned certificates will no longer be able to "
 "access them."
 msgstr ""
+"{em_start}No{em_end} borrar certificados después de que un curso haya "
+"comenzado; los estudiantes que ya hayan obtenido certificados no serán "
+"capaces de acceder a los mismos."
 
 #: cms/templates/certificates.html
 msgid "Learn more about certificates"
@@ -20637,7 +20694,6 @@ msgstr "envía un correo electrónico a {email}"
 
 #: cms/templates/widgets/sock.html
 #: themes/edx.org/cms/templates/widgets/sock.html
-#: themes/example/lms/templates/static_templates/contact.html
 #: themes/stanford-style/lms/templates/static_templates/about.html
 msgid "Contact Us"
 msgstr "Contáctanos"
@@ -21350,6 +21406,12 @@ msgid "User profile"
 msgstr "Perfil de usuario."
 
 #: common/djangoapps/student/forms.py
+msgid ""
+"Usernames can only contain Roman letters, western numerals (0-9), "
+"underscores (_), and hyphens (-)."
+msgstr ""
+
+#: common/djangoapps/student/forms.py
 msgid "Unauthorized email address."
 msgstr "Dirección de correo electrónico no autorizada."
 
@@ -21443,6 +21505,16 @@ msgstr ""
 
 #: common/djangoapps/student/management/commands/manage_user.py
 msgid "Removing user \"{username}\" from groups {group_names}"
+msgstr ""
+
+#. Translators: 'None' refers to the student's level of education
+#: common/djangoapps/student/models.py
+msgid "No formal education"
+msgstr ""
+
+#. Translators: 'Other' refers to the student's level of education
+#: common/djangoapps/student/models.py
+msgid "Other education"
 msgstr ""
 
 #: common/djangoapps/student/models.py
@@ -21583,6 +21655,10 @@ msgid "Answer"
 msgstr "Respuesta"
 
 #: common/lib/xmodule/xmodule/capa_base.py
+msgid "Whether or not the answers have been saved since last submit"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/capa_base.py
 msgid "Submitting"
 msgstr ""
 
@@ -21594,6 +21670,11 @@ msgstr ""
 #: common/lib/xmodule/xmodule/capa_base.py
 msgid ""
 "{previous_hints}<li><strong>{hint_number_prefix}</strong>{hint_text}</li>"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/capa_base.py
+msgid ""
+"Your answers were previously saved. Click '{button_name}' to grade them."
 msgstr ""
 
 #: common/lib/xmodule/xmodule/capa_base.py
@@ -21811,6 +21892,18 @@ msgid ""
 msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
+msgid "Allow Opting Out of Proctored Exams"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/course_module.py
+msgid ""
+"Enter true or false. If this value is true, learners can choose to take "
+"proctored exams without proctoring. If this value is false, all learners "
+"must take the exam with proctoring. This setting only applies if proctored "
+"exams are enabled for the course."
+msgstr ""
+
+#: common/lib/xmodule/xmodule/course_module.py
 msgid "Create Zendesk Tickets For Suspicious Proctored Exam Attempts"
 msgstr ""
 
@@ -21818,6 +21911,13 @@ msgstr ""
 msgid ""
 "Enter true or false. If this value is true, a Zendesk ticket will be created"
 " for suspicious attempts."
+msgstr ""
+
+#: common/lib/xmodule/xmodule/course_module.py
+msgid ""
+"Enter true or false. If this value is true, timed exams are enabled in your "
+"course. Regardless of this setting, timed exams are enabled if Enable "
+"Proctored Exams is set to true."
 msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
@@ -22011,7 +22111,7 @@ msgstr ""
 #. messages.
 #: lms/djangoapps/certificates/models.py
 msgid "regenerated"
-msgstr ""
+msgstr "Regenerado"
 
 #. Translators: This string represents task was executed for all learners.
 #: lms/djangoapps/certificates/models.py
@@ -22866,6 +22966,42 @@ msgstr ""
 msgid "Usermenu dropdown"
 msgstr ""
 
+#: common/lib/capa/capa/templates/codeinput.html
+msgid "Code Editor"
+msgstr ""
+
+#: common/templates/emails/contact_us_feedback_email_body.txt
+msgid "Feedback Form"
+msgstr ""
+
+#: common/templates/emails/contact_us_feedback_email_body.txt
+msgid "Email: {email}"
+msgstr ""
+
+#: common/templates/emails/contact_us_feedback_email_body.txt
+msgid "Full Name: {realname}"
+msgstr ""
+
+#: common/templates/emails/contact_us_feedback_email_body.txt
+msgid "Inquiry Type: {inquiry_type}"
+msgstr ""
+
+#: common/templates/emails/contact_us_feedback_email_body.txt
+msgid "Message: {message}"
+msgstr ""
+
+#: common/templates/emails/contact_us_feedback_email_body.txt
+msgid "Tags: {tags}"
+msgstr "Etiquetas: {tags}"
+
+#: common/templates/emails/contact_us_feedback_email_body.txt
+msgid "Additional Info:"
+msgstr ""
+
+#: common/templates/emails/contact_us_feedback_email_subject.txt
+msgid "Feedback from user"
+msgstr ""
+
 #: lms/djangoapps/discussion/templates/discussion/discussion_board.html
 msgid "Discussions"
 msgstr "Foros"
@@ -22898,6 +23034,14 @@ msgstr "Marcado como favorito"
 
 #: lms/templates/bookmark_button.html
 msgid "Bookmark this page"
+msgstr ""
+
+#: lms/templates/conditional_module.html
+msgid "You do not have access to this dependency module."
+msgstr ""
+
+#: lms/templates/course.html
+msgid "Starts: {date}"
 msgstr ""
 
 #: lms/templates/dashboard.html themes/edx.org/lms/templates/dashboard.html
@@ -22953,6 +23097,14 @@ msgid ""
 msgstr ""
 
 #: lms/templates/help_modal.html
+msgid ""
+"Thank you for your inquiry or feedback.  We typically respond to a request "
+"within one business day, Monday to Friday.  In the meantime, please review "
+"our {link_start}detailed FAQs{link_end} where most questions have already "
+"been answered."
+msgstr ""
+
+#: lms/templates/help_modal.html
 msgid "Details of the problem you are encountering{asterisk}"
 msgstr ""
 
@@ -23000,8 +23152,10 @@ msgid "Submit your answer"
 msgstr ""
 
 #: lms/templates/problem.html
-msgid "You have used {num_used} of {num_total} attempts"
-msgstr ""
+msgid "You have used {num_used} of {num_total} attempt"
+msgid_plural "You have used {num_used} of {num_total} attempts"
+msgstr[0] ""
+msgstr[1] ""
 
 #: lms/templates/problem_notifications.html
 msgid "Next Hint"
@@ -23024,6 +23178,25 @@ msgid ""
 "You can find the answers to most of your questions in our list of FAQs. "
 "After you enroll in a course, you can also find answers in the course "
 "discussions."
+msgstr ""
+
+#: lms/templates/staff_problem_info.html
+msgid "Reset Learner's Attempts to Zero"
+msgstr ""
+
+#: lms/templates/staff_problem_info.html
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "Delete Learner's State"
+msgstr ""
+
+#: lms/templates/staff_problem_info.html
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "Rescore Learner's Submission"
+msgstr ""
+
+#: lms/templates/staff_problem_info.html
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "Rescore Only If Score Improves"
 msgstr ""
 
 #: lms/templates/user_dropdown.html
@@ -23700,7 +23873,15 @@ msgid "Course Updates and News"
 msgstr ""
 
 #: lms/templates/courseware/progress.html
-msgid "Completed by"
+msgid "Opens in a new browser window"
+msgstr ""
+
+#: lms/templates/courseware/progress.html
+msgid "Completed by {date}"
+msgstr ""
+
+#: lms/templates/courseware/progress.html
+msgid "Details for each chapter"
 msgstr ""
 
 #: lms/templates/credit_notifications/credit_eligibility_email.html
@@ -23722,6 +23903,18 @@ msgstr ""
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Course details"
+msgstr ""
+
+#: lms/templates/dashboard/_dashboard_course_listing.html
+msgid "Ended - {date}"
+msgstr ""
+
+#: lms/templates/dashboard/_dashboard_course_listing.html
+msgid "Started - {date}"
+msgstr ""
+
+#: lms/templates/dashboard/_dashboard_course_listing.html
+msgid "Starts - {date}"
 msgstr ""
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
@@ -23858,9 +24051,19 @@ msgid ""
 "To regenerate certificates for your course, choose the learners who will "
 "receive regenerated certificates and click Regenerate Certificates."
 msgstr ""
+"Para regenerar certificados para tu curso, elige los estudiantes que "
+"recibirán certificados regenerados y haz click en Regenerar certificados."
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid "Choose learner types for regeneration"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/certificates.html
+msgid "Regenerate for learners with audit passing state. ({count})"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/certificates.html
+msgid "Regenerate for learners with audit not passing state. ({count})"
 msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
@@ -23955,6 +24158,165 @@ msgstr ""
 msgid ""
 "To see the status for all email tasks submitted for this course, click this "
 "button:"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "View gradebook for enrolled learners"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid ""
+"Note: This feature is available only to courses with a small number of "
+"enrolled learners."
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "View a specific learner's grades and progress"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "Learner's {platform_name} email address or username *"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "Learner email address or username"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "View Progress Page"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "Adjust a learner's grade for a specific problem"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "Location of problem in course *"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "Example"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "Attempts"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid ""
+"Allow a learner who has used up all attempts to work on the problem again."
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "Reset Attempts to Zero"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "Rescore"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid ""
+"For the specified problem, rescore the learner's responses. The 'Rescore "
+"Only If Score Improves' option updates the learner's score only if it "
+"improves in the learner's favor."
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "Problem History"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid ""
+"For the specified problem, permanently and completely delete the learner's "
+"answers and scores from the database."
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "Task Status"
+msgstr "Estado de la tarea"
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid ""
+"Show the status for the rescoring tasks that you submitted for this learner "
+"and problem."
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "Show Task Status"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "Adjust a learner's entrance exam results"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "Allow the learner to take the exam again."
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "Allow Skip"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "Waive the requirement for the learner to take the exam."
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "Let Learner Skip Entrance Exam"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid ""
+"Rescore any responses that have been submitted. The 'Rescore All Problems "
+"Only If Score Improves' option updates the learner's scores only if it "
+"improves in the learner's favor."
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "Rescore All Problems Only If Score Improves"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "Entrance Exam History"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid ""
+"For the entire entrance exam, permanently and completely delete the "
+"learner's answers and scores from the database."
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid ""
+"Show the status for the rescoring tasks that you submitted for this learner "
+"and entrance exam."
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "Adjust all enrolled learners' grades for a specific problem"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "Allows all learners to work on the problem again."
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid ""
+"Rescore submitted responses. The 'Rescore Only If Scores Improve' option "
+"updates a learner's score only if it improves in the learner's favor."
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "Rescore All Learners' Submissions"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "Rescore Only If Scores Improve"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "Show the status for the tasks that you submitted for this problem."
 msgstr ""
 
 #: lms/templates/learner_dashboard/program_details.html
@@ -24138,83 +24500,6 @@ msgid ""
 "Inc."
 msgstr ""
 
-#: themes/example/lms/templates/header.html
-msgid "Create Account"
-msgstr ""
-
-#: themes/example/lms/templates/courseware/course_about.html
-msgid "Want to purchase this course for a group?"
-msgstr ""
-
-#: themes/example/lms/templates/courseware/course_about.html
-msgid ""
-"You can purchase enrollment codes for this course to distribute to your team"
-msgstr ""
-
-#: themes/example/lms/templates/courseware/course_about.html
-msgid "Purchase for a Group"
-msgstr ""
-
-#: themes/example/lms/templates/courseware/course_about.html
-msgid ""
-"Bulk discounts may apply for groups larger than 10. Contact "
-"{link_start}harvardxplus@harvard.edu{link_end} for more information."
-msgstr ""
-
-#: themes/example/lms/templates/courseware/course_about.html
-msgid "Email Us"
-msgstr ""
-
-#: themes/example/lms/templates/courseware/courses.html
-msgid "Lorem ipsum dolor sit amet."
-msgstr ""
-
-#: themes/example/lms/templates/static_templates/about.html
-msgid "About Us"
-msgstr ""
-
-#: themes/example/lms/templates/static_templates/contact.html
-msgid "Thank you for your inquiry"
-msgstr ""
-
-#: themes/example/lms/templates/static_templates/faq.html
-msgid "FAQ's"
-msgstr ""
-
-#: themes/example/lms/templates/static_templates/faq.html
-msgid "General FAQs"
-msgstr ""
-
-#: themes/example/lms/templates/static_templates/faq.html
-#: themes/example/lms/templates/static_templates/honor.html
-#: themes/example/lms/templates/static_templates/privacy.html
-#: themes/example/lms/templates/static_templates/tos.html
-msgid "Lorem ipsum dolor sit amet"
-msgstr ""
-
-#: themes/example/lms/templates/static_templates/faq.html
-msgid "Academic Planning"
-msgstr ""
-
-#: themes/example/lms/templates/static_templates/faq.html
-#: themes/example/lms/templates/static_templates/honor.html
-#: themes/example/lms/templates/static_templates/privacy.html
-#: themes/example/lms/templates/static_templates/tos.html
-msgid "Back to top"
-msgstr ""
-
-#: themes/example/lms/templates/static_templates/faq.html
-msgid "Registration"
-msgstr ""
-
-#: themes/example/lms/templates/static_templates/faq.html
-msgid "Finances"
-msgstr ""
-
-#: themes/example/lms/templates/student_account/login_and_register.html
-msgid "Sign in or Create Account"
-msgstr ""
-
 #: themes/stanford-style/lms/templates/footer.html
 msgid "Copyright {year}. All rights reserved."
 msgstr ""
@@ -24249,6 +24534,15 @@ msgstr ""
 
 #: cms/templates/certificates.html
 msgid "This course does not use a mode that offers certificates."
+msgstr ""
+
+#: cms/templates/certificates.html
+msgid ""
+"After you have configured and previewed your certificate, ask your edX "
+"partner manager to activate your certificate. When your certificate has been"
+" activated, you can begin issuing certificates to learners. Course team "
+"members without the Admin role cannot edit or delete an activated "
+"certificate."
 msgstr ""
 
 #: cms/templates/container.html
@@ -24461,6 +24755,10 @@ msgstr "Descripción del curso"
 
 #: cms/templates/settings.html
 msgid "Displayed on the course details page. Limit to 1000 characters."
+msgstr ""
+
+#: cms/templates/settings.html
+msgid "HTML Code Editor"
 msgstr ""
 
 #: cms/templates/settings.html

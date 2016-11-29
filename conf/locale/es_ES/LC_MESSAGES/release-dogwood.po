@@ -69,9 +69,9 @@
 # Enrique Centelles <ecentelles2003@yahoo.es>, 2016
 # Carlos Guzman <guzmca@gmail.com>, 2016
 # Rocío Pérez Venero <perezvenero.rocio@gmail.com>, 2016
+# mercefan <mercefan@gmail.com>, 2016
 # sandra bonillo <sandraboni13@gmail.com>, 2016
 # Jack R. <dny1020@aol.com>, 2016
-# mercefan <mercefan@gmail.com>, 2016
 # jorge jorge marrero <jjorgewill@gmail.com>, 2016
 # Daniel Vazquez <daniel@alabs.es>, 2016
 # LUCIA GOMEZ TEIJEIRO <lucy._.y@hotmail.com>, 2016
@@ -88,13 +88,14 @@
 # Francisco Cruz <paco@di.uc3m.es>, 2016
 # RUTH QUINTANA <rqvaquero@gmail.com>, 2016
 # Guillermo Peñarando Sánchez <guillerpsanchez@gmail.com>, 2016
+# Mercedes Rey <mrey@teltek.es>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
 "POT-Creation-Date: 2016-05-09 11:27+0000\n"
 "PO-Revision-Date: 2016-08-09 20:07+0000\n"
-"Last-Translator: Guillermo Peñarando Sánchez <guillerpsanchez@gmail.com>, 2016\n"
+"Last-Translator: Mercedes Rey <mrey@teltek.es>, 2016\n"
 "Language-Team: Spanish (Spain) (https://www.transifex.com/open-edx/teams/6205/es_ES/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1239,8 +1240,10 @@ msgstr "Diciembre"
 msgid "The file must end with the extension '{file_types}'."
 msgid_plural ""
 "The file must end with one of the following extensions: '{file_types}'."
-msgstr[0] ""
+msgstr[0] "El archivo debe finalizar con la extensión '{file_types'}."
 msgstr[1] ""
+"El archivo debe finalizar con una de las siguientes extensiones: "
+"'{file_types}'."
 
 #: common/djangoapps/util/file.py
 msgid "Maximum upload file size is {file_size} bytes."
@@ -1842,6 +1845,9 @@ msgid ""
 "Defines when to randomize the variables specified in the associated Python "
 "script. For problems that do not randomize values, specify \"Never\". "
 msgstr ""
+"Define cuando aleatorizar las variables especificadas en el script de Python"
+" asociado. Para los problemas que no aleatorizan los valores, especificar "
+"\"Nunca\"."
 
 #: common/lib/xmodule/xmodule/capa_base.py
 msgid "On Reset"
@@ -1939,6 +1945,13 @@ msgid ""
 "compromised. To obtain a key for your course, or to report an issue, please "
 "contact moocsupport@mathworks.com"
 msgstr ""
+"Introduzca la clave de la API proporcionada por MathWorks para acceder al "
+"servicio de MATLAB. Esta clave es otorgada para usar de forma exclusiva por "
+"este curso para la duración especificada. Por favor no comparta la clave de "
+"la API con otros cursos y notifique inmediatamente a MathWorks si cree que "
+"la clave ha sido expuesta o comprometida. Para obtener una clave para tu "
+"curso, o para reportar una incidencia, por favor contacte con "
+"moocsupport@mathworks.com"
 
 #: common/lib/xmodule/xmodule/capa_base.py
 msgid "Check"
@@ -2049,6 +2062,8 @@ msgid ""
 "Your answers have been saved but not graded. Click '{button_name}' to grade "
 "them."
 msgstr ""
+"Tus respuestas han sido guardadas pero no evaluadas. Haz click en "
+"'{button_name}' para evaluarlas."
 
 #. Translators: A student must "make an attempt" to solve the problem on the
 #. page before they can reset it.
@@ -2814,13 +2829,16 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Teams Configuration"
-msgstr ""
+msgstr "Configuración de equipos"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid ""
 "Enter configuration for the teams feature. Expects two entries: "
 "max_team_size and topics, where topics is a list of topics."
 msgstr ""
+"Introduzca la configuración para la funcionalidad de los equipos. Espera "
+"recibir dos entradas: max_team_size y topics, donde topics es una lista de "
+"temas."
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Enable Proctored Exams"
@@ -4326,6 +4344,8 @@ msgid ""
 "A human-readable description of the example certificate.  For example, "
 "'verified' or 'honor' to differentiate between two types of certificates."
 msgstr ""
+"Una descripción legible del certificado de ejemplo. Por ejemplo, "
+"'verificado' u 'honor' para diferenciar entre dos tipos de certificados."
 
 #: lms/djangoapps/certificates/models.py
 msgid ""
@@ -5823,6 +5843,8 @@ msgid ""
 "Certificate regeneration task has been started. You can view the status of "
 "the generation task in the \"Pending Tasks\" section."
 msgstr ""
+"La tarea de regeneración de certificados ha comenzado. Puedes ver el estado "
+"de la tarea de generación en la sección de \"Tareas pendientes\"."
 
 #: lms/djangoapps/instructor/views/api.py
 msgid "Student (username/email={user}) already in certificate exception list."
@@ -5845,6 +5867,9 @@ msgid ""
 "Student username/email field is required and can not be empty. Kindly fill "
 "in username/email and then press \"Add to Exception List\" button."
 msgstr ""
+"El campo de nombre de usuario/email del estudiante es obligatorio y no puede"
+" estar vacío. Por favor, escriba el nombre de usuario/email y  pulse el "
+"botón \"Añadir a la lista de excepción\"."
 
 #: lms/djangoapps/instructor/views/api.py
 msgid ""
@@ -6023,8 +6048,8 @@ msgstr "0 enviados"
 #: lms/djangoapps/instructor/views/instructor_task_helpers.py
 msgid "{num_emails} sent"
 msgid_plural "{num_emails} sent"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{num_emails} enviado"
+msgstr[1] "{num_emails} enviados"
 
 #: lms/djangoapps/instructor/views/instructor_task_helpers.py
 msgid "{num_emails} failed"
@@ -6755,9 +6780,7 @@ msgstr "Cantidad"
 msgid ""
 "List Price\n"
 "per item"
-msgstr ""
-"Listado de precios\n"
-"por artículo"
+msgstr "Precio\\npor curso"
 
 #: lms/djangoapps/shoppingcart/pdf.py
 msgid ""
@@ -7654,7 +7677,7 @@ msgstr "No tienes permisos para ver esta página."
 
 #: lms/djangoapps/student_account/views.py
 msgid "No user with the provided email address exists."
-msgstr ""
+msgstr "No existe ningún usuario con el correo electrónico facilitado."
 
 #: lms/djangoapps/student_account/views.py
 msgid "No email address provided."
@@ -7662,7 +7685,7 @@ msgstr ""
 
 #: lms/djangoapps/support/views/index.py
 msgid "View and regenerate certificates."
-msgstr ""
+msgstr "Ver y regenerar certificados."
 
 #: lms/djangoapps/support/views/index.py lms/templates/support/refund.html
 msgid "Manual Refund"
@@ -9016,7 +9039,7 @@ msgstr ""
 
 #: cms/djangoapps/contentstore/courseware_index.py
 msgid "General indexing error occurred"
-msgstr ""
+msgstr "Se ha producido un error inesperado."
 
 #: cms/djangoapps/contentstore/courseware_index.py
 msgid "(Unnamed)"
@@ -9364,7 +9387,7 @@ msgstr "Elemento inválido"
 #. import
 #: cms/djangoapps/contentstore/views/videos.py
 msgid "Imported"
-msgstr ""
+msgstr "Importado"
 
 #. Translators: This is the status for a video that is in an unknown state
 #: cms/djangoapps/contentstore/views/videos.py
@@ -12593,7 +12616,7 @@ msgstr ""
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Course options dropdown"
-msgstr ""
+msgstr "Menú desplegable de las opciones del curso"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Additional Actions Menu"
@@ -12698,6 +12721,8 @@ msgid ""
 "Pursue a {cert_name_long} to highlight the knowledge and skills you gain in "
 "this course."
 msgstr ""
+"Consigue una acreditación verificada {cert_name_long} para resaltar el "
+"conocimiento y las aptitudes que adquieras en este curso."
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid ""
@@ -12705,6 +12730,9 @@ msgid ""
 "the course. <br>{link_start}Learn more about the verified "
 "{cert_name_long}{link_end}."
 msgstr ""
+"Es oficial. Es fácil de compartir. Prueba ser motivador para completar el "
+"curso. <br>{link_start}Aprende más sobre la acreditación verificada "
+"{cert_name_long}{link_end}."
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Upgrade to Verified"
@@ -12987,8 +13015,8 @@ msgstr "por más votadas"
 #, python-format
 msgid "%s discussion started"
 msgid_plural "%s discussions started"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s debate empezado"
+msgstr[1] "%s debates empezados"
 
 #: lms/templates/discussion/_user_profile.html
 #, python-format
@@ -13956,21 +13984,23 @@ msgstr "Refrescar estado"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid "Student-Generated Certificates"
-msgstr ""
+msgstr "Certificados generados por el alumno"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid "Disable Student-Generated Certificates"
-msgstr ""
+msgstr "Deshabilitar los certificados generados por el alumno"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid "Enable Student-Generated Certificates"
-msgstr ""
+msgstr "Habilitar los certificados generados por el alumno"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid ""
 "You must successfully generate example certificates before you enable "
 "student-generated certificates."
 msgstr ""
+"Debes generar certificados de ejemplo exitosos antes de habilitar los "
+"certificados generados por el alumno."
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid "Generate Certificates"
@@ -14009,34 +14039,38 @@ msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid "Regenerate Certificates"
-msgstr ""
+msgstr "Regenerar certificados"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid ""
 "To regenerate certificates for your course, chose the learners who will "
 "receive regenerated certificates and click <br/> Regenerate Certificates."
 msgstr ""
+"Para regenerar certificados de tu curso, elige los estudiantes que recibirán"
+" certificados regenerados y haz click en <br/> Regenerar certificados."
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid ""
 "Regenerate for learners who have already received certificates. ({count})"
 msgstr ""
+"Regenerar para estudiantes que ya han recibido certificados. ({count})"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid "Regenerate for learners who have not received certificates. ({count})"
 msgstr ""
+"Regenerar para estudiantes que no han recibido certificados. ({count})"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid "Regenerate for learners in an error state. ({count})"
-msgstr ""
+msgstr "Regenerar para estudiantes en estado de error. ({count})"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid "Certificate Generation History"
-msgstr ""
+msgstr "Historial de la generación de certificados"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid "SET CERTIFICATE EXCEPTIONS"
-msgstr ""
+msgstr "ESTABLECER EXCEPCIONES DE CERTIFICADO"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid ""
@@ -14045,6 +14079,10 @@ msgid ""
 "you add learners to the exception list, click Generate Exception "
 "Certificates below."
 msgstr ""
+"Establecer excepciones para generar certificados de alumnos que no pasen la "
+"nota de corte para recibir un certificado pero que han sido marcados con una"
+" excepción por el equipo del curso. Después de añadir estudiantes a la lista"
+" de excepción, haz click en Generar certificados de excepción debajo."
 
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
 msgid "Enrollment Information"
@@ -14192,7 +14230,7 @@ msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/data_download.html
 msgid "Download a CSV of learners who can enroll"
-msgstr "Descarga el listado de estudiantes matriculados en CSV"
+msgstr "Descarga en CSV el listado de estudiantes que pueden matricularse"
 
 #: lms/templates/instructor/instructor_dashboard_2/data_download.html
 msgid ""
@@ -16776,12 +16814,17 @@ msgid ""
 "right corner of the form and select {em_start}Edit{em_end} or the delete "
 "icon."
 msgstr ""
+"Para editar o borrar un certificado antes de ser activado, ponga el puntero "
+"del ratón sobre la esquina superior derecha del formulario y seleccione "
+"{em_start}Edit{em_end} o el icono de borrado."
 
 #: cms/templates/certificates.html
 msgid ""
 "To view a sample certificate, choose a course mode and select "
 "{em_start}Preview Certificate{em_end}."
 msgstr ""
+"Para ver un certificado de muestra, elija un modo de curso y seleccione "
+"{em_start}Previsualizar certificado{em_end}."
 
 #: cms/templates/certificates.html
 msgid "Issuing Certificates to Learners"
@@ -16793,6 +16836,10 @@ msgid ""
 "selects {em_start}Activate{em_end}. Course team members without the Admin "
 "role cannot edit or delete an activated certificate."
 msgstr ""
+"Para empezar a emitir certificados, un miembro del equipo del curso con el "
+"rol de administrador debe seleccionar {em_start}Activar{em_end}. Los "
+"miembros del equipo del curso sin rol de administrador no pueden editar o "
+"borrar un certificado activado."
 
 #: cms/templates/certificates.html
 msgid ""
@@ -16800,6 +16847,9 @@ msgid ""
 "learners who have already earned certificates will no longer be able to "
 "access them."
 msgstr ""
+"{em_start}No{em_end} borrar certificados después de que un curso haya "
+"comenzado; los estudiantes que ya hayan obtenido certificados no serán "
+"capaces de acceder a los mismos."
 
 #: cms/templates/certificates.html
 msgid "Learn more about certificates"
@@ -18874,6 +18924,8 @@ msgid ""
 "All course team members can access content in Studio, the LMS, and Insights,"
 " but are not automatically enrolled in the course."
 msgstr ""
+"Todos los miembros del equipo pueden acceder al contenido de Studio, el LMS "
+"e Insights, pero no se inscriben automáticamente en el curso."
 
 #: cms/templates/manage_users.html
 msgid "Transferring Ownership"
