@@ -14011,6 +14011,8 @@ msgid ""
 "Course certificate generation requires an activated web certificate "
 "configuration."
 msgstr ""
+"La generación de certificado de curso requiere una configuración activa de "
+"certificado web."
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid ""

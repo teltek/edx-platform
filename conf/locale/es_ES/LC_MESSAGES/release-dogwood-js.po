@@ -10586,7 +10586,7 @@ msgstr "Generar certificados de excepción"
 #: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-white-list.d79a92475d37.underscore
 #: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
 msgid "Generate a Certificate for all "
-msgstr ""
+msgstr "Generar un certificados para todas las"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
 #: test_root/staticfiles/cms/templates/instructor/instructor_dashboard_2/certificate-white-list.d79a92475d37.underscore
@@ -10611,6 +10611,7 @@ msgstr "incorporaciones a la lista de excepción"
 #: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
 msgid "Generate a Certificate for all users on the Exception list"
 msgstr ""
+"Generar un certificado para todos los estudiantes en la lista de excepción"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
 #: test_root/staticfiles/cms/templates/instructor/instructor_dashboard_2/certificate-white-list.d79a92475d37.underscore
