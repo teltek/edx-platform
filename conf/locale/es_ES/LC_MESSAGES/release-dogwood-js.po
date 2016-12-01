@@ -3331,6 +3331,8 @@ msgstr "Error al generar las calificaciones. Por favor, prueba de nuevo."
 #: lms/static/coffee/src/instructor_dashboard/data_download.js
 msgid "Error generating problem grade report. Please try again."
 msgstr ""
+"Error al generar el informe de las notas de los problemas. Por favor "
+"inténtelo más tarde."
 
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 #: lms/static/js/student_account/views/account_settings_factory.js
