@@ -13582,16 +13582,8 @@ msgstr "por más votadas"
 #, python-format
 msgid "%s discussion started"
 msgid_plural "%s discussions started"
-msgstr[0] ""
-"#-#-#-#-#  release-dogwood.po (edx-platform)  #-#-#-#-#\n"
-"%s debate empezado\n"
-"#-#-#-#-#  mako.po (edx-platform)  #-#-#-#-#\n"
-"Iniciada %s discusión"
-msgstr[1] ""
-"#-#-#-#-#  release-dogwood.po (edx-platform)  #-#-#-#-#\n"
-"%s debates empezados\n"
-"#-#-#-#-#  mako.po (edx-platform)  #-#-#-#-#\n"
-"%s discusiones iniciadas "
+msgstr[0] "Iniciada %s discusión"
+msgstr[1] "%s discusiones iniciadas "
 
 #: lms/templates/discussion/_user_profile.html
 #, python-format
