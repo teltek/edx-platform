@@ -4915,6 +4915,9 @@ msgid ""
 "The email address you use to sign in. Communications from {platform_name} "
 "and your courses are sent to this address."
 msgstr ""
+"La dirección de correo electrónico empleada para loguearse. Las "
+"notificaciones desde {platform_name} y tus cursos son enviadas a esta "
+"dirección."
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 #: lms/templates/student_account/account.underscore
@@ -4952,6 +4955,8 @@ msgid ""
 "The language used throughout this site. This site is currently available in "
 "a limited number of languages."
 msgstr ""
+"El idioma empleado en esta plataforma. Actualmente esta plataforma está "
+"disponible en un número limitado de idiomas."
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "Country or Region"
