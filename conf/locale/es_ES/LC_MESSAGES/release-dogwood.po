@@ -13015,8 +13015,8 @@ msgstr "por más votadas"
 #, python-format
 msgid "%s discussion started"
 msgid_plural "%s discussions started"
-msgstr[0] "%s debate empezado"
-msgstr[1] "%s debates empezados"
+msgstr[0] "Iniciada %s discusión"
+msgstr[1] "%s discusiones iniciadas "
 
 #: lms/templates/discussion/_user_profile.html
 #, python-format
@@ -14011,6 +14011,8 @@ msgid ""
 "Course certificate generation requires an activated web certificate "
 "configuration."
 msgstr ""
+"La generación de certificado de curso requiere una configuración activa de "
+"certificado web."
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid ""
