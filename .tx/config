@@ -61,13 +61,13 @@ source_file = conf/locale/en/LC_MESSAGES/wiki.po
 source_lang = en
 type = PO
 
-[edx-named-releases.release-dogwood]
+[open-edx-releases.release-dogwood]
 file_filter = conf/locale/<lang>/LC_MESSAGES/release-dogwood.po
 source_file = conf/locale/en/LC_MESSAGES/release-dogwood.po
 source_lang = en
 type = PO
 
-[edx-named-releases.release-dogwood-js]
+[open-edx-releases.release-dogwood-js]
 file_filter = conf/locale/<lang>/LC_MESSAGES/release-dogwood-js.po
 source_file = conf/locale/en/LC_MESSAGES/release-dogwood-js.po
 source_lang = en
