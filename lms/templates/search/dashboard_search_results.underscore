@@ -15,7 +15,7 @@
                 { num_items: pageSize },
                 true
             ) %>
-            <i class="icon fa fa-spinner fa-spin"></i>
+            <span class="icon fa fa-spinner fa-spin" aria-hidden="true" title="<%= interpolate(ngettext('Load next %(num_items)s result', 'Load next %(num_items)s results', pageSize), { num_items: pageSize }, true) %>"></span>
         </a>
     <% } %>
 
