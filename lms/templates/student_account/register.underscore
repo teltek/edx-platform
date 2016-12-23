@@ -72,20 +72,23 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade register-modal register-modal-window" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade register-modal register-modal-window" id="myModal" tabindex="-1" data-keyboard="false" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog register-modal" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close-button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close-button" data-dismiss="modal" aria-label="<%- gettext("Close") %>"><span aria-hidden="true">&times;</span></button>
         <h2 class="modal-title review-title review-font" id="myModalLabel"><%- gettext("Review your info") %></h2>
       </div>
-      <div class="modal-body">
-        <ul id="form-data-fields" class="review-info-ul">
+      <div class="modal-body" role="list">
+        <ul id="form-data-fields" class="review-info-ul" role="group">
 	</ul>
       </div>
       <div class="modal-footer review-info">
-        <button type="button" class="action-primary review-button" data-dismiss="modal"><%- gettext("Edit") %></button>
-	<button type="submit" class="action action-primary action-update js-register register-button review-button"><%- gettext("Create your account") %></button>
+	<button type="submit" class="action action-primary action-update js-register register-button review-button save-button"><%- gettext("Create your account") %></button>
+      </div>
+      <div class="modal-footer review-info">
+        <button type="button" class="action-primary review-button edit-button" data-dismiss="modal"><%- gettext("Edit") %></button>
+        <button type="button" id="cancelButton" class="action-primary review-button cancel-button"><%- gettext("Cancel") %></button>
       </div>
     </div>
   </div>
