@@ -27,7 +27,7 @@
                    template: _.template( '<li><%= content %></li>' ),
 
                     msg: {
-                        email: gettext("The email address you've provided isn't formatted correctly."),
+                        email: gettext("The email address you've provided isn't formatted correctly.") + " " + gettext("Email format should be:  example@domain.com. Valid keywords for an email: uppercase and lowercase English letters (a-z, A-Z), digits 0 to 9, characters ! # $ %% & ' * + - / = ? ^ _ ` { | } ~, character . (dot, period, full stop) provided that it is not the first or last character, and provided also that it does not appear two or more times consecutively."),
                         min: gettext("%(field)s must have at least %(count)d characters."),
                         max: gettext("%(field)s can only contain up to %(count)d characters."),
                         required: gettext("Please enter your %(field)s.")
@@ -141,7 +141,6 @@
                             if ( !value ) {
                                 label = _fn.validate.getLabel( $el.attr('id') );
                                 customMsg = $el.data('errormsg-' + key) || false;
-
                                 // If the field has a custom error msg attached, use it
                                 if ( customMsg ) {
                                     content = customMsg;
