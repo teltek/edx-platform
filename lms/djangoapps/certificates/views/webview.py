@@ -108,7 +108,7 @@ def _update_certificate_context(context, user_certificate, platform_name):
         'September': 'septiembre',
         'October': 'octubre',
         'November': 'noviembre',
-        'December': 'december'
+        'December': 'diciembre'
         }
     context['certificate_date_issued'] = _('{day} {month} {year}').format(
         month=spanish_months.get(user_certificate.modified_date.strftime("%B")),
