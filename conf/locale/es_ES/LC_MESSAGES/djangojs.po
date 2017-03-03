@@ -62,7 +62,7 @@
 # Tony G. Bolaño <tonybolanyo@gmail.com>, 2016
 # Susan Webster <susan@db.uc3m.es>, 2016
 # Rubén Torres <r.torres@usal.es>, 2016
-# Oscar Carrero <ocf@openmailbox.org>, 2016
+# Oscar <ocf@openmailbox.org>, 2016
 # luistrenado <inactive+luistrenado@transifex.com>, 2016
 # Juan Rodríguez de Vera Mouliaá <jrodriguez@um.es>, 2016
 # David Ruiz <daruc20@gmail.com>, 2016
@@ -86,6 +86,7 @@
 # valenciaupv <valenciaupv@gmail.com>, 2016
 # Ignacio Piqueras <igpisa@upv.es>, 2016
 # Raúl Aguilera Ortega <raguiler@db.uc3m.es>, 2016
+# mercefan <mercefan@gmail.com>, 2016
 # ispal <asanchez@induscomp.com>, 2016
 # Gonzalo Rodrigo Ruiz <gonzalorodrigoruiz@gmail.com>, 2016
 # Luis Carlos Contreras <jinchuika@gmail.com>, 2016
@@ -93,7 +94,6 @@
 # MiguelSdP <miguelsdp@gmail.com>, 2016
 # Rosa Sanchez Hernandez <rosa@db.uc3m.es>, 2016
 # Jack R. <dny1020@aol.com>, 2016
-# mercefan <mercefan@gmail.com>, 2016
 # Iago Enjo <enjo@ub.edu>, 2016
 # Daniel Vazquez <daniel@alabs.es>, 2016
 # Steven McArthur <inactive+legallyunemployed@transifex.com>, 2016
@@ -115,6 +115,7 @@
 # juditseb <juditseb@hotmail.com>, 2016
 # karl_kox <chus_vader@hotmail.com>, 2016
 # Tesaur <pablo15892@hotmail.com>, 2016
+# Katerina Katapodi <katerinakatapodi@gmail.com>, 2017
 # #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 # edX translation file.
 # Copyright (C) 2017 EdX
@@ -210,7 +211,7 @@
 # Steven McArthur <inactive+legallyunemployed@transifex.com>, 2014
 # mercefan <mercefan@gmail.com>, 2016
 # MiguelSdP <miguelsdp@gmail.com>, 2014
-# Oscar Carrero <ocf@openmailbox.org>, 2015
+# Oscar <ocf@openmailbox.org>, 2015
 # Paco López <pacol@db.uc3m.es>, 2015
 # Rubén Torres <r.torres@usal.es>, 2015
 # sandra bonillo <sandraboni13@gmail.com>, 2015
@@ -246,8 +247,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2017-01-05 17:02+0000\n"
-"PO-Revision-Date: 2017-01-05 17:07+0000\n"
+"POT-Creation-Date: 2017-01-23 17:56+0000\n"
+"PO-Revision-Date: 2017-01-23 18:00+0000\n"
 "Last-Translator: Ned Batchelder <ned@edx.org>\n"
 "Language-Team: Spanish (Spain) (http://www.transifex.com/open-edx/edx-platform/language/es_ES/)\n"
 "MIME-Version: 1.0\n"
@@ -2776,7 +2777,7 @@ msgstr "Mostrando %(first_index)s-%(last_index)s de %(num_items)s total"
 
 #: common/static/common/js/utils/edx.utils.validate.js
 msgid "The email address you've provided isn't formatted correctly."
-msgstr "El correo electrónico usado no tiene el formato adecuado"
+msgstr "El correo electrónico usado no tiene el formato adecuado."
 
 #: common/static/common/js/utils/edx.utils.validate.js
 msgid "%(field)s must have at least %(count)d characters."
@@ -10990,7 +10991,7 @@ msgstr ""
 #: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-white-list.d79a92475d37.underscore
 #: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
 msgid "User Email"
-msgstr ""
+msgstr "Correo de usuario "
 
 #: lms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
 #: test_root/staticfiles/cms/templates/instructor/instructor_dashboard_2/certificate-white-list.d79a92475d37.underscore
@@ -10998,7 +10999,7 @@ msgstr ""
 #: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-white-list.d79a92475d37.underscore
 #: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
 msgid "Exception Granted"
-msgstr ""
+msgstr "Excepcion ofrecida"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
 #: test_root/staticfiles/cms/templates/instructor/instructor_dashboard_2/certificate-white-list.d79a92475d37.underscore
@@ -11006,7 +11007,7 @@ msgstr ""
 #: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-white-list.d79a92475d37.underscore
 #: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
 msgid "Certificate Generated"
-msgstr ""
+msgstr "Certificado Generado"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
 #: test_root/staticfiles/cms/templates/instructor/instructor_dashboard_2/certificate-white-list.d79a92475d37.underscore
@@ -11025,7 +11026,7 @@ msgstr "Notas"
 #: cms/templates/js/previous-video-upload-list.underscore
 #: lms/templates/instructor/instructor_dashboard_2/certificate-invalidation.underscore
 msgid "Action"
-msgstr ""
+msgstr "Accion"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
 #: test_root/staticfiles/cms/templates/instructor/instructor_dashboard_2/certificate-white-list.d79a92475d37.underscore
@@ -11033,7 +11034,7 @@ msgstr ""
 #: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-white-list.d79a92475d37.underscore
 #: test_root/staticfiles/lms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
 msgid "Remove from List"
-msgstr ""
+msgstr "Eliminar de la lista"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-discussions-course-wide.underscore
 #: lms/templates/instructor/instructor_dashboard_2/cohorts.underscore
@@ -13704,6 +13705,10 @@ msgid ""
 " cohorts are disabled. You must enable cohorts for the feature to work."
 msgstr ""
 
+#: lms/static/js/instructor_dashboard/send_email.js
+msgid "All learners in the {track_name} track"
+msgstr ""
+
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid ""
 "Error getting student progress url for '<%- student_id %>'. Make sure that "
@@ -14982,7 +14987,17 @@ msgid "Learners see the published subsection and can access its content."
 msgstr ""
 
 #: cms/templates/js/content-visibility-editor.underscore
+msgid "Hide content after course end date"
+msgstr ""
+
+#: cms/templates/js/content-visibility-editor.underscore
 msgid "Hide content after due date"
+msgstr ""
+
+#: cms/templates/js/content-visibility-editor.underscore
+msgid ""
+"After the course\\'s end date has passed, learners can no longer access "
+"subsection content. The subsection remains included in grade calculations."
 msgstr ""
 
 #: cms/templates/js/content-visibility-editor.underscore
@@ -15004,9 +15019,9 @@ msgstr ""
 #: cms/templates/js/content-visibility-editor.underscore
 #, python-format
 msgid ""
-"If you select an option other than \"%(hide_label)s\", after the subsection "
-"release date has passed, published units in this subsection will become "
-"available to learners unless units are explicitly hidden."
+"If you select an option other than \"%(hide_label)s\", published units in "
+"this subsection become available to learners unless they are explicitly "
+"hidden."
 msgstr ""
 
 #: cms/templates/js/course-instructor-details.underscore
@@ -15077,6 +15092,10 @@ msgstr "Prerrequisitos: %(prereq_display_name)s "
 #: cms/templates/js/course-outline.underscore
 msgid "Duplicate"
 msgstr "Duplicar"
+
+#: cms/templates/js/course-outline.underscore
+msgid "Subsection is hidden after course end date"
+msgstr ""
 
 #: cms/templates/js/course-outline.underscore
 msgid "Subsection is hidden after due date"

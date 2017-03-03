@@ -65,12 +65,12 @@
 # Gonzalo Rodrigo Ruiz <gonzalorodrigoruiz@gmail.com>, 2016
 # Walter Ronald <walterronald21@gmail.com>, 2016
 # ispal <asanchez@induscomp.com>, 2016
+# mercefan <mercefan@gmail.com>, 2016
 # Maxfer <maxfer@gmail.com>, 2016
 # mcolomer <mcmlilhity@gmail.com>, 2016
 # Enrique Centelles <ecentelles2003@yahoo.es>, 2016
 # Carlos Guzman <guzmca@gmail.com>, 2016
 # Rocío Pérez Venero <perezvenero.rocio@gmail.com>, 2016
-# mercefan <mercefan@gmail.com>, 2016
 # sandra bonillo <sandraboni13@gmail.com>, 2016
 # Jack R. <dny1020@aol.com>, 2016
 # jorge jorge marrero <jjorgewill@gmail.com>, 2016
@@ -90,6 +90,7 @@
 # RUTH QUINTANA <rqvaquero@gmail.com>, 2016
 # Guillermo Peñarando Sánchez <guillerpsanchez@gmail.com>, 2016
 # Mercedes Rey <mrey@teltek.es>, 2016
+# Katerina Katapodi <katerinakatapodi@gmail.com>, 2017
 # #-#-#-#-#  django-partial.po (edx-platform)  #-#-#-#-#
 # edX translation file.
 # Copyright (C) 2017 EdX
@@ -227,6 +228,7 @@
 # juanan <juanan@diariolinux.com>, 2014
 # Juan Camilo Montoya Franco <juan.montoya@edunext.co>, 2013
 # Juan Rodríguez de Vera Mouliaá <jrodriguez@um.es>, 2016
+# Katerina Katapodi <katerinakatapodi@gmail.com>, 2017
 # Luis Ricardo Ruiz <luislicardo1307@gmail.com>, 2013
 # manolograma <manolograma@gmail.com>, 2014
 # Mariangeles Fernandez <mariangelesfm@gmail.com>, 2015
@@ -458,6 +460,7 @@ msgstr "Ed profesional"
 #: lms/djangoapps/shoppingcart/reports.py cms/templates/widgets/header.html
 #: lms/templates/courseware/courseware.html common/lib/xmodule/xmodule/tabs.py
 #: lms/djangoapps/courseware/tabs.py lms/djangoapps/courseware/views/views.py
+#: lms/templates/help_modal.html
 msgid "Course"
 msgstr "Curso"
 
@@ -1090,7 +1093,7 @@ msgstr "%A, %d %B %Y"
 #. See http://strftime.org for details.
 #: common/djangoapps/util/date_utils.py
 msgid "DATE_TIME_FORMAT"
-msgstr "%d %b, %Y a las %H:%M"
+msgstr "%d %B %Y a las %H:%M"
 
 #. Translators: the translation for "SHORT_DATE_FORMAT" must be a
 #. format string for formatting dates in a brief form.  For example,
@@ -20437,6 +20440,8 @@ msgid ""
 "Content group no longer exists. Please choose another or allow access to All"
 " Students and staff"
 msgstr ""
+"El grupo de contenido no existe mas. Por favor elige un otro o dar acceso a "
+"Todos los Estudiantes y persona"
 
 #: cms/templates/visibility_editor.html
 msgid "Verification Checkpoint"
@@ -20452,6 +20457,9 @@ msgid ""
 "the content in this component. Learners who do not require verification see "
 "this content by default."
 msgstr ""
+"Los alumnos que deben ser verificado deben pasear el punto de check para ver"
+" al contenido en el componente. Los alumnos que no necesitan ser verificados"
+" ven al contenido faltado"
 
 #: cms/templates/emails/activation_email.txt
 msgid ""
@@ -23164,18 +23172,33 @@ msgid ""
 msgstr ""
 
 #: lms/templates/help_modal.html
+msgid "- Select -"
+msgstr ""
+
+#: lms/templates/help_modal.html
 msgid "Details of the problem you are encountering{asterisk}"
 msgstr ""
 
 #: lms/templates/hidden_content.html
-msgid "The due date for this {subsection_format} has passed."
+msgid "The course has ended."
+msgstr ""
+
+#: lms/templates/hidden_content.html
+msgid "The due date for this assignment has passed."
 msgstr ""
 
 #: lms/templates/hidden_content.html
 msgid ""
-"Because the due date has passed, this {subsection_format} is no longer "
-"available.{line_break}If you have completed this {subsection_format}, your "
-"grade is available on the {link_start}progress page{link_end}."
+"Because the course has ended, this assignment is no longer "
+"available.{line_break}If you have completed this assignment, your grade is "
+"available on the {link_start}progress page{link_end}."
+msgstr ""
+
+#: lms/templates/hidden_content.html
+msgid ""
+"Because the due date has passed, this assignment is no longer "
+"available.{line_break}If you have completed this assignment, your grade is "
+"available on the {link_start}progress page{link_end}."
 msgstr ""
 
 #. Translators: 'Open edX' is a registered trademark, please keep this
@@ -23237,6 +23260,10 @@ msgid ""
 "You can find the answers to most of your questions in our list of FAQs. "
 "After you enroll in a course, you can also find answers in the course "
 "discussions."
+msgstr ""
+
+#: lms/templates/seq_module.html
+msgid "Sequence"
 msgstr ""
 
 #: lms/templates/staff_problem_info.html
@@ -24186,6 +24213,10 @@ msgid "(Learners not explicitly assigned to a cohort)"
 msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/send_email.html
+msgid "Learners in the {track_name} Track"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/send_email.html
 msgid "(Maximum 128 characters)"
 msgstr ""
 
@@ -24562,9 +24593,9 @@ msgstr ""
 
 #: themes/edx.org/lms/templates/footer.html
 msgid ""
-"© 2016 edX Inc.  All rights reserved except where noted.  EdX, Open edX and "
-"the edX and Open EdX logos are registered trademarks or trademarks of edX "
-"Inc."
+"© 2012-{year} edX Inc.  All rights reserved except where noted.  EdX, Open "
+"edX and the edX and Open EdX logos are registered trademarks or trademarks "
+"of edX Inc."
 msgstr ""
 
 #: themes/stanford-style/lms/templates/footer.html
@@ -24620,6 +24651,12 @@ msgstr ""
 msgid ""
 "Click the {strong_start}Edit{strong_end} icon in a component to edit its "
 "content."
+msgstr ""
+
+#: cms/templates/container.html
+msgid ""
+"To create a link to this unit from an HTML component in this course, enter "
+"\"/jump_to_id/<location ID>\" as the URL value."
 msgstr ""
 
 #: cms/templates/course_outline.html
@@ -25014,7 +25051,7 @@ msgstr ""
 
 #: cms/templates/widgets/problem-edit.html
 msgid "Insert a numerical response"
-msgstr ""
+msgstr "Inserar una rispuesta numerica "
 
 #: cms/templates/widgets/problem-edit.html
 msgid "Insert a dropdown response"
@@ -25026,4 +25063,4 @@ msgstr ""
 
 #: cms/templates/widgets/user_dropdown.html
 msgid "Maintenance"
-msgstr ""
+msgstr "Mantenimiento "

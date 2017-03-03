@@ -64,12 +64,12 @@
 # Gonzalo Rodrigo Ruiz <gonzalorodrigoruiz@gmail.com>, 2016
 # Walter Ronald <walterronald21@gmail.com>, 2016
 # ispal <asanchez@induscomp.com>, 2016
+# mercefan <mercefan@gmail.com>, 2016
 # Maxfer <maxfer@gmail.com>, 2016
 # mcolomer <mcmlilhity@gmail.com>, 2016
 # Enrique Centelles <ecentelles2003@yahoo.es>, 2016
 # Carlos Guzman <guzmca@gmail.com>, 2016
 # Rocío Pérez Venero <perezvenero.rocio@gmail.com>, 2016
-# mercefan <mercefan@gmail.com>, 2016
 # sandra bonillo <sandraboni13@gmail.com>, 2016
 # Jack R. <dny1020@aol.com>, 2016
 # jorge jorge marrero <jjorgewill@gmail.com>, 2016
@@ -89,13 +89,14 @@
 # RUTH QUINTANA <rqvaquero@gmail.com>, 2016
 # Guillermo Peñarando Sánchez <guillerpsanchez@gmail.com>, 2016
 # Mercedes Rey <mrey@teltek.es>, 2016
+# Katerina Katapodi <katerinakatapodi@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
 "POT-Creation-Date: 2016-05-09 11:27+0000\n"
 "PO-Revision-Date: 2016-08-09 20:07+0000\n"
-"Last-Translator: Mercedes Rey <mrey@teltek.es>, 2016\n"
+"Last-Translator: Katerina Katapodi <katerinakatapodi@gmail.com>, 2017\n"
 "Language-Team: Spanish (Spain) (https://www.transifex.com/open-edx/teams/6205/es_ES/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -899,7 +900,7 @@ msgstr "%A, %d %B %Y"
 #. See http://strftime.org for details.
 #: common/djangoapps/util/date_utils.py
 msgid "DATE_TIME_FORMAT"
-msgstr "%d %b, %Y a las %H:%M"
+msgstr "%d %B %Y a las %H:%M"
 
 #. Translators: the translation for "SHORT_DATE_FORMAT" must be a
 #. format string for formatting dates in a brief form.  For example,
@@ -19839,6 +19840,8 @@ msgid ""
 "Content group no longer exists. Please choose another or allow access to All"
 " Students and staff"
 msgstr ""
+"El grupo de contenido no existe mas. Por favor elige un otro o dar acceso a "
+"Todos los Estudiantes y persona"
 
 #: cms/templates/visibility_editor.html
 msgid "Verification Checkpoint"
@@ -19854,6 +19857,9 @@ msgid ""
 "the content in this component. Learners who do not require verification see "
 "this content by default."
 msgstr ""
+"Los alumnos que deben ser verificado deben pasear el punto de check para ver"
+" al contenido en el componente. Los alumnos que no necesitan ser verificados"
+" ven al contenido faltado"
 
 #: cms/templates/emails/activation_email.txt
 msgid ""
