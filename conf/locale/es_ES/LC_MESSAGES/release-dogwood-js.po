@@ -11420,7 +11420,7 @@ msgstr "Ha ocurrido un error."
 #: test_root/staticfiles/lms/templates/student_account/password_reset.cb2e909309a9.underscore
 #: test_root/staticfiles/lms/templates/student_account/password_reset.underscore
 msgid "Password assistance"
-msgstr "Ayuda con la constraseña"
+msgstr "Ayuda con la contraseña"
 
 #: lms/templates/student_account/password_reset.underscore
 #: test_root/staticfiles/cms/templates/student_account/password_reset.cb2e909309a9.underscore
