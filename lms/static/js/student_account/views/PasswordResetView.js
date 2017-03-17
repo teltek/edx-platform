@@ -27,6 +27,14 @@
                 this.listenTo( this.model, 'sync', this.saveSuccess );
             },
 
+            postRender: function() {
+                var $container = $(this.el);
+                this.$form = $container.find('form');
+                this.$errors = $container.find('.submission-error');
+                this.$submitButton = $container.find(this.submitButton);
+                $("#password-reset").focus();
+            },
+
             toggleErrorMsg: function( show ) {
                 if ( show ) {
                     this.setErrors();
