@@ -51,7 +51,7 @@ from .processors import (
 
 import json
 from .decorators import enforce_shopping_cart_enabled
-
+from xmodule.modulestore.django import ModuleI18nService
 
 log = logging.getLogger("shoppingcart")
 AUDIT_LOG = logging.getLogger("audit")
@@ -928,7 +928,7 @@ def _show_receipt_html(request, order):
         'currency': settings.PAID_COURSE_REGISTRATION_CURRENCY[0],
         'total_registration_codes': total_registration_codes,
         'reg_code_info_list': reg_code_info_list,
-        'order_purchase_date': order.purchase_time.strftime("%B %d, %Y"),
+        'order_purchase_date': ModuleI18nService().strftime(order.purchase_time, "%d %B %Y"),
         'course_id': course_id,
         'enrollment_mode': enrollment_mode
     }
