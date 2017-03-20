@@ -125,3 +125,6 @@ lms/lib/comment_client/python
 autodeploy.properties
 .ws_migrations_complete
 dist
+
+### To include Pumukit hardcoded
+!common/lib/xmodule/XModule.egg-info

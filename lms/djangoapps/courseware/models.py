@@ -82,6 +82,7 @@ class StudentModule(models.Model):
     MODULE_TYPES = (('problem', 'problem'),
                     ('video', 'video'),
                     ('html', 'html'),
+                    ('pumukit', 'pumukit'),
                     ('course', 'course'),
                     ('chapter', 'Section'),
                     ('sequential', 'Subsection'),
