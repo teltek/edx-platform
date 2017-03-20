@@ -22728,4 +22728,3 @@ msgid ""
 msgstr ""
 "Se creó una nueva revisión: Fusión entre la Revisión #%(r1)d y la Revisión "
 "#%(r2)d"
-
