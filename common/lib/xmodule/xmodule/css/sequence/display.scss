@@ -122,7 +122,7 @@ $seq-nav-height: 44px;
         }
 
         //video
-        &.seq_video {
+        &.seq_video, &.seq_pumukit {
           .icon:before {
             content: "\f008"; // .fa-film
           }
