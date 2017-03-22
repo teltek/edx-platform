@@ -14,6 +14,7 @@ XMODULES = [
     "poll_question = xmodule.poll_module:PollDescriptor",
     "problem = xmodule.capa_module:CapaDescriptor",
     "problemset = xmodule.seq_module:SequenceDescriptor",
+    "pumukit = xmodule.pumukit_module:PumukitDescriptor",
     "randomize = xmodule.randomize_module:RandomizeDescriptor",
     "split_test = xmodule.split_test_module:SplitTestDescriptor",
     "section = xmodule.backcompat_module:SemanticSectionDescriptor",
