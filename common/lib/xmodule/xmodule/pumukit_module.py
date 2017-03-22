@@ -124,8 +124,8 @@ class PumukitModule(PumukitFields, XModule):
     """
     icon_class = 'video'
     js = {
-        'js': [
-            resource_string(__name__, 'js/src/pumukit/display.js')
+        'coffee': [
+            resource_string(__name__, 'js/src/pumukit/display.coffee')
         ]
     }
     css = {'scss': [resource_string(__name__, 'css/pumukit/display.scss')]}
