@@ -61,10 +61,11 @@ from student.tasks import send_activation_email
 from lms.djangoapps.commerce.utils import EcommerceService  # pylint: disable=import-error
 from lms.djangoapps.verify_student.models import SoftwareSecurePhotoVerification  # pylint: disable=import-error
 from bulk_email.models import Optout, BulkEmailFlag  # pylint: disable=import-error
-from certificates.models import CertificateStatuses, certificate_status_for_student
+from certificates.models import CertificateStatuses, certificate_status_for_student, GeneratedCertificate
 from certificates.api import (  # pylint: disable=import-error
     get_certificate_url,
     has_html_certificates_enabled,
+    format_certificate_for_user,
 )
 from lms.djangoapps.grades.new.course_grade import CourseGradeFactory
 
@@ -745,6 +746,9 @@ def dashboard(request):
     )
     courses_requirements_not_met = get_pre_requisite_courses_not_completed(user, courses_having_prerequisites)
 
+    # Populate the Certificate History for the side-bar.
+    certificate_history_list = _get_certificate_history_for_user(user.username)
+
     if 'notlive' in request.GET:
         redirect_message = _("The course you are looking for does not start until {date}.").format(
             date=request.GET['notlive']
@@ -783,6 +787,7 @@ def dashboard(request):
         'enrolled_courses_either_paid': enrolled_courses_either_paid,
         'provider_states': [],
         'order_history_list': order_history_list,
+        'certificate_history_list': certificate_history_list,
         'courses_requirements_not_met': courses_requirements_not_met,
         'nav_hidden': True,
         'programs_by_run': programs_by_run,
@@ -838,6 +843,35 @@ def _create_recent_enrollment_message(course_enrollments, course_modes):  # pyli
             {'course_enrollment_messages': enroll_messages, 'platform_name': platform_name}
         )
 
+def _get_certificate_history_for_user(username):
+    """
+    Retrieve certificate information for a particular user.
+
+    Arguments:
+        username (unicode): The identifier of the user.
+
+    Returns: list
+
+    Example Usage:
+    >>> get_certificate_history_for_user("bob")
+    [
+        {
+            "username": "bob",
+            "course_key": CourseLocator('edX', 'DemoX', 'Demo_Course', None, None),
+            "type": "verified",
+            "status": "downloadable",
+            "download_url": "http://www.example.com/cert.pdf",
+            "grade": "0.98",
+            "created": 2015-07-31T00:00:00Z,
+            "modified": 2015-07-31T00:00:00Z
+        }
+    ]
+
+    """
+    return [
+        format_certificate_for_user(username, cert)
+        for cert in GeneratedCertificate.eligible_certificates.filter(user__username=username, status='downloadable').order_by("course_id")
+    ]
 
 def _get_recently_enrolled_courses(course_enrollments):
     """
