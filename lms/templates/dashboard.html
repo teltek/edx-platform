@@ -173,6 +173,19 @@ from openedx.core.djangolib.markup import HTML, Text
 
             <%include file="${static.get_template_path('dashboard/_dashboard_status_verification.html')}" />
 
+	    % if len(certificate_history_list):
+            <li class="order-history">
+              <span class="title">${_("Certificate History")}</span>
+              % for certificate_history_item in certificate_history_list:
+                % if certificate_history_item['download_url'] is None:
+                <span><a href="/../certificates/${certificate_history_item['verify_uuid']}" target="_blank" class="edit-name">${certificate_history_item['course_key']}</a></span>
+		% else:
+                <span><a href="${certificate_history_item['download_url']}" target="_blank" class="edit-name">${certificate_history_item['course_key']}</a></span>
+		% endif
+              % endfor
+            </li>
+            % endif
+
           </ul>
             </div>
         </div>
