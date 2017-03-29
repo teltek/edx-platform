@@ -10287,6 +10287,10 @@ msgstr ""
 msgid "HTML"
 msgstr "HTML"
 
+#: cms/djangoapps/contentstore/views/component.py
+msgid "Pumukit"
+msgstr "Pumukit"
+
 #: cms/djangoapps/contentstore/views/component.py lms/templates/video.html
 msgid "Video"
 msgstr "Vídeo"
@@ -11116,6 +11120,10 @@ msgstr "Información del estado de la cuenta"
 #: lms/templates/dashboard.html themes/edx.org/lms/templates/dashboard.html
 msgid "Order History"
 msgstr "Historial de pedidos"
+
+#: lms/templates/dashboard.html
+msgid "Certificate History"
+msgstr "Historial de certificados"
 
 #: lms/templates/dashboard.html themes/edx.org/lms/templates/dashboard.html
 msgid "Email Settings for {course_number}"
