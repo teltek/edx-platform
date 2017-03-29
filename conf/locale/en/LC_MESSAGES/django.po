@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2017-03-16 12:22+0000\n"
-"PO-Revision-Date: 2017-03-16 12:22:33.273699\n"
+"POT-Creation-Date: 2017-03-29 09:31+0000\n"
+"PO-Revision-Date: 2017-03-29 09:31:08.499889\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -9503,6 +9503,10 @@ msgstr ""
 msgid "HTML"
 msgstr ""
 
+#: cms/djangoapps/contentstore/views/component.py
+msgid "Pumukit"
+msgstr ""
+
 #: cms/djangoapps/contentstore/views/component.py lms/templates/video.html
 msgid "Video"
 msgstr ""
@@ -10338,6 +10342,10 @@ msgstr ""
 
 #: lms/templates/dashboard.html themes/edx.org/lms/templates/dashboard.html
 msgid "Order History"
+msgstr ""
+
+#: lms/templates/dashboard.html
+msgid "Certificate History"
 msgstr ""
 
 #: lms/templates/dashboard.html themes/edx.org/lms/templates/dashboard.html
