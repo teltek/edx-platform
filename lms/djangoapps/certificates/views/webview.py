@@ -89,6 +89,7 @@ def _update_certificate_context(context, user_certificate, platform_name):
 
     # Override the defaults with any mode-specific static values
     context['certificate_id_number'] = user_certificate.verify_uuid
+    context['certificate_id_url'] = 'https://' + settings.SITE_NAME + '/certificates/' + user_certificate.verify_uuid
     context['certificate_verify_url'] = "{prefix}{uuid}{suffix}".format(
         prefix=context.get('certificate_verify_url_prefix'),
         uuid=user_certificate.verify_uuid,
