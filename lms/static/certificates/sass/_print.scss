@@ -16,6 +16,7 @@
 // page set up - only available to modern browsers now
 @page {
     size : landscape;
+    margin :0;
 }
 
 @media print {
@@ -73,7 +74,7 @@
 
     body {
         height: auto;
-        margin: spacing-vertical(mid-large) spacing-vertical(mid-small) 0 spacing-vertical(mid-small) !important;
+        margin: spacing-vertical(mid-small) spacing-vertical(mid-small) 0 spacing-vertical(mid-small) !important;
         padding: 0;
     }
 
@@ -101,11 +102,15 @@
     .wrapper-about,
     .wrapper-footer,
     .wrapper-header,
+    .su-header,
     .wrapper-introduction,
     .accomplishment-metadata-title,
     .accomplishment-metadata .accomplishment-recipient,
     .deco-corner,
-    .accomplishment-date .label {
+    .accomplishment-date .label,
+    .copy-meta,
+    .copy-base,
+    .cert-first-level{
         @extend %print-hide;
     }
 
@@ -179,6 +184,13 @@
         line-height: line-height(small);
     }
 
+    .logo{
+	max-height: 20px;
+	max-width: 32px;
+	width: 32px;
+	height: 20px;
+    }
+
     .copy-micro {
         font-size: font-size(xx-small);
         line-height: line-height(x-small);
@@ -193,16 +205,19 @@
         top: 0 !important;
         border: rem(1) solid palette(grayscale, back);
         border-top: rem(2) solid $cert-base-color;
-        box-shadow: none;
-        padding: spacing-vertical(small) spacing-horizontal(mid-large);
+        box-shadow: none !important;
+        padding: spacing-vertical(small) spacing-horizontal(small);
 
 
         .accomplishment-type {
-            margin-top: -(spacing-vertical(mid-large));
+            margin-top: -(spacing-vertical(small));
         }
 
         .accomplishment-type-symbol {
-            @include size(rem(75));
+	    max-height: 100px;
+	    max-width: 100px;
+	    height: 100px;
+	    width: 100px;
             border: none !important;
         }
 
@@ -212,13 +227,22 @@
 
         .accomplishment-statement {
             @extend %print-rendering-section;
-            @include span(8);
-            margin: 0 auto;
-        }
+	    padding-top: 10px !important;
+	    padding-bottom: 5px !important;
+	}
+
+	.accomplishment-course{
+	    font-size: 1rem !important;
+	}
+
+	.accomplishment-recipient{
+	    font-size: 1.8rem !important;
+	}
 
         .accomplishment-summary,
         .accomplishment-statement-detail {
             margin-bottom: spacing-vertical(mid-small);
+	    font-size: 0.8rem !important;
         }
 
         .wrapper-orgs::after {
@@ -252,11 +276,10 @@
             }
 
             .signatory-signature {
-                height: spacing-vertical(small);
+                height: 5.25rem;
                 max-width: 100%;
                 margin-top: 0;
-                padding-top: 0 !important;
-                padding-bottom: 0 !important;
+                
             }
 
             .signatory-name {
@@ -265,6 +288,7 @@
 
             .signatory-credentials {
                 margin-bottom: 0 !important;
+		font-size : 0.5rem !important;
             }
 
             // CASE: > 4 signatures
@@ -274,6 +298,13 @@
                     @include span(2);
                 }
             }
+
+	    .logo-pie{
+		max-height: 52px !important;
+		max-width: 82px !important;
+		width: 82px !important;
+		height: 52px !important;
+	    }
         }
     }
 
