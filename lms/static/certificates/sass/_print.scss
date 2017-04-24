@@ -184,11 +184,12 @@
         line-height: line-height(small);
     }
 
-    .logo{
-	max-height: 20px;
-	max-width: 32px;
-	width: 32px;
-	height: 20px;
+    .logo-certificate{
+	max-height: 100px !important;
+	max-width: 100px !important;
+	height: 100px !important;
+    	width: 100px !important;
+        border: none !important;
     }
 
     .copy-micro {
@@ -299,11 +300,11 @@
                 }
             }
 
-	    .logo-pie{
-		max-height: 52px !important;
-		max-width: 82px !important;
-		width: 82px !important;
-		height: 52px !important;
+	    .logo-footer{
+		max-height: 73px !important;
+		max-width: 115px !important;
+		width: 115px !important;
+		height: 73px !important;
 	    }
         }
     }
