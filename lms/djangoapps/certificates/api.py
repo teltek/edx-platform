@@ -448,6 +448,14 @@ def get_certificate_template(course_key, mode):
             is_active=True
         )
     # if we still don't template find by only course mode
+    if not template and mode and course_key:
+        template = CertificateTemplate.objects.filter(
+            organization_id=None,
+            course_key=course_key,
+            mode=mode,
+            is_active=True
+        )
+    # if we still don't template find by only course mode and course key
     if not template and mode:
         template = CertificateTemplate.objects.filter(
             organization_id=None,
