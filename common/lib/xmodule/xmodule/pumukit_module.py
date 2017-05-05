@@ -52,7 +52,7 @@ class PumukitFields(object):
     video_url = String(
         display_name="Video URL",
         help="URL of the video. Valid sources: tv.uvigo.es or tv.campusdomar.es",
-        default="http://tv.campusdomar.es/en/video/1722.html",
+        default="https://tv.uvigo.es/es/video/mm/23759.html",
         scope=Scope.settings
     )
     video_list = String(
@@ -196,7 +196,15 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
         for vid_value in vid_values:
             if self.video_list in vid_value.get('value'):
                 vid_title = vid_value.get('display_name')
-                break       
+                break
+
+        if "tv.uvigo.es/" in self.video_url or "tv.campusdomar.es/" in self.video_url:
+            video_url_value = self.video_url
+            m = re.match('^(.*?) src="http://(.*?)"(.*?)$', video_url_value)
+            if m is not None:
+                video_url_value = '{} src="https://{}"{}'.format(*m.groups())
+                self.video_url = video_url_value
+
         if self.video_url not in self.previous_url: 
             # Selected a video from the url or first time of component
             r = requests.head(self.video_url, allow_redirects=True)
@@ -236,7 +244,7 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
         vid_title = WRONG_URL
         vid_value = CHECK_URL
         # Previous 200 code for existing web page before entering this function
-        html_object = html.parse(url)
+        html_object = html.parse(urllib2.urlopen(url))
         if "tv.uvigo.es/matterhorn" in url:
             input_values = html_object.xpath("//iframe[@id='mh_iframe']")
             if input_values:
@@ -244,11 +252,14 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
                     iframe_value = html.tostring(value)
                     if "engage" in iframe_value:
                         vid_title = html_object.find(".//title").text
-                        m = re.match('^(.*?) width="1220"(.*?)$', iframe_value)
-                        if m is not None:
-                            vid_value = '{} width="800"{}'.format(*m.groups())
+                        m1 = re.match('^(.*?) width="1220"(.*?)$', iframe_value)
+                        if m1 is not None:
+                            vid_value = '{} width="800"{}'.format(*m1.groups())
                         else:
                             vid_value = iframe_value
+                        m2 = re.match('^(.*?) src="http://(.*?)"(.*?)$', vid_value)
+                        if m2 is not None:
+                            vid_value = '{} src="https://{}"{}'.format(*m2.groups())
                         break
         elif "tv.uvigo.es/" in url:
             input_values = html_object.xpath("//input[@type='text']/@value")
@@ -263,6 +274,9 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
                         m2 = re.match('^(.*?) width="1220"(.*?)$', vid_value)
                         if m2 is not None:
                             vid_value = '{} width="800"{}'.format(*m2.groups())
+                        m3 = re.match('^(.*?) src="http://(.*?)"(.*?)$', vid_value)
+                        if m3 is not None:
+                            vid_value = '{} src="https://{}"{}'.format(*m3.groups())
                         break
         elif "tv.campusdomar.es/" in url:
             input_values = html_object.xpath("//input[@type='text']/@value")
@@ -277,6 +291,9 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
                         m2 = re.match('^(.*?) width="1220"(.*?)$', vid_value)
                         if m2 is not None:
                             vid_value = '{} width="960"{}'.format(*m2.groups())
+                        m3 = re.match('^(.*?) src="http://(.*?)"(.*?)$', vid_value)
+                        if m3 is not None:
+                            vid_value = '{} src="https://{}"{}'.format(*m3.groups())
                         break
         video_player = {
             "display_name": vid_title,
