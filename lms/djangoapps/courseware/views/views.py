@@ -83,6 +83,7 @@ from shoppingcart.utils import is_shopping_cart_enabled
 from openedx.core.djangoapps.self_paced.models import SelfPacedConfiguration
 from student.models import UserTestGroup, CourseEnrollment
 from student.roles import GlobalStaff
+from national_id.models import get_dni
 from util.cache import cache, cache_if_anonymous
 from util.date_utils import strftime_localized
 from util.db import outer_atomic
@@ -739,9 +740,10 @@ def _progress(request, course_key, student_id):
     grade_summary = course_grade.summary
 
     studio_url = get_studio_url(course, 'settings/grading')
-
+    
     # checking certificate generation configuration
     enrollment_mode, is_active = CourseEnrollment.enrollment_mode_for_user(student, course_key)
+    dni = get_dni(student.id)
 
     context = {
         'course': course,
@@ -752,7 +754,7 @@ def _progress(request, course_key, student_id):
         'student': student,
         'passed': is_course_passed(course, grade_summary),
         'credit_course_requirements': _credit_course_requirements(course_key, student),
-        'certificate_data': _get_cert_data(student, course, course_key, is_active, enrollment_mode)
+        'certificate_data': _get_cert_data(student, course, course_key, is_active, enrollment_mode, dni)
     }
 
     with outer_atomic():
@@ -761,7 +763,7 @@ def _progress(request, course_key, student_id):
     return response
 
 
-def _get_cert_data(student, course, course_key, is_active, enrollment_mode):
+def _get_cert_data(student, course, course_key, is_active, enrollment_mode, dni):
     """Returns students course certificate related data.
 
     Arguments:
@@ -802,6 +804,15 @@ def _get_cert_data(student, course, course_key, is_active, enrollment_mode):
         )
 
     cert_downloadable_status = certs_api.certificate_downloadable_status(student, course_key)
+
+    if not dni:
+        return CertData(
+            'notidentification',
+            _('Congratulations, you qualified for a certificate!'),
+            _('To get a certificate, you need to add your National Identity Number in the account settings'),
+            download_url=None,
+            cert_web_view_url=None
+        )
 
     if cert_downloadable_status['is_downloadable']:
         cert_status = CertificateStatuses.downloadable
