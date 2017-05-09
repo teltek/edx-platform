@@ -740,9 +740,10 @@ def _progress(request, course_key, student_id):
     grade_summary = course_grade.summary
 
     studio_url = get_studio_url(course, 'settings/grading')
-
+    
     # checking certificate generation configuration
     enrollment_mode, is_active = CourseEnrollment.enrollment_mode_for_user(student, course_key)
+
     try:
         user_national_id = NationalId.objects.get(user=student.id)
         national_id = user_national_id.get_national_id();
