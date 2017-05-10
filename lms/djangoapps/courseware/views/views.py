@@ -746,7 +746,7 @@ def _progress(request, course_key, student_id):
 
     try:
         user_national_id = NationalId.objects.get(user=student.id)
-        national_id = user_national_id.get_national_id();
+        national_id = user_national_id.get_national_id()
     except NationalId.DoesNotExist:
         national_id = False
 
