@@ -20,6 +20,7 @@ from courseware.access import has_access
 from edxmako.shortcuts import render_to_response
 from edxmako.template import Template
 from eventtracking import tracker
+from national_id.models import ExtraInfo
 from opaque_keys import InvalidKeyError
 from opaque_keys.edx.keys import CourseKey
 from openedx.core.lib.courses import course_image_url
@@ -292,7 +293,7 @@ def _update_social_context(request, context, course, user, user_certificate, pla
         )
 
 
-def _update_context_with_user_info(context, user, user_certificate):
+def _update_context_with_user_info(context, user, user_certificate, national_id):
     """
     Updates context dictionary with user related info.
     """
@@ -302,6 +303,7 @@ def _update_context_with_user_info(context, user, user_certificate):
     context['accomplishment_user_id'] = user.id
     context['accomplishment_copy_name'] = user_fullname
     context['accomplishment_copy_username'] = user.username
+    context['accomplishment_user_national_id'] = national_id.get_dni()
 
     context['accomplishment_more_title'] = _("More Information About {user_name}'s Certificate:").format(
         user_name=user_fullname
@@ -522,9 +524,10 @@ def render_html_view(request, user_id, course_id):
         course_key = CourseKey.from_string(course_id)
         user = User.objects.get(id=user_id)
         course = modulestore().get_course(course_key)
+        national_id = ExtraInfo.objects.get(user=user_id)
 
     # For any other expected exceptions, kick the user back to the "Invalid" screen
-    except (InvalidKeyError, ItemNotFoundError, User.DoesNotExist) as exception:
+    except (InvalidKeyError, ItemNotFoundError, User.DoesNotExist, ExtraInfo.DoesNotExist) as exception:
         error_str = (
             "Invalid cert: error finding course %s or user with id "
             "%d. Specific error: %s"
@@ -566,7 +569,7 @@ def render_html_view(request, user_id, course_id):
     _update_course_context(request, context, course, platform_name)
 
     # Append user info
-    _update_context_with_user_info(context, user, user_certificate)
+    _update_context_with_user_info(context, user, user_certificate, national_id)
 
     # Append social sharing info
     _update_social_context(request, context, course, user, user_certificate, platform_name)
