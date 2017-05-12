@@ -51,12 +51,14 @@ define(['domReady', 'jquery', 'underscore', 'js/utils/cancel_on_escape', 'js/vie
             var org = $newCourseForm.find('.new-course-org').val();
             var number = $newCourseForm.find('.new-course-number').val();
             var run = $newCourseForm.find('.new-course-run').val();
+	    var effort = $newCourseForm.find('.new-estimated-effort').val();
 
             var course_info = {
                 org: org,
                 number: number,
                 display_name: display_name,
-                run: run
+                run: run,
+		effort: effort
             };
 
             analytics.track('Created a Course', course_info);
