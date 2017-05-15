@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='ExtraInfo',
+            name='NationalID',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('national_id', models.CharField(max_length=30, unique=True, verbose_name=b'National Identification Number', error_messages={b'required': 'Please introduce your National ID number', b'invalid': "National ID number isn valid", b'unique':"Already exists"})),
