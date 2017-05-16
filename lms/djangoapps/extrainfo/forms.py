@@ -3,7 +3,7 @@ from django.forms import ModelForm
 
 class NationalIDForm(ModelForm):
     """
-    The fields on this form are derived from the national_id model in models.py.
+    The fields on this form are derived from the NationalID model in models.py.
     """
     def __init__(self, *args, **kwargs):
         super(NationalIDForm, self).__init__(*args, **kwargs)

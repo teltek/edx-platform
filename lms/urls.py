@@ -886,7 +886,7 @@ urlpatterns += (
     url(r'^request_certificate$', 'certificates.views.request_certificate'),
 
     # Identity Number required for certificates
-    url(r'^save_identification','national_id.views.set_national_id'),
+    url(r'^save_identification','extrainfo.views.set_national_id'),
     
     # REST APIs
     url(r'^api/certificates/',

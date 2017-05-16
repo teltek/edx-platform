@@ -3,7 +3,10 @@ from django.contrib.auth.models import User
 from django.http import (
             HttpResponse, HttpResponseBadRequest, HttpResponseForbidden, HttpRequest
 )
-from national_id.models import ExtraInfo
+from extrainfo.models import NationalID
+
+logger = logging.getLogger(__name__)
+
 
 def set_national_id(request):
     if request.method == "POST":
@@ -12,7 +15,7 @@ def set_national_id(request):
             try:
                 user = User.objects.get(username=username)
                 identification = request.POST.get("identification")
-                national_id = ExtraInfo.objects.get(national_id=identification)
+                national_id = NationalID.objects.get(national_id=identification)
                 if identification == '':
                     msg="Passport or National ID number can not be empty"
                     return HttpResponse(msg,status=403)
@@ -23,8 +26,8 @@ def set_national_id(request):
                 msg="User invalid"
                 logger.error('Error thrown when updating Passport or National ID number of user {username}. ERROR: {exception}'.format(username=username, exception=exception))
                 return HttpResponse(msg,status=403)
-            except ExtraInfo.DoesNotExist:
-                national_id = ExtraInfo()
+            except NationalID.DoesNotExist:
+                national_id = NationalID()
                 national_id.set_dni(user,identification)
                 msg="Ok"
-                return HttpResponse(msg,status=200)
+                return HttpResponse(status=200)

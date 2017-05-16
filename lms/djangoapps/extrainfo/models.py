@@ -28,7 +28,7 @@ class NationalID(models.Model):
     def get_dni(self):
         try:
             dni = self.national_id
-        except ExtraInfo.DoesNotExist:
+        except NationalID.DoesNotExist:
             dni = False
         return dni
 
