@@ -741,7 +741,7 @@ def _create_or_rerun_course(request):
                     status=400
                 )
 
-        fields = {'start': start}
+        fields = {'start': start,'effort': effort}
         if display_name is not None:
             fields['display_name'] = display_name
 

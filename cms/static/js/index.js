@@ -7,6 +7,7 @@ define(['domReady', 'jquery', 'underscore', 'js/utils/cancel_on_escape', 'js/vie
             org: '.new-course-org',
             number: '.new-course-number',
             run: '.new-course-run',
+	    effort: '.new-course-effort',
             save: '.new-course-save',
             errorWrapper: '.create-course .wrap-error',
             errorMessage: '#course_creation_error',
