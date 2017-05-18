@@ -52,7 +52,7 @@ define(['domReady', 'jquery', 'underscore', 'js/utils/cancel_on_escape', 'js/vie
             var org = $newCourseForm.find('.new-course-org').val();
             var number = $newCourseForm.find('.new-course-number').val();
             var run = $newCourseForm.find('.new-course-run').val();
-	    var effort = $newCourseForm.find('.new-estimated-effort').val();
+	    var effort = $newCourseForm.find('.new-course-effort').val();
 
             var course_info = {
                 org: org,

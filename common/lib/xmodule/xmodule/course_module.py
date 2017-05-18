@@ -270,7 +270,7 @@ class CourseFields(object):
 
     effort = Integer(
         help=_("Enter the number of hours in total to complete the course."),
-        default=25,
+        default=0,
         display_name=_("Course Estimated Effort"),
         scope=Scope.settings
     )
