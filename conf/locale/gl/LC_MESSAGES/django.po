@@ -28,6 +28,7 @@
 # Translators:
 # Eu <luz.armas@udc.es>, 2013
 # Eu <luz.armas@udc.es>, 2014
+# mercefan <mercefan@gmail.com>, 2017
 # #-#-#-#-#  wiki.po (edx-platform)  #-#-#-#-#
 # edX translation file
 # Copyright (C) 2017 edX
@@ -19518,7 +19519,7 @@ msgstr ""
 
 #: cms/templates/register.html cms/templates/widgets/header.html
 msgid "Sign Up"
-msgstr "Iniciar sesión"
+msgstr "Rexistrarse"
 
 #: cms/templates/register.html
 msgid "Sign Up for {studio_name}"
