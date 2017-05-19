@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 USER_MODEL = getattr(settings, 'AUTH_USER_MODEL', 'auth.User')
 
 
-class NationalID(models.Model):
+class NationalId(models.Model):
     """
     The form that wraps this model is in the forms.py file.
     """
@@ -25,14 +25,14 @@ class NationalID(models.Model):
         unique=True,
     )
 
-    def get_nationalID(self):
+    def get_national_id(self):
         try:
             national_id = self.national_id
-        except NationalID.DoesNotExist:
+        except NationalId.DoesNotExist:
             national_id = False
         return national_id
 
-    def set_nationalID(self,user,identification=None):
+    def set_national_id(self,user,identification=None):
         self.user = user
         self.national_id = identification
         self.save()

@@ -83,7 +83,7 @@ from shoppingcart.utils import is_shopping_cart_enabled
 from openedx.core.djangoapps.self_paced.models import SelfPacedConfiguration
 from student.models import UserTestGroup, CourseEnrollment
 from student.roles import GlobalStaff
-from extrainfo.models import NationalID
+from extrainfo.models import NationalId
 from util.cache import cache, cache_if_anonymous
 from util.date_utils import strftime_localized
 from util.db import outer_atomic
@@ -744,9 +744,9 @@ def _progress(request, course_key, student_id):
     # checking certificate generation configuration
     enrollment_mode, is_active = CourseEnrollment.enrollment_mode_for_user(student, course_key)
     try:
-        user_national_id = NationalID.objects.get(user=student.id)
-        national_id = national_id.get_nationalID();
-    except NationalID.DoesNotExist:
+        user_national_id = NationalId.objects.get(user=student.id)
+        national_id = user_national_id.get_national_id();
+    except NationalId.DoesNotExist:
         national_id = False
 
     context = {
