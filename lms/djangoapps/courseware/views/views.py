@@ -740,14 +740,14 @@ def _progress(request, course_key, student_id):
     grade_summary = course_grade.summary
 
     studio_url = get_studio_url(course, 'settings/grading')
-    
+
     # checking certificate generation configuration
     enrollment_mode, is_active = CourseEnrollment.enrollment_mode_for_user(student, course_key)
     try:
-        national_id = NationalID.objects.get(user=student.id)
-        dni = national_id.get_dni();
+        user_national_id = NationalID.objects.get(user=student.id)
+        national_id = national_id.get_nationalID();
     except NationalID.DoesNotExist:
-        dni = False
+        national_id = False
 
     context = {
         'course': course,
@@ -756,10 +756,10 @@ def _progress(request, course_key, student_id):
         'grade_summary': grade_summary,
         'staff_access': staff_access,
         'student': student,
-        'dni': dni,
+        'national_id': national_id,
         'passed': is_course_passed(course, grade_summary),
         'credit_course_requirements': _credit_course_requirements(course_key, student),
-        'certificate_data': _get_cert_data(student, course, course_key, is_active, enrollment_mode, dni)
+        'certificate_data': _get_cert_data(student, course, course_key, is_active, enrollment_mode, national_id)
     }
 
     with outer_atomic():
@@ -768,7 +768,7 @@ def _progress(request, course_key, student_id):
     return response
 
 
-def _get_cert_data(student, course, course_key, is_active, enrollment_mode, dni):
+def _get_cert_data(student, course, course_key, is_active, enrollment_mode, national_id):
     """Returns students course certificate related data.
 
     Arguments:
@@ -810,7 +810,7 @@ def _get_cert_data(student, course, course_key, is_active, enrollment_mode, dni)
 
     cert_downloadable_status = certs_api.certificate_downloadable_status(student, course_key)
 
-    if not dni:
+    if not national_id:
         return CertData(
             'notidentification',
             _('Congratulations, you qualified for a certificate!'),

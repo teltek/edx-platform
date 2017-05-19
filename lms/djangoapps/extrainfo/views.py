@@ -28,6 +28,6 @@ def set_national_id(request):
                 return HttpResponse(msg,status=403)
             except NationalID.DoesNotExist:
                 national_id = NationalID()
-                national_id.set_dni(user,identification)
+                national_id.set_nationalID(user,identification)
                 msg="Ok"
                 return HttpResponse(status=200)

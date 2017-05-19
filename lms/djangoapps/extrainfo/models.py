@@ -25,14 +25,14 @@ class NationalID(models.Model):
         unique=True,
     )
 
-    def get_dni(self):
+    def get_nationalID(self):
         try:
-            dni = self.national_id
+            national_id = self.national_id
         except NationalID.DoesNotExist:
-            dni = False
-        return dni
+            national_id = False
+        return national_id
 
-    def set_dni(self,user,identification=None):
+    def set_nationalID(self,user,identification=None):
         self.user = user
         self.national_id = identification
         self.save()
