@@ -71,7 +71,7 @@ class PumukitFields(object):
     previous_url = String(
         display_name="Previous URL",
         help="Getting track of changes of the url",
-        default="http://tv.uvigo.es/es/video/mm/20334.html",
+        default="https://tv.uvigo.es/es/video/mm/23759.html",
         scope=Scope.settings
     ) 
     previous_title = String(
@@ -83,7 +83,7 @@ class PumukitFields(object):
     previous_iframe = String(
         display_name="Previous iframe",
         help="Auxiliar field for changes in title",
-        default="Anything",
+        default="<iframe src=\"https://tv.uvigo.es/video/iframe/width/740/height/420/id/23759\" style=\"border:0px #FFFFFF none;\" name=\"Pumukit - Media Player\" scrolling=\"no\" frameborder=\"1\" marginheight=\"0px\" marginwidth=\"0px\"  allowfullscreen webkitallowfullscreen height=\"420\" width=\"740\"></iframe>",
         scope=Scope.settings
     )
     available_videos = List(
@@ -107,7 +107,7 @@ class PumukitFields(object):
     show_video_iframe = String(
         display_name="Show Video Iframe",
         help="Iframe of the video to show",
-        default="",
+        default="<iframe src=\"https://tv.uvigo.es/video/iframe/width/740/height/420/id/23759\" style=\"border:0px #FFFFFF none;\" name=\"Pumukit - Media Player\" scrolling=\"no\" frameborder=\"1\" marginheight=\"0px\" marginwidth=\"0px\"  allowfullscreen webkitallowfullscreen height=\"420\" width=\"740\"></iframe>",
         scope=Scope.settings
     )
     two_titles = Boolean(
@@ -180,8 +180,14 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
         self.available_videos = self.get_available_videos(self.location.html_id())
 
         editable_fields = self.editable_metadata_fields
-        
-        test = self.check_for_changes()
+
+
+    def editor_saved(self, user, old_metadata, old_content):
+        """
+        Called when clicking save on Editor in Studio.
+        """
+        if self.video_url not in self.previous_url:
+            output = self.check_for_changes()
 
 
     def check_for_changes(self):
@@ -193,6 +199,7 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
 
         vid_title = "Select video"
         vid_values = self.available_videos
+
         for vid_value in vid_values:
             if self.video_list in vid_value.get('value'):
                 vid_title = vid_value.get('display_name')
@@ -205,18 +212,16 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
                 video_url_value = '{} src="https://{}"{}'.format(*m.groups())
                 self.video_url = video_url_value
 
-        if self.video_url not in self.previous_url: 
-            # Selected a video from the url or first time of component
-            r = requests.head(self.video_url, allow_redirects=True)
-            url_status = r.status_code
-            # Check if the web page exists
-            if url_status == 200:
+        if self.video_url not in self.previous_url:
+            try:
                 video_player = self.get_video_iframe(self.video_url)
                 self.show_video_iframe = video_player.get('value')
                 if video_player.get('display_name'):
                     self.show_video_title = video_player.get('display_name')
                 else:
                     self.show_video_title = "Pumukit"
+            except Exception as exc:
+                log.info(u'There was an error in trying to get Pumukit url: {}'.format(exc))
             self.previous_title = self.show_video_title
             self.previous_iframe = self.show_video_iframe
             self.previous_url = self.video_url 
@@ -234,7 +239,7 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
             self.two_titles = True
         else:
             self.two_titles = False
-        return "test"
+        return "output"
 
 
     def get_video_iframe(self, url):
@@ -243,7 +248,7 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
         """
         vid_title = WRONG_URL
         vid_value = CHECK_URL
-        # Previous 200 code for existing web page before entering this function
+
         html_object = html.parse(urllib2.urlopen(url))
         if "tv.uvigo.es/matterhorn" in url:
             input_values = html_object.xpath("//iframe[@id='mh_iframe']")
@@ -295,106 +300,19 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
                         if m3 is not None:
                             vid_value = '{} src="https://{}"{}'.format(*m3.groups())
                         break
+
         video_player = {
             "display_name": vid_title,
-             "value": vid_value
+            "value": vid_value
         }
         return video_player
-
-
-    def get_video_list(self, email):
-        """
-        Get a list of videos from a given mail
-        """
-        vid_list = []
-        url_mail = "http://tv.campusdomar.es/api.php/edx/list?email=" + email
-        r = requests.head(url_mail, allow_redirects=True)
-        url_code = r.status_code
-        if url_code == 200:
-            all_data = json.loads(urllib2.urlopen(url_mail).read())
-            for vid_id,data in all_data.iteritems():
-                vid_full_title = data.get('serial_title') + ": " + data.get('title')
-                vid_player = data.get('player')
-                vid_list.append({"display_name": vid_full_title, "value": vid_player})
-        return vid_list
-
-
-    def get_video_player(self, url):
-        """
-        Get video player: title and iframe
-        """
-        vid_player = {
-            "display_name": WRONG_URL,
-            "value": CHECK_URL
-        }  
-        video_id = url.split('/')[-1].rsplit('.')[0]   
-        pumukit_api = "http://tv.campusdomar.es/api.php/edx/info?id=" + video_id
-        try:
-            data = json.loads(urllib2.urlopen(pumukit_api).read())
-            vid_player = {
-                "display_name": data.get('title'), 
-                "value": data.get('player')
-            }
-        except urllib2.HTTPError, e:
-            if e.code != 200:
-                vid_player = {
-                    "display_name": WRONG_URL,
-                    "value": CHECK_URL
-                }
-                return vid_player
-        return vid_player
-
-
-    def access_mysql_emails(self, location):
-        """
-        Access MySQL database to get the emails of the staff
-        """
-        index_start = location.find('-')
-        index_end = location.find('-pumukit')
-        course_id = location[(index_start+1):index_end]
-        course_id = course_id.replace('-', '.')
-
-        db = MySQLdb.connect(user="root", db="edxapp")
-        cur = db.cursor()
-
-        ids = []
-        sql_aux = "SELECT id FROM auth_group WHERE auth_group.name LIKE 'staff_%s%s'"
-        sql_query = sql_aux % (course_id, '%')
-        cur.execute(sql_query)
-        ids = cur.fetchall()
-
-        user_ids = []      
-        for ide in ids:
-            cur.execute("SELECT user_id FROM auth_user_groups WHERE auth_user_groups.group_id LIKE '%s'" % ide)
-            user_ids = cur.fetchall()
-       
-        emails = []
-        for user_id in user_ids:
-            cur.execute("SELECT email FROM auth_user WHERE auth_user.id LIKE '%s'" % user_id)
-            emails.append(cur.fetchall())
-
-        staff_emails = []
-        for email in emails:
-            staff_emails.append(email[0][0])
-        return staff_emails
 
 
     def get_available_videos(self, location):
         """
         Get available videos for a course
         """
-        vid_list =[]
-        full_list = []
-        # staff_emails = self.access_mysql_emails(location)
-        # for email in staff_emails:
-        #     video_list_email = self.get_video_list(email)
-        #     for vid_item in video_list_email:
-        #         vid_list.append(vid_item)
-        if vid_list:
-            full_list = sorted(vid_list, key=lambda k: k['display_name'])
-            full_list.insert(0, {"display_name": "Select video", "value": "select video"})
-        else:
-            full_list = [{"display_name": "No available videos", "value": "no available videos"}]
+        full_list = [{"display_name": "No available videos", "value": "no available videos"}]
         return full_list
 
 
