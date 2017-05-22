@@ -20,7 +20,7 @@ from courseware.access import has_access
 from edxmako.shortcuts import render_to_response
 from edxmako.template import Template
 from eventtracking import tracker
-from national_id.models import ExtraInfo
+from extrainfo.models import NationalId
 from opaque_keys import InvalidKeyError
 from opaque_keys.edx.keys import CourseKey
 from openedx.core.lib.courses import course_image_url
