@@ -109,7 +109,7 @@ define(['jquery', 'underscore', 'gettext', 'common/js/components/utils/view_util
                     }
                 });
 
-		var $effort = $(self.selectors.effort);
+                var $effort = $(self.selectors.effort);
                 $effort.on('keyup', function() {
 		    var error = self.validateRequiredField($effort.val());
 		    if(!(parseInt($effort.val())==$effort.val()) && error==''){
@@ -117,7 +117,7 @@ define(['jquery', 'underscore', 'gettext', 'common/js/components/utils/view_util
 			self.setFieldInErr($effort.parent(), error);
 			self.toggleSaveButton(false);
 		    }
-                    self.validateTotalKeyLength();
+		    self.validateTotalKeyLength();
 		    self.setFieldInErr($effort.parent(), error);
 		    if (!self.validateFilledFields()){
 			self.toggleSaveButton(false);
