@@ -254,17 +254,13 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
             input_values = html_object.xpath("//iframe[@id='mh_iframe']")
             if input_values:
                 for value in input_values:
-                    iframe_value = html.tostring(value)
-                    if "engage" in iframe_value:
+                    vid_value = html.tostring(value)
+                    if "engage" in vid_value:
                         vid_title = html_object.find(".//title").text
-                        m1 = re.match('^(.*?) width="1220"(.*?)$', iframe_value)
-                        if m1 is not None:
-                            vid_value = '{} width="800"{}'.format(*m1.groups())
-                        else:
-                            vid_value = iframe_value
-                        m2 = re.match('^(.*?) src="http://(.*?)"(.*?)$', vid_value)
-                        if m2 is not None:
-                            vid_value = '{} src="https://{}"{}'.format(*m2.groups())
+                        vid_value = vid_value.replace('http://', 'https://')
+                        vid_value = vid_value.replace('width="1220"', 'width="800"')
+                        vid_value = vid_value.replace('width:100%', 'width:800px')
+                        vid_value = vid_value.replace('height:860px', 'height:840px')
                         break
         elif "tv.uvigo.es/" in url:
             input_values = html_object.xpath("//input[@type='text']/@value")
@@ -276,12 +272,8 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
                         m1 = re.match('^(.*?) src="(.*?)"(.*?)$', vid_value)
                         if m1 is not None:
                             vid_value = '{} src="{}?image=EDX"{}'.format(*m1.groups())
-                        m2 = re.match('^(.*?) width="1220"(.*?)$', vid_value)
-                        if m2 is not None:
-                            vid_value = '{} width="800"{}'.format(*m2.groups())
-                        m3 = re.match('^(.*?) src="http://(.*?)"(.*?)$', vid_value)
-                        if m3 is not None:
-                            vid_value = '{} src="https://{}"{}'.format(*m3.groups())
+                        vid_value = vid_value.replace('http://', 'https://')
+                        vid_value = vid_value.replace('width="1220"', 'width="800"')
                         break
         elif "tv.campusdomar.es/" in url:
             input_values = html_object.xpath("//input[@type='text']/@value")
@@ -293,12 +285,8 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
                         m1 = re.match('^(.*?) src="(.*?)"(.*?)$', vid_value)
                         if m1 is not None:
                             vid_value = '{} src="{}?autostart=false"{}'.format(*m1.groups())
-                        m2 = re.match('^(.*?) width="1220"(.*?)$', vid_value)
-                        if m2 is not None:
-                            vid_value = '{} width="960"{}'.format(*m2.groups())
-                        m3 = re.match('^(.*?) src="http://(.*?)"(.*?)$', vid_value)
-                        if m3 is not None:
-                            vid_value = '{} src="https://{}"{}'.format(*m3.groups())
+                        vid_value = vid_value.replace('http://', 'https://')
+                        vid_value = vid_value.replace('width="1220"', 'width="960"')
                         break
 
         video_player = {
