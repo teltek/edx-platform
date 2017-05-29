@@ -297,7 +297,7 @@ def _update_context_with_user_info(context, user, user_certificate):
     """
     Updates context dictionary with user related info.
     """
-    national_id = NationalId.objects.get(user=user_id)
+    national_id = NationalId.objects.get(user=user.id)
     user_fullname = user.profile.name
     context['username'] = user.username
     context['course_mode'] = user_certificate.mode
@@ -525,9 +525,10 @@ def render_html_view(request, user_id, course_id):
         course_key = CourseKey.from_string(course_id)
         user = User.objects.get(id=user_id)
         course = modulestore().get_course(course_key)
+        national_id = NationalId.objects.get(user=user_id)
 
     # For any other expected exceptions, kick the user back to the "Invalid" screen
-    except (InvalidKeyError, ItemNotFoundError, User.DoesNotExist) as exception:
+    except (InvalidKeyError, ItemNotFoundError, User.DoesNotExist, NationalId.DoesNotExist) as exception:
         error_str = (
             "Invalid cert: error finding course %s or user with id "
             "%d. Specific error: %s"
