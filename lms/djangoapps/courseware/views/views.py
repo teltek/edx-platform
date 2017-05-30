@@ -760,7 +760,7 @@ def _progress(request, course_key, student_id):
         'national_id': national_id,
         'passed': is_course_passed(course, grade_summary),
         'credit_course_requirements': _credit_course_requirements(course_key, student),
-        'certificate_data': _get_cert_data(student, course, course_key, is_active, enrollment_mode, national_id)
+        'certificate_data': _get_cert_data(student, course, course_key, is_active, enrollment_mode)
     }
 
     with outer_atomic():
@@ -769,7 +769,7 @@ def _progress(request, course_key, student_id):
     return response
 
 
-def _get_cert_data(student, course, course_key, is_active, enrollment_mode, national_id):
+def _get_cert_data(student, course, course_key, is_active, enrollment_mode):
     """Returns students course certificate related data.
 
     Arguments:
@@ -811,7 +811,12 @@ def _get_cert_data(student, course, course_key, is_active, enrollment_mode, nati
 
     cert_downloadable_status = certs_api.certificate_downloadable_status(student, course_key)
 
-    if not national_id:
+    try:
+        user_national_id = NationalId.objects.get(user=student.id)
+    except NationalId.DoesNotExist:
+        user_national_id = False
+
+    if not user_national_id:
         return CertData(
             'notidentification',
             _('Congratulations, you qualified for a certificate!'),
