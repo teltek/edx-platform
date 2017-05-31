@@ -83,7 +83,7 @@ class PumukitFields(object):
     previous_iframe = String(
         display_name="Previous iframe",
         help="Auxiliar field for changes in title",
-        default="<iframe src=\"https://tv.uvigo.es/video/iframe/width/740/height/420/id/23759\" style=\"border:0px #FFFFFF none;\" name=\"Pumukit - Media Player\" scrolling=\"no\" frameborder=\"1\" marginheight=\"0px\" marginwidth=\"0px\"  allowfullscreen webkitallowfullscreen height=\"420\" width=\"740\"></iframe>",
+        default="<iframe src=\"https://tv.uvigo.es/video/iframe/width/740/height/420/id/23759\?image\=EDX\" style=\"border:0px #FFFFFF none;\" name=\"Pumukit - Media Player\" scrolling=\"no\" frameborder=\"1\" marginheight=\"0px\" marginwidth=\"0px\"  allowfullscreen webkitallowfullscreen height=\"420\" width=\"740\"></iframe>",
         scope=Scope.settings
     )
     available_videos = List(
@@ -107,7 +107,7 @@ class PumukitFields(object):
     show_video_iframe = String(
         display_name="Show Video Iframe",
         help="Iframe of the video to show",
-        default="<iframe src=\"https://tv.uvigo.es/video/iframe/width/740/height/420/id/23759\" style=\"border:0px #FFFFFF none;\" name=\"Pumukit - Media Player\" scrolling=\"no\" frameborder=\"1\" marginheight=\"0px\" marginwidth=\"0px\"  allowfullscreen webkitallowfullscreen height=\"420\" width=\"740\"></iframe>",
+        default="<iframe src=\"https://tv.uvigo.es/video/iframe/width/740/height/420/id/23759?image=EDX\" style=\"border:0px #FFFFFF none;\" name=\"Pumukit - Media Player\" scrolling=\"no\" frameborder=\"1\" marginheight=\"0px\" marginwidth=\"0px\"  allowfullscreen webkitallowfullscreen height=\"420\" width=\"740\"></iframe>",
         scope=Scope.settings
     )
     two_titles = Boolean(
@@ -257,10 +257,15 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
                     vid_value = html.tostring(value)
                     if "engage" in vid_value:
                         vid_title = html_object.find(".//title").text
+                        vid_value = vid_value.replace('\n', '')
                         vid_value = vid_value.replace('http://', 'https://')
-                        vid_value = vid_value.replace('width="1220"', 'width="800"')
-                        vid_value = vid_value.replace('width:100%', 'width:800px')
-                        vid_value = vid_value.replace('height:860px', 'height:840px')
+                        vid_value = vid_value.replace('width="1220"', 'width="960"')
+                        vid_value = vid_value.replace('width:100%', 'width:960px')
+                        vid_value = vid_value.replace('height:860px', 'height:900px')
+                        vid_value = vid_value.replace('/engage/', '/paellaengage/')
+                        m1 = re.match('^(.*?) style="(.*?)"(.*?)$', vid_value)
+                        if m1 is not None:
+                            vid_value = '{} style="{}-ms-zoom: 0.85;-moz-transform: scale(0.85);-moz-transform-origin: 0 0;-o-transform: scale(0.85);-o-transform-origin: 0 0;-webkit-transform: scale(0.85);-webkit-transform-origin: 0 0;"{}'.format(*m1.groups())
                         break
         elif "tv.uvigo.es/" in url:
             input_values = html_object.xpath("//input[@type='text']/@value")
@@ -269,6 +274,7 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
                     if "iframe src" in value and "tv.uvigo.es" in value:
                         vid_title = html_object.find(".//title").text
                         vid_value = unicode(value, "utf-8")
+                        vid_value = vid_value.replace('\n', '')
                         m1 = re.match('^(.*?) src="(.*?)"(.*?)$', vid_value)
                         if m1 is not None:
                             vid_value = '{} src="{}?image=EDX"{}'.format(*m1.groups())
@@ -282,11 +288,15 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
                     if "iframe src" in value and "tv.campusdomar.es" in value:
                         vid_title = html_object.find(".//title").text
                         vid_value = unicode(value, "utf-8")
+                        vid_value = vid_value.replace('\n', '')
                         m1 = re.match('^(.*?) src="(.*?)"(.*?)$', vid_value)
                         if m1 is not None:
                             vid_value = '{} src="{}?autostart=false"{}'.format(*m1.groups())
                         vid_value = vid_value.replace('http://', 'https://')
                         vid_value = vid_value.replace('width="1220"', 'width="960"')
+                        m2 = re.match('^(.*?) style="(.*?)"(.*?)$', vid_value)
+                        if m2 is not None:
+                            vid_value = '{} style="{}-ms-zoom: 0.85;-moz-transform: scale(0.85);-moz-transform-origin: 0 0;-o-transform: scale(0.85);-o-transform-origin: 0 0;-webkit-transform: scale(0.85);-webkit-transform-origin: 0 0;"{}'.format(*m2.groups())
                         break
 
         video_player = {
