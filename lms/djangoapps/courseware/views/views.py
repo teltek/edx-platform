@@ -83,6 +83,7 @@ from shoppingcart.utils import is_shopping_cart_enabled
 from openedx.core.djangoapps.self_paced.models import SelfPacedConfiguration
 from student.models import UserTestGroup, CourseEnrollment
 from student.roles import GlobalStaff
+from extrainfo.models import NationalId
 from util.cache import cache, cache_if_anonymous
 from util.date_utils import strftime_localized
 from util.db import outer_atomic
@@ -743,6 +744,12 @@ def _progress(request, course_key, student_id):
     # checking certificate generation configuration
     enrollment_mode, is_active = CourseEnrollment.enrollment_mode_for_user(student, course_key)
 
+    try:
+        user_national_id = NationalId.objects.get(user=student.id)
+        national_id = user_national_id.get_national_id()
+    except NationalId.DoesNotExist:
+        national_id = False
+
     context = {
         'course': course,
         'courseware_summary': courseware_summary,
@@ -750,6 +757,7 @@ def _progress(request, course_key, student_id):
         'grade_summary': grade_summary,
         'staff_access': staff_access,
         'student': student,
+        'national_id': national_id,
         'passed': is_course_passed(course, grade_summary),
         'credit_course_requirements': _credit_course_requirements(course_key, student),
         'certificate_data': _get_cert_data(student, course, course_key, is_active, enrollment_mode)
@@ -802,6 +810,20 @@ def _get_cert_data(student, course, course_key, is_active, enrollment_mode):
         )
 
     cert_downloadable_status = certs_api.certificate_downloadable_status(student, course_key)
+
+    try:
+        user_national_id = NationalId.objects.get(user=student.id)
+    except NationalId.DoesNotExist:
+        user_national_id = False
+
+    if not user_national_id:
+        return CertData(
+            'notidentification',
+            _('Congratulations, you qualified for a certificate!'),
+            _('To get a certificate, you need to add your National Identity Number in the account settings'),
+            download_url=None,
+            cert_web_view_url=None
+        )
 
     if cert_downloadable_status['is_downloadable']:
         cert_status = CertificateStatuses.downloadable

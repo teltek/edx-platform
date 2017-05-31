@@ -20,6 +20,7 @@ from courseware.access import has_access
 from edxmako.shortcuts import render_to_response
 from edxmako.template import Template
 from eventtracking import tracker
+from extrainfo.models import NationalId
 from opaque_keys import InvalidKeyError
 from opaque_keys.edx.keys import CourseKey
 from openedx.core.lib.courses import course_image_url
@@ -296,12 +297,14 @@ def _update_context_with_user_info(context, user, user_certificate):
     """
     Updates context dictionary with user related info.
     """
+    national_id = NationalId.objects.get(user=user.id)
     user_fullname = user.profile.name
     context['username'] = user.username
     context['course_mode'] = user_certificate.mode
     context['accomplishment_user_id'] = user.id
     context['accomplishment_copy_name'] = user_fullname
     context['accomplishment_copy_username'] = user.username
+    context['accomplishment_user_national_id'] = national_id.get_national_id()
 
     context['accomplishment_more_title'] = _("More Information About {user_name}'s Certificate:").format(
         user_name=user_fullname
@@ -522,9 +525,10 @@ def render_html_view(request, user_id, course_id):
         course_key = CourseKey.from_string(course_id)
         user = User.objects.get(id=user_id)
         course = modulestore().get_course(course_key)
+        national_id = NationalId.objects.get(user=user_id)
 
     # For any other expected exceptions, kick the user back to the "Invalid" screen
-    except (InvalidKeyError, ItemNotFoundError, User.DoesNotExist) as exception:
+    except (InvalidKeyError, ItemNotFoundError, User.DoesNotExist, NationalId.DoesNotExist) as exception:
         error_str = (
             "Invalid cert: error finding course %s or user with id "
             "%d. Specific error: %s"

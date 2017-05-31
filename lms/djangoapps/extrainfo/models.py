@@ -5,9 +5,8 @@ from django.db import models
 USER_MODEL = getattr(settings, 'AUTH_USER_MODEL', 'auth.User')
 
 
-class NationalID(models.Model):
+class NationalId(models.Model):
     """
-    This model contains two extra fields that will be saved when a user registers.
     The form that wraps this model is in the forms.py file.
     """
     user = models.OneToOneField(USER_MODEL, null=False)
@@ -17,3 +16,15 @@ class NationalID(models.Model):
         max_length=30,
         unique=True,
     )
+
+    def get_national_id(self):
+        try:
+            national_id = self.national_id
+        except NationalId.DoesNotExist:
+            national_id = False
+        return national_id
+
+    def set_national_id(self,user,identification=None):
+        self.user = user
+        self.national_id = identification
+        self.save()
