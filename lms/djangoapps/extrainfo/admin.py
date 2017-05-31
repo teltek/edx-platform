@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import NationalID
+from .models import NationalId
 
-admin.site.register(NationalID)
+admin.site.register(NationalId)
