@@ -1,13 +1,5 @@
-import logging
-import json
 from django.conf import settings
 from django.db import models
-from django.http import (
-        HttpResponse, HttpResponseBadRequest, HttpResponseForbidden, HttpRequest
-)
-from student.models import UserProfile
-
-logger = logging.getLogger(__name__)
 
 # Backwards compatible settings.AUTH_USER_MODEL
 USER_MODEL = getattr(settings, 'AUTH_USER_MODEL', 'auth.User')
