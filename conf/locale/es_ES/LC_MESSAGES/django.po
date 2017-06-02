@@ -52,6 +52,7 @@
 # leosamu <leosamu@gmail.com>, 2014
 # Mariangeles Fernandez <mariangelesfm@gmail.com>, 2015
 # Marta Cuesta, 2014
+# Miguel Angel Cordova <miguel.angel.cordova.uned@gmail.com>, 2017
 # Rubén Torres <r.torres@usal.es>, 2015
 # UAMx <uamx.dev@gmail.com>, 2014
 # UC3M <edx@uc3m.es>, 2014
@@ -169,7 +170,7 @@ msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
 "POT-Creation-Date: 2017-05-11 15:06+0000\n"
-"PO-Revision-Date: 2017-03-16 12:39+0000\n"
+"PO-Revision-Date: 2017-06-01 10:58+0000\n"
 "Last-Translator: Ned Batchelder <ned@edx.org>\n"
 "Language-Team: Spanish (Spain) (http://www.transifex.com/open-edx/edx-platform/language/es_ES/)\n"
 "MIME-Version: 1.0\n"
@@ -400,7 +401,7 @@ msgstr ""
 
 #: common/djangoapps/course_modes/models.py
 msgid "Verified modes cannot be free."
-msgstr ""
+msgstr "Los modos verificados no pueden ser gratis."
 
 #: common/djangoapps/course_modes/models.py
 msgid ""
@@ -2350,7 +2351,7 @@ msgstr ""
 #: common/lib/xmodule/xmodule/capa_base.py
 #, python-brace-format
 msgid "Hint ({hint_num} of {hints_count}): "
-msgstr ""
+msgstr "Consejo ({hint_num} de {hints_count}): "
 
 #: common/lib/xmodule/xmodule/capa_base.py
 #, python-brace-format
@@ -5729,7 +5730,7 @@ msgstr "Recibo"
 
 #: lms/djangoapps/commerce/views.py
 msgid "Payment Failed"
-msgstr ""
+msgstr "El pago ha fallado"
 
 #: lms/djangoapps/commerce/views.py
 msgid "There was a problem with this transaction. You have not been charged."
@@ -10793,11 +10794,11 @@ msgstr ""
 #: cms/djangoapps/contentstore/tasks.py
 #, python-brace-format
 msgid "Unknown User ID: {0}"
-msgstr ""
+msgstr "ID de usuario desconocido: {0}"
 
 #: cms/djangoapps/contentstore/tasks.py
 msgid "Permission denied"
-msgstr ""
+msgstr "Permiso denegado"
 
 #: cms/djangoapps/contentstore/tasks.py
 #: cms/djangoapps/contentstore/views/import_export.py
@@ -10806,7 +10807,7 @@ msgstr "Sólo aceptamos el envío de ficheros .tar.gz."
 
 #: cms/djangoapps/contentstore/tasks.py
 msgid "Tar file not found"
-msgstr ""
+msgstr "Fichero tar no encontrado"
 
 #: cms/djangoapps/contentstore/tasks.py
 msgid "Unsafe tar file. Aborting import."
@@ -10819,7 +10820,7 @@ msgstr "No se encuentra el archivo {0} en el paquete."
 
 #: cms/djangoapps/contentstore/utils.py cms/templates/visibility_editor.html
 msgid "Deleted Group"
-msgstr ""
+msgstr "Grupo eliminado"
 
 #. Translators: This is building up a list of groups. It is marked for
 #. translation because of the
@@ -13690,6 +13691,13 @@ msgid ""
 "PARTICULAR PURPOSE AND NON-INFRINGEMENT, EXCEPT INSOFAR AS ANY SUCH IMPLIED "
 "WARRANTIES MAY NOT BE DISCLAIMED UNDER APPLICABLE LAW."
 msgstr ""
+"LAS APIS Y CUALQUIER INFORMACIÓN, CONTENIDO DE LA API O SERVICIOS "
+"DISPONIBLES EN O A TRAVÉS DE LAS APIS SE PROPORCIONAN \"TAL CUAL\" Y \"COMO "
+"ESTÁN DISPONIBLES\" SIN GARANTÍA DE NINGÚN TIPO (EXPRESA, IMPLÍCITA O DE "
+"OTRA MANERA), INCLUYENDO, SIN LIMITACIÓN, CUALQUIER GARANTÍA IMPLÍCITA DE "
+"COMERCIABILIDAD, ADECUACIÓN PARA UN PROPÓSITO ESPECÍFICO Y NO INFRACCIÓN, "
+"EXCEPTO EN CUALQUIERA CUALQUIER GARANTÍA IMPLÍCITA PUEDE NO SER EXCLUIDA "
+"BAJO LA LEY APLICABLE."
 
 #: lms/templates/api_admin/terms_of_service.html
 msgid ""
@@ -13704,6 +13712,17 @@ msgid ""
 "MEMBERS, THE ENTITIES PROVIDING INFORMATION, API CONTENT OR SERVICES FOR THE"
 " APIS, THE COURSE INSTRUCTORS AND THEIR STAFFS."
 msgstr ""
+"{Platform_name} Y LOS PARTICIPANTES {platform_name} (COMO SE DEFINE "
+"POSTERIORMENTE) NO GARANTIZAN QUE LAS APIS OPERARÁN DE MANERA ININTERRUMPIDA"
+" O SIN ERROR, QUE LAS APIS ESTÁN LIBRES DE VIRUS U OTROS COMPONENTES DAÑINOS"
+" O QUE EL CONTENIDO APIS O API PROPORCIONADO CUMPLIRÁ SUS NECESIDADES O "
+"EXPECTATIVAS. {Platform_name} Y LOS PARTICIPANTES {platform_name} TAMBIÉN NO"
+" HACEN NINGUNA GARANTÍA SOBRE LA EXACTITUD, INTEGRIDAD, CALIDAD O CALIDAD DE"
+" LAS APIS O CUALQUIER CONTENIDO DE LA API, NI QUE ALGÚN CONTENIDO PARTICULAR"
+" DE LA API CONTINUARÁ DISPONIBLE. \"{Platform_name} PARTICIPANTES\" "
+"SIGNIFICA MIT, HARVARD, LOS OTROS MIEMBROS, LAS ENTIDADES QUE PROPORCIONAN "
+"INFORMACIÓN, CONTENIDO API O SERVICIOS PARA LAS APIS, LOS INSTRUCTORES DEL "
+"CURSO Y SUS PERSONAS."
 
 #: lms/templates/api_admin/terms_of_service.html
 msgid ""
@@ -13715,6 +13734,13 @@ msgid ""
 "DOWNLOAD OR USE OF SUCH MATERIAL OR DATA, UNLESS OTHERWISE EXPRESSLY "
 "PROVIDED FOR IN THE {platform_name} PRIVACY POLICY."
 msgstr ""
+"EL USO DE LAS APIS Y EL CONTENIDO DE LA API Y CUALQUIER SERVICIO OBTENIDO DE"
+" O A TRAVÉS DE LAS APIS ES BAJO SU PROPIO RIESGO. SU ACCESO A LA "
+"INFORMACIÓN, MATERIALES O DATOS A TRAVÉS DE LAS APIS ES A SU PROPIA "
+"DISCRECIÓN Y RIESGO, Y USTED SERÁ SOLAMENTE RESPONSABLE POR CUALQUIER DAÑO A"
+" SU PROPIEDAD (INCLUYENDO SU SISTEMA INFORMÁTICO) O LA PÉRDIDA DE DATOS QUE "
+"RESULTEN DE LA DESCARGA O USO DE DICHOS MATERIALES O DATOS, A MENOS QUE LO "
+"EXPRESAMENTE SE PREVÉ EN LA POLÍTICA DE PRIVACIDAD {platform_name}."
 
 #: lms/templates/api_admin/terms_of_service.html
 msgid ""
@@ -13726,6 +13752,13 @@ msgid ""
 "INFORMATION OBTAINED FROM OR THROUGH THE APIS, WHETHER YOUR CLAIM IS BASED "
 "IN CONTRACT, TORT, STATUTORY OR OTHER LAW."
 msgstr ""
+"EN LA MEDIDA MÁXIMA PERMITIDA POR LA LEY APLICABLE, USTED ACEPTA QUE NI "
+"{platform_name} NI NINGUNO DE LOS PARTICIPANTES {platform_name} SERÁ "
+"RESPONSABLE ANTE USTED POR CUALQUIER PÉRDIDA O DAÑO, REAL O CONSIGUIENTE, "
+"QUE SURJA O SE RELACIONE CON ESTOS TÉRMINOS, O SU (O CUALQUIER TERCERO) USO "
+"O LA IMPOSIBILIDAD DE USAR LAS APIS O CUALQUIER CONTENIDO DE LA API, O SU "
+"CONFIANZA SOBRE LA INFORMACIÓN OBTENIDA DE O A TRAVÉS DEL APIS, YA SEA SU "
+"RECLAMACIÓN SE BASA EN CONTRATO, AGRAVIO, LEY ESTATUTARIA O OTRA LEY."
 
 #: lms/templates/api_admin/terms_of_service.html
 msgid ""
@@ -13738,6 +13771,14 @@ msgid ""
 "DEFAMATION, ERRORS, LOSS OF PROFITS, LOSS OF DATA OR INTERRUPTION IN "
 "AVAILABILITY OF DATA)."
 msgstr ""
+"EN PARTICULAR, EN LA MEDIDA MÁXIMA PERMITIDA POR LA LEY APLICABLE, NI "
+"{platform_name} NI NINGUNO DE LOS PARTICIPANTES DE {platform_name} TENDRÁ "
+"CUALQUIER RESPONSABILIDAD POR DAÑOS CONSECUENTES, INDIRECTOS, PUNITIVOS, "
+"ESPECIALES, EJEMPLARES O INCIDENTALES, PREVISIBLES O IMPREVISTOS Y YA SEA O "
+"NO {platform_name} O CUALQUIERA DE LOS PARTICIPANTES {platform_name} HA SIDO"
+" NEGLIGENTE O DE OTRA MANERA EN FALLA (INCLUYENDO, PERO SIN LIMITARSE A, "
+"RECLAMOS POR DEFAMACIÓN, ERRORES, PÉRDIDA DE GANANCIAS, PÉRDIDA DE DATOS O "
+"INTERRUPCIÓN EN DISPONIBILIDAD DE DATOS)."
 
 #: lms/templates/api_admin/terms_of_service.html
 msgid ""
@@ -13746,6 +13787,10 @@ msgid ""
 " OR ALL OF THE ABOVE DISCLAIMERS, EXCLUSIONS, OR LIMITATIONS MAY NOT APPLY "
 "TO YOU, AND YOU MIGHT HAVE ADDITIONAL RIGHTS."
 msgstr ""
+"CIERTAS LEYES ESTATALES NO PERMITEN LIMITACIONES SOBRE GARANTÍAS IMPLÍCITAS "
+"O LA EXCLUSIÓN O LIMITACIÓN DE CIERTOS DAÑOS. SI ESTAS LEYES SE APLICAN A "
+"USTED, ALGUNAS O TODAS LAS RENUNCIAS ANTERIORES, EXCLUSIONES O LIMITACIONES "
+"PUEDEN NO APLICARSE A USTED, Y USTED PUEDE TENER DERECHOS ADICIONALES."
 
 #: lms/templates/api_admin/terms_of_service.html
 msgid ""
@@ -14375,7 +14420,7 @@ msgstr ""
 
 #: lms/templates/commerce/checkout_cancel.html
 msgid "Checkout Cancelled"
-msgstr ""
+msgstr "Compra cancelada"
 
 #: lms/templates/commerce/checkout_cancel.html
 msgid ""
@@ -14387,7 +14432,7 @@ msgstr ""
 
 #: lms/templates/commerce/checkout_error.html
 msgid "Checkout Error"
-msgstr ""
+msgstr "Error en la compra"
 
 #: lms/templates/commerce/checkout_error.html
 msgid ""

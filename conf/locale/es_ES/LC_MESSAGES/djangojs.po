@@ -30,7 +30,7 @@
 # Maxfer <maxfer@gmail.com>, 2015
 # mercefan <mercefan@gmail.com>, 2014-2017
 # Miguel Ángel Candel <mcandel@upvnet.upv.es>, 2015
-# Miguel Angel Cordova <miguel.angel.cordova.uned@gmail.com>, 2014
+# Miguel Angel Cordova <miguel.angel.cordova.uned@gmail.com>, 2014,2017
 # Nacho Díaz <nachotheix@gmail.com>, 2015
 # RAFAEL LOPEZ <rlopez@behaviorandlaw.com>, 2015
 # Rocío Pérez Venero <perezvenero.rocio@gmail.com>, 2015
@@ -131,7 +131,7 @@ msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
 "POT-Creation-Date: 2017-05-11 15:05+0000\n"
-"PO-Revision-Date: 2017-05-11 15:11+0000\n"
+"PO-Revision-Date: 2017-05-31 12:56+0000\n"
 "Last-Translator: Ned Batchelder <ned@edx.org>\n"
 "Language-Team: Spanish (Spain) (http://www.transifex.com/open-edx/edx-platform/language/es_ES/)\n"
 "MIME-Version: 1.0\n"
@@ -2995,7 +2995,7 @@ msgstr "Introduce hipervínculo"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "e.g. 'http://google.com'"
-msgstr ""
+msgstr "p.ej. 'http://google.com/'"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Link Description"
@@ -3069,8 +3069,8 @@ msgstr "Por favor, proporciona una URL válida."
 #: lms/static/js/Markdown.Editor.js
 msgid "%(errorCount)s error found in form."
 msgid_plural "%(errorCount)s errors found in form."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(errorCount)s error encontrado en el formulario."
+msgstr[1] "%(errorCount)s errores encontrados en el formulario."
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Bold (Ctrl+B)"
@@ -4546,7 +4546,7 @@ msgstr ""
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "TOTAL"
-msgstr ""
+msgstr "TOTAL"
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "ORDER NUMBER"
@@ -5728,7 +5728,7 @@ msgstr "Cambiar manualmente"
 
 #: cms/static/js/views/move_xblock_list.js
 msgid "Sections"
-msgstr ""
+msgstr "Secciones"
 
 #: cms/static/js/views/move_xblock_list.js
 msgid "Subsections"
