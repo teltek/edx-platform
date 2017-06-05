@@ -490,14 +490,14 @@ def render_cert_by_uuid(request, certificate_uuid):
 
 def _get_user_national_id(user, preview_mode):
     try:
+        national_id = NationalId.objects.get(user=user.id)
+        return national_id.get_national_id()
+    except NationalId.DoesNotExist:
         if preview_mode:
             national_id = "123456789-AA"
             return national_id
         else:
-            national_id = NationalId.objects.get(user=user.id)
-            return national_id.get_national_id()
-    except NationalId.DoesNotExist:
-        national_id= False
+            national_id= False
         return national_id
 
 @handle_500(
