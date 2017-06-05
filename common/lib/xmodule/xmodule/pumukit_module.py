@@ -297,6 +297,10 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
                         m2 = re.match('^(.*?) style="(.*?)"(.*?)$', vid_value)
                         if m2 is not None:
                             vid_value = '{} style="{}-ms-zoom: 0.85;-moz-transform: scale(0.85);-moz-transform-origin: 0 0;-o-transform: scale(0.85);-o-transform-origin: 0 0;-webkit-transform: scale(0.85);-webkit-transform-origin: 0 0;"{}'.format(*m2.groups())
+                        if "allowfullscreen" not in vid_value:
+                            m3 = re.match('^(.*?) src=(.*?)$', vid_value)
+                            if m3 is not None:
+                                vid_value = '{} webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" src={}'.format(*m3.groups())
                         break
 
         video_player = {
