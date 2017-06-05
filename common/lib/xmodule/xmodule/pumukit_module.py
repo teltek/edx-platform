@@ -251,57 +251,11 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
 
         html_object = html.parse(urllib2.urlopen(url))
         if "tv.uvigo.es/matterhorn" in url:
-            input_values = html_object.xpath("//iframe[@id='mh_iframe']")
-            if input_values:
-                for value in input_values:
-                    vid_value = html.tostring(value)
-                    if "engage" in vid_value:
-                        vid_title = html_object.find(".//title").text
-                        vid_value = vid_value.replace('\n', '')
-                        vid_value = vid_value.replace('http://', 'https://')
-                        vid_value = vid_value.replace('width="1220"', 'width="960"')
-                        vid_value = vid_value.replace('width:100%', 'width:960px')
-                        vid_value = vid_value.replace('height:860px', 'height:900px')
-                        vid_value = vid_value.replace('/engage/', '/paellaengage/')
-                        m1 = re.match('^(.*?) style="(.*?)"(.*?)$', vid_value)
-                        if m1 is not None:
-                            vid_value = '{} style="{}-ms-zoom: 0.85;-moz-transform: scale(0.85);-moz-transform-origin: 0 0;-o-transform: scale(0.85);-o-transform-origin: 0 0;-webkit-transform: scale(0.85);-webkit-transform-origin: 0 0;"{}'.format(*m1.groups())
-                        break
+            vid_title, vid_value = self._get_video_iframe_uvigo_matterhorn(html_object)
         elif "tv.uvigo.es/" in url:
-            input_values = html_object.xpath("//input[@type='text']/@value")
-            if input_values:
-                for value in input_values:
-                    if "iframe src" in value and "tv.uvigo.es" in value:
-                        vid_title = html_object.find(".//title").text
-                        vid_value = unicode(value, "utf-8")
-                        vid_value = vid_value.replace('\n', '')
-                        m1 = re.match('^(.*?) src="(.*?)"(.*?)$', vid_value)
-                        if m1 is not None:
-                            vid_value = '{} src="{}?image=EDX"{}'.format(*m1.groups())
-                        vid_value = vid_value.replace('http://', 'https://')
-                        vid_value = vid_value.replace('width="1220"', 'width="800"')
-                        break
+            vid_title, vid_value = self._get_video_iframe_uvigo_onestream(html_object)
         elif "tv.campusdomar.es/" in url:
-            input_values = html_object.xpath("//input[@type='text']/@value")
-            if input_values:
-                for value in input_values:
-                    if "iframe src" in value and "tv.campusdomar.es" in value:
-                        vid_title = html_object.find(".//title").text
-                        vid_value = unicode(value, "utf-8")
-                        vid_value = vid_value.replace('\n', '')
-                        m1 = re.match('^(.*?) src="(.*?)"(.*?)$', vid_value)
-                        if m1 is not None:
-                            vid_value = '{} src="{}?autostart=false"{}'.format(*m1.groups())
-                        vid_value = vid_value.replace('http://', 'https://')
-                        vid_value = vid_value.replace('width="1220"', 'width="960"')
-                        m2 = re.match('^(.*?) style="(.*?)"(.*?)$', vid_value)
-                        if m2 is not None:
-                            vid_value = '{} style="{}-ms-zoom: 0.85;-moz-transform: scale(0.85);-moz-transform-origin: 0 0;-o-transform: scale(0.85);-o-transform-origin: 0 0;-webkit-transform: scale(0.85);-webkit-transform-origin: 0 0;"{}'.format(*m2.groups())
-                        if "allowfullscreen" not in vid_value:
-                            m3 = re.match('^(.*?) src=(.*?)$', vid_value)
-                            if m3 is not None:
-                                vid_value = '{} webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" src={}'.format(*m3.groups())
-                        break
+            vid_title, vid_value = self._get_video_iframe_campusdomar(html_object)
 
         video_player = {
             "display_name": vid_title,
@@ -457,3 +411,90 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
             field_data[attr] = value
 
         return field_data  
+
+
+    def _get_video_iframe_uvigo_matterhorn(self, html_object):
+        """
+        Parse uvigo matterhorn video page
+        to get the video iframe to embed.
+        """
+        vid_title = WRONG_URL
+        vid_value = CHECK_URL
+        input_values = html_object.xpath("//iframe[@id='mh_iframe']")
+        if input_values:
+            for value in input_values:
+                vid_value = html.tostring(value)
+                if "engage" in vid_value:
+                    vid_title = html_object.find(".//title").text
+                    vid_value = vid_value.replace('\n', '')
+                    vid_value = vid_value.replace('http://', 'https://')
+                    vid_value = vid_value.replace('width="1220"', 'width="960"')
+                    vid_value = vid_value.replace('width:100%', 'width:960px')
+                    vid_value = vid_value.replace('height:860px', 'height:900px')
+                    vid_value = vid_value.replace('/engage/', '/paellaengage/')
+                    m1 = re.match('^(.*?) style="(.*?)"(.*?)$', vid_value)
+                    if m1 is not None:
+                        vid_value = '{} style="{}-ms-zoom: 0.75;-moz-transform: scale(0.75);-moz-transform-origin: 0 0;-o-transform: scale(0.75);-o-transform-origin: 0 0;-webkit-transform: scale(0.75);-webkit-transform-origin: 0 0;"{}'.format(*m1.groups())
+                    m2 = re.match('^(.*?) src=(.*?)$', vid_value)
+                    if m2 is not None:
+                        vid_value = '{} class="iframe-pumukit" src={}'.format(*m3.groups())
+                    break
+
+        return vid_title, vid_value
+
+
+    def _get_video_iframe_uvigo_onestream(self, html_object):
+        """
+        Parse the UVigo video page to get the iframe to embed.
+        """
+        vid_title = WRONG_URL
+        vid_value = CHECK_URL
+        input_values = html_object.xpath("//input[@type='text']/@value")
+        if input_values:
+            for value in input_values:
+                if "iframe src" in value and "tv.uvigo.es" in value:
+                    vid_title = html_object.find(".//title").text
+                    vid_value = unicode(value, "utf-8")
+                    vid_value = vid_value.replace('\n', '')
+                    m1 = re.match('^(.*?) src="(.*?)"(.*?)$', vid_value)
+                    if m1 is not None:
+                        vid_value = '{} src="{}?image=EDX"{}'.format(*m1.groups())
+                    vid_value = vid_value.replace('http://', 'https://')
+                    vid_value = vid_value.replace('width="1220"', 'width="800"')
+                    break
+
+        return vid_title, vid_value
+
+
+    def _get_video_iframe_campusdomar(self, html_object):
+        """
+        Parse the Campus do Mar video page to get the
+        iframe to embed.
+        """
+        vid_title = WRONG_URL
+        vid_value = CHECK_URL
+        input_values = html_object.xpath("//input[@type='text']/@value")
+        if input_values:
+            for value in input_values:
+                if "iframe src" in value and "tv.campusdomar.es" in value:
+                    vid_title = html_object.find(".//title").text
+                    vid_value = unicode(value, "utf-8")
+                    vid_value = vid_value.replace('\n', '')
+                    m1 = re.match('^(.*?) src="(.*?)"(.*?)$', vid_value)
+                    if m1 is not None:
+                        vid_value = '{} src="{}?autostart=false"{}'.format(*m1.groups())
+                    vid_value = vid_value.replace('http://', 'https://')
+                    vid_value = vid_value.replace('width="1220"', 'width="960"')
+                    m2 = re.match('^(.*?) style="(.*?)"(.*?)$', vid_value)
+                    if m2 is not None:
+                        vid_value = '{} style="{}-ms-zoom: 0.75;-moz-transform: scale(0.75);-moz-transform-origin: 0 0;-o-transform: scale(0.75);-o-transform-origin: 0 0;-webkit-transform: scale(0.75);-webkit-transform-origin: 0 0;"{}'.format(*m2.groups())
+                    if "allowfullscreen" not in vid_value:
+                        m3 = re.match('^(.*?) src=(.*?)$', vid_value)
+                        if m3 is not None:
+                            vid_value = '{} webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" src={}'.format(*m3.groups())
+                    m4 = re.match('^(.*?) src=(.*?)$', vid_value)
+                    if m4 is not None:
+                        vid_value = '{} class="iframe-pumukit" src={}'.format(*m4.groups())
+                    break
+
+        return vid_title, vid_value
