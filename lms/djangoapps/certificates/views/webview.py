@@ -496,9 +496,7 @@ def _get_user_national_id(user, preview_mode):
         if preview_mode:
             national_id = "123456789-AA"
             return national_id
-        else:
-            national_id= False
-        return national_id
+        raise 
 
 @handle_500(
     template_path="certificates/server-error.html",
@@ -547,11 +545,12 @@ def render_html_view(request, user_id, course_id):
         return render_to_response(invalid_template_path, context)
 
     # Get National number
-    national_id = _get_user_national_id(user, preview_mode)
-    if not national_id:
-        log.info(
+    try:
+        national_id = _get_user_national_id(user, preview_mode)
+    except:
+        log.error(
             "Invalid cert: User %s does not have national identity number.",
-            national_id,
+            user_id,
         )
         return render_to_response(invalid_template_path, context)
     context['accomplishment_user_national_id'] = national_id
