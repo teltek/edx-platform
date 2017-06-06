@@ -14,3 +14,7 @@
 !collapsible.js
 !xmodule.js
 !javascript_loader.js
+
+
+# Pumukit fullscreen resize for Opencast videos
+!fullscreen.js
