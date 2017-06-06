@@ -126,7 +126,10 @@ class PumukitModule(PumukitFields, XModule):
     js = {
         'coffee': [
             resource_string(__name__, 'js/src/pumukit/display.coffee')
-        ]
+        ],
+        'js': [
+            resource_string(__name__, 'js/src/pumukit/fullscreen.js')
+        ],
     }
     css = {'scss': [resource_string(__name__, 'css/pumukit/display.scss')]}
     js_module_name = "Pumukit"
