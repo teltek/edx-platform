@@ -431,7 +431,6 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
                     vid_value = vid_value.replace('width:100%', 'width:960px')
                     vid_value = vid_value.replace('height:860px', 'height:900px')
                     vid_value = vid_value.replace('/engage/', '/paellaengage/')
-                    vid_value = self._scale_iframe(vid_value)
                     break
 
         return vid_title, vid_value
@@ -479,7 +478,6 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
                     vid_value = vid_value.replace('/engage/', '/paellaengage/')
                     vid_value = vid_value.replace('width="1220"', 'width="960"')
                     vid_value = vid_value.replace('height:860px', 'height:900px')
-                    vid_value = self._scale_iframe(vid_value)
 
                     return vid_title, vid_value
 
@@ -507,17 +505,6 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
         vid_value = vid_value.replace('\n', '')
 
         return vid_value.replace('http://', 'https://')
-
-
-    def _scale_iframe(self, vid_value):
-        """
-        Scale iframe size.
-        """
-        m1 = re.match('^(.*?) style="(.*?)"(.*?)$', vid_value)
-        if m1 is not None:
-            vid_value = '{} style="{}-ms-zoom: 0.75;-moz-transform: scale(0.75);-moz-transform-origin: 0 0;-o-transform: scale(0.75);-o-transform-origin: 0 0;-webkit-transform: scale(0.75);-webkit-transform-origin: 0 0;"{}'.format(*m1.groups())
-
-        return vid_value
 
 
     def _force_allowfullscreen(self, vid_value):
