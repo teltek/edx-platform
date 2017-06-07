@@ -20,7 +20,7 @@ function scaleElementSize(element, size) {
 function scaleIframes() {
     el = $('body', $('#mh_iframe'));
     if (!el.context[0]) {
-        if (total < 5000) {
+        if (total < 10000) {
             total += 500;
             setTimeout(scaleIframes, 500);
             return;
@@ -53,11 +53,14 @@ $(function(){
             });
         } else {
             // Rescale iframes to fit in page
-            var iframes = $([id=mh_iframe])[0];
-            $(iframes).each(function(d){
-                var iframed = $(iframes[d]);
-                scaleElementSize(iframed, 0);
-            });
+            try {
+                var iframes = $([id=mh_iframe])[0];
+                $(iframes).each(function(d){
+                    var iframed = $(iframes[d]);
+                    scaleElementSize(iframed, 0);
+                });
+            } catch (e) {
+            }
         }
     });
 
