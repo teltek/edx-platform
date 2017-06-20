@@ -81,6 +81,21 @@ $(function(){
         setTimeout(scaleIframesWhenLoaded, 4000);
     });
 
+    $(document).on('click', '.sequence-nav-button.button-previous', function(e) {
+	total = 0;
+	setTimeout(scaleIframesWhenLoaded, 500);
+    });
+
+    $(document).on('click', '.seq_video.nav-item', function(e) {
+	total = 0;
+	setTimeout(scaleIframesWhenLoaded, 500);
+    });
+
+    $(document).on('click', '.sequence-nav-button.button-next', function(e) {
+	total = 0;
+	setTimeout(scaleIframesWhenLoaded, 500);
+    });
+
     $(window).on('resize', function(e){
         if (screen.width === window.innerWidth) {
             // Force fullscreen size scaling
