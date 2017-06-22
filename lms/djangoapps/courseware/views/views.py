@@ -820,7 +820,7 @@ def _get_cert_data(student, course, course_key, is_active, enrollment_mode):
         return CertData(
             'notidentification',
             _('Congratulations, you qualified for a certificate!'),
-            _('To get a certificate, you need to add your National Identity Number in the account settings'),
+            _('To get a certificate, you need to add your National Identity Number.'),
             download_url=None,
             cert_web_view_url=None
         )
