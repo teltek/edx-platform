@@ -117,6 +117,11 @@ define(['jquery', 'underscore', 'gettext', 'common/js/components/utils/view_util
 			self.setFieldInErr($effort.parent(), error);
 			self.toggleSaveButton(false);
 		    }
+		    if($effort.val()>100000 || $effort.val()<0){
+			error = gettext('The value must be between 0 and 100000.')
+			self.setFieldInErr($effort.parent(), error);
+			self.toggleSaveButton(false);
+		    }
 		    self.validateTotalKeyLength();
 		    self.setFieldInErr($effort.parent(), error);
 		    if (!self.validateFilledFields()){
