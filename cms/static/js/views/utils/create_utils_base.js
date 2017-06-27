@@ -112,7 +112,7 @@ define(['jquery', 'underscore', 'gettext', 'common/js/components/utils/view_util
                 var $effort = $(self.selectors.effort);
                 $effort.on('keyup', function() {
 		    var error = self.validateRequiredField($effort.val());
-		    if(!(parseInt($effort.val())==$effort.val()) && error==''){
+		    if((!(parseInt($effort.val())==$effort.val()) || $effort.val().indexOf(".")>=0) && error==''){
 			error = gettext('Please use only integer numbers in this field.');
 			self.setFieldInErr($effort.parent(), error);
 			self.toggleSaveButton(false);
