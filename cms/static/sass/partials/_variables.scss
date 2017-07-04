@@ -47,7 +47,7 @@ $uxpl-blue-hover-active: rgb(6, 86, 131); // wcag2a compliant
 $uxpl-green-base: rgb(0, 129, 0); // wcag2a compliant
 $uxpl-green-hover-active: rgb(0, 155, 0); // wcag2a compliant
 
-$uxpl-pink-base: rgb(194, 56, 125); // wcag2a compliant
+$uxpl-pink-base: rgb(135,39,87); // wcag2a compliant
 $uxpl-pink-hover-active: lighten($uxpl-pink-base, 7%); // wcag2a compliant
 
 $uxpl-grayscale-x-back: rgb(245, 245, 245); // UXPL grayscale, x-back
@@ -81,6 +81,9 @@ $gray-d1: shade($gray,20%);
 $gray-d2: shade($gray,40%);
 $gray-d3: shade($gray,60%);
 $gray-d4: shade($gray,80%);
+
+$gray-l1-a11y: rgb(118, 118, 118); // #767676
+$gray-l2-a11y: rgb(112, 112, 112); // #707070
 
 // These define button styles similar to LMS
 // The goal here is consistency (until we can overhaul all of this...)

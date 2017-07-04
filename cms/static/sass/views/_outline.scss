@@ -22,6 +22,7 @@
     .incontext-editor-open-action {
       @include transition(opacity $tmg-f1 ease-in-out 0);
       opacity: 0.0;
+      color: $gray-l1-a11y;
     }
 
     .incontext-editor-form {
@@ -200,6 +201,7 @@
       display: inline-block;
       vertical-align: middle;
       margin-bottom: 0;
+      color: $gray-l2-a11y;
     }
 
     .status-release-label,
