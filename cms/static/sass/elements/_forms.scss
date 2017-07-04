@@ -408,6 +408,7 @@ form {
     @extend %ui-btn-non-blue;
     @extend %t-copy-base;
     padding-top: ($baseline/10);
+    color: $gray-l2-a11y;
 
     .icon.icon {
       vertical-align: baseline;
