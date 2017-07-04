@@ -166,7 +166,7 @@ $uxpl-blue-hover-active: rgb(6, 86, 131); // wcag2a compliant
 $uxpl-green-base: rgb(0, 129, 0); // wcag2a compliant
 $uxpl-green-hover-active: rgb(0, 155, 0); // wcag2a compliant
 
-$uxpl-pink-base: rgb(194, 56, 125); // wcag2a compliant
+$uxpl-pink-base: rgb(135,39,87); // wcag2a compliant
 $uxpl-pink-hover-active: lighten($uxpl-pink-base, 7%); // wcag2a compliant
 
 $uxpl-grayscale-x-back: rgb(245, 245, 245); // UXPL grayscale, x-back
@@ -446,7 +446,7 @@ $link-color-d1: $link-color !default;
 $link-hover: $uxpl-blue-hover-active !default; // from our Pattern Library http://ux.edx.org/elements/colors/
 $site-status-color: $pink !default;
 $button-color: $uxpl-blue-base !default;
-$button-archive-color: rgb(238,238,238) !default; // #eeeeee
+$button-archive-color: rgb(243,243,243) !default; // #f3f3f3
 
 // larger, random elements
 $dark-trans-bg: rgba(0, 0, 0, .75);
