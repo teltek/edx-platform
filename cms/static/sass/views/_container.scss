@@ -246,7 +246,7 @@
 
         .copy {
           @extend %t-copy-sub2;
-          color: $gray;
+          color: $gray-l1-a11y;
         }
 
         .date,
@@ -287,7 +287,7 @@
           @extend %cont-text-wrap;
 
           a {
-            color: $blue;
+            color: $blue-a11y;
 
             &:hover {
               color: $orange-d1;
