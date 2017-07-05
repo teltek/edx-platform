@@ -8,7 +8,7 @@
         </div>
         <div class="embeddable">
             <label id="embeddable-label">URL:</label>
-            <input type="text" class="embeddable-xml-input" value='' readonly aria-labelledy="embeddable-label">
+            <input type="text" class="embeddable-xml-input" value='' readonly aria-labelledby="embeddable-label">
         </div>
         <form class="file-chooser" action="asset-url"
               method="post" enctype="multipart/form-data">
