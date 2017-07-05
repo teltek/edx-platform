@@ -12,6 +12,7 @@
 
     .no-textbook-content {
       @extend %no-content;
+      color: $gray-l3-a11y;
     }
 
     .textbook {
