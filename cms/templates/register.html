@@ -78,7 +78,7 @@ from django.core.urlresolvers import reverse
         </div>
 
         <!-- no honor code for CMS, but need it because we're using the lms student object -->
-        <input name="honor_code" type="checkbox" value="true" checked="true" hidden="true">
+        <input name="honor_code" type="checkbox" value="true" checked="true" hidden="true" aria-label="${_('Honor Code')}" />
       </form>
     </article>
 

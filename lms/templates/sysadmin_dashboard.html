@@ -70,17 +70,17 @@ textarea {
 
 	<ul class="list-input">
 	  <li class="field text" style="padding-bottom: 1.2em">
-		<label for="student_uname">${_('Email or username')}</label>
-		<input type="text" name="student_uname" size=40 />
+		<label for="student_uname" id="student_uname_label">${_('Email or username')}</label>
+		<input type="text" name="student_uname" size=40 aria-labelledby="student_uname_label" />
 	  </li>
 
 	  <li class="field text">
-		<label for="student_fullname">${_('Full Name')}</label>
-		<input type="text" name="student_fullname" size=40 />
+		<label for="student_fullname" id="student_fullname_label">${_('Full Name')}</label>
+		<input type="text" name="student_fullname" size=40 aria-labelledby="student_fullname_label" />
 	  </li>
 	  <li class="field text">
-		<label for="student_password">${_('Password')}</label>
-		<input type="password" name="student_password" size=40 />
+		<label for="student_password" id="student_password_label">${_('Password')}</label>
+		<input type="password" name="student_password" size=40 aria-labelledby="student_password_label" />
 	  </li>
 	</ul>
 
