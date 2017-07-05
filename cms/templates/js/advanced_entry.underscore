@@ -4,8 +4,8 @@
   </div>
 
   <div class="field text value">
-    <label class="sr" for="<%= valueUniqueId %>"><%= display_name %></label>
-    <textarea class="json text" id="<%= valueUniqueId %>"><%= value %></textarea>
+    <label class="sr" for="<%= valueUniqueId %>" id="<%= valueUniqueId %>-label"><%= display_name %></label>
+    <textarea class="json text" id="<%= valueUniqueId %>" aria-labelledby="<%= valueUniqueId %>-label"><%= value %></textarea>
     <span class="tip tip-stacked"><%= help %></span>
   </div>
   <% if (deprecated) { %>

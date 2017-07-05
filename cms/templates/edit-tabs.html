@@ -100,11 +100,11 @@
 
                         % if tab.is_hideable:
                           <li class="action-item action-visible">
-                            <label><span class="sr">${_("Show this page")}</span></label>
+                            <label id="show-page-label"><span class="sr">${_("Show this page")}</span></label>
                             % if tab.is_hidden:
-                              <input type="checkbox" class="toggle-checkbox" data-tooltip="${_('Show/hide page')}" checked />
+                              <input type="checkbox" class="toggle-checkbox" data-tooltip="${_('Show/hide page')}" checked aria-labelledby="show-page-label" />
                             % else:
-                              <input type="checkbox" class="toggle-checkbox" data-tooltip="${_('Show/hide page')}" />
+                              <input type="checkbox" class="toggle-checkbox" data-tooltip="${_('Show/hide page')}" aria-labelledby="show-page-label" />
                             % endif
                             <div class="action-button"><span class="icon fa fa-eye" aria-hidden="true"></span><span class="icon fa fa-eye-slash"></span></div>
                           </li>
