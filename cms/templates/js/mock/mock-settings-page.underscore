@@ -226,4 +226,5 @@
     </button>
   </div>
 </section>
+<button type="submit" hidden>On change field, another button appears to save settings.</button>
 </form>
