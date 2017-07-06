@@ -123,6 +123,7 @@ textarea {
       <form name="dashform" method="POST" action="${reverse('sysadmin')}">
         <input type="hidden" name="csrfmiddlewaretoken" value="${ csrf_token }">
         <input type="hidden" name="dash_mode" value="">
+        <button type="submit" hidden>${_('Hidden data form')}</button>
       </form>
 
       ## Translators: refers to http://git-scm.com/docs/git-log
