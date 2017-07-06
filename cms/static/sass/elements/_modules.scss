@@ -16,6 +16,9 @@
     padding: ($baseline/2) ($baseline*0.75);
     background-color: $gray-l4;
   }
+  .bar-mod-title.pub-status {
+    color: $gray-l7-a11y;
+  }
 
   .bar-mod-content {
     @extend %t-copy-sub1;
