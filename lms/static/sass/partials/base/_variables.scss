@@ -69,6 +69,7 @@ $gray-d3:   shade($gray,60%) !default;
 $gray-d4:   shade($gray,80%) !default;
 
 $gray-l1-a11y: rgb(118, 118, 118); // #767676
+$gray-l2-a11y: rgb(116,118,120); // #747678
 
 $yellow: rgb(255, 252, 221);
 
@@ -163,6 +164,8 @@ $blue-t2: rgba($blue, 0.50);
 $blue-t3: rgba($blue, 0.75);
 
 $blue-d1-a11y: rgb(0,107,165); // #006BA5
+$blue-l1-a11y: rgb(233,245,251); // #E9F5FB
+
 
 $uxpl-blue-base: rgb(0, 117, 180); // wcag2a compliant
 $uxpl-blue-hover-active: rgb(6, 86, 131); // wcag2a compliant

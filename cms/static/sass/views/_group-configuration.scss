@@ -21,6 +21,7 @@
 
     .no-content {
       @extend %no-content;
+      color: $gray-l3-a11y;
     }
 
     .wrapper-groups {
