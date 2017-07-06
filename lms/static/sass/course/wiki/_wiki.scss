@@ -238,7 +238,7 @@ section.wiki {
 
       .label {
         font-size: 0.7em;
-        color: #aaa;
+        color: $gray-l1-a11y;
         text-transform: uppercase;
       }
 
@@ -276,7 +276,7 @@ section.wiki {
     li {
       &.active {
         a {
-          color: $link-color;
+          color: $blue-d1-a11y;
           font-weight: bold;
           background-color: $gray-l4;
         }
