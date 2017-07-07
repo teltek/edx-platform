@@ -12355,7 +12355,7 @@ msgstr ""
 #. Translators: This is short for "System administration".
 #: lms/templates/navigation.html themes/red-theme/lms/templates/header.html
 msgid "Sysadmin"
-msgstr "Administrador del Sistema"
+msgstr "Admin"
 
 #: lms/templates/navigation.html lms/templates/shoppingcart/shopping_cart.html
 #: themes/edx.org/lms/templates/header.html
