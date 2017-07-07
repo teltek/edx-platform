@@ -54,7 +54,7 @@
       display: inline-block;
       vertical-align: top;
       width: flex-grid(9, 12);
-      color: $gray-l1-a11y;
+      color: $gray-l2-a11y;
       background-color: $uxpl-grayscale-x-back;
 
       .count-current-shown,
@@ -220,7 +220,7 @@
         &.nav-dd{
           // basic layout - nav items
           margin: 0 -($baseline/2);
-          color: $blue;
+          color: $blue-d1-a11y;
           cursor: pointer;
           .wrapper-nav-sub {
             top: 35px;
