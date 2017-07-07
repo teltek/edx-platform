@@ -146,7 +146,7 @@
           }
 
           span.register, span.add-to-cart {
-            background: $button-archive-color;
+            background: $gray-l3-a11y;
             border: 1px solid darken($button-archive-color, 50%);
             @include box-sizing(border-box);
             color: darken($button-archive-color, 50%);
