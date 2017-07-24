@@ -18362,7 +18362,7 @@ msgstr ""
 #: lms/templates/navigation/navbar-authenticated.html
 #: lms/templates/navigation/bootstrap/navbar-authenticated.html
 msgid "Sysadmin"
-msgstr "Administrador del Sistema"
+msgstr "Admin"
 
 #: lms/templates/navigation/navbar-authenticated.html
 #: lms/templates/navigation/bootstrap/navbar-authenticated.html
