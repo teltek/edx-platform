@@ -7,13 +7,14 @@
             <div class="progress-fill"></div>
         </div>
         <div class="embeddable">
-            <label>URL:</label>
-            <input type="text" class="embeddable-xml-input" value='' readonly>
+            <label id="embeddable-label">URL:</label>
+            <input type="text" class="embeddable-xml-input" value='' readonly aria-labelledby="embeddable-label">
         </div>
         <form class="file-chooser" action="asset-url"
               method="post" enctype="multipart/form-data">
             <a href="#" class="choose-file-button"><%= gettext("Choose File") %></a>
-            <input type="file" class="file-input" name="file">
+            <input type="file" class="file-input" name="file" aria-label="<%= gettext('Choose File') %>">
+            <button type="submit" hidden><%= gettext('Submit') %></button>
         </form>
     </div>
 </div>

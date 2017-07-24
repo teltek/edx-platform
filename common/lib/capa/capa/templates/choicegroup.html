@@ -10,6 +10,8 @@
     <fieldset ${describedby_html}>
       % if response_data['label']:
         <legend id="${id}-legend" class="response-fieldset-legend field-group-hd">${response_data['label']}</legend>
+      % else:
+        <legend id="${id}-legend" class="response-fieldset-legend field-group-hd" hidden>${id}</legend>
       % endif
       % for description_id, description_text in response_data['descriptions'].items():
         <p class="question-description" id="${description_id}">${description_text}</p>

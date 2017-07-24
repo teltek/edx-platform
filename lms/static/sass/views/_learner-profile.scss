@@ -57,8 +57,8 @@
                 height: $profile-image-dimension;
                 border-radius: ($baseline/4);
                 border: 2px dashed transparent;
-                background: rgba(229,241,247, .8);
-                color: $link-color;
+                background: $white;
+                color: $black;
                 text-shadow: none;
                 @include transition(all $tmg-f1 ease-in-out 0s);
                 opacity: 0;
@@ -72,6 +72,8 @@
                 &:hover {
                     @include show-hover-state();
                     border-color: $link-color;
+                    color: $link-color;
+                    background: rgba(229,241,247, .8);
                 }
             }
 

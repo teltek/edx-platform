@@ -70,17 +70,17 @@ textarea {
 
 	<ul class="list-input">
 	  <li class="field text" style="padding-bottom: 1.2em">
-		<label for="student_uname">${_('Email or username')}</label>
-		<input type="text" name="student_uname" size=40 />
+		<label for="student_uname" id="student_uname_label">${_('Email or username')}</label>
+		<input type="text" name="student_uname" size=40 aria-labelledby="student_uname_label" />
 	  </li>
 
 	  <li class="field text">
-		<label for="student_fullname">${_('Full Name')}</label>
-		<input type="text" name="student_fullname" size=40 />
+		<label for="student_fullname" id="student_fullname_label">${_('Full Name')}</label>
+		<input type="text" name="student_fullname" size=40 aria-labelledby="student_fullname_label" />
 	  </li>
 	  <li class="field text">
-		<label for="student_password">${_('Password')}</label>
-		<input type="password" name="student_password" size=40 />
+		<label for="student_password" id="student_password_label">${_('Password')}</label>
+		<input type="password" name="student_password" size=40 aria-labelledby="student_password_label" />
 	  </li>
 	</ul>
 
@@ -128,20 +128,20 @@ textarea {
   <input type="hidden" name="csrfmiddlewaretoken" value="${ csrf_token }" />
   <ul class="list-input">
 	<li class="field text">
-	  <label for="repo_location">
+	  <label for="repo_location" id="repo_location_label">
 		## Translators: Repo is short for git repository or source of
 		## courseware; see http://git-scm.com/about
 		${_('Repo Location')}:
 	  </label>
-	  <input type="text" name="repo_location" style="width:60%" />
+	  <input type="text" name="repo_location" style="width:60%" aria-labelledby="repo_location_label"/>
 	</li>
 	<li class="field text">
-	  <label for="repo_location">
+	  <label for="repo_branch" id="repo_branch_label">
 		## Translators: Repo is short for git repository (http://git-scm.com/about) or source of
 		## courseware and branch is a specific version within that repository
 		${_('Repo Branch (optional)')}:
 	  </label>
-	  <input type="text" name="repo_branch" style="width:60%" />
+	  <input type="text" name="repo_branch" style="width:60%" aria-labelledby="repo_branch_label"/>
 	</li>
   </ul>
   <div class="form-actions">
@@ -151,11 +151,11 @@ textarea {
   <hr />
   <ul class="list-input">
 	<li class="field text">
-	  <label for="course_id">
+	  <label for="course_id" id="course_id_label">
 	        ## Translators: 'dir' is short for 'directory'
 		${_('Course ID or dir')}:
 	  </label>
-	  <input type="text" name="course_id" style="width:60%" />
+	  <input type="text" name="course_id" style="width:60%" aria-labelledby="course_id_label"/>
 	</li>
   </ul>
   <div class="form-actions">
