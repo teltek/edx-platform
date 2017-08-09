@@ -86,6 +86,11 @@ $(function(){
 	setTimeout(scaleIframesWhenLoaded(), 500);
     });
 
+    $(document).on('click', '.sequence-bottom', function(e) {
+	total = 0;
+	setTimeout(scaleIframesWhenLoaded(), 500);
+    });
+
     $(window).on('resize', function(e){
         if (screen.width === window.innerWidth) {
             // Force fullscreen size scaling
