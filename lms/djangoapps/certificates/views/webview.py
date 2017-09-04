@@ -28,6 +28,7 @@ from util import organizations_helpers as organization_api
 from util.views import handle_500
 from xmodule.modulestore.django import modulestore
 from xmodule.modulestore.exceptions import ItemNotFoundError
+from openedx.core.djangoapps.models.course_details import CourseDetails
 
 from certificates.api import (
     get_active_web_certificate,
@@ -108,7 +109,7 @@ def _update_certificate_context(context, user_certificate, platform_name):
         'September': 'septiembre',
         'October': 'octubre',
         'November': 'noviembre',
-        'December': 'december'
+        'December': 'diciembre'
         }
     context['certificate_date_issued'] = _('{day} {month} {year}').format(
         month=spanish_months.get(user_certificate.modified_date.strftime("%B")),
@@ -263,6 +264,14 @@ def _update_course_context(request, context, course, platform_name):
                                                               'through {platform_name}.').format(
             partner_short_name=context['organization_short_name'],
             platform_name=platform_name)
+
+    course_details = CourseDetails.fetch(course.id)
+    course_effort = course_details.effort if course_details.effort else "25 horas"
+    course_start_date = course.start.strftime("%d/%m/%Y") if course.start else False
+    course_end_date = course.end.strftime("%d/%m/%Y") if course.end else False
+    context['course_effort'] = course_effort
+    context['course_start_date'] = course_start_date
+    context['course_end_date'] = course_end_date
 
 
 def _update_social_context(request, context, course, user, user_certificate, platform_name):
