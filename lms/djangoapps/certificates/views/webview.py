@@ -300,6 +300,7 @@ def _update_context_with_user_info(context, user, user_certificate):
     Updates context dictionary with user related info.
     """
     user_fullname = user.profile.name
+    context['certificated_user'] = user
     context['username'] = user.username
     context['course_mode'] = user_certificate.mode
     context['accomplishment_user_id'] = user.id
