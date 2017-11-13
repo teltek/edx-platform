@@ -24,6 +24,7 @@ from opaque_keys import InvalidKeyError
 from opaque_keys.edx.keys import CourseKey
 from openedx.core.lib.courses import course_image_url
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
+from openedx.core.djangoapps.models.course_details import CourseDetails
 from student.models import LinkedInAddToProfileConfiguration
 from util import organizations_helpers as organization_api
 from util.views import handle_500
@@ -243,6 +244,11 @@ def _update_course_context(request, context, course, platform_name):
                                                               '{partner_short_name}.').format(
             partner_short_name=context['organization_short_name'],
             platform_name=platform_name)
+    course_details = CourseDetails.fetch(course.id)
+    course_effort = course_details.effort if course_details.effort else False
+    course_end_date = course.end.strftime("%B %d, %Y") if course.end else False
+    context['course_effort'] = course_effort
+    context['course_end_date'] = course_end_date
 
 
 def _update_social_context(request, context, course, user, user_certificate, platform_name):
