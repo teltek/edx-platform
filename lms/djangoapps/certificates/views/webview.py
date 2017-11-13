@@ -595,5 +595,11 @@ def render_html_view(request, user_id, course_id):
     # Track certificate view events
     _track_certificate_events(request, context, course, user, user_certificate)
 
+    context['cert_date_issued'] = ('{month} {day}, {year}').format(
+        month=user_certificate.modified_date.strftime("%B"),
+        day=user_certificate.modified_date.day,
+        year=user_certificate.modified_date.year
+    )
+
     # FINALLY, render appropriate certificate
     return _render_certificate_template(request, context, course, user_certificate)
