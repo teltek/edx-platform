@@ -39,7 +39,7 @@
     }
 
     %print-rendering-section {
-        margin-bottom: spacing-vertical(small);
+        margin-bottom: 0px !important;
         border-bottom: none !important;
         padding-bottom: 0 !important;
 
@@ -73,7 +73,7 @@
 
     body {
         height: auto;
-        margin: spacing-vertical(mid-large) spacing-vertical(mid-small) 0 spacing-vertical(mid-small) !important;
+        margin: spacing-vertical(mid-small) spacing-vertical(mid-small) 0 spacing-vertical(mid-small) !important;
         padding: 0;
     }
 
@@ -104,7 +104,6 @@
     .wrapper-introduction,
     .accomplishment-metadata-title,
     .accomplishment-metadata .accomplishment-recipient,
-    .deco-corner,
     .accomplishment-date .label {
         @extend %print-hide;
     }
@@ -189,6 +188,29 @@
         @extend %print-no-background;
     }
 
+    .cert-attendance {
+        font-size: 2.5em !important;
+	line-height: 1.5em !important;
+    }
+
+    .cert-user-fullname {
+        font-size: 1.5em !important;
+    }
+
+    .cert-course-data {
+        font-size: 0.75em !important;
+    }
+
+    .cert-logo-images {
+        height: 100px !important;
+    }
+
+    .cert-logo-texas {
+        width: 200px !important;
+	height: auto !important;
+	margin-right: 235px !important;
+    }
+
     .accomplishment-rendering {
         top: 0 !important;
         border: rem(1) solid palette(grayscale, back);
@@ -207,18 +229,28 @@
         }
 
         .wrapper-statement-and-signatories {
-            border-bottom: rem(2) solid palette(grayscale, x-back);
+            border-bottom: none;
+	    margin-top: 0px !important;
         }
 
         .accomplishment-statement {
             @extend %print-rendering-section;
             @include span(8);
             margin: 0 auto;
+
+	    .cert-course-details-block {
+		margin-left: -20px;
+	    }
+
+	    .accomplishment-statement-lead {
+	        margin-bottom: 0em !important;
+		margin-left: 35px !important;
+            }
         }
 
         .accomplishment-summary,
         .accomplishment-statement-detail {
-            margin-bottom: spacing-vertical(mid-small);
+            margin-bottom: spacing-vertical(xx-small);
         }
 
         .wrapper-orgs::after {
@@ -229,6 +261,7 @@
             margin-bottom: 0 !important;
             border-bottom: none !important;
             padding-bottom: 0 !important;
+	    text-align: center;
 
             .wrapper-organization {
                 height: rem(48);
@@ -252,7 +285,7 @@
             }
 
             .signatory-signature {
-                height: spacing-vertical(small);
+                height: spacing-vertical(mid-large) !important;
                 max-width: 100%;
                 margin-top: 0;
                 padding-top: 0 !important;
@@ -260,11 +293,15 @@
             }
 
             .signatory-name {
-                font-size: font-size(x-small);
+                font-size: font-size(small) !important;
             }
 
             .signatory-credentials {
                 margin-bottom: 0 !important;
+
+		.role {
+		    font-size: font-size(small) !important;
+		}
             }
 
             // CASE: > 4 signatures
@@ -285,26 +322,8 @@
         margin-bottom: 0;
 
         .wrapper-metadata {
-            @include clearfix();
-            margin-bottom: 0;
-
-            .metadata {
-                margin-bottom: 0;
-                border-bottom: none !important;
-                padding-bottom: 0 !important;
-
-                .label, .value {
-                    display: inline-block;
-                    vertical-align: baseline;
-                    font-size: font-size(x-small);
-                    line-height: line-height(small);
-                }
-
-                .label {
-                    @include margin-right(spacing-horizontal(small));
-                }
-            }
-        }
+	    @extend %print-hide;
+	}
         .accomplishment-id {
             float: left;
             width: 65% !important;
