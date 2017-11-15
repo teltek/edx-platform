@@ -190,7 +190,10 @@
 
     .cert-attendance {
         font-size: 2.5em !important;
-	line-height: 1.5em !important;
+        line-height: 1.5em !important;
+        letter-spacing: normal !important;
+        margin-bottom: 1.5em !important;
+        margin-left: 115px !important;
     }
 
     .cert-user-fullname {
@@ -207,8 +210,12 @@
 
     .cert-logo-texas {
         width: 200px !important;
-	height: auto !important;
-	margin-right: 235px !important;
+        height: auto !important;
+        margin-right: 110px !important;
+    }
+
+    .main-logo {
+        margin-top: -40px !important;
     }
 
     .accomplishment-rendering {
@@ -217,7 +224,6 @@
         border-top: rem(2) solid $cert-base-color;
         box-shadow: none;
         padding: spacing-vertical(small) spacing-horizontal(mid-large);
-
 
         .accomplishment-type {
             margin-top: -(spacing-vertical(mid-large));
@@ -239,11 +245,11 @@
             margin: 0 auto;
 
 	    .cert-course-details-block {
-		margin-left: -20px;
+		margin-left: 15px;
 	    }
 
 	    .accomplishment-statement-lead {
-	        margin-bottom: 0em !important;
+	        margin-bottom: 40px !important;
 		margin-left: 35px !important;
             }
         }
@@ -258,6 +264,7 @@
         }
 
         .accomplishment-orgs {
+            margin-top: 5px !important;
             margin-bottom: 0 !important;
             border-bottom: none !important;
             padding-bottom: 0 !important;
