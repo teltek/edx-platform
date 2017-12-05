@@ -738,6 +738,14 @@
             @include left($baseline/2);
             @include padding(($baseline * 0.4), 0, ($baseline * 0.4), ($baseline * 0.75));
 
+            &.action-upgrade-honor {
+              @extend %btn-primary-blue;
+              @include clearfix();
+              position: relative;
+              @include left($baseline/2);
+              @include padding(($baseline * 0.4), 0, ($baseline * 0.4), ($baseline * 0.75));
+	    }
+
             .action-upgrade-icon{
               @include float(left);
               display: inline;
