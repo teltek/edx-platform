@@ -368,6 +368,9 @@ FEATURES = {
 
     # Set this to False to facilitate cleaning up invalid xml from your modulestore.
     'ENABLE_XBLOCK_XML_VALIDATION': True,
+
+    # Ignore verification deadline for paying for course
+    'IGNORE_VERIFICATION_DEADLINE_FOR_PAY': True,
 }
 
 # Ignore static asset files on import which match this pattern
