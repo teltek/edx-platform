@@ -556,6 +556,9 @@ class CourseMode(models.Model):
         if modes_dict is None:
             modes_dict = cls.modes_for_course_dict(course_id)
 
+        if cls.AUDIT in modes_dict:
+            return True
+
         # Professional and no-id-professional mode courses are always behind a paywall
         if cls.has_professional_mode(modes_dict):
             return False
@@ -616,7 +619,7 @@ class CourseMode(models.Model):
 
         # White-label uses course mode honor with a price
         # to indicate that the course is behind a paywall.
-        if cls.HONOR in modes_dict and len(modes_dict) == 1:
+        if cls.HONOR in modes_dict:
             if modes_dict["honor"].min_price > 0 or modes_dict["honor"].suggested_prices != '':
                 return True
         return False

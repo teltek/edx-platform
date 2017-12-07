@@ -1528,8 +1528,13 @@ class CourseEnrollment(models.Model):
         if refund_cutoff_date and datetime.now(UTC) > refund_cutoff_date:
             return False
 
-        course_mode = CourseMode.mode_for_course(self.course_id, 'verified')
-        if course_mode is None:
+        course_mode_verified = CourseMode.mode_for_course(self.course_id, CourseMode.VERIFIED)
+        course_mode_honor = CourseMode.mode_for_course(self.course_id, CourseMode.HONOR)
+        if course_mode_verified is None and self.mode == CourseMode.VERIFIED:
+            return False
+        elif course_mode_honor is None and self.mode == CourseMode.HONOR:
+            return False
+        elif course_mode_honor is not None and course_mode_honor.min_price == 0 and self.mode == CourseMode.HONOR:
             return False
         else:
             return True

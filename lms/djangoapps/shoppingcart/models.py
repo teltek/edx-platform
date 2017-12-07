@@ -1890,7 +1890,7 @@ class CertificateItem(OrderItem):
         if (not course_enrollment.refundable()) or skip_refund:
             return
 
-        target_certs = CertificateItem.objects.filter(course_id=course_enrollment.course_id, user_id=course_enrollment.user, status='purchased', mode='verified')
+        target_certs = CertificateItem.objects.filter(course_id=course_enrollment.course_id, user_id=course_enrollment.user, status='purchased', mode=course_enrollment.mode)
         try:
             target_cert = target_certs[0]
         except IndexError:
