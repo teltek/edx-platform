@@ -7219,6 +7219,10 @@ msgstr ""
 msgid "price"
 msgstr ""
 
+#: lms/templates/verify_student/make_payment_step.underscore
+msgid "I accept the {anchorStart}Terms of Service{anchorEnd} *"
+msgstr "Aceito as {anchorStart}condições de serviço{anchorEnd} *"
+
 #: lms/templates/verify_student/make_payment_step_ab_testing.underscore
 msgid "Account Not Activated"
 msgstr ""

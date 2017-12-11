@@ -7450,6 +7450,10 @@ msgstr "Seu status de verificação é válido até {verificationGoodUntil}."
 msgid "price"
 msgstr "preço"
 
+#: lms/templates/verify_student/make_payment_step.underscore
+msgid "I accept the {anchorStart}Terms of Service{anchorEnd} *"
+msgstr "Aceito as {anchorStart}condições de serviço{anchorEnd} *"
+
 #: lms/templates/verify_student/make_payment_step_ab_testing.underscore
 msgid "Account Not Activated"
 msgstr "Conta não ativada"
