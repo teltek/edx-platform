@@ -3666,6 +3666,14 @@ msgid "Try the transaction again in a few minutes."
 msgstr "Tente fazer esta transação novamente em alguns minutos."
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
+msgid "Accept the Terms of Service."
+msgstr "É necessário aceitar os Termos de Serviço."
+
+#: lms/static/js/verify_student/views/make_payment_step_view.js
+msgid "Connecting to Payment Processor..."
+msgstr "Conectando-se ao gateway de pagamento..."
+
+#: lms/static/js/verify_student/views/make_payment_step_view.js
 #: openedx/features/course_bookmarks/static/course_bookmarks/js/views/bookmark_button.js
 #: openedx/features/course_bookmarks/static/course_bookmarks/js/views/bookmarks_list.js
 msgid "An error has occurred. Please try again."

@@ -15375,7 +15375,7 @@ msgstr "Matrículas encerradas"
 
 #: lms/templates/courseware/course_about.html
 msgid "Add {course_name} to Cart <span>({price} USD)</span>"
-msgstr "Adicione {course_name} ao Carrinho <span>({price} USD)</span>"
+msgstr "Adicione {course_name} ao Carrinho <span>({price} {currency})</span>"
 
 #: lms/templates/courseware/course_about.html
 msgid "Enroll in {course_name}"
@@ -16177,6 +16177,28 @@ msgid ""
 "Your current verification will expire in {days} days. {start_link}Re-verify "
 "your identity now{end_link} using a webcam and a government-issued photo ID."
 msgstr ""
+
+#: lms/templates/dashboard/_dashboard_course_listing.html
+msgid ""
+"Get credentials without identity verification to emphasize the knowledge and"
+" aptitudes you get in this course."
+msgstr ""
+"Obter uma acreditação sem verificação de identidade para destacar os "
+"conhecimentos e habilidades que você adquire neste curso."
+
+#: lms/templates/dashboard/_dashboard_course_listing.html
+msgid ""
+"It's a Suitable Title. It's easy to share. It proves to be motivating to "
+"complete the course. <br>{link_start}Learn more about the not verified "
+"certificate Credentials{link_end}."
+msgstr ""
+"É um título próprio. É fácil de compartilhar. Tente ser motivador para "
+"completar o curso. <br>{link_start}Saiba mais sobre a acreditação não "
+"credenciada{link_end}."
+
+#: lms/templates/dashboard/_dashboard_course_listing.html
+msgid "Request Credentials"
+msgstr "Solicitar Credencial"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid ""
