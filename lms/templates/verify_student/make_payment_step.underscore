@@ -115,6 +115,13 @@
       <%
       // payment buttons will go here
       %>
+      <div class="field required checkbox" id="field-tos">
+        <input id="tos-yes" type="checkbox" name="terms_of_service" value="true" required aria-required="true" />
+        <label for="tos-yes"><%= HtmlUtils.interpolateHtml(gettext( "I accept the {anchorStart}Terms of Service{anchorEnd} *"), {anchorStart: HtmlUtils.HTML('<a class="new-vp" tabindex="-1" target="_blank" href="/tos">'), anchorEnd: HtmlUtils.HTML('</a>')})%></label>
+      </div>
+      <div class="field required" id="field-tos-message">
+        <p id="tos-message"></p>
+      </div>
     </div>
   </div>
   <% } %>

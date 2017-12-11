@@ -162,6 +162,15 @@ var edx = edx || {};
                     'sku': this.templateContext().sku
                 };
 
+	    // Check the user has accepted the terms of service of payments
+	    var termsOfServiceAcceptance = $( 'input[name="terms_of_service"]:checked' , this.el);
+	    if (termsOfServiceAcceptance.length == 0) {
+	        $('#tos-message').html(gettext('Accept the Terms of Service.'));
+	        return 1;
+	    } else {
+	        $('#tos-message').html(gettext('Connecting to Payment Processor...'));
+	    }
+
             // Disable the payment button to prevent multiple submissions
             this.setPaymentEnabled(false);
 
