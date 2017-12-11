@@ -679,7 +679,7 @@ class OrderItem(TimeStampedModel):
         # this is a validation step to verify that the currency of the item we
         # are adding is the same as the currency of the order we are adding it
         # to
-        currency = kwargs.get('currency', 'usd')
+        currency = kwargs.get('currency', settings.PAID_COURSE_REGISTRATION_CURRENCY[0])
         if order.currency != currency and order.orderitem_set.exists():
             raise InvalidCartItem(_("Trying to add a different currency into the cart"))
 
@@ -1613,8 +1613,8 @@ class PaidCourseRegistration(OrderItem):
         self.course_enrollment = CourseEnrollment.enroll(user=self.user, course_key=self.course_id, mode=self.mode)
         self.save()
 
-        log.info("Enrolled {0} in paid course {1}, paid ${2}"
-                 .format(self.user.email, self.course_id, self.line_cost))
+        log.info("Enrolled {0} in paid course {1}, paid {2}{3}"
+                 .format(self.user.email, self.course_id, settings.PAID_COURSE_REGISTRATION_CURRENCY[1], self.line_cost))
         self.course_enrollment.send_signal(EnrollStatusChange.paid_complete,
                                            cost=self.line_cost, currency=self.currency)
 
@@ -1795,8 +1795,8 @@ class CourseRegCodeItem(OrderItem):
         for i in range(total_registration_codes):  # pylint: disable=unused-variable
             save_registration_code(self.user, self.course_id, self.mode, order=self.order)
 
-        log.info("Enrolled {0} in paid course {1}, paid ${2}"
-                 .format(self.user.email, self.course_id, self.line_cost))
+        log.info("Enrolled {0} in paid course {1}, paid {2}{3}"
+                 .format(self.user.email, self.course_id, settings.PAID_COURSE_REGISTRATION_CURRENCY[1], self.line_cost))
 
     @property
     def csv_report_comments(self):
@@ -2069,7 +2069,7 @@ class CertificateItem(OrderItem):
                 course_id=course_id,
                 mode='verified',
                 status='purchased',
-                unit_cost__gt=(CourseMode.min_course_price_for_verified_for_currency(course_id, 'usd')))).count()
+                unit_cost__gt=(CourseMode.min_course_price_for_verified_for_currency(course_id, settings.PAID_COURSE_REGISTRATION_CURRENCY[0])))).count()
 
     def analytics_data(self):
         """Simple function used to construct analytics data for the OrderItem.

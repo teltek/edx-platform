@@ -379,7 +379,7 @@ from openedx.core.lib.courses import course_image_url
       var typeChanged = false;
       var prevTotal = $('#total-amount').data('amount');
       var newTotal = getNewTotal(prevQty, newQty, unit_cost, prevTotal);
-      $('#total-amount').html('$'+newTotal.toFixed(2)+' USD');
+      $('#total-amount').html('$'+newTotal.toFixed(2)+' '+${currency});
       $('#total-amount').data('amount', newTotal);
 
       if(isbusinessType != wasbusinessType){
@@ -423,7 +423,7 @@ from openedx.core.lib.courses import course_image_url
                           $('li.billing').addClass('hidden');
                       }
 
-//                      $('#total-amount').html('$'+data['total_cost'].toFixed(2)+' USD');
+//                      $('#total-amount').html('$'+data['total_cost'].toFixed(2)+' '+${currency});
                       isSpinnerBtnEnabled = true;
                   }
 

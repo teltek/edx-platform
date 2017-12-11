@@ -210,7 +210,7 @@ def payment_accepted(params):
     else:
         return {'accepted': False,
                 'amt_charged': 0,
-                'currency': 'usd',
+                'currency': settings.PAID_COURSE_REGISTRATION_CURRENCY[0],
                 'order': order}
 
 

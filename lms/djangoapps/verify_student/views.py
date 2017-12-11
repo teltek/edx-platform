@@ -732,8 +732,11 @@ def checkout_with_shoppingcart(request, user, course_key, course_mode, amount):
     """ Create an order and trigger checkout using shoppingcart."""
     cart = Order.get_cart_for_user(user)
     cart.clear()
+    currency = settings.PAID_COURSE_REGISTRATION_CURRENCY[0]
+    cart.currency = currency
+    cart.save()
     enrollment_mode = course_mode.slug
-    CertificateItem.add_to_order(cart, course_key, amount, enrollment_mode)
+    CertificateItem.add_to_order(cart, course_key, amount, enrollment_mode, currency)
 
     # Change the order's status so that we don't accidentally modify it later.
     # We need to do this to ensure that the parameters we send to the payment system

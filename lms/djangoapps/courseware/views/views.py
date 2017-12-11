@@ -638,6 +638,7 @@ def course_about(request, course_id):
         overview = CourseOverview.get_from_id(course.id)
 
         all_modes = CourseMode.modes_for_course_dict(course_key, include_expired=True)
+        currency = settings.PAID_COURSE_REGISTRATION_CURRENCY[0].upper()
 
         context = {
             'course': course,
@@ -667,7 +668,8 @@ def course_about(request, course_id):
             'cart_link': reverse('shoppingcart.views.show_cart'),
             'pre_requisite_courses': pre_requisite_courses,
             'course_image_urls': overview.image_urls,
-            'all_modes': all_modes
+            'all_modes': all_modes,
+            'currency': currency,
         }
         inject_coursetalk_keys_into_context(context, course_key)
 

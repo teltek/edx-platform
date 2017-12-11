@@ -26,6 +26,7 @@ from edxmako.shortcuts import render_to_response
 from openedx.core.djangoapps.embargo import api as embargo_api
 from student.models import CourseEnrollment
 from util.db import outer_atomic
+from django.conf import settings
 
 
 class ChooseModeView(View):
@@ -156,6 +157,7 @@ class ChooseModeView(View):
                 if x.strip()
             ]
             context["currency"] = verified_mode.currency.upper()
+            context["currency_symbol"] = settings.PAID_COURSE_REGISTRATION_CURRENCY[1]
             context["min_price"] = verified_mode.min_price
             context["verified_name"] = verified_mode.name
             context["verified_description"] = verified_mode.description
@@ -288,7 +290,7 @@ def create_mode(request, course_id):
         'mode_display_name': u'Honor Code Certificate',
         'min_price': 0,
         'suggested_prices': u'',
-        'currency': u'usd',
+        'currency': settings.PAID_COURSE_REGISTRATION_CURRENCY[0],
     }
 
     # Try pulling querystring parameters out of the request
