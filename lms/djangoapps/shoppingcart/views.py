@@ -670,6 +670,7 @@ def postpay_callback(request):
         # to continue with verification.
 
         # Only orders where order_items.count() == 1 might be attempting to upgrade
+        is_honor = False
         attempting_upgrade = request.session.get('attempting_upgrade', False)
         if attempting_upgrade:
             if result['order'].has_items(CertificateItem):
@@ -678,11 +679,12 @@ def postpay_callback(request):
                     course_enrollment = CourseEnrollment.get_enrollment(request.user, course_id)
                     if course_enrollment:
                         course_enrollment.emit_event(EVENT_NAME_USER_UPGRADED)
+                        is_honor = True if course_enrollment.mode == 'honor' else False
 
             request.session['attempting_upgrade'] = False
 
         verify_flow_redirect = _get_verify_flow_redirect(result['order'])
-        if verify_flow_redirect is not None:
+        if verify_flow_redirect is not None and not (is_honor and settings.FEATURES.get('SHOW_RECEIPT_FOR_HONOR', True)):
             return verify_flow_redirect
 
         # Otherwise, send the user to the receipt page

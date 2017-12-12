@@ -375,6 +375,9 @@ FEATURES = {
     # Whether to show currency symbol before or after price of a course.
     # Default value: before price, as in US dollars.
     'SHOW_CURRENCY_SYMBOL_BEFORE_PRICE': True,
+
+    # Whether to show receipt for honor mode after purchased.
+    'SHOW_RECEIPT_FOR_HONOR': True,
 }
 
 # Ignore static asset files on import which match this pattern
