@@ -371,6 +371,10 @@ FEATURES = {
 
     # Ignore verification deadline for paying for course
     'IGNORE_VERIFICATION_DEADLINE_FOR_PAY': True,
+
+    # Whether to show currency symbol before or after price of a course.
+    # Default value: before price, as in US dollars.
+    'SHOW_CURRENCY_SYMBOL_BEFORE_PRICE': True,
 }
 
 # Ignore static asset files on import which match this pattern
