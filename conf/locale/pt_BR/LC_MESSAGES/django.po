@@ -6252,6 +6252,78 @@ msgstr ""
 msgid "Your certificate is available"
 msgstr "Seu certificado está disponível"
 
+#: lms/djangoapps/courseware/views/views.py:786
+msgid ""
+"Congratulations, you meet the requirements to receive a payment "
+"accreditation!"
+msgstr ""
+"Parabéns, você atende aos requisitos para receber uma "
+"acreditação de pagamento!"
+
+#: lms/djangoapps/courseware/views/views.py:787
+msgid ""
+"You can keep working to get a better score, or pay to get an accreditation. "
+"Update your course registration form in your panel and get a payment "
+"accreditation."
+msgstr ""
+"Você pode continuar trabalhando para obter uma pontuação melhor, ou pagar "
+"para obter uma acreditação. Atualize seu formulário de inscrição no seu "
+"painel e obtenha uma acreditação de pagamento."
+
+#: lms/djangoapps/courseware/views/views.py:803
+msgid "Your accreditation has been invalidated"
+msgstr "A sua acreditação foi invalidada"
+
+#: lms/djangoapps/courseware/views/views.py:813
+msgid "Your accreditation is available"
+msgstr "Sua acreditação está disponível"
+
+#: lms/djangoapps/courseware/views/views.py:814
+msgid "You can keep working for a higher grade."
+msgstr "Você pode continuar trabalhando para obter uma melhor pontuação."
+
+#: lms/djangoapps/courseware/views/views.py:826
+msgid ""
+"We're creating your acreditation. You can keep working in your courses and a "
+"link to it will appear here and on your Dashboard when it is ready."
+msgstr ""
+"Estamos criando sua credencial. Você pode continuar trabalhando em seus "
+"cursos e quando estiver pronto, um link aparecerá aqui e em seu Painel "
+"de controle."
+
+#: lms/djangoapps/courseware/views/views.py:842
+msgid ""
+"We're creating your accreditation. You can keep working in your courses and "
+"a link to it will appear here and on your Dashboard when it is ready."
+msgstr ""
+"Estamos criando sua credencial. Você pode continuar trabalhando em seus "
+"cursos e quando estiver pronto, um link aparecerá aqui e em seu Painel "
+"de controle."
+
+#: lms/djangoapps/courseware/views/views.py:858
+msgid "Accreditation unavailable"
+msgstr "Acreditação não disponível"
+
+#: lms/djangoapps/courseware/views/views.py:860
+#, python-brace-format
+msgid ""
+"You have not received an accreditation because you do not have a current "
+"{platform_name} verified identity."
+msgstr ""
+"Você não recebeu uma acreditação porque você não possui uma identidade "
+"verificada da {platform_name}."
+
+#: lms/djangoapps/courseware/views/views.py:869
+msgid "Congratulations, you qualified for an accreditation!"
+msgstr "Parabéns, você atende aos requisitos para receber uma acreditação!"
+
+#: lms/djangoapps/courseware/views/views.py:870
+msgid ""
+"You can keep working for a higher grade, or request your accreditation now."
+msgstr ""
+"Você pode continuar trabalhando para obter uma pontuação melhor, ou "
+"solicitar a acreditação agora."
+
 #: lms/djangoapps/courseware/views/views.py
 #, python-brace-format
 msgid "To see course content, {sign_in_link} or {register_link}."

@@ -5167,6 +5167,72 @@ msgstr ""
 msgid "Congratulations, you qualified for a certificate!"
 msgstr ""
 
+#: lms/djangoapps/courseware/views/views.py:786
+msgid ""
+"Congratulations, you meet the requirements to receive a payment "
+"accreditation!"
+msgstr ""
+
+#: lms/djangoapps/courseware/views/views.py:787
+msgid ""
+"You can keep working to get a better score, or pay to get an accreditation. "
+"Update your course registration form in your panel and get a payment "
+"accreditation."
+msgstr ""
+
+#: lms/djangoapps/courseware/views/views.py:803
+msgid "Your accreditation has been invalidated"
+msgstr ""
+
+#: lms/djangoapps/courseware/views/views.py:804
+msgid "Please contact your course team if you have any questions."
+msgstr ""
+
+#: lms/djangoapps/courseware/views/views.py:813
+msgid "Your accreditation is available"
+msgstr ""
+
+#: lms/djangoapps/courseware/views/views.py:814
+msgid "You can keep working for a higher grade."
+msgstr ""
+
+#: lms/djangoapps/courseware/views/views.py:824
+#: lms/djangoapps/courseware/views/views.py:840
+msgid "We're working on it..."
+msgstr ""
+
+#: lms/djangoapps/courseware/views/views.py:826
+msgid ""
+"We're creating your acreditation. You can keep working in your courses and a "
+"link to it will appear here and on your Dashboard when it is ready."
+msgstr ""
+
+#: lms/djangoapps/courseware/views/views.py:842
+msgid ""
+"We're creating your accreditation. You can keep working in your courses and "
+"a link to it will appear here and on your Dashboard when it is ready."
+msgstr ""
+
+#: lms/djangoapps/courseware/views/views.py:858
+msgid "Accreditation unavailable"
+msgstr ""
+
+#: lms/djangoapps/courseware/views/views.py:860
+#, python-brace-format
+msgid ""
+"You have not received an accreditation because you do not have a current "
+"{platform_name} verified identity."
+msgstr ""
+
+#: lms/djangoapps/courseware/views/views.py:869
+msgid "Congratulations, you qualified for an accreditation!"
+msgstr ""
+
+#: lms/djangoapps/courseware/views/views.py:870
+msgid ""
+"You can keep working for a higher grade, or request your certificate now."
+msgstr ""
+
 #: lms/djangoapps/courseware/views/views.py
 msgid "Invalid location."
 msgstr ""

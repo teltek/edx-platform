@@ -757,7 +757,8 @@ def _progress(request, course_key, student_id):
         'student': student,
         'passed': is_course_passed(course, grade_summary),
         'credit_course_requirements': _credit_course_requirements(course_key, student),
-        'certificate_data': _get_cert_data(student, course, course_key, is_active, enrollment_mode)
+        'certificate_data': _get_cert_data(student, course, course_key, is_active, enrollment_mode),
+        'enrollment_mode': enrollment_mode
     }
 
     with outer_atomic():
@@ -783,8 +784,8 @@ def _get_cert_data(student, course, course_key, is_active, enrollment_mode):
     if enrollment_mode == CourseMode.AUDIT:
         return CertData(
             CertificateStatuses.audit_passing,
-            _('Your enrollment: Audit track'),
-            _('You are enrolled in the audit track for this course. The audit track does not include a certificate.'),
+            _('Congratulations, you meet the requirements to receive a payment accreditation!'),
+            _('You can keep working to get a better score, or pay to get an accreditation. Update your course registration form in your panel and get a payment accreditation.'),
             download_url=None,
             cert_web_view_url=None
         )
@@ -800,7 +801,7 @@ def _get_cert_data(student, course, course_key, is_active, enrollment_mode):
     if certs_api.is_certificate_invalid(student, course_key):
         return CertData(
             CertificateStatuses.invalidated,
-            _('Your certificate has been invalidated'),
+            _('Your accreditation has been invalidated'),
             _('Please contact your course team if you have any questions.'),
             download_url=None,
             cert_web_view_url=None
@@ -810,8 +811,8 @@ def _get_cert_data(student, course, course_key, is_active, enrollment_mode):
 
     if cert_downloadable_status['is_downloadable']:
         cert_status = CertificateStatuses.downloadable
-        title = _('Your certificate is available')
-        msg = _('You can keep working for a higher grade, or request your certificate now.')
+        title = _('Your accreditation is available')
+        msg = _('You can keep working for a higher grade.')
         if certs_api.has_html_certificates_enabled(course_key, course):
             if certs_api.get_active_web_certificate(course) is not None:
                 cert_web_view_url = certs_api.get_certificate_url(
@@ -823,7 +824,7 @@ def _get_cert_data(student, course, course_key, is_active, enrollment_mode):
                     CertificateStatuses.generating,
                     _("We're working on it..."),
                     _(
-                        "We're creating your certificate. You can keep working in your courses and a link "
+                        "We're creating your acreditation. You can keep working in your courses and a link "
                         "to it will appear here and on your Dashboard when it is ready."
                     ),
                     download_url=None,
@@ -839,7 +840,7 @@ def _get_cert_data(student, course, course_key, is_active, enrollment_mode):
             CertificateStatuses.generating,
             _("We're working on it..."),
             _(
-                "We're creating your certificate. You can keep working in your courses and a link to "
+                "We're creating your accreditation. You can keep working in your courses and a link to "
                 "it will appear here and on your Dashboard when it is ready."
             ),
             download_url=None,
@@ -855,9 +856,9 @@ def _get_cert_data(student, course, course_key, is_active, enrollment_mode):
         platform_name = configuration_helpers.get_value('PLATFORM_NAME', settings.PLATFORM_NAME)
         return CertData(
             CertificateStatuses.unverified,
-            _('Certificate unavailable'),
+            _('Accreditation unavailable'),
             _(
-                'You have not received a certificate because you do not have a current {platform_name} '
+                'You have not received an accreditation because you do not have a current {platform_name} '
                 'verified identity.'
             ).format(platform_name=platform_name),
             download_url=None,
@@ -866,8 +867,8 @@ def _get_cert_data(student, course, course_key, is_active, enrollment_mode):
 
     return CertData(
         CertificateStatuses.requesting,
-        _('Congratulations, you qualified for a certificate!'),
-        _('You can keep working for a higher grade, or request your certificate now.'),
+        _('Congratulations, you qualified for an accreditation!'),
+        _('You can keep working for a higher grade, or request your accreditation now.'),
         download_url=None,
         cert_web_view_url=None
     )
