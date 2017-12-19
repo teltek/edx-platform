@@ -2643,7 +2643,7 @@ msgstr "Tú mismo"
 
 #: lms/static/js/instructor_dashboard/send_email.js
 msgid "Everyone who has staff privileges in this course"
-msgstr ""
+msgstr "Todos los que están apuntados o son profesores de este curso"
 
 #: lms/static/js/instructor_dashboard/send_email.js
 msgid "All learners who are enrolled in this course"
@@ -2669,6 +2669,8 @@ msgid ""
 "You are sending an email message with the subject {subject} to the following"
 " recipients."
 msgstr ""
+"Estás a punto de enviar un correo electrónico con título {subject} a los "
+"siguientes destinatarios."
 
 #: lms/static/js/instructor_dashboard/send_email.js
 msgid "Is this OK?"
