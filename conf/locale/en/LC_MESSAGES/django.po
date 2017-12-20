@@ -5130,20 +5130,7 @@ msgid "Your certificate has been invalidated"
 msgstr ""
 
 #: lms/djangoapps/courseware/views/views.py
-msgid "Please contact your course team if you have any questions."
-msgstr ""
-
-#: lms/djangoapps/courseware/views/views.py
 msgid "Your certificate is available"
-msgstr ""
-
-#: lms/djangoapps/courseware/views/views.py
-msgid ""
-"You can keep working for a higher grade, or request your certificate now."
-msgstr ""
-
-#: lms/djangoapps/courseware/views/views.py
-msgid "We're working on it..."
 msgstr ""
 
 #: lms/djangoapps/courseware/views/views.py
