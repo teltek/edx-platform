@@ -774,7 +774,8 @@ class OrderItem(TimeStampedModel):
         course_key = getattr(self, 'course_id', None)
         if course_key:
             course = get_course_by_id(course_key, depth=0)
-            return course.display_name
+            return _(u'Credential for course {course_name}').format(
+                course_name=course.display_name_with_default_escaped)
         else:
             raise Exception(
                 "Not Implemented. OrderItems that are not Course specific should have"

@@ -8131,6 +8131,11 @@ msgid "Trying to add a different currency into the cart"
 msgstr "Intentando añadir una moneda diferente en la compra"
 
 #: lms/djangoapps/shoppingcart/models.py
+#, python-brace-format
+msgid "Credential for course {course_name}"
+msgstr "Credencial para el curso {course_name}"
+
+#: lms/djangoapps/shoppingcart/models.py
 msgid "Internal reference code for this invoice."
 msgstr ""
 

@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2017-12-20 09:16+0100\n"
-"PO-Revision-Date: 2017-12-20 08:16:31.875825\n"
+"POT-Creation-Date: 2017-12-20 11:15+0100\n"
+"PO-Revision-Date: 2017-12-20 10:15:25.086487\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -6830,6 +6830,11 @@ msgstr ""
 
 #: lms/djangoapps/shoppingcart/models.py
 msgid "Trying to add a different currency into the cart"
+msgstr ""
+
+#: lms/djangoapps/shoppingcart/models.py
+#, python-brace-format
+msgid "Credential for course {course_name}"
 msgstr ""
 
 #: lms/djangoapps/shoppingcart/models.py
