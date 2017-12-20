@@ -5535,6 +5535,17 @@ msgstr ""
 #. and appears in the browser title bar
 #: lms/djangoapps/certificates/views/webview.py
 #, python-brace-format
+msgid ""
+"Credential for course {course_title} for student {user_fullname} | "
+"{platform_name}"
+msgstr ""
+"Credencial del curso {course_title} para el estudiante {user_fullname} | "
+"{platform_name}"
+
+#. Translators:  This text is bound to the HTML 'title' element of the page
+#. and appears in the browser title bar
+#: lms/djangoapps/certificates/views/webview.py
+#, python-brace-format
 msgid "{partner_short_name} {course_number} Certificate | {platform_name}"
 msgstr "{partner_short_name} {course_number} Certificado | {platform_name}"
 
@@ -5693,6 +5704,10 @@ msgstr ""
 #, python-brace-format
 msgid "a course of study offered by {partner_short_name}."
 msgstr ""
+
+#: lms/djangoapps/certificates/views/webview.py
+msgid "25 hours"
+msgstr "25 horas"
 
 #: lms/djangoapps/certificates/views/webview.py
 #, python-brace-format

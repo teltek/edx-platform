@@ -24,6 +24,21 @@ urlpatterns = patterns(
         name='render_cert_by_uuid'
     ),
 
+    # Certificates HTML view end point to render web certs by download_uuid
+    url(
+        r'^downloads/(?P<download_uuid>[0-9a-f]{32})/Certificate.pdf$',
+        views.render_cert_by_download_uuid,
+        name='render_cert_by_download_uuid'
+    ),
+
+    # Certificates HTML view end point to render web certs by valid.html
+    # or verify.html page with the verify_uuid
+    url(
+        r'^cert/(?P<verify_uuid>[0-9a-f]{32})/((\bvalid\b)|(\bverify\b)).html$',
+        views.render_cert_by_verify_uuid,
+        name='render_cert_by_verify_uuid'
+    ),
+
     # End-points used by student support
     # The views in the lms/djangoapps/support use these end-points
     # to retrieve certificate information and regenerate certificates.

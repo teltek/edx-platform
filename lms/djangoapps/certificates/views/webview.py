@@ -9,7 +9,7 @@ import urllib
 
 from django.conf import settings
 from django.contrib.auth.models import User
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.template import RequestContext
 from django.utils.translation import ugettext as _
 from django.utils.encoding import smart_str
@@ -24,8 +24,10 @@ from opaque_keys import InvalidKeyError
 from opaque_keys.edx.keys import CourseKey
 from openedx.core.lib.courses import course_image_url
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
+from openedx.core.djangoapps.models.course_details import CourseDetails
 from student.models import LinkedInAddToProfileConfiguration
 from util import organizations_helpers as organization_api
+from util.date_utils import strftime_localized
 from util.views import handle_500
 from xmodule.modulestore.django import modulestore
 from xmodule.modulestore.exceptions import ItemNotFoundError
@@ -46,6 +48,29 @@ from certificates.models import (
     CertificateSocialNetworks)
 
 log = logging.getLogger(__name__)
+
+
+def render_cert_by_download_uuid(request, download_uuid):
+    """
+    This public view generates an HTML representation of the specified certificate
+    WORKAROUND to render already generated Certificates from Birch version
+    """
+    try:
+        certificate = GeneratedCertificate.eligible_certificates.get(
+            download_uuid=download_uuid,
+            status=CertificateStatuses.downloadable
+        )
+        return HttpResponseRedirect('/certificates/' + certificate.verify_uuid)
+    except GeneratedCertificate.DoesNotExist:
+        raise Http404
+
+
+def render_cert_by_verify_uuid(request, verify_uuid):
+    """
+    This public view generates an HTML representation of the specified certificate
+    WORKAROUND to render already generated Certificates from Birch version
+    """
+    return HttpResponseRedirect('/certificates/' + verify_uuid)
 
 
 def get_certificate_description(mode, certificate_type, platform_name):
@@ -89,6 +114,7 @@ def _update_certificate_context(context, user_certificate, platform_name):
 
     # Override the defaults with any mode-specific static values
     context['certificate_id_number'] = user_certificate.verify_uuid
+    context['certificate_id_url'] = settings.LMS_ROOT_URL + '/certificates/' + user_certificate.verify_uuid
     context['certificate_verify_url'] = "{prefix}{uuid}{suffix}".format(
         prefix=context.get('certificate_verify_url_prefix'),
         uuid=user_certificate.verify_uuid,
@@ -97,7 +123,7 @@ def _update_certificate_context(context, user_certificate, platform_name):
 
     # Translators:  The format of the date includes the full name of the month
     context['certificate_date_issued'] = _('{month} {day}, {year}').format(
-        month=user_certificate.modified_date.strftime("%B"),
+        month=strftime_localized(user_certificate.modified_date, "%B"),
         day=user_certificate.modified_date.day,
         year=user_certificate.modified_date.year
     )
@@ -112,9 +138,9 @@ def _update_certificate_context(context, user_certificate, platform_name):
     )
 
     # Translators:  This text is bound to the HTML 'title' element of the page and appears in the browser title bar
-    context['document_title'] = _("{partner_short_name} {course_number} Certificate | {platform_name}").format(
-        partner_short_name=context['organization_short_name'],
-        course_number=context['course_number'],
+    context['document_title'] = _("Credential for course {course_title} for student {user_fullname} | {platform_name}").format(
+        course_title=context['accomplishment_copy_course_name'],
+        user_fullname=context['accomplishment_copy_name'],
         platform_name=platform_name
     )
 
@@ -243,6 +269,13 @@ def _update_course_context(request, context, course, platform_name):
                                                               '{partner_short_name}.').format(
             partner_short_name=context['organization_short_name'],
             platform_name=platform_name)
+    course_details = CourseDetails.fetch(course.id)
+    course_effort = course_details.effort if course_details.effort else _('25 hours')
+    course_start_date = course.start.strftime('%d/%m/%Y') if course.start else False
+    course_end_date = course.end.strftime('%d/%m/%Y') if course.end else False
+    context['course_effort'] = course_effort
+    context['course_start_date'] = course_start_date
+    context['course_end_date'] = course_end_date
 
 
 def _update_social_context(request, context, course, user, user_certificate, platform_name):

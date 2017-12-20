@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2017-12-20 11:57+0100\n"
-"PO-Revision-Date: 2017-12-20 10:57:24.573772\n"
+"POT-Creation-Date: 2017-12-20 18:32+0100\n"
+"PO-Revision-Date: 2017-12-20 17:32:56.826673\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -4616,7 +4616,9 @@ msgstr ""
 #. and appears in the browser title bar
 #: lms/djangoapps/certificates/views/webview.py
 #, python-brace-format
-msgid "{partner_short_name} {course_number} Certificate | {platform_name}"
+msgid ""
+"Credential for course {course_title} for student {user_fullname} | "
+"{platform_name}"
 msgstr ""
 
 #. Translators:  This text fragment appears after the student's name
@@ -4760,6 +4762,10 @@ msgstr ""
 #: lms/djangoapps/certificates/views/webview.py
 #, python-brace-format
 msgid "a course of study offered by {partner_short_name}."
+msgstr ""
+
+#: lms/djangoapps/certificates/views/webview.py
+msgid "25 hours"
 msgstr ""
 
 #: lms/djangoapps/certificates/views/webview.py
