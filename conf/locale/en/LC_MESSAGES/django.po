@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2017-12-20 11:15+0100\n"
-"PO-Revision-Date: 2017-12-20 10:15:25.086487\n"
+"POT-Creation-Date: 2017-12-20 11:57+0100\n"
+"PO-Revision-Date: 2017-12-20 10:57:24.573772\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -6985,8 +6985,8 @@ msgstr ""
 
 #: lms/djangoapps/shoppingcart/pdf.py
 msgid ""
-"List Price\n"
-"per item"
+"Price\n"
+"per course"
 msgstr ""
 
 #: lms/djangoapps/shoppingcart/pdf.py
