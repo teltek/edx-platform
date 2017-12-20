@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2017-12-11 16:02+0100\n"
-"PO-Revision-Date: 2017-12-11 15:02:24.314955\n"
+"POT-Creation-Date: 2017-12-20 09:16+0100\n"
+"PO-Revision-Date: 2017-12-20 08:16:31.875825\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -5116,108 +5116,68 @@ msgid "Free"
 msgstr ""
 
 #: lms/djangoapps/courseware/views/views.py
-msgid "Your enrollment: Audit track"
-msgstr ""
-
-#: lms/djangoapps/courseware/views/views.py
-msgid ""
-"You are enrolled in the audit track for this course. The audit track does "
-"not include a certificate."
-msgstr ""
-
-#: lms/djangoapps/courseware/views/views.py
-msgid "Your certificate has been invalidated"
-msgstr ""
-
-#: lms/djangoapps/courseware/views/views.py
-msgid "Your certificate is available"
-msgstr ""
-
-#: lms/djangoapps/courseware/views/views.py
-msgid ""
-"We're creating your certificate. You can keep working in your courses and a "
-"link to it will appear here and on your Dashboard when it is ready."
-msgstr ""
-
-#: lms/djangoapps/courseware/views/views.py
-msgid "Certificate unavailable"
-msgstr ""
-
-#: lms/djangoapps/courseware/views/views.py
-#, python-brace-format
-msgid ""
-"You have not received a certificate because you do not have a current "
-"{platform_name} verified identity."
-msgstr ""
-
-#: lms/djangoapps/courseware/views/views.py
-msgid "Congratulations, you qualified for a certificate!"
-msgstr ""
-
-#: lms/djangoapps/courseware/views/views.py:786
 msgid ""
 "Congratulations, you meet the requirements to receive a payment "
 "accreditation!"
 msgstr ""
 
-#: lms/djangoapps/courseware/views/views.py:787
+#: lms/djangoapps/courseware/views/views.py
 msgid ""
 "You can keep working to get a better score, or pay to get an accreditation. "
 "Update your course registration form in your panel and get a payment "
 "accreditation."
 msgstr ""
 
-#: lms/djangoapps/courseware/views/views.py:803
+#: lms/djangoapps/courseware/views/views.py
 msgid "Your accreditation has been invalidated"
 msgstr ""
 
-#: lms/djangoapps/courseware/views/views.py:804
+#: lms/djangoapps/courseware/views/views.py
 msgid "Please contact your course team if you have any questions."
 msgstr ""
 
-#: lms/djangoapps/courseware/views/views.py:813
+#: lms/djangoapps/courseware/views/views.py
 msgid "Your accreditation is available"
 msgstr ""
 
-#: lms/djangoapps/courseware/views/views.py:814
+#: lms/djangoapps/courseware/views/views.py
 msgid "You can keep working for a higher grade."
 msgstr ""
 
-#: lms/djangoapps/courseware/views/views.py:824
-#: lms/djangoapps/courseware/views/views.py:840
+#: lms/djangoapps/courseware/views/views.py
 msgid "We're working on it..."
 msgstr ""
 
-#: lms/djangoapps/courseware/views/views.py:826
+#: lms/djangoapps/courseware/views/views.py
 msgid ""
-"We're creating your acreditation. You can keep working in your courses and a "
-"link to it will appear here and on your Dashboard when it is ready."
+"We're creating your acreditation. You can keep working in your courses and a"
+" link to it will appear here and on your Dashboard when it is ready."
 msgstr ""
 
-#: lms/djangoapps/courseware/views/views.py:842
+#: lms/djangoapps/courseware/views/views.py
 msgid ""
 "We're creating your accreditation. You can keep working in your courses and "
 "a link to it will appear here and on your Dashboard when it is ready."
 msgstr ""
 
-#: lms/djangoapps/courseware/views/views.py:858
+#: lms/djangoapps/courseware/views/views.py
 msgid "Accreditation unavailable"
 msgstr ""
 
-#: lms/djangoapps/courseware/views/views.py:860
+#: lms/djangoapps/courseware/views/views.py
 #, python-brace-format
 msgid ""
 "You have not received an accreditation because you do not have a current "
 "{platform_name} verified identity."
 msgstr ""
 
-#: lms/djangoapps/courseware/views/views.py:869
+#: lms/djangoapps/courseware/views/views.py
 msgid "Congratulations, you qualified for an accreditation!"
 msgstr ""
 
-#: lms/djangoapps/courseware/views/views.py:870
+#: lms/djangoapps/courseware/views/views.py
 msgid ""
-"You can keep working for a higher grade, or request your certificate now."
+"You can keep working for a higher grade, or request your accreditation now."
 msgstr ""
 
 #: lms/djangoapps/courseware/views/views.py
@@ -7054,7 +7014,7 @@ msgid "Billing Address"
 msgstr ""
 
 #: lms/djangoapps/shoppingcart/pdf.py
-msgid "Disclaimer"
+msgid "CIF"
 msgstr ""
 
 #: lms/djangoapps/shoppingcart/pdf.py

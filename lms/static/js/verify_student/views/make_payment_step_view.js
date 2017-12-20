@@ -46,18 +46,30 @@ var edx = edx || {};
         },
 
         _getProductText: function(modeSlug, isUpgrade) {
-            switch (modeSlug) {
-            case 'professional':
+            switch ( modeSlug ) {
+            case "professional":
                 return gettext('Professional Education Verified Certificate');
-            case 'no-id-professional':
-                return gettext('Professional Education');
-            default:
-                if (isUpgrade) {
-                    return gettext('Verified Certificate upgrade');
-                } else {
-                    return gettext('Verified Certificate');
+            case "no-id-professional":
+		return gettext('Professional Education');
+            case "honor":
+		if ( isUpgrade ) {
+                    return gettext('Upgrade to obtain a Credential,');
+		} else {
+                    return gettext('Obtain a Credential,');
                 }
-            }
+            case "verified":
+		if ( isUpgrade ) {
+		    return gettext('Upgrade to obtain a Certificate,');
+		} else {
+		    return gettext('Obtain a Certificate,');
+		}
+            default:
+		if ( isUpgrade ) {
+		    return gettext('Upgrade to obtain a Certificate,');
+		} else {
+		    return gettext('Obtain a Certificate,');
+		}
+	    }
         },
 
         _getPaymentButtonText: function(processorName) {

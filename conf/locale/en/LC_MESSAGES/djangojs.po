@@ -26,8 +26,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2017-12-11 16:02+0100\n"
-"PO-Revision-Date: 2017-12-11 15:02:24.645295\n"
+"POT-Creation-Date: 2017-12-20 09:16+0100\n"
+"PO-Revision-Date: 2017-12-20 08:16:32.225130\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -4362,11 +4362,19 @@ msgid "Professional Education"
 msgstr ""
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
-msgid "Verified Certificate upgrade"
+msgid "Upgrade to obtain a Credential,"
 msgstr ""
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
-msgid "Verified Certificate"
+msgid "Obtain a Credential,"
+msgstr ""
+
+#: lms/static/js/verify_student/views/make_payment_step_view.js
+msgid "Upgrade to obtain a Certificate,"
+msgstr ""
+
+#: lms/static/js/verify_student/views/make_payment_step_view.js
+msgid "Obtain a Certificate,"
 msgstr ""
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js

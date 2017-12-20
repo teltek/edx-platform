@@ -3466,12 +3466,20 @@ msgid "Professional Education"
 msgstr "Educación profesional"
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
-msgid "Verified Certificate upgrade"
-msgstr ""
+msgid "Upgrade to obtain a Credential,"
+msgstr "Actualización para obtención de Credencial,"
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
-msgid "Verified Certificate"
-msgstr "Certificado verificado"
+msgid "Obtain a Credential,"
+msgstr "Obtención de Credencial,"
+
+#: lms/static/js/verify_student/views/make_payment_step_view.js
+msgid "Upgrade to obtain a Certificate,"
+msgstr "Actualización para obtención de Certificado,"
+
+#: lms/static/js/verify_student/views/make_payment_step_view.js
+msgid "Obtain a Certificate,"
+msgstr "Obtención de Certificado,"
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Checkout"
@@ -7133,7 +7141,7 @@ msgstr ""
 
 #: lms/templates/verify_student/make_payment_step.underscore
 msgid "You are upgrading your enrollment for: {courseName}"
-msgstr ""
+msgstr "Estás mejorando tu inscripción en: {courseName}"
 
 #: lms/templates/verify_student/make_payment_step.underscore
 msgid ""
