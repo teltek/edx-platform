@@ -16800,8 +16800,8 @@ msgid ""
 msgstr ""
 
 #: lms/templates/emails/activation_email_subject.txt
-msgid "Action Required: Activate your {platform_name} account"
-msgstr ""
+msgid "Activate Your {platform_name} Account"
+msgstr "Activa tu cuenta de {platform_name}"
 
 #: lms/templates/emails/add_beta_tester_email_message.txt
 #: lms/templates/emails/enroll_email_enrolledmessage.txt
