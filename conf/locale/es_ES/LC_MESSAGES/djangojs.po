@@ -3179,6 +3179,22 @@ msgstr "No hemos podido crear tu cuenta"
 msgid "Create Account"
 msgstr ""
 
+#: lms/templates/student_account/register.underscore
+msgid "Create your account"
+msgstr "Crea tu cuenta"
+
+#: lms/templates/student_account/register.underscore
+msgid "Required field"
+msgstr "Campo requerido"
+
+#: lms/templates/student_account/register.underscore
+msgid "Already have an account?"
+msgstr "¿Ya tienes una cuenta?"
+
+#: lms/templates/student_account/register.underscore
+msgid "Create a new account"
+msgstr "Crear una nueva cuenta"
+
 #: lms/static/js/student_account/views/RegisterView.js
 msgid "(required)"
 msgstr ""
@@ -6817,6 +6833,15 @@ msgstr ""
 #: lms/templates/student_account/register.underscore
 msgid "Use my institution/campus credentials"
 msgstr ""
+
+#: lms/templates/student_account/login.underscore
+#, python-format
+msgid "New to %(platformName)s?"
+msgstr "¿Nuevo en %(platformName)s?"
+
+#: lms/templates/student_account/login.underscore
+msgid "Create an account"
+msgstr "Crear una cuenta"
 
 #: lms/templates/student_account/password_reset.underscore
 msgid "Password assistance"

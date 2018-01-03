@@ -1018,6 +1018,30 @@ msgstr "El token de acceso proporcionado no es válido."
 msgid "Account creation not allowed."
 msgstr "No se permite la creación de cuentas"
 
+#. Translators: This label appears above a field on the registration form
+#. meant to hold the user's full name.
+#: openedx/core/djangoapps/user_api/views.py
+msgid "Full name"
+msgstr "Nombre completo"
+
+#. Translators: This label appears above a field on the registration form
+#. meant to hold the user's public username.
+#: openedx/core/djangoapps/user_api/views.py
+msgid "Public username"
+msgstr "Nombre público de usuario"
+
+#. Translators: These instructions appear on the registration form,
+#. immediately
+#. below a field meant to hold the user's public username.
+#: openedx/core/djangoapps/user_api/views.py
+#, python-brace-format
+msgid ""
+"The name that will identify you in your courses - {bold_start}(cannot be "
+"changed later){bold_end}"
+msgstr ""
+"El nombre que te identificará en en tus cursos - {bold_start}(no se podrá "
+"cambiar a posteriori){bold_end}"
+
 #: common/djangoapps/student/views.py
 #, python-brace-format
 msgid ""
@@ -11336,8 +11360,9 @@ msgid "Terms of Service and Honor Code"
 msgstr "Condiciones del servicio y Código de Honor"
 
 #: openedx/core/djangoapps/user_api/api.py
+#: openedx/core/djangoapps/user_api/views.py
 msgid "Review the Terms of Service and Honor Code"
-msgstr ""
+msgstr "Revisa las Condiciones del servicio y Código de Honor"
 
 #. Translators: "Terms of Service" is a legal document users must agree to
 #. in order to register a new account.
