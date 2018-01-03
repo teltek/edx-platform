@@ -7742,11 +7742,11 @@ msgstr "Vista previa del certificado"
 
 #: cms/templates/js/certificate-web-preview.underscore
 msgid "Activate"
-msgstr "Activado"
+msgstr "Activar"
 
 #: cms/templates/js/certificate-web-preview.underscore
 msgid "Deactivate"
-msgstr "Desactivado"
+msgstr "Desactivar"
 
 #: cms/templates/js/container-access.underscore
 msgid "component"
