@@ -114,7 +114,7 @@ class Order(models.Model):
         app_label = "shoppingcart"
 
     user = models.ForeignKey(User, db_index=True)
-    currency = models.CharField(default="usd", max_length=8)  # lower case ISO currency codes
+    currency = models.CharField(default=settings.PAID_COURSE_REGISTRATION_CURRENCY[0], max_length=8)  # lower case ISO currency codes
     status = models.CharField(max_length=32, default='cart', choices=ORDER_STATUSES)
     purchase_time = models.DateTimeField(null=True, blank=True)
     refunded_time = models.DateTimeField(null=True, blank=True)
@@ -656,7 +656,7 @@ class OrderItem(TimeStampedModel):
     unit_cost = models.DecimalField(default=0.0, decimal_places=2, max_digits=30)
     list_price = models.DecimalField(decimal_places=2, max_digits=30, null=True)
     line_desc = models.CharField(default="Misc. Item", max_length=1024)
-    currency = models.CharField(default="usd", max_length=8)  # lower case ISO currency codes
+    currency = models.CharField(default=settings.PAID_COURSE_REGISTRATION_CURRENCY[0], max_length=8)  # lower case ISO currency codes
     fulfilled_time = models.DateTimeField(null=True, db_index=True)
     refund_requested_time = models.DateTimeField(null=True, db_index=True)
     service_fee = models.DecimalField(default=0.0, decimal_places=2, max_digits=30)
@@ -1002,7 +1002,7 @@ class InvoiceTransaction(TimeStampedModel):
         )
     )
     currency = models.CharField(
-        default="usd",
+        default=settings.PAID_COURSE_REGISTRATION_CURRENCY[0],
         max_length=8,
         help_text=ugettext_lazy("Lower-case ISO currency codes")
     )
@@ -1096,7 +1096,7 @@ class InvoiceItem(TimeStampedModel):
         help_text=ugettext_lazy("The price per item sold, including discounts.")
     )
     currency = models.CharField(
-        default="usd",
+        default=settings.PAID_COURSE_REGISTRATION_CURRENCY[0],
         max_length=8,
         help_text=ugettext_lazy("Lower-case ISO currency codes")
     )
@@ -1932,7 +1932,7 @@ class CertificateItem(OrderItem):
 
     @classmethod
     @transaction.atomic
-    def add_to_order(cls, order, course_id, cost, mode, currency='usd'):
+    def add_to_order(cls, order, course_id, cost, mode, currency=settings.PAID_COURSE_REGISTRATION_CURRENCY[0]):
         """
         Add a CertificateItem to an order
 
@@ -2124,7 +2124,7 @@ class Donation(OrderItem):
 
     @classmethod
     @transaction.atomic
-    def add_to_order(cls, order, donation_amount, course_id=None, currency='usd'):
+    def add_to_order(cls, order, donation_amount, course_id=None, currency=settings.PAID_COURSE_REGISTRATION_CURRENCY[0]):
         """Add a donation to an order.
 
         Args:

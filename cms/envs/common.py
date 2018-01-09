@@ -553,6 +553,10 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 ##### EMBARGO #####
 EMBARGO_SITE_REDIRECT_URL = None
 
+##################### PAID COURSE REGISTRATION CURRENCY ########################
+# Setting for PAID_COURSE_REGISTRATION, DOES NOT AFFECT VERIFIED STUDENTS
+PAID_COURSE_REGISTRATION_CURRENCY = ['usd', '$']
+
 ############################### PIPELINE #######################################
 
 PIPELINE_ENABLED = True
