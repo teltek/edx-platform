@@ -22,6 +22,8 @@ def get_default_time_display(dtime):
     """
     if dtime is None:
         return u""
+    if type(dtime) is unicode:
+        return dtime
     if dtime.tzinfo is not None:
         try:
             timezone = u" " + dtime.tzinfo.tzname(dtime)
@@ -48,6 +50,8 @@ def get_time_display(dtime, format_string=None, coerce_tz=None):
 
     format_string should be a unicode string that is a valid argument for datetime's strftime method.
     """
+    if type(dtime) is unicode:
+        return dtime
     if dtime is not None and dtime.tzinfo is not None and coerce_tz:
         try:
             to_tz = timezone(coerce_tz)
@@ -130,6 +134,8 @@ def strftime_localized(dtime, format):      # pylint: disable=redefined-builtin
 
     """
 
+    if type(dtime) is unicode:
+        return dtime
     if format == "SHORT_DATE":
         format = "%x"
     elif format == "LONG_DATE":
