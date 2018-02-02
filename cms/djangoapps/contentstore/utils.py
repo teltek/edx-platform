@@ -23,6 +23,7 @@ from student.roles import CourseInstructorRole, CourseStaffRole
 from student.models import CourseEnrollment
 from student import auth
 
+import re
 
 log = logging.getLogger(__name__)
 
@@ -109,10 +110,22 @@ def get_lms_link_for_item(location, preview=False):
             settings.FEATURES.get('PREVIEW_LMS_BASE')
         )
 
+    def _check_deprecated_index_course_location(location):
+        """
+        TTK-16893: Workaround to fix deprecated course
+        locations in Studio index.
+        """
+        fix_location = location.to_deprecated_string()
+        m = re.match('^i4x(.*?)/course/course$', fix_location)
+        if m is not None:
+            fix_location = 'i4x{}/course/{run}'.format(*m.groups(), run=location.run)
+
+        return fix_location
+
     return u"//{lms_base}/courses/{course_key}/jump_to/{location}".format(
         lms_base=lms_base,
         course_key=location.course_key.to_deprecated_string(),
-        location=location.to_deprecated_string(),
+        location=_check_deprecated_index_course_location(location),
     )
 
 
