@@ -98,7 +98,7 @@ def _update_certificate_context(context, user_certificate, platform_name):
 
     # Translators:  The format of the date includes the full name of the month
     context['certificate_date_issued'] = _('{month} {day}, {year}').format(
-        month=user_certificate.modified_date.strftime("%B"),
+        month=_(user_certificate.modified_date.strftime("%B")),
         day=user_certificate.modified_date.day,
         year=user_certificate.modified_date.year
     )
@@ -246,7 +246,11 @@ def _update_course_context(request, context, course, platform_name):
             platform_name=platform_name)
     course_details = CourseDetails.fetch(course.id)
     course_effort = course_details.effort if course_details.effort else False
-    course_end_date = course.end.strftime("%B %d, %Y") if course.end else False
+    course_end_date = _('{month} {day}, {year}').format(
+        month=_(course.end.strftime("%B")),
+        day=course.end.day,
+        year=course.end.year
+    ) if course.end else False
     context['course_effort'] = course_effort
     context['course_end_date'] = course_end_date
 
@@ -595,8 +599,8 @@ def render_html_view(request, user_id, course_id):
     # Track certificate view events
     _track_certificate_events(request, context, course, user, user_certificate)
 
-    context['cert_date_issued'] = ('{month} {day}, {year}').format(
-        month=user_certificate.modified_date.strftime("%B"),
+    context['cert_date_issued'] = _('{month} {day}, {year}').format(
+        month=_(user_certificate.modified_date.strftime("%B")),
         day=user_certificate.modified_date.day,
         year=user_certificate.modified_date.year
     )
