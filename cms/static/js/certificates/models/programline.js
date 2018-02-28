@@ -1,4 +1,4 @@
-// Backbone.js Application Model: Certificate Signatory
+// Backbone.js Application Model: Program line
 
 define([
     'underscore',
@@ -8,14 +8,10 @@ define([
 function(_, Backbone) {
     'use strict';
 
-    var Signatory = Backbone.RelationalModel.extend({
+    var ProgramLine = Backbone.RelationalModel.extend({
         idAttribute: 'id',
         defaults: {
-            name: '',
-            title: '',
-            organization: '',
-            signature_image_path: '',
-	    course_program: ''
+            line: '',
         },
 
         initialize: function() {
@@ -39,5 +35,5 @@ function(_, Backbone) {
             this.set(this._originalAttributes, {parse: true, validate: true});
         }
     });
-    return Signatory;
+    return ProgramLine;
 });

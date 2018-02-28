@@ -13,7 +13,7 @@ from openedx.core.djangolib.js_utils import (
 <%block name="bodyclass">is-signedin course view-certificates</%block>
 
 <%block name="header_extras">
-% for template_name in ["certificate-details", "certificate-editor", "signatory-editor", "signatory-details", "basic-modal", "modal-button", "list", "upload-dialog", "certificate-web-preview", "signatory-actions"]:
+% for template_name in ["certificate-details", "certificate-editor", "signatory-editor", "signatory-details", "basic-modal", "modal-button", "list", "upload-dialog", "certificate-web-preview", "signatory-actions", "programline-editor"]:
   <script type="text/template" id="${template_name}-tpl">
     <%static:include path="js/${template_name}.underscore" />
   </script>

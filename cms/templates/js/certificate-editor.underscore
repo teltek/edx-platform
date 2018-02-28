@@ -41,6 +41,15 @@
            <button class="action action-add-signatory" type="button"><%- gettext("Add Additional Signatory") %></button>
            <span class="tip tip-stacked"><%- gettext("(Add signatories for a certificate)") %></span>
         </span>
+         <header>
+            <h2 class="title title-2"><%- gettext("Certificate Program Lines") %></h2>
+         </header>
+         <p class="instructions"><%- gettext("It is strongly recommended that you include twenty or fewer program lines of your course. If you include additional lines, preview the certificate in Print View to ensure the certificate will print correctly on one page.") %></p>
+        <div class="programline-edit-list"> </div>
+        <span>
+           <button class="action action-add-signatory" type="button"><%- gettext("Add Additional Line") %></button>
+           <span class="tip tip-stacked"><%- gettext("(Add program lines for a certificate course program)") %></span>
+        </span>
     </div>
     <div class="actions">
         <button class="action action-primary" type="submit"><% if (isNew) { print(gettext("Create")) } else { print(gettext("Save")) } %></button>

@@ -16,6 +16,14 @@ course.certificates: {
                     'title': 'Dean of the College',
                     'organization': 'Awesome College'
                 }
+            ],
+            'program': [
+                {
+                    'line': 'Unit 1'
+                },
+                {
+                    'line': 'Unit 2'
+                }
             ]
         }
     ]

@@ -8,10 +8,12 @@ define([
     'gettext',
     'cms/js/main',
     'js/certificates/models/signatory',
-    'js/certificates/collections/signatories'
+    'js/certificates/collections/signatories',
+    'js/certificates/models/programline',
+    'js/certificates/collections/programline'
 ],
     function(_, Backbone, BackboneRelational, BackboneAssociations, gettext, CoffeeSrcMain,
-             SignatoryModel, SignatoryCollection) {
+             SignatoryModel, SignatoryCollection, ProgramLineModel, ProgramLineCollection) {
         'use strict';
         var Certificate = Backbone.RelationalModel.extend({
             idAttribute: 'id',
@@ -37,6 +39,15 @@ define([
                 reverseRelation: {
                     key: 'certificate',
                     includeInJSON: 'id'
+                },
+		{
+                type: Backbone.HasMany,
+                key: 'programline',
+                relatedModel: ProgramLineModel,
+                collectionType: ProgramLineCollection,
+                reverseRelation: {
+                    key: 'certificate',
+                    includeInJSON: 'id'
                 }
             }],
 
@@ -46,6 +57,8 @@ define([
                 if (options.add) {
                     // Ensure at least one child Signatory model is defined for any new Certificate model
                     attributes.signatories = new SignatoryModel({certificate: this});
+
+		    attributes.programline = new ProgramLineModel({certificate: this});
                 }
                 this.setOriginalAttributes();
                 return this;
@@ -64,11 +77,21 @@ define([
                     modelSignatory.setOriginalAttributes();
                 });
 
+                this.get('programline').each(function(modelProgram) {
+                    modelProgram.setOriginalAttributes();
+                });
+
                 // If no url is defined for the signatories child collection we'll need to create that here as well
                 if (!this.isNew() && !this.get('signatories').url) {
                     this.get('signatories').url = this.collection.url + '/' + this.get('id') + '/signatories';
                 }
-            },
+
+                // If no url is defined for the program child collection we'll need to create that here as well
+                if (!this.isNew() && !this.get('programline').url) {
+                    this.get('programline').url = this.collection.url + '/' + this.get('id') + '/program';
+                }
+
+	    },
 
             validate: function(attrs) {
                 // Ensure the provided attributes set meets our expectations for format, type, etc.
