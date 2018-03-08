@@ -24,13 +24,15 @@ define(['jquery', 'underscore', 'gettext', 'js/views/baseview', 'common/js/compo
                     this.$el.html(this.template({}));
                     this.collection.each(
                         function(componentModel) {
-                            var view, menu;
+			    if (componentModel.type != 'pumukit') {
+                                var view, menu;
 
-                            view = new AddXBlockButton({model: componentModel});
-                            that.$el.find('.new-component-type').append(view.render().el);
+				view = new AddXBlockButton({model: componentModel});
+				that.$el.find('.new-component-type').append(view.render().el);
 
-                            menu = new AddXBlockMenu({model: componentModel});
-                            that.$el.append(menu.render().el);
+				menu = new AddXBlockMenu({model: componentModel});
+				that.$el.append(menu.render().el);
+			    }
                         }
                     );
 		    // PUMUKIT2
