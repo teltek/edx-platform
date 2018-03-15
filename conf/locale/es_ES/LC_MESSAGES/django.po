@@ -9675,7 +9675,7 @@ msgstr "Gracias por utilizar nuestro sitio!"
 #: lms/templates/registration/password_reset_email.html
 #, python-format
 msgid "The %(platform_name)s Team"
-msgstr "EL equipo de %(platform_name)s"
+msgstr "El equipo de %(platform_name)s"
 
 #: lms/templates/wiki/article.html
 msgid "Last modified:"
