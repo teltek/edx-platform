@@ -36,7 +36,9 @@ from django.http import HttpRequest
 log = logging.getLogger(__name__)
 WRONG_URL = "Wrong URL"
 CHECK_URL = "Check the URL. Remember, videos from these valid sources: tv.campusdomar.es or tv.uvigo.es"
-
+DEFAULT_TITLE = 'Pumukit'
+DEFAULT_IFRAME_START = "<iframe src=\"https://tv.campusdomar.es/iframe/"
+DEFAULT_IFRAME_END = "\" style=\"border:0px #FFFFFF none;\" name=\"Pumukit - Media Player\" scrolling=\"no\" frameborder=\"1\" marginheight=\"0px\" marginwidth=\"0px\" height=\"740\" width=\"1220\"></iframe>"
 
 class PumukitFields(object):
     """
@@ -46,7 +48,7 @@ class PumukitFields(object):
     display_name = String(
         display_name="Display Name",
         help="Display name for this module in case the source video doesn't have any.",
-        default="Pumukit",
+        default=DEFAULT_TITLE,
         scope=Scope.settings
     )
     video_url = String(
@@ -65,7 +67,7 @@ class PumukitFields(object):
     alternative_video_title = String(
         display_name="Alternative Video Title",
         help="Display name for this video in case the source video doesn't have any or in case additional text is required by the author.",
-        default="Pumukit",
+        default=DEFAULT_TITLE,
         scope=Scope.settings
     ) 
     previous_url = String(
@@ -77,7 +79,7 @@ class PumukitFields(object):
     previous_title = String(
         display_name="Previous title",
         help="Getting track of changes in the title",
-        default="Pumukit",
+        default=DEFAULT_TITLE,
         scope=Scope.settings
     )
     previous_iframe = String(
@@ -101,7 +103,7 @@ class PumukitFields(object):
     show_video_title = String(
         display_name="Show Video Title",
         help="Title of the video to show",
-        default="Pumukit",
+        default=DEFAULT_TITLE,
         scope=Scope.settings
     )
     show_video_iframe = String(
@@ -219,7 +221,7 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
                 if video_player.get('display_name'):
                     self.show_video_title = video_player.get('display_name')
                 else:
-                    self.show_video_title = "Pumukit"
+                    self.show_video_title = DEFAULT_TITLE
             except Exception as exc:
                 log.info(u'There was an error in trying to get Pumukit url: {}'.format(exc))
             self.previous_title = self.show_video_title
@@ -231,11 +233,11 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
             if vid_title:
                 self.show_video_title = vid_title
             else:
-                self.show_video_title = "Pumukit"
+                self.show_video_title = DEFAULT_TITLE
             self.previous_title = self.show_video_title
             self.previous_iframe = self.show_video_iframe
             self.previous_list = self.video_list     
-        if self.alternative_video_title and ("Pumukit" not in self.alternative_video_title):
+        if self.alternative_video_title and (DEFAULT_TITLE not in self.alternative_video_title):
             self.two_titles = True
         else:
             self.two_titles = False
@@ -249,18 +251,23 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
         vid_title = WRONG_URL
         vid_value = CHECK_URL
 
-        html_object = html.parse(urllib2.urlopen(url))
-        if "tv.uvigo.es/matterhorn" in url:
-            vid_title, vid_value = self._get_video_iframe_uvigo_matterhorn(html_object)
-        elif "tv.uvigo.es/" in url:
-            vid_title, vid_value = self._get_video_iframe_uvigo_onestream(html_object)
-        elif "tv.campusdomar.es/" in url:
-            vid_title, vid_value = self._get_video_iframe_campusdomar(html_object)
+        response = urllib2.urlopen(url)
+        if "login.campusdomar.es" in response.geturl():
+            vid_title, vid_value = self._get_login_iframe_campusdomar(url)
+        else:
+            html_object = html.parse(response)
+            if "tv.uvigo.es/matterhorn" in url:
+                vid_title, vid_value = self._get_video_iframe_uvigo_matterhorn(html_object)
+            elif "tv.uvigo.es/" in url:
+                vid_title, vid_value = self._get_video_iframe_uvigo_onestream(html_object)
+            elif "tv.campusdomar.es/" in url:
+                vid_title, vid_value = self._get_video_iframe_campusdomar(html_object)
 
         video_player = {
             "display_name": vid_title,
             "value": vid_value
         }
+
         return video_player
 
 
@@ -412,6 +419,14 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
 
         return field_data  
 
+
+    def _get_login_iframe_campusdomar(self, url):
+        video_id = url.split('/')[-1]
+        vid_value = DEFAULT_IFRAME_START + video_id + DEFAULT_IFRAME_END
+        vid_value = self._filter_vid_value(vid_value)
+        vid_title = DEFAULT_TITLE
+
+        return vid_title, vid_value
 
     def _get_video_iframe_uvigo_matterhorn(self, html_object):
         """
