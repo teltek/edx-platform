@@ -478,6 +478,9 @@ class PumukitDescriptor(PumukitFields, MetadataOnlyEditingDescriptor, RawDescrip
                     vid_value = vid_value.replace('/engage/', '/paellaengage/')
                     vid_value = vid_value.replace('width="1220"', 'width="960"')
                     vid_value = vid_value.replace('height:860px', 'height:900px')
+                    vid_value = vid_value.replace('height: 860px', 'height: 900px')
+                    vid_value = vid_value.replace('height:950px', 'height:750px')
+                    vid_value = vid_value.replace('height: 950px', 'height: 750px')
 
                     return vid_title, vid_value
 
