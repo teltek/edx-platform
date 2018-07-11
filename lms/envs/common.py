@@ -3047,3 +3047,13 @@ DOC_LINK_BASE_URL = None
 ############## Settings for the Enterprise App ######################
 
 ENTERPRISE_ENROLLMENT_API_URL = LMS_ROOT_URL + "/api/enrollment/v1/"
+
+############## Settings for Course Enrollment Modes ######################
+COURSE_ENROLLMENT_MODES = {
+    "audit": {"slug": "audit", "display_name": _("Audit"), "min_price": 0},
+    "verified": {"slug": "verified", "display_name": _("Verified"), "min_price": 0},
+    "professional": {"slug": "professional", "display_name": _("Professional"), "min_price": 0},
+    "no-id-professional": {"slug": "no-id-professional", "display_name": _("No-Id-Professional"), "min_price": 0},
+    "credit": {"slug": "credit", "display_name": _("Credit"), "min_price": 0},
+    "honor": {"slug": "honor", "display_name": _("Honor"), "min_price": 0},
+}
