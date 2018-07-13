@@ -793,7 +793,7 @@ def create_order(request):
 
     if mode_slug:
         try:
-            current_mode = CourseMode.objects.get(mode_slug=mode_slug)
+            current_mode = CourseMode.objects.get(mode_slug=mode_slug,course_id=course_id)
         except CourseMode.DoesNotExist:
             log.exception(u'Failed to find CourseMode with slug [%s].', mode_slug)
 
