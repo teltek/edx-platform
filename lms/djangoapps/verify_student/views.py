@@ -209,7 +209,8 @@ class PayAndVerifyView(View):
         self, request, course_id,
         always_show_payment=False,
         current_step=None,
-        message=FIRST_TIME_VERIFY_MSG
+        message=FIRST_TIME_VERIFY_MSG,
+        mode_slug=None
     ):
         """
         Render the payment and verification flow.
@@ -280,7 +281,7 @@ class PayAndVerifyView(View):
         #
         # Nonetheless, for the time being we continue to make the really ugly assumption
         # that at some point there was a paid course mode we can query for the price.
-        relevant_course_mode = self._get_paid_mode(course_key)
+        relevant_course_mode = self._get_paid_mode(course_key, mode_slug)
 
         # If we can find a relevant course mode, then log that we're entering the flow
         # Otherwise, this course does not support payment/verification, so respond with a 404.
@@ -347,7 +348,8 @@ class PayAndVerifyView(View):
             course_key,
             user_is_trying_to_pay,
             request.user,
-            sku_to_use
+            sku_to_use,
+            mode_slug
         )
         if redirect_response is not None:
             return redirect_response
@@ -437,7 +439,7 @@ class PayAndVerifyView(View):
 
     def _redirect_if_necessary(
             self, message, already_verified, already_paid, is_enrolled, course_key,  # pylint: disable=bad-continuation
-            user_is_trying_to_pay, user, sku  # pylint: disable=bad-continuation
+            user_is_trying_to_pay, user, sku, mode_slug  # pylint: disable=bad-continuation
     ):
         """Redirect the user to a more appropriate page if necessary.
 
@@ -472,6 +474,7 @@ class PayAndVerifyView(View):
         """
         url = None
         course_kwargs = {'course_id': unicode(course_key)}
+        course_slug_kwargs = {'course_id': unicode(course_key), 'mode_slug': mode_slug}
 
         if already_verified and already_paid:
             # If they've already paid and verified, there's nothing else to do,
@@ -483,7 +486,7 @@ class PayAndVerifyView(View):
                 # If the user is already enrolled but hasn't yet paid,
                 # then the "upgrade" messaging is more appropriate.
                 if not already_paid:
-                    url = reverse('verify_student_upgrade_and_verify', kwargs=course_kwargs)
+                    url = reverse('verify_student_upgrade_and_verify', kwargs=course_slug_kwargs)
             else:
                 # If the user is NOT enrolled, then send him/her
                 # to the first time verification page.
@@ -507,7 +510,7 @@ class PayAndVerifyView(View):
         if url is not None:
             return redirect(url)
 
-    def _get_paid_mode(self, course_key):
+    def _get_paid_mode(self, course_key, mode_slug=None):
         """
         Retrieve the paid course mode for a course.
 
@@ -516,6 +519,7 @@ class PayAndVerifyView(View):
 
         Arguments:
             course_key (CourseKey): The location of the course.
+            mode_slug (String): The mode slug if given.
 
         Returns:
             CourseMode tuple
@@ -523,6 +527,9 @@ class PayAndVerifyView(View):
         """
         # Retrieve all the modes at once to reduce the number of database queries
         all_modes, unexpired_modes = CourseMode.all_and_unexpired_modes_for_courses([course_key])
+        for mode in all_modes[course_key]:
+            if mode_slug == mode.slug:
+                return mode
 
         # Retrieve the first mode that matches the following criteria:
         #  * Unexpired
@@ -781,9 +788,16 @@ def create_order(request):
         return HttpResponseBadRequest(_("Selected price is not valid number."))
 
     current_mode = None
+    mode_slug = request.POST['slug']
     sku = request.POST.get('sku', None)
 
-    if sku:
+    if mode_slug:
+        try:
+            current_mode = CourseMode.objects.get(mode_slug=mode_slug)
+        except CourseMode.DoesNotExist:
+            log.exception(u'Failed to find CourseMode with slug [%s].', mode_slug)
+
+    if not current_mode and sku:
         try:
             current_mode = CourseMode.objects.get(sku=sku)
         except CourseMode.DoesNotExist:
