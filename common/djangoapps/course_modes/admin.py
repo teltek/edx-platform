@@ -36,8 +36,15 @@ class CourseModeForm(forms.ModelForm):
         fields = '__all__'
 
     COURSE_MODE_SLUG_CHOICES = [(key, mode_slug['display_name']) for key,mode_slug in settings.COURSE_ENROLLMENT_MODES.iteritems()]
+    COURSE_MODE_PRICE_CHOICES = {}
+    for key,mode in settings.COURSE_ENROLLMENT_MODES.iteritems():
+        COURSE_MODE_PRICE_CHOICES[key] = mode['min_price']
 
-    mode_slug = forms.ChoiceField(choices=COURSE_MODE_SLUG_CHOICES, label=_("Mode"))
+    mode_slug = forms.ChoiceField(
+        choices=COURSE_MODE_SLUG_CHOICES,
+        label=_("Mode"),
+        widget=forms.widgets.Select(attrs=COURSE_MODE_PRICE_CHOICES)
+    )
 
     # The verification deadline is stored outside the course mode in the verify_student app.
     # (we used to use the course mode expiration_datetime as both an upgrade and verification deadline).
@@ -167,6 +174,9 @@ class CourseModeForm(forms.ModelForm):
 
 class CourseModeAdmin(admin.ModelAdmin):
     """Admin for course modes"""
+    class Media:
+        js = ('common/js/vendor/jquery.js', 'js/src/course_mode.js',)
+
     form = CourseModeForm
 
     fields = (

@@ -171,7 +171,8 @@ var edx = edx || {};
                     'processor': event.target.id,
                     'contribution': paymentAmount,
                     'course_id': this.stepData.courseKey,
-                    'sku': this.templateContext().sku
+                    'sku': this.templateContext().sku,
+                    'slug': this.stepData.courseModeSlug
                 };
 
 	    // Check the user has accepted the terms of service of payments

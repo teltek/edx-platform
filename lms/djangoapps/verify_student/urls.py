@@ -37,7 +37,7 @@ urlpatterns = patterns(
     # This is the same as the "start verification" flow,
     # except with slight messaging changes.
     url(
-        r'^upgrade/{course}/$'.format(course=settings.COURSE_ID_PATTERN),
+        r'^upgrade/{course}/{mode_slug}$'.format(course=settings.COURSE_ID_PATTERN, mode_slug=settings.COURSE_MODE_SLUG_PATTERN),
         views.PayAndVerifyView.as_view(),
         name="verify_student_upgrade_and_verify",
         kwargs={
