@@ -13,7 +13,7 @@ urlpatterns = patterns(
     # most likely after enrolling in a course and selecting
     # a "verified" track.
     url(
-        r'^start-flow/{course}/$'.format(course=settings.COURSE_ID_PATTERN),
+        r'^start-flow/{course}/{mode_slug}$'.format(course=settings.COURSE_ID_PATTERN, mode_slug=settings.COURSE_MODE_SLUG_PATTERN),
         # Pylint seems to dislike the as_view() method because as_view() is
         # decorated with `classonlymethod` instead of `classmethod`.
         views.PayAndVerifyView.as_view(),

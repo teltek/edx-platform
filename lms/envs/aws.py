@@ -906,5 +906,5 @@ SLUG_PATTERN = ''
 for slug in COURSE_ENROLLMENT_MODES.keys():
     SLUG_PATTERN += slug + '|'
 SLUG_PATTERN = SLUG_PATTERN[:-1]
-MODE_SLUG_PATTERN = r'(?:/(?P<mode_slug>(slug_pattern)))?'
+MODE_SLUG_PATTERN = r'(?:\/(?P<mode_slug>(slug_pattern)))?'
 COURSE_MODE_SLUG_PATTERN = MODE_SLUG_PATTERN.replace('slug_pattern', SLUG_PATTERN)
