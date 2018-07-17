@@ -214,6 +214,9 @@ class PhotoVerification(StatusModel):
 
         This will check for the user's *initial* verification.
         """
+        if settings.FEATURES.get('AUTOMATIC_VERIFY_STUDENT_IDENTITY_FOR_TESTING'):
+            return True
+
         return cls.objects.filter(
             user=user,
             status="approved",
@@ -243,6 +246,8 @@ class PhotoVerification(StatusModel):
             queryset: queryset of 'PhotoVerification' sorted by 'created_at' in
             descending order.
         """
+        if settings.FEATURES.get('AUTOMATIC_VERIFY_STUDENT_IDENTITY_FOR_TESTING'):
+            return True
 
         valid_statuses = ['submitted', 'approved', 'must_retry']
 
@@ -287,6 +292,9 @@ class PhotoVerification(StatusModel):
         Returns:
             bool: True or False according to existence of valid verifications
         """
+        if settings.FEATURES.get('AUTOMATIC_VERIFY_STUDENT_IDENTITY_FOR_TESTING'):
+            return True
+
         return cls.verification_valid_or_pending(user, earliest_allowed_date, queryset).exists()
 
     @classmethod

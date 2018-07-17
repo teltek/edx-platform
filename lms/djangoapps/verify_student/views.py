@@ -637,6 +637,9 @@ class PayAndVerifyView(View):
         Returns:
             datetime object in string format
         """
+        if settings.FEATURES.get('AUTOMATIC_VERIFY_STUDENT_IDENTITY_FOR_TESTING'):
+            return ''
+
         photo_verifications = SoftwareSecurePhotoVerification.verification_valid_or_pending(user)
         # return 'expiration_datetime' of latest photo verification if found,
         # otherwise implicitly return ''
