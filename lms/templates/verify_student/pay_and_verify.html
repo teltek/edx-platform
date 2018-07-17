@@ -53,7 +53,12 @@ from django.conf import settings
 ## Top-level wrapper for errors
 ## JavaScript views may append to this wrapper
 <div id="error-container" style="display: none;"></div>
-
+<%
+   if mode_difference_price:
+       min_price = mode_difference_price
+   else:
+       min_price = course_mode.min_price
+%>
 <div class="container no-min-scale">
   <section class="wrapper carousel">
     ## Payment / Verification flow
@@ -70,6 +75,7 @@ from django.conf import settings
       data-course-mode-name='${course_mode.name}'
       data-course-mode-slug='${course_mode.slug}'
       data-course-mode-min-price='${course_mode.min_price}'
+      data-course-mode-difference-price='${min_price}'
       data-course-mode-sku='${course_mode.sku or ''}'
       data-course-mode-suggested-prices='${course_mode.suggested_prices}'
       data-course-mode-currency='${course_mode.currency.upper()}'

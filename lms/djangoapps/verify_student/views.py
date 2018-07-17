@@ -354,6 +354,7 @@ class PayAndVerifyView(View):
         if redirect_response is not None:
             return redirect_response
 
+        always_show_payment, mode_difference_price = self._get_difference_price(request.user, course_key, mode_slug, relevant_course_mode, already_paid, always_show_payment)
         display_steps = self._display_steps(
             always_show_payment,
             already_verified,
@@ -433,6 +434,7 @@ class PayAndVerifyView(View):
             'capture_sound': staticfiles_storage.url("audio/camera_capture.wav"),
             'nav_hidden': True,
             'is_ab_testing': 'begin-flow' in request.path,
+            'mode_difference_price': mode_difference_price
         }
 
         return render_to_response("verify_student/pay_and_verify.html", context)
@@ -475,8 +477,9 @@ class PayAndVerifyView(View):
         url = None
         course_kwargs = {'course_id': unicode(course_key)}
         course_slug_kwargs = {'course_id': unicode(course_key), 'mode_slug': mode_slug}
+        enrollment_mode, is_active = CourseEnrollment.enrollment_mode_for_user(user, course_key)
 
-        if already_verified and already_paid:
+        if already_verified and already_paid and mode_slug and mode_slug == enrollment_mode:
             # If they've already paid and verified, there's nothing else to do,
             # so redirect them to the dashboard.
             if message != self.PAYMENT_CONFIRMATION_MSG:
@@ -487,17 +490,19 @@ class PayAndVerifyView(View):
                 # then the "upgrade" messaging is more appropriate.
                 if not already_paid:
                     url = reverse('verify_student_upgrade_and_verify', kwargs=course_slug_kwargs)
+                elif already_paid and mode_slug and mode_slug != enrollment_mode:
+                    url = reverse('verify_student_start_flow', kwargs=course_slug_kwargs)
             else:
                 # If the user is NOT enrolled, then send him/her
                 # to the first time verification page.
-                url = reverse('verify_student_start_flow', kwargs=course_kwargs)
+                url = reverse('verify_student_start_flow', kwargs=course_slug_kwargs)
         elif message == self.UPGRADE_MSG:
             if is_enrolled:
-                if already_paid:
+                if already_paid and mode_slug and mode_slug == enrollment_mode:
                     # If the student has paid, but not verified, redirect to the verification flow.
                     url = reverse('verify_student_verify_now', kwargs=course_kwargs)
             else:
-                url = reverse('verify_student_start_flow', kwargs=course_kwargs)
+                url = reverse('verify_student_start_flow', kwargs=course_slug_kwargs)
 
         if user_is_trying_to_pay and user.is_active and not already_paid:
             # If the user is trying to pay, has activated their account, and the ecommerce service
@@ -632,6 +637,9 @@ class PayAndVerifyView(View):
         Returns:
             datetime object in string format
         """
+        if settings.FEATURES.get('AUTOMATIC_VERIFY_STUDENT_IDENTITY_FOR_TESTING'):
+            return ''
+
         photo_verifications = SoftwareSecurePhotoVerification.verification_valid_or_pending(user)
         # return 'expiration_datetime' of latest photo verification if found,
         # otherwise implicitly return ''
@@ -705,6 +713,28 @@ class PayAndVerifyView(View):
                 'deadline': deadline_datetime
             }
             return render_to_response("verify_student/missed_deadline.html", context)
+
+    def _get_difference_price(self, user, course_key, mode_slug, relevant_course_mode, already_paid, always_show_payment):
+        """
+        Respond with some error messaging if the deadline has passed.
+
+        Arguments:
+            user: Request user
+            course_key: The course key the user is trying to enroll in.
+            mode_slug: Course Mode slug the user is trying to enroll in.
+            relevant_course_mode: Course Mode the user is trying to enroll in.
+
+        Returns: always_show_payment, mode_difference_price
+        """
+        mode_difference_price = 0
+        enrollment_mode, is_active = CourseEnrollment.enrollment_mode_for_user(user, course_key)
+        if already_paid and mode_slug and enrollment_mode and mode_slug != enrollment_mode and mode_slug != CourseMode.AUDIT:
+            enrollment_course_mode = CourseMode.objects.get(mode_slug=enrollment_mode, course_id=course_key)
+            if enrollment_course_mode.min_price < relevant_course_mode.min_price:
+                always_show_payment = True
+                mode_difference_price = relevant_course_mode.min_price - enrollment_course_mode.min_price
+
+        return always_show_payment, mode_difference_price
 
 
 def checkout_with_ecommerce_service(user, course_key, course_mode, processor):
@@ -821,7 +851,14 @@ def create_order(request):
         amount = current_mode.min_price
 
     if amount < current_mode.min_price:
-        return HttpResponseBadRequest(_("No selected price or selected price is below minimum."))
+        bad_request = True
+        enrollment_mode, is_active = CourseEnrollment.enrollment_mode_for_user(request.user, course_id)
+        if enrollment_mode:
+            enrollment_course_mode = CourseMode.objects.get(mode_slug=enrollment_mode, course_id=course_id)
+            if enrollment_course_mode.min_price < current_mode.min_price:
+                bad_request = False
+        if bad_request:
+            return HttpResponseBadRequest(_("No selected price or selected price is below minimum."))
 
     if current_mode.sku:
         # if request.POST doesn't contain 'processor' then the service's default payment processor will be used.

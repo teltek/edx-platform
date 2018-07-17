@@ -635,6 +635,13 @@ urlpatterns += (
         'courseware.views.views.generate_user_cert',
         name='generate_user_cert',
     ),
+    url(
+        r'^courses/{}/regenerate_user_cert'.format(
+            settings.COURSE_ID_PATTERN,
+        ),
+        'courseware.views.views.regenerate_user_cert',
+        name='regenerate_user_cert',
+    ),
 )
 
 # discussion forums live within courseware, so courseware must be enabled first
