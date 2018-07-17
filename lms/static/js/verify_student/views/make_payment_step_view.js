@@ -26,6 +26,7 @@ var edx = edx || {};
                 isActive: true,
                 suggestedPrices: [],
                 minPrice: 0,
+                differencePrice: 0,
                 sku: '',
                 currency: 'usd',
                 currencySymbol: '$',
