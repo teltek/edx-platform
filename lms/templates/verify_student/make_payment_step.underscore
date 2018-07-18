@@ -24,6 +24,9 @@
       </h2>
       <div class="instruction">
         <%- gettext( "You can now enter your payment information and complete your enrollment." ) %>
+        <% if ( courseModeSlug === 'verified') { %>
+          <%- gettext( "In order to obtain a Certificate, you need to introduce your National Identity Number." ) %>
+	<% } %>
       </div>
     <% } %>
 
@@ -124,6 +127,15 @@
       <%
       // payment buttons will go here
       %>
+      <% if ( courseModeSlug === 'verified') { %>
+        <div class="field required checkbox" id="field-national-id">
+          <label for="input-national-id"><%= HtmlUtils.interpolateHtml(gettext( "National Identity Number *")) %></label>
+          <input id="input-national-id" type="text" name="national_id" value="" placeholder="123456789-KK" maxlenght="30" required aria-required="true" />
+        </div>
+        <div class="field required" id="field-national-id-message">
+          <p id="national-id-message"></p>
+        </div>
+      <% } %>
       <div class="field required checkbox" id="field-tos">
         <input id="tos-yes" type="checkbox" name="terms_of_service" value="true" required aria-required="true" />
         <label for="tos-yes"><%= HtmlUtils.interpolateHtml(gettext( "I accept the {anchorStart}Terms of Service{anchorEnd} *"), {anchorStart: HtmlUtils.HTML('<a class="new-vp" tabindex="-1" target="_blank" href="/tos">'), anchorEnd: HtmlUtils.HTML('</a>')})%></label>

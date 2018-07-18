@@ -965,6 +965,9 @@ INSTALLED_APPS = (
 
     # Unusual migrations
     'database_fixups',
+
+    # UserInfo
+    'openedx.core.djangoapps.userinfo',
 )
 
 

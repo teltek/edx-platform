@@ -185,24 +185,67 @@ var edx = edx || {};
 	        $('#tos-message').html(gettext('Connecting to Payment Processor...'));
 	    }
 
-            // Disable the payment button to prevent multiple submissions
-            this.setPaymentEnabled(false);
+	    // Check the user has introduced the National Identity Number
+	    if (this.stepData.courseModeSlug == 'verified') {
+		var nationalId = $('#input-national-id').val();
+		if (nationalId) {
+		    var postIdData = {'national_id': nationalId};
+		    postData.national_id = nationalId;
+		    $.ajax({
+			url: location.origin + '/userinfo/save_identification',
+			type: 'POST',
+			headers: {
+			    'X-CSRFToken': $.cookie('csrftoken')
+			},
+			data: postIdData,
+			context: this,
+			success: function(data) {
+			    // Disable the payment button to prevent multiple submissions
+			    $('#national-id-message').html('');
+			    $('#tos-message').html(gettext('Connecting to Payment Processor...'));
+			    this.createOrderPostData(event, postData);
+			},
+			error: function(xhr) {
+			    var errorMsg = gettext('An error has occurred. Please try again.');
+			    if (xhr.status === 400) {
+				errorMsg = xhr.responseText;
+			    }
+			    this.errorModel.set({
+				errorTitle: gettext('Could not submit order'),
+				errorMsg: errorMsg,
+				shown: true
+			    });
+			    // Re-enable the button so the user can re-try
+			    this.setPaymentEnabled(true);
+			    $('.payment-button').toggleClass('is-selected', false);
+			}
+		    });
+		} else {
+		    $('#national-id-message').html(gettext('Introduce your National Identify Number.'));
+		    return 1;
+		}
+	    } else {
+		this.createOrderPostData(event, postData);
+	    }
+        },
 
-            $(event.target).toggleClass('is-selected');
-
-            // Create the order for the amount
-            $.ajax({
+	createOrderPostData: function(event, postData) {
+	    // Disable the payment button to prevent multiple submissions
+	    this.setPaymentEnabled(false);
+	    $(event.target).toggleClass('is-selected');
+	    // Create the order for the amount
+	    $.ajax({
                 url: '/verify_student/create_order/',
                 type: 'POST',
                 headers: {
-                    'X-CSRFToken': $.cookie('csrftoken')
+		    'X-CSRFToken': $.cookie('csrftoken')
                 },
                 data: postData,
                 context: this,
                 success: this.handleCreateOrderResponse,
                 error: this.handleCreateOrderError
-            });
-        },
+	    });
+	},
 
         handleCreateOrderResponse: function(paymentData) {
             // At this point, the basket has been created on the server,
@@ -266,7 +309,13 @@ var edx = edx || {};
             // If no suggested prices are available, then the user does not
             // get the option to select a price.  Default to the minimum.
             if (!amount) {
-                amount = this.templateContext().minPrice;
+		var minPrice = this.templateContext().minPrice;
+		var differencePrice = this.templateContext().differencePrice;
+		if (differencePrice == minPrice) {
+		    amount = minPrice;
+		} else {
+		    amount = differencePrice;
+		}
             }
 
             return amount;
