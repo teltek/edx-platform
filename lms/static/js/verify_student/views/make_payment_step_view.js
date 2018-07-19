@@ -205,20 +205,7 @@ var edx = edx || {};
 			    $('#tos-message').html(gettext('Connecting to Payment Processor...'));
 			    this.createOrderPostData(event, postData);
 			},
-			error: function(xhr) {
-			    var errorMsg = gettext('An error has occurred. Please try again.');
-			    if (xhr.status === 400) {
-				errorMsg = xhr.responseText;
-			    }
-			    this.errorModel.set({
-				errorTitle: gettext('Could not submit order'),
-				errorMsg: errorMsg,
-				shown: true
-			    });
-			    // Re-enable the button so the user can re-try
-			    this.setPaymentEnabled(true);
-			    $('.payment-button').toggleClass('is-selected', false);
-			}
+			error: this.handleSaveIdentificationError
 		    });
 		} else {
 		    $('#national-id-message').html(gettext('Introduce your National Identify Number.'));
@@ -245,6 +232,23 @@ var edx = edx || {};
                 success: this.handleCreateOrderResponse,
                 error: this.handleCreateOrderError
 	    });
+	},
+
+	handleSaveIdentificationError: function(xhr) {
+	    $('#national-id-message').html('');
+	    $('#tos-message').html('');
+	    var errorMsg = gettext('An error has occurred. Please try again.');
+	    if (xhr.status === 400) {
+		errorMsg = xhr.responseText;
+	    }
+	    this.errorModel.set({
+		errorTitle: gettext('Could not submit order'),
+		errorMsg: errorMsg,
+		shown: true
+	    });
+	    // Re-enable the button so the user can re-try
+	    this.setPaymentEnabled(true);
+	    $('.payment-button').toggleClass('is-selected', false);
 	},
 
         handleCreateOrderResponse: function(paymentData) {
