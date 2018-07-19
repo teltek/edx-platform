@@ -25085,3 +25085,24 @@ msgid ""
 msgstr ""
 "Se creó una nueva revisión: Fusión entre la Revisión #%(r1)d y la Revisión "
 "#%(r2)d"
+
+#: openedx/core/djangoapps/userinfo/views.py:26
+msgid ""
+"National Id not given. You need to specify your National Identity Number."
+msgstr ""
+"Documento Nacional de Identidad no proporcionado. Debe especificar "
+"su número de Documento Nacional de Identidad."
+
+#: openedx/core/djangoapps/userinfo/views.py:34
+#: openedx/core/djangoapps/userinfo/views.py:44
+#, python-brace-format
+msgid ""
+"Error on saving National Id '{national_id}' of user '{username}': {exception}"
+msgstr ""
+"Error al guardar el Documento Nacional de Identidad '{national_id}' "
+"del usuario '{username}': {exception}"
+
+#: openedx/core/djangoapps/userinfo/views.py:42
+#, python-brace-format
+msgid "Already saved with value '{national_id}'."
+msgstr "Ya guardado con valor '{national_id}'."

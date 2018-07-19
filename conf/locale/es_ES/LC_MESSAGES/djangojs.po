@@ -9148,3 +9148,20 @@ msgstr ""
 #: cms/templates/js/video/transcripts/messages/transcripts-use-existing.underscore
 msgid "Use Current Transcript"
 msgstr "Usar transcripción actual"
+
+#: lms/static/js/verify_student/views/make_payment_step_view.js
+msgid "Introduce your National Identify Number."
+msgstr ""
+"Introduzca su Documento Nacional de Identidad."
+
+#: lms/templates/verify_student/make_payment_step.underscore
+msgid ""
+"In order to obtain a Certificate, you need to introduce your "
+"National Identity Number."
+msgstr ""
+"Para obtener un Certificado, es necesario que introduzca "
+"el número de su Documento Nacional de Identidad."
+
+#: lms/templates/verify_student/make_payment_step.underscore
+msgid "National Identity Number *"
+msgstr "Documento Nacional de Identidad *"
