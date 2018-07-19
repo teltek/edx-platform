@@ -176,17 +176,20 @@ var edx = edx || {};
                     'slug': this.stepData.courseModeSlug
                 };
 
+	    if (this.stepData.courseModeSlug == 'verified') {
+		$('#national-id-message').html('');
+	    }
 	    // Check the user has accepted the terms of service of payments
 	    var termsOfServiceAcceptance = $( 'input[name="terms_of_service"]:checked' , this.el);
 	    if (termsOfServiceAcceptance.length == 0) {
 	        $('#tos-message').html(gettext('Accept the Terms of Service.'));
 	        return 1;
-	    } else {
-	        $('#tos-message').html(gettext('Connecting to Payment Processor...'));
 	    }
 
 	    // Check the user has introduced the National Identity Number
 	    if (this.stepData.courseModeSlug == 'verified') {
+		$('#national-id-message').html('');
+		$('#tos-message').html('');
 		var nationalId = $('#input-national-id').val();
 		if (nationalId) {
 		    var postIdData = {'national_id': nationalId};
@@ -200,7 +203,6 @@ var edx = edx || {};
 			data: postIdData,
 			context: this,
 			success: function(data) {
-			    // Disable the payment button to prevent multiple submissions
 			    $('#national-id-message').html('');
 			    $('#tos-message').html(gettext('Connecting to Payment Processor...'));
 			    this.createOrderPostData(event, postData);

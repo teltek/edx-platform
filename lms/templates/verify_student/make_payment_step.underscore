@@ -130,7 +130,11 @@
       <% if ( courseModeSlug === 'verified') { %>
         <div class="field required checkbox" id="field-national-id">
           <label for="input-national-id"><%= HtmlUtils.interpolateHtml(gettext( "National Identity Number *")) %></label>
-          <input id="input-national-id" type="text" name="national_id" value="" placeholder="123456789-KK" maxlenght="30" required aria-required="true" />
+	  <% if (nationalIdentityNumber) { %>
+            <input id="input-national-id" type="text" name="national_id" value="<%- nationalIdentityNumber %>" placeholder="123456789-KK" maxlenght="30" required aria-required="true" disabled/>
+	  <% } else { %>
+            <input id="input-national-id" type="text" name="national_id" value="" placeholder="123456789-KK" maxlenght="30" required aria-required="true" />
+	  <% } %>
         </div>
         <div class="field required" id="field-national-id-message">
           <p id="national-id-message"></p>

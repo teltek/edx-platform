@@ -62,7 +62,7 @@ from util.date_utils import get_default_time_display
 from util.db import outer_atomic
 from xmodule.modulestore.django import modulestore
 from django.contrib.staticfiles.storage import staticfiles_storage
-
+from openedx.core.djangoapps.userinfo.models import NationalId
 
 log = logging.getLogger(__name__)
 
@@ -355,6 +355,7 @@ class PayAndVerifyView(View):
             return redirect_response
 
         always_show_payment, mode_difference_price = self._get_difference_price(request.user, course_key, mode_slug, relevant_course_mode, already_paid, always_show_payment)
+        national_identity_number = self._get_national_identity_number(request.user)
         display_steps = self._display_steps(
             always_show_payment,
             already_verified,
@@ -434,7 +435,8 @@ class PayAndVerifyView(View):
             'capture_sound': staticfiles_storage.url("audio/camera_capture.wav"),
             'nav_hidden': True,
             'is_ab_testing': 'begin-flow' in request.path,
-            'mode_difference_price': mode_difference_price
+            'mode_difference_price': mode_difference_price,
+            'national_identity_number': national_identity_number
         }
 
         return render_to_response("verify_student/pay_and_verify.html", context)
@@ -735,6 +737,12 @@ class PayAndVerifyView(View):
                 mode_difference_price = relevant_course_mode.min_price - enrollment_course_mode.min_price
 
         return always_show_payment, mode_difference_price
+
+    def _get_national_identity_number(self, user):
+        national_id = NationalId.get_from_user(user)
+        if national_id:
+            return national_id.national_id
+        return ''
 
 
 def checkout_with_ecommerce_service(user, course_key, course_mode, processor):

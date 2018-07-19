@@ -72,7 +72,8 @@ var edx = edx || {};
                 courseModeSlug: el.data('course-mode-slug'),
                 alreadyVerified: el.data('already-verified'),
                 verificationGoodUntil: el.data('verification-good-until'),
-                isABTesting: el.data('is-ab-testing')
+                isABTesting: el.data('is-ab-testing'),
+                nationalIdentityNumber: el.data('national-identity-number')
             },
             'payment-confirmation-step': {
                 courseKey: el.data('course-key'),
