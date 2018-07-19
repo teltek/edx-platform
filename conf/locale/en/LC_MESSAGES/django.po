@@ -20927,3 +20927,20 @@ msgid ""
 "A new revision was created: Merge between Revision #%(r1)d and Revision "
 "#%(r2)d"
 msgstr ""
+
+#: openedx/core/djangoapps/userinfo/views.py:26
+msgid ""
+"National Id not given. You need to specify your National Identity Number."
+msgstr ""
+
+#: openedx/core/djangoapps/userinfo/views.py:34
+#: openedx/core/djangoapps/userinfo/views.py:44
+#, python-brace-format
+msgid ""
+"Error on saving National Id '{national_id}' of user '{username}': {exception}"
+msgstr ""
+
+#: openedx/core/djangoapps/userinfo/views.py:42
+#, python-brace-format
+msgid "Already saved with value '{national_id}'."
+msgstr ""

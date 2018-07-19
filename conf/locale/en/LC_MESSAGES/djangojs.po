@@ -9254,3 +9254,17 @@ msgstr ""
 #: cms/templates/js/video/transcripts/messages/transcripts-use-existing.underscore
 msgid "Use Current Transcript"
 msgstr ""
+
+#: lms/static/js/verify_student/views/make_payment_step_view.js
+msgid "Introduce your National Identify Number."
+msgstr ""
+
+#: lms/templates/verify_student/make_payment_step.underscore
+msgid ""
+"In order to obtain a Certificate, you need to introduce your "
+"National Identity Number."
+msgstr ""
+
+#: lms/templates/verify_student/make_payment_step.underscore
+msgid "National Identity Number *"
+msgstr ""
