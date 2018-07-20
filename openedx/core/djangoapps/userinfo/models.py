@@ -37,3 +37,10 @@ class NationalId(models.Model):
         instance = cls.objects.create(user=user,national_id=national_id)
         instance.save()
         return instance
+
+    @classmethod
+    def get_national_id_from_user(cls, user):
+        national_id = cls.get_from_user(user)
+        if national_id:
+            return national_id.national_id
+        return False
