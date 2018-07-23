@@ -328,6 +328,7 @@
     "Course Number Override": "Ignorar n\u00famero del curso", 
     "Course Outline": "Estructura del curso", 
     "Course Program": "Programa del curso",
+    "Course Program Override": "Sobreescribir el programa del curso",
     "Course Title": "Nombre del curso", 
     "Course is not yet visible to students.": "El curso a\u00fan no es visible para los alumnos.", 
     "Course title": "T\u00edtulo del curso", 

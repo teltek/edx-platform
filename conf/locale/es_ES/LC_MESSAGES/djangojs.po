@@ -9165,3 +9165,29 @@ msgstr ""
 #: lms/templates/verify_student/make_payment_step.underscore
 msgid "National Identity Number *"
 msgstr "Documento Nacional de Identidad *"
+
+#: cms/templates/js/certificate-details.underscore
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course Program"
+msgstr "Programa del curso"
+
+#: cms/static/js/certificates/views/certificate_editor.js
+msgid "Upload course program."
+msgstr "Sube el programa del curso."
+
+#: cms/static/js/certificates/views/certificate_editor.js
+msgid "File must be in PDF format."
+msgstr "El archivo debe ser en formato PDF."
+
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course Program Override"
+msgstr "Sobreescribir el programa del curso"
+
+#: cms/templates/js/certificate-editor.underscore
+msgid ""
+"Upload a PDF file with the program of the Course "
+"to display on certificates. Leave blank to not use it."
+msgstr ""
+"Sube un archivo PDF con el programa del curso para "
+"mostrarlo en el certificado. Déjalo en blanco para no "
+"usarlo."
