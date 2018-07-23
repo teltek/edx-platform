@@ -31,7 +31,7 @@
                 <input id="certificate-course-title-<%- uniqueId %>" class="certificate-course-title-input input-text" name="certificate-course-title" type="text" placeholder="<%- gettext("Course title") %>" value="<%- course_title %>" aria-describedby="certificate-course-title-<%-uniqueId %>-tip" />
                 <span id="certificate-course-title-<%- uniqueId %>-tip" class="tip tip-stacked"><%- gettext("Specify an alternative to the official course title to display on certificates. Leave blank to use the official course title.") %></span>
             </div>
-            <div class='course-number-section pull-left'>
+            <div class='course-program-section'>
                  <p class="actual-course-program">
                             <span class="certificate-label"><b><%- gettext('Course Program') %>: </b> </span>
 			    <% if (course_program_path != "") { %>
