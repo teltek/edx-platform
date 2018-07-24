@@ -45,6 +45,13 @@
                     <% } %>
                 </div>
 
+                <div class='course-credits-section pull-left'>
+                    <p class="actual-credits-number">
+                            <span class="certificate-label"><b><%- gettext('Course Credits') %>: </b> </span>
+                            <span class="certificate-value"><%- course_credits %></span>
+                    </p>
+                </div>
+
                 <div class='course-program-section pull-left'>
                     <p class="actual-course-program">
                             <span class="certificate-label"><b><%- gettext('Course Program') %>: </b> </span>

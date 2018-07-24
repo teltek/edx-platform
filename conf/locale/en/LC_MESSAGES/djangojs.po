@@ -9291,3 +9291,22 @@ msgid ""
 "Upload a PDF file with the program of the Course "
 "to display on certificates. Leave blank to not use it."
 msgstr ""
+
+#: cms/templates/js/certificate-details.underscore
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course Credits"
+msgstr ""
+
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course credits"
+msgstr ""
+
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course Credits Override"
+msgstr ""
+
+#: cms/templates/js/certificate-editor.underscore
+msgid ""
+"Specify an alternative to the official course "
+"credits number to display on certificates."
+msgstr ""

@@ -9458,3 +9458,24 @@ msgstr ""
 "Carregue um arquivo PDF com o programa do Curso "
 "para exibir em certificados. Deixe em branco para não "
 "usá-lo."
+
+#: cms/templates/js/certificate-details.underscore
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course Credits"
+msgstr "Créditos do curso"
+
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course credits"
+msgstr "Créditos do curso"
+
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course Credits Override"
+msgstr "Substituição de créditos do curso"
+
+#: cms/templates/js/certificate-editor.underscore
+msgid ""
+"Specify an alternative to the official course "
+"credits number to display on certificates."
+msgstr ""
+"Especifique uma alternativa ao número oficial de "
+"créditos do curso para exibir em certificados."
