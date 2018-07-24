@@ -9268,3 +9268,26 @@ msgstr ""
 #: lms/templates/verify_student/make_payment_step.underscore
 msgid "National Identity Number *"
 msgstr ""
+
+#: cms/templates/js/certificate-details.underscore
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course Program"
+msgstr ""
+
+#: cms/static/js/certificates/views/certificate_editor.js
+msgid "Upload course program."
+msgstr ""
+
+#: cms/static/js/certificates/views/certificate_editor.js
+msgid "File must be in PDF format."
+msgstr ""
+
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course Program Override"
+msgstr ""
+
+#: cms/templates/js/certificate-editor.underscore
+msgid ""
+"Upload a PDF file with the program of the Course "
+"to display on certificates. Leave blank to not use it."
+msgstr ""

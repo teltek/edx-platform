@@ -8,10 +8,12 @@ define([
     'js/views/list_item_editor',
     'js/certificates/models/signatory',
     'js/certificates/views/signatory_editor',
-    'text!templates/certificate-editor.underscore'
+    'text!templates/certificate-editor.underscore',
+    'js/models/uploads',
+    'js/views/uploads'
 ],
 function($, _, Backbone, gettext,
-         ListItemEditorView, SignatoryModel, SignatoryEditorView, certificateEditorTemplate) {
+         ListItemEditorView, SignatoryModel, SignatoryEditorView, certificateEditorTemplate, FileUploadModel, FileUploadDialog) {
     'use strict';
 
     // If signatories limit is required to specific value then we can change it.
@@ -27,7 +29,8 @@ function($, _, Backbone, gettext,
             'blur .input-text': 'onBlur',
             'submit': 'setAndClose',
             'click .action-cancel': 'cancel',
-            'click .action-add-signatory': 'addSignatory'
+            'click .action-add-signatory': 'addSignatory',
+            'click .upload-button': 'uploadCourseProgram',
         },
 
         className: function() {
@@ -50,6 +53,7 @@ function($, _, Backbone, gettext,
             this.eventAgg = _.extend({}, Backbone.Events);
             this.eventAgg.bind('onSignatoryRemoved', this.onSignatoryRemoved);
             this.eventAgg.bind('onSignatoryUpdated', this.clearErrorMessage);
+            this.model.bind('change', this.render);
             ListItemEditorView.prototype.initialize.call(this);
         },
 
@@ -102,6 +106,7 @@ function($, _, Backbone, gettext,
                 name: this.model.get('name'),
                 description: this.model.get('description'),
                 course_title: this.model.get('course_title'),
+		course_program_path: this.model.get('course_program_path'),
                 org_logo_path: this.model.get('org_logo_path'),
                 is_active: this.model.get('is_active'),
                 isNew: this.model.isNew()
@@ -148,7 +153,26 @@ function($, _, Backbone, gettext,
             this.setDescription();
             this.setCourseTitle();
             return this;
-        }
+        },
+
+	uploadCourseProgram: function(event) {
+            event.preventDefault();
+            var upload = new FileUploadModel({
+                title: gettext('Upload course program.'),
+                message: gettext('File must be in PDF format.'),
+                mimeTypes: ['application/pdf']
+            });
+            var self = this;
+            var modal = new FileUploadDialog({
+                model: upload,
+                onSuccess: function(response) {
+                    self.model.set('course_program_path', response.asset.url);
+                }
+            });
+            modal.show();
+            return false;
+	}
+
     });
     return CertificateEditorView;
 });

@@ -9416,3 +9416,45 @@ msgstr ""
 #: cms/templates/js/video/transcripts/messages/transcripts-use-existing.underscore
 msgid "Use Current Transcript"
 msgstr "Usar a Transcrição Atual"
+
+#: lms/static/js/verify_student/views/make_payment_step_view.js
+msgid "Introduce your National Identify Number."
+msgstr "Introduza o seu Número de Identidade Nacional."
+
+#: lms/templates/verify_student/make_payment_step.underscore
+msgid ""
+"In order to obtain a Certificate, you need to introduce your "
+"National Identity Number."
+msgstr ""
+"Para obter um certificado, você precisa apresentar o seu "
+"Número de Identidade Nacional."
+
+#: lms/templates/verify_student/make_payment_step.underscore
+msgid "National Identity Number *"
+msgstr "Número de Identidade Nacional *"
+
+#: cms/templates/js/certificate-details.underscore
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course Program"
+msgstr "Programa do Curso"
+
+#: cms/static/js/certificates/views/certificate_editor.js
+msgid "Upload course program."
+msgstr "Carregar programa de curso."
+
+#: cms/static/js/certificates/views/certificate_editor.js
+msgid "File must be in PDF format."
+msgstr "O arquivo deve estar no formato PDF."
+
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course Program Override"
+msgstr "Substituição do programa do curso"
+
+#: cms/templates/js/certificate-editor.underscore
+msgid ""
+"Upload a PDF file with the program of the Course "
+"to display on certificates. Leave blank to not use it."
+msgstr ""
+"Carregue um arquivo PDF com o programa do Curso "
+"para exibir em certificados. Deixe em branco para não "
+"usá-lo."
