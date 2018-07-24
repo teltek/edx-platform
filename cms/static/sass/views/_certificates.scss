@@ -54,12 +54,9 @@
       margin-bottom: $baseline;
     }
 
-    .actual-course-title {
-      @extend %t-strong;
-      margin-bottom: $baseline;
-    }
-
-    .actual-course-program {
+    .actual-course-title,
+    .actual-course-program,
+    .actual-course-credits {
       @extend %t-strong;
       margin-bottom: $baseline;
     }
@@ -72,7 +69,7 @@
   .certificate-info-section{
       overflow: auto;
 
-    .course-title-section, .course-number-section, .course-program-section {
+    .course-title-section, .course-number-section, .course-program-section, .course-credits-section {
       min-width: 47%;
       @include margin-right(2%);
     }

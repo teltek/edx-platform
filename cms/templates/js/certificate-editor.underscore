@@ -31,6 +31,15 @@
                 <input id="certificate-course-title-<%- uniqueId %>" class="certificate-course-title-input input-text" name="certificate-course-title" type="text" placeholder="<%- gettext("Course title") %>" value="<%- course_title %>" aria-describedby="certificate-course-title-<%-uniqueId %>-tip" />
                 <span id="certificate-course-title-<%- uniqueId %>-tip" class="tip tip-stacked"><%- gettext("Specify an alternative to the official course title to display on certificates. Leave blank to use the official course title.") %></span>
             </div>
+            <div class="actual-course-credits">
+                <span class="actual-course-credits"><%- gettext("Course Credits") %>: </span>
+                <span class="actual-credits"><%- course_credits %></span>
+            </div>
+            <div class="input-wrap field text add-certificate-course-credits">
+                <label for="certificate-course-credits-<%- uniqueId %>"><%- gettext("Course Credits Override") %></label>
+                <input id="certificate-course-credits-<%- uniqueId %>" class="certificate-course-credits-input input-text" name="certificate-course-credits" type="text" placeholder="<%- gettext("Course credits") %>" value="<%- course_credits %>" aria-describedby="certificate-course-credits-<%-uniqueId %>-tip" />
+                <span id="certificate-course-credits-<%- uniqueId %>-tip" class="tip tip-stacked"><%- gettext("Specify an alternative to the official course credits number to display on certificates.") %></span>
+            </div>
             <div class='course-program-section'>
                  <p class="actual-course-program">
                             <span class="certificate-label"><b><%- gettext('Course Program') %>: </b> </span>
