@@ -48,6 +48,9 @@ from certificates.models import (
     CertificateHtmlViewConfiguration,
     CertificateSocialNetworks)
 
+from certificates.pdf import PDFCertificate
+from io import BytesIO
+
 log = logging.getLogger(__name__)
 
 
@@ -520,6 +523,32 @@ def render_cert_by_uuid(request, certificate_uuid):
         raise Http404
 
 
+def render_pdf_cert_by_uuid(request, certificate_uuid):
+    """
+    This public view generates a PDF representation of the specified certificate
+    """
+    try:
+        certificate = GeneratedCertificate.objects.get(verified_uuid=certificate_uuid)
+        log.error('certificate: {0}'.format(certificate))
+        language = get_language_from_request(request, check_path=False)
+        log.error('language: {0}'.format(language))
+        pdf_buffer = BytesIO()
+        PDFCertificate(
+            certificate=certificate.verified_uuid,
+            course_id=certificate.course_id,
+            user_id=certificate.user_id,
+            language=language
+        ).generate_pdf(pdf_buffer)
+    except GeneratedCertificate.DoesNotExist:
+        raise Http404
+    except Exception as err:
+        log.error('exception: {}'.format(err))
+        raise err
+        
+    return pdf_buffer
+
+
+    
 @handle_500(
     template_path="certificates/server-error.html",
     test_func=lambda request: request.GET.get('preview', None)
