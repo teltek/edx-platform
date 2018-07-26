@@ -1,9 +1,21 @@
+import os
+import urllib2
+
 from django.conf import settings
-from django.utils.translation import get_language_from_request
+from django.utils.translation import ugettext as _
+
+from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
+
 from io import BytesIO
 from PIL import Image
 from reportlab.pdfgen.canvas import Canvas
 from reportlab.lib.pagesizes import letter
+from reportlab.lib import colors
+from reportlab.lib.units import mm
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.platypus import Paragraph
+from reportlab.platypus.tables import Table, TableStyle
+
 import logging
 
 log = logging.getLogger(__name__)
@@ -26,6 +38,12 @@ class PDFCertificate(object):
         self.page_height = 297 * mm
         self.language = language
 
+        self.min_clearance = 3 * mm
+        self.second_page_available_height = ''
+        self.second_page_start_y_pos = ''
+        self.first_page_available_height = ''
+
+
         self.logo_path = configuration_helpers.get_value("PDF_RECEIPT_LOGO_PATH", settings.PDF_RECEIPT_LOGO_PATH)
         self.cobrand_logo_path = configuration_helpers.get_value(
             "PDF_RECEIPT_COBRAND_LOGO_PATH", settings.PDF_RECEIPT_COBRAND_LOGO_PATH
@@ -42,16 +60,33 @@ class PDFCertificate(object):
     def generate_pdf(self, file_buffer):
         self.pdf = Canvas(file_buffer, pagesize=letter)
         y_pos = self.draw_logos()
+
+        # Clean the PDF object cleanly.
+        self.pdf.showPage()
+
+
+        # URL = ""
+        # response=urllib2.urlopen(URL)
+        # p = BytesIO(response.read())
+        # p.seek(0, os.SEEK_END)
+        # log.error('p tell: {0}'.format(p.tell()))
+
+        # self.pdf = Canvas(p, pagesize=letter)
+
+        # Clean the PDF object cleanly.
+        self.pdf.showPage()
+
+        y_pos = self.draw_logos()
+
+        # Clean the PDF object cleanly.
+        self.pdf.showPage()
+
         
+        y_pos = self.draw_logos()
+
+
         self.pdf.save()
         log.error('file_buffer: {0}'.format(file_buffer))
-
-    def save(self):
-        """
-            Adds page numbering to each page (page x of y)
-        """
-        Canvas.save(self)
-
         
 
     @staticmethod
@@ -68,7 +103,6 @@ class PDFCertificate(object):
 
         return img
 
-        
 
     def draw_logos(self):
         """
@@ -80,25 +114,31 @@ class PDFCertificate(object):
             self.margin + vertical_padding_from_border + max(self.cobrand_logo_height, self.brand_logo_height)
         )
 
-        # Left-Aligned cobrand logo
-        if self.cobrand_logo_path:
-            cobrand_img = self.load_image(self.cobrand_logo_path)
-            if cobrand_img:
-                img_width = float(cobrand_img.size[0]) / (float(cobrand_img.size[1]) / self.cobrand_logo_height)
-                self.pdf.drawImage(cobrand_img.filename, horizontal_padding_from_border, img_y_pos, img_width,
-                                   self.cobrand_logo_height, mask='auto')
-
-        # Right aligned brand logo
+        # Left aligned brand logo
         if self.logo_path:
             logo_img = self.load_image(self.logo_path)
             if logo_img:
                 img_width = float(logo_img.size[0]) / (float(logo_img.size[1]) / self.brand_logo_height)
                 self.pdf.drawImage(
                     logo_img.filename,
+                    horizontal_padding_from_border,
+                    img_y_pos,
+                    img_width,
+                    self.cobrand_logo_height,
+                    mask='auto'
+                )
+
+        # Right Aligned cobrand logo
+        if self.cobrand_logo_path:
+            cobrand_img = self.load_image(self.cobrand_logo_path)
+            if cobrand_img:
+                img_width = float(cobrand_img.size[0]) / (float(cobrand_img.size[1]) / self.cobrand_logo_height)
+                self.pdf.drawImage(
+                    cobrand_img.filename,
                     self.page_width - (horizontal_padding_from_border + img_width),
                     img_y_pos,
                     img_width,
-                    self.brand_logo_height,
+                    self.cobrand_logo_height,
                     mask='auto'
                 )
 

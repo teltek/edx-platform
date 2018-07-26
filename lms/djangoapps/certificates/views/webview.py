@@ -50,6 +50,8 @@ from certificates.models import (
 
 from certificates.pdf import PDFCertificate
 from io import BytesIO
+from django.utils.translation import get_language_from_request
+from reportlab.pdfgen import canvas
 
 log = logging.getLogger(__name__)
 
@@ -523,18 +525,22 @@ def render_cert_by_uuid(request, certificate_uuid):
         raise Http404
 
 
+@handle_500(
+    template_path="certificates/server-error.html",
+    test_func=lambda request: request.GET.get('preview', None)
+)
 def render_pdf_cert_by_uuid(request, certificate_uuid):
     """
     This public view generates a PDF representation of the specified certificate
     """
     try:
-        certificate = GeneratedCertificate.objects.get(verified_uuid=certificate_uuid)
+        certificate = GeneratedCertificate.objects.get(verify_uuid=certificate_uuid)
         log.error('certificate: {0}'.format(certificate))
         language = get_language_from_request(request, check_path=False)
         log.error('language: {0}'.format(language))
         pdf_buffer = BytesIO()
         PDFCertificate(
-            certificate=certificate.verified_uuid,
+            certificate=certificate.verify_uuid,
             course_id=certificate.course_id,
             user_id=certificate.user_id,
             language=language
@@ -545,9 +551,14 @@ def render_pdf_cert_by_uuid(request, certificate_uuid):
         log.error('exception: {}'.format(err))
         raise err
         
-    return pdf_buffer
+    log.error('pdf_buffer: {0}'.format(pdf_buffer))
 
-
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="somefilename.pdf"'
+    pdf = pdf_buffer.getvalue()
+    pdf_buffer.close()
+    response.write(pdf)
+    return response
     
 @handle_500(
     template_path="certificates/server-error.html",
