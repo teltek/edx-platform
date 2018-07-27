@@ -1,10 +1,13 @@
-import os
-import urllib2
+import logging
 
 from django.conf import settings
 from django.utils.translation import ugettext as _
+from django.utils.translation import get_language_from_request
 
+from certificates.api import get_active_web_certificate
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
+from opaque_keys.edx.keys import CourseKey
+from xmodule.modulestore.django import modulestore
 
 from io import BytesIO
 from PIL import Image
@@ -16,20 +19,21 @@ from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import Paragraph
 from reportlab.platypus.tables import Table, TableStyle
 
-import logging
+from PyPDF2 import PdfFileWriter, PdfFileReader
+from xmodule.assetstore.assetmgr import AssetManager
+from xmodule.contentstore.content import StaticContent
 
 log = logging.getLogger(__name__)
-
 
 class PDFCertificate(object):
     """
     PDF Generation Class
     """
-    def __init__(self, certificate, course_id, user_id, language='en'):
+    def __init__(self, verify_uuid, course_id, user_id, language='en'):
         """
         Generates certificate in PDF format.
         """
-        self.certificate = certificate
+        self.verify_uuid = verify_uuid
         self.course_id = course_id
         self.user_id = user_id
         self.pdf = None
@@ -55,39 +59,49 @@ class PDFCertificate(object):
             "PDF_RECEIPT_COBRAND_LOGO_HEIGHT_MM", settings.PDF_RECEIPT_COBRAND_LOGO_HEIGHT_MM
         ) * mm
 
-        
 
     def generate_pdf(self, file_buffer):
+        """
+        Generates PDF file with Certificate
+        """
         self.pdf = Canvas(file_buffer, pagesize=letter)
         y_pos = self.draw_logos()
 
-        # Clean the PDF object cleanly.
         self.pdf.showPage()
-
-
-        # URL = ""
-        # response=urllib2.urlopen(URL)
-        # p = BytesIO(response.read())
-        # p.seek(0, os.SEEK_END)
-        # log.error('p tell: {0}'.format(p.tell()))
-
-        # self.pdf = Canvas(p, pagesize=letter)
-
-        # Clean the PDF object cleanly.
-        self.pdf.showPage()
-
-        y_pos = self.draw_logos()
-
-        # Clean the PDF object cleanly.
-        self.pdf.showPage()
-
-        
-        y_pos = self.draw_logos()
-
-
         self.pdf.save()
-        log.error('file_buffer: {0}'.format(file_buffer))
+
+        try:
+            course_key = CourseKey.from_string(self.course_id)
+            course = modulestore().get_course(course_key)
+            active_configuration = get_active_web_certificate(course)
+            if 'course_program_path' in active_configuration:
+                return self.add_course_program(file_buffer, active_configuration['course_program_path'])
+        except Exception as exception:
+            error_str = (
+                "Invalid cert: error finding course %s. "
+                "Specific error: %s"
+            )
+            log.error(error_str, self.course_id, str(exception))
         
+        return file_buffer
+
+    def add_course_program(self, pdf_buffer, relative_path):
+        """
+        Adds Course Program PDF File to the Certificate
+        """
+        if not relative_path:
+            return pdf_buffer
+        pdf_buffer.seek(0)
+        new_pdf = PdfFileReader(pdf_buffer)
+        asset_key = StaticContent.get_asset_key_from_path(self.course_id, relative_path)
+        content = AssetManager.find(asset_key, as_stream=True)
+        existing_pdf = PdfFileReader(content._stream)
+        output_writer = PdfFileWriter()
+        page = new_pdf.getPage(0)
+        output_writer.addPage(page)
+        output_writer.appendPagesFromReader(existing_pdf)
+
+        return output_writer
 
     @staticmethod
     def load_image(img_path):

@@ -51,7 +51,6 @@ from certificates.models import (
 from certificates.pdf import PDFCertificate
 from io import BytesIO
 from django.utils.translation import get_language_from_request
-from reportlab.pdfgen import canvas
 
 log = logging.getLogger(__name__)
 
@@ -535,13 +534,11 @@ def render_pdf_cert_by_uuid(request, certificate_uuid):
     """
     try:
         certificate = GeneratedCertificate.objects.get(verify_uuid=certificate_uuid)
-        log.error('certificate: {0}'.format(certificate))
         language = get_language_from_request(request, check_path=False)
-        log.error('language: {0}'.format(language))
         pdf_buffer = BytesIO()
-        PDFCertificate(
-            certificate=certificate.verify_uuid,
-            course_id=certificate.course_id,
+        output_writer = PDFCertificate(
+            verify_uuid=certificate.verify_uuid,
+            course_id=unicode(certificate.course_id),
             user_id=certificate.user_id,
             language=language
         ).generate_pdf(pdf_buffer)
@@ -550,14 +547,16 @@ def render_pdf_cert_by_uuid(request, certificate_uuid):
     except Exception as err:
         log.error('exception: {}'.format(err))
         raise err
-        
-    log.error('pdf_buffer: {0}'.format(pdf_buffer))
 
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename="somefilename.pdf"'
-    pdf = pdf_buffer.getvalue()
-    pdf_buffer.close()
-    response.write(pdf)
+
+    pdf_stream = BytesIO()
+    output_writer.write(pdf_stream)
+    pdf_value = pdf_stream.getvalue()
+    pdf_stream.close()
+    response.write(pdf_value)
+
     return response
     
 @handle_500(
