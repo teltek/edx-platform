@@ -378,6 +378,12 @@ FEATURES = {
 
     # Whether to show receipt for honor mode after purchased.
     'SHOW_RECEIPT_FOR_HONOR': True,
+
+    # PDF certificates logo extra.
+    'PDF_LOGO_EXTRA': '',
+
+    # PDF certificates fonts extra.
+    'PDF_FONTS_EXTRA': '',
 }
 
 # Ignore static asset files on import which match this pattern
