@@ -170,7 +170,28 @@ class PDFCertificate(object):
         now = datetime.datetime.now(pytz.UTC)
 
         first_line = _('NATIONAL UNIVERSITY OF DISTANCE EDUCATION')
-        paragraph_text = (_('The Rector of the National University of Distance Education,{breakline}considering that{breakline}{breakline}{studentstyle_start}{student_name}{studentstyle_end}{breakline}with National Identity Number: {student_national_id}{breakline}{breakline}has successfully finished the UNED Abierta course{breakline}{breakline}{coursestyle_start}{course_title}{coursestyle_end}{breakline}{breakline}According to the program on the back of this document,{breakline}issues the present{breakline}{certificatestyle_start}CERTIFICATE OF USE{certificatestyle_end}{breakline}{date}')).format(studentstyle_start="<font size=20 color=#c49838>", studentstyle_end="</font>", student_name="Student Name", student_national_id="123456789X", coursestyle_start="<font size=20 color=#870d0d>", course_title="Identidad digital, posicionamiento y promocion de los profesionales de ciencias de la salud", coursestyle_end="</font>", breakline="<br/><br/>", certificatestyle_start="<font size=18>", certificatestyle_end="</font>", date=now.strftime('%d %B %Y'))
+        paragraph_text = (_('The Rector of the National University of Distance Education,' \
+                            '{breakline}considering that{breakline}{breakline}' \
+                            '{studentstyle_start}{student_name}{studentstyle_end}{breakline}' \
+                            'with National Identity Number: {student_national_id}{breakline}{breakline}' \
+                            'has successfully finished the UNED Abierta course{breakline}{breakline}' \
+                            '{coursestyle_start}{course_title}{coursestyle_end}{breakline}{breakline}' \
+                            'According to the program on the back of this document,' \
+                            '{breakline}issues the present{breakline}' \
+                            '{certificatestyle_start}CERTIFICATE OF USE{certificatestyle_end}{breakline}' \
+                            '{date}')).format(
+                                studentstyle_start="<font size=20 color=#c49838>",
+                                studentstyle_end="</font>",
+                                student_name="Student Name",
+                                student_national_id="123456789X",
+                                coursestyle_start="<font size=20 color=#870d0d>",
+                                course_title="Identidad digital, posicionamiento y promocion de los profesionales de ciencias de la salud",
+                                coursestyle_end="</font>",
+                                breakline="<br/><br/>",
+                                certificatestyle_start="<font size=18>",
+                                certificatestyle_end="</font>",
+                                date=now.strftime('%d %B %Y')
+                            )
         rector_title = (_('{color_start}The Rector of the UNED,{color_end}')).format(color_start="<font color=#c49838>", color_end="</font>")
         rector_name = (_('{bold_start}Alejandro Tiana Ferrer{bold_end}')).format(bold_start="<b>", bold_end="</b>")
         footer = (_('Credits number: {course_credits} ETCS{breakline}Hours number: {course_effort} hours{breakline}This degree is given as suitable of UNED and it does not have the official nature established in number 30 of the Organic Law 4/2007 that modifies the article 34 of Organic Law 6/2001 of Universities{breakline}* The authenticity of this document, as well as its validity and validity, can be checked through the following URL: {cert_url}')).format(course_credits=1.0, breakline="<br/>", course_effort=25, cert_url='https://example.com')
