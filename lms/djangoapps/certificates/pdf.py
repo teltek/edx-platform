@@ -1,6 +1,7 @@
 import logging
 
 from django.conf import settings
+from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _
 from django.utils.translation import get_language_from_request
 
@@ -8,6 +9,7 @@ from certificates.api import get_active_web_certificate
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 from opaque_keys.edx.keys import CourseKey
 from xmodule.modulestore.django import modulestore
+from openedx.core.djangoapps.userinfo.models import NationalId
 
 from io import BytesIO
 from PIL import Image
@@ -26,6 +28,10 @@ from reportlab.pdfbase.ttfonts import TTFont
 from PyPDF2 import PdfFileWriter, PdfFileReader
 from xmodule.assetstore.assetmgr import AssetManager
 from xmodule.contentstore.content import StaticContent
+
+import datetime
+import pytz
+
 
 log = logging.getLogger(__name__)
 
@@ -73,9 +79,9 @@ class PDFCertificate(object):
             course = modulestore().get_course(course_key)
             active_configuration = get_active_web_certificate(course)
             self.pdf = Canvas(file_buffer, pagesize=letter)
-            if active_configuration:
+            if course and active_configuration:
                 y_pos = self.draw_logos()
-                y_pos = self.add_text(active_configuration, y_pos)
+                y_pos = self.add_text(course, active_configuration, y_pos)
             self.pdf.showPage()
             self.pdf.save()
             if 'course_program_path' in active_configuration:
@@ -163,13 +169,24 @@ class PDFCertificate(object):
         return img_y_pos - self.min_clearance
 
 
-    def add_text(self, active_configuration, y_pos):
-
-        import datetime
-        import pytz
+    def add_text(self, course, active_configuration, y_pos):
+        """
+        Prints all text to PDF file.
+        """
         now = datetime.datetime.now(pytz.UTC)
+        user = User.objects.get(id=self.user_id)
+        user_fullname = user.profile.name
+        course_title_from_cert = active_configuration.get('course_title', '')
+        course_name = course_title_from_cert
+        course_name = course_title_from_cert if course_title_from_cert else course.display_name
 
-        first_line = _('NATIONAL UNIVERSITY OF DISTANCE EDUCATION')
+        if settings.FEATURES['PDF_FONTS_EXTRA']:
+            pdfmetrics.registerFont(TTFont('Fontana', settings.FEATURES['PDF_FONTS_EXTRA']))
+            pdfmetrics.registerFont(TTFont('Fontana-Semibold', settings.FEATURES['PDF_FONTS_EXTRA_2']))
+            pdfmetrics.registerFontFamily('Fontana', normal='Fontana', bold='Fontana-Semibold')
+            self.pdf.setFont('Fontana', 18)
+
+        first_line = (_(u'{bold_start}NATIONAL UNIVERSITY OF DISTANCE EDUCATION{bold_end}')).format(bold_start="<strong>", bold_end="</strong>")
         paragraph_text = (_('The Rector of the National University of Distance Education,' \
                             '{breakline}considering that{breakline}{breakline}' \
                             '{studentstyle_start}{student_name}{studentstyle_end}{breakline}' \
@@ -182,10 +199,10 @@ class PDFCertificate(object):
                             '{date}')).format(
                                 studentstyle_start="<font size=20 color=#c49838>",
                                 studentstyle_end="</font>",
-                                student_name="Student Name",
-                                student_national_id="123456789X",
+                                student_name=user_fullname,
+                                student_national_id=NationalId.get_national_id_from_user(user=user),
                                 coursestyle_start="<font size=20 color=#870d0d>",
-                                course_title="Identidad digital, posicionamiento y promocion de los profesionales de ciencias de la salud",
+                                course_title=course_name,
                                 coursestyle_end="</font>",
                                 breakline="<br/><br/>",
                                 certificatestyle_start="<font size=18>",
@@ -205,10 +222,6 @@ class PDFCertificate(object):
         HEIGHT = 297  # hight in mm (A4)
         LEFT_INDENT = 49  # mm from the left side to write the text
         RIGHT_INDENT = 49  # mm from the right side for the CERTIFICATE
-
-        if settings.FEATURES['PDF_FONTS_EXTRA']:
-            pdfmetrics.registerFont(TTFont('Fontana', settings.FEATURES['PDF_FONTS_EXTRA']))
-            self.pdf.setFont('Fontana', 18)
 
         style = ParagraphStyle('title', alignment=TA_CENTER, fontSize=18, fontName="Fontana")
         paragraph = Paragraph(title, style)
