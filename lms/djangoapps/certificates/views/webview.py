@@ -550,7 +550,7 @@ def render_pdf_cert_by_uuid(request, certificate_uuid):
         raise err
 
     response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="somefilename.pdf"'
+    response['Content-Disposition'] = 'attachment; filename="Certificate'+certificate.verify_uuid+'.pdf"'
 
     pdf_stream = BytesIO()
     output_writer.write(pdf_stream)
