@@ -32,7 +32,7 @@ from xmodule.contentstore.content import StaticContent
 
 import datetime
 import pytz
-
+from util.date_utils import strftime_localized
 
 log = logging.getLogger(__name__)
 
@@ -181,23 +181,33 @@ class PDFCertificate(object):
         course_credits = active_configuration.get('course_credits', 1.0)
         certificate_id_url = settings.LMS_ROOT_URL + '/certificates/' + self.verify_uuid
 
-
         pdfmetrics.registerFont(TTFont('Fontana', settings.FEATURES['PDF_FONTS_NORMAL']))
         pdfmetrics.registerFont(TTFont('Fontana-Semibold', settings.FEATURES['PDF_FONTS_SEMIBOLD']))
         pdfmetrics.registerFontFamily('Fontana', normal='Fontana', bold='Fontana-Semibold')
         self.pdf.setFont('Fontana', 18)
 
+        WIDTH = 210  # width in mm (A4)
+        HEIGHT = 297  # hight in mm (A4)
+        LEFT_INDENT = 49  # mm from the left side to write the text
+        RIGHT_INDENT = 49  # mm from the right side for the CERTIFICATE
+
         first_line = (_(u'{strong_start}NATIONAL UNIVERSITY OF DISTANCE EDUCATION{strong_end}')).format(
             strong_start="<strong>",
             strong_end="</strong>"
         )
+
+        style = ParagraphStyle('title', alignment=TA_CENTER, fontSize=18, fontName="Fontana")
+        paragraph = Paragraph(first_line, style)
+        paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
+        paragraph.drawOn(self.pdf, 20 * mm, 240 * mm, TA_CENTER)
+
         paragraph_text = (_('The Rector of the National University of Distance Education,' \
                             '{breakline}considering that{breakline}{breakline}' \
                             '{studentstyle_start}{student_name}{studentstyle_end}{breakline}' \
                             'with National Identity Number: {student_national_id}{breakline}{breakline}' \
                             'has successfully finished the UNED Abierta course{breakline}{breakline}' \
-                            '{coursestyle_start}{course_title}{coursestyle_end}{breakline}{breakline}' \
-                            'According to the program on the back of this document,' \
+                            '{strong_start}{coursestyle_start}{course_title}{coursestyle_end}{strong_end}' \
+                            '{breakline}{breakline}According to the program on the back of this document,' \
                             '{breakline}issues the present{breakline}{strong_start}' \
                             '{certificatestyle_start}CERTIFICATE OF USE{certificatestyle_end}' \
                             '{strong_end}{breakline}' \
@@ -214,16 +224,34 @@ class PDFCertificate(object):
                                 certificatestyle_end="</font>",
                                 strong_start="<strong>",
                                 strong_end="</strong>",
-                                date=now.strftime('%d %B %Y')
+                                date=strftime_localized(now, '%d %B %Y')
                             )
+
+        style = ParagraphStyle('paragraph', alignment=TA_CENTER, fontSize=12, fontName="Fontana", leading=14)
+        paragraph = Paragraph(paragraph_text, style)
+        paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
+        paragraph.drawOn(self.pdf, 20 * mm, 90 * mm, TA_CENTER)
+
         rector_title = (_('{color_start}The Rector of the UNED,{color_end}')).format(
             color_start="<font color=#c49838>",
             color_end="</font>"
         )
+
+        style = ParagraphStyle('rectortitle', alignment=TA_RIGHT, fontSize=10,fontName="Fontana")
+        paragraph = Paragraph(rector_title, style)
+        paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
+        paragraph.drawOn(self.pdf, 20 * mm, 60 * mm, TA_RIGHT)
+
         rector_name = (_('{strong_start}Alejandro Tiana Ferrer{strong_end}')).format(
             strong_start="<strong>",
             strong_end="</strong>"
         )
+
+        style = ParagraphStyle('rectorname', alignment=TA_RIGHT, fontSize=12, fontName="Fontana")
+        paragraph = Paragraph(rector_name, style)
+        paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
+        paragraph.drawOn(self.pdf, 20 * mm, 50 * mm, TA_RIGHT)
+
         footer = (_('{fontsize_start}Credits number: {fontcolor_start}' \
                     '{course_credits}{fontcolor_end} ETCS{fontsize_end}{breakline}' \
                     '{fontsize_start}Hours number: {fontcolor_start}' \
@@ -244,31 +272,6 @@ class PDFCertificate(object):
                         course_effort=course_effort,
                         cert_url=certificate_id_url
                     )
-
-        WIDTH = 210  # width in mm (A4)
-        HEIGHT = 297  # hight in mm (A4)
-        LEFT_INDENT = 49  # mm from the left side to write the text
-        RIGHT_INDENT = 49  # mm from the right side for the CERTIFICATE
-
-        style = ParagraphStyle('title', alignment=TA_CENTER, fontSize=18, fontName="Fontana")
-        paragraph = Paragraph(first_line, style)
-        paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
-        paragraph.drawOn(self.pdf, 20 * mm, 240 * mm, TA_CENTER)
-
-        style = ParagraphStyle('paragraph', alignment=TA_CENTER, fontSize=12, fontName="Fontana", leading=14)
-        paragraph = Paragraph(paragraph_text, style)
-        paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
-        paragraph.drawOn(self.pdf, 20 * mm, 90 * mm, TA_CENTER)
-
-        style = ParagraphStyle('rectortitle', alignment=TA_RIGHT, fontSize=10,fontName="Fontana")
-        paragraph = Paragraph(rector_title, style)
-        paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
-        paragraph.drawOn(self.pdf, 20 * mm, 60 * mm, TA_RIGHT)
-
-        style = ParagraphStyle('rectorname', alignment=TA_RIGHT, fontSize=12, fontName="Fontana")
-        paragraph = Paragraph(rector_name, style)
-        paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
-        paragraph.drawOn(self.pdf, 20 * mm, 50 * mm, TA_RIGHT)
 
         style = ParagraphStyle('footer', alignment=TA_LEFT, fontSize=8, fontName="Fontana")
         paragraph = Paragraph(footer, style)
