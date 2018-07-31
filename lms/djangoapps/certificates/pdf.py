@@ -6,6 +6,7 @@ from django.utils.translation import ugettext as _
 from django.utils.translation import get_language_from_request
 
 from certificates.api import get_active_web_certificate
+from certificates.models import CertificateTemplate
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 from opaque_keys.edx.keys import CourseKey
 from xmodule.modulestore.django import modulestore
@@ -40,18 +41,18 @@ class PDFCertificate(object):
     """
     PDF Generation Class
     """
-    def __init__(self, verify_uuid, course_id, user_id, language='en'):
+    def __init__(self, verify_uuid, course_id, user_id, mode):
         """
         Generates certificate in PDF format.
         """
         self.verify_uuid = verify_uuid
         self.course_id = course_id
         self.user_id = user_id
+        self.mode = mode
         self.pdf = None
         self.margin = 15 * mm
         self.page_width = 210 * mm
         self.page_height = 297 * mm
-        self.language = language
 
         self.min_clearance = 3 * mm
         self.second_page_available_height = ''
@@ -59,15 +60,11 @@ class PDFCertificate(object):
         self.first_page_available_height = ''
 
         self.logo_path = configuration_helpers.get_value("PDF_RECEIPT_LOGO_PATH", settings.PDF_RECEIPT_LOGO_PATH)
-        self.cobrand_logo_path = configuration_helpers.get_value(
-            "PDF_RECEIPT_COBRAND_LOGO_PATH", settings.PDF_RECEIPT_COBRAND_LOGO_PATH
-        )
+        self.cobrand_logo_path = settings.FEATURES.get("PDF_LOGO_EXTRA", "")
         self.brand_logo_height = configuration_helpers.get_value(
             "PDF_RECEIPT_LOGO_HEIGHT_MM", settings.PDF_RECEIPT_LOGO_HEIGHT_MM
         ) * mm
-        self.cobrand_logo_height = configuration_helpers.get_value(
-            "PDF_RECEIPT_COBRAND_LOGO_HEIGHT_MM", settings.PDF_RECEIPT_COBRAND_LOGO_HEIGHT_MM
-        ) * mm
+        self.cobrand_logo_height = 12 * mm
 
 
     def generate_pdf(self, file_buffer):
@@ -81,7 +78,7 @@ class PDFCertificate(object):
             active_configuration = get_active_web_certificate(course)
             self.pdf = Canvas(file_buffer, pagesize=letter)
             if course and active_configuration:
-                y_pos = self.draw_logos()
+                y_pos = self.draw_logos(course_key)
                 y_pos = self.add_text(course, active_configuration, y_pos)
             self.pdf.showPage()
             self.pdf.save()
@@ -125,7 +122,7 @@ class PDFCertificate(object):
         return img
 
 
-    def draw_logos(self):
+    def draw_logos(self, course_key):
         """
         Draws logos.
         """
@@ -150,7 +147,7 @@ class PDFCertificate(object):
                 )
 
         # Right Aligned cobrand logo
-        if self.cobrand_logo_path:
+        if self.add_cobrand_logo(course_key):
             cobrand_img = self.load_image(self.cobrand_logo_path)
             if cobrand_img:
                 img_width = float(cobrand_img.size[0]) / (float(cobrand_img.size[1]) / self.cobrand_logo_height)
@@ -298,3 +295,19 @@ class PDFCertificate(object):
 
         return y_pos
 
+    def add_cobrand_logo(self, course_key):
+        """
+        Checks if this course has a specific template.
+        """
+        if not self.cobrand_logo_path:
+            return False
+        if self.mode and course_key:
+            template = CertificateTemplate.objects.filter(
+                organization_id=None,
+                course_key=course_key,
+                mode=self.mode,
+                is_active=True
+            )
+        if template:
+            return True
+        return False

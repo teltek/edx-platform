@@ -541,7 +541,7 @@ def render_pdf_cert_by_uuid(request, certificate_uuid):
             verify_uuid=certificate.verify_uuid,
             course_id=unicode(certificate.course_id),
             user_id=certificate.user_id,
-            language=language
+            mode=certificate.mode
         ).generate_pdf(pdf_buffer)
     except GeneratedCertificate.DoesNotExist:
         raise Http404
