@@ -201,38 +201,53 @@ class PDFCertificate(object):
         paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
         paragraph.drawOn(self.pdf, 20 * mm, 240 * mm, TA_CENTER)
 
-        paragraph_text = (_('The Rector of the National University of Distance Education,' \
+        paragraph_text = (_(u'The Rector of the National University of Distance Education,' \
                             '{breakline}considering that{breakline}{breakline}' \
                             '{studentstyle_start}{student_name}{studentstyle_end}{breakline}' \
                             'with National Identity Number: {student_national_id}{breakline}{breakline}' \
-                            'has successfully finished the UNED Abierta course{breakline}{breakline}' \
-                            '{strong_start}{coursestyle_start}{course_title}{coursestyle_end}{strong_end}' \
-                            '{breakline}{breakline}According to the program on the back of this document,' \
-                            '{breakline}issues the present{breakline}{strong_start}' \
-                            '{certificatestyle_start}CERTIFICATE OF USE{certificatestyle_end}' \
-                            '{strong_end}{breakline}' \
-                            '{date}')).format(
+                            'has successfully finished the UNED Abierta course')).format(
                                 studentstyle_start="<font size=20 color=#c49838>",
                                 studentstyle_end="</font>",
-                                student_name=user_fullname,
+                                student_name=user_fullname.upper(),
                                 student_national_id=NationalId.get_national_id_from_user(user=user),
-                                coursestyle_start="<font size=20 color=#870d0d>",
+                                breakline="<br/><br/>",
+                            )
+        style = ParagraphStyle('paragraph', alignment=TA_CENTER, fontSize=12, fontName="Fontana", leading=10)
+        paragraph = Paragraph(paragraph_text, style)
+        paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
+        paragraph.drawOn(self.pdf, 20 * mm, 170 * mm, TA_CENTER)
+
+        course_text = (_(u'{strong_start}{coursestyle_start}{course_title}{coursestyle_end}{strong_end}')).format(
+                                coursestyle_start="<font size=24 color=#870d0d>",
                                 course_title=course_name,
                                 coursestyle_end="</font>",
+                                strong_start="<strong>",
+                                strong_end="</strong>",
+        )
+        style = ParagraphStyle('course', alignment=TA_CENTER, fontSize=12, fontName="Fontana", leading=24)
+        paragraph = Paragraph(course_text, style)
+        paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
+        paragraph.drawOn(self.pdf, 20 * mm, 135 * mm, TA_CENTER)
+
+        according_text = (_(u'According to the program on the back of this document,' \
+                            '{breakline}issues the present{breakline}{breakline}{strong_start}' \
+                            '{certificatestyle_start}CERTIFICATE OF USE{certificatestyle_end}' \
+                            '{strong_end}{breakline}{breakline}{fontdate_start}{date}{fontdate_end}')).format(
                                 breakline="<br/><br/>",
-                                certificatestyle_start="<font size=18>",
+                                certificatestyle_start="<font size=20>",
                                 certificatestyle_end="</font>",
                                 strong_start="<strong>",
                                 strong_end="</strong>",
+                                fontdate_start="<font size=8>",
+                                fontdate_end="</font>",
                                 date=strftime_localized(now, '%d %B %Y')
                             )
-
-        style = ParagraphStyle('paragraph', alignment=TA_CENTER, fontSize=12, fontName="Fontana", leading=14)
-        paragraph = Paragraph(paragraph_text, style)
+        style = ParagraphStyle('according', alignment=TA_CENTER, fontSize=12, fontName="Fontana", leading=10)
+        paragraph = Paragraph(according_text, style)
         paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
         paragraph.drawOn(self.pdf, 20 * mm, 90 * mm, TA_CENTER)
 
-        rector_title = (_('{color_start}The Rector of the UNED,{color_end}')).format(
+        rector_title = (_(u'{color_start}The Rector of the UNED,{color_end}')).format(
             color_start="<font color=#c49838>",
             color_end="</font>"
         )
@@ -242,7 +257,7 @@ class PDFCertificate(object):
         paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
         paragraph.drawOn(self.pdf, 20 * mm, 60 * mm, TA_RIGHT)
 
-        rector_name = (_('{strong_start}Alejandro Tiana Ferrer{strong_end}')).format(
+        rector_name = (_(u'{strong_start}Alejandro Tiana Ferrer{strong_end}')).format(
             strong_start="<strong>",
             strong_end="</strong>"
         )
@@ -252,17 +267,18 @@ class PDFCertificate(object):
         paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
         paragraph.drawOn(self.pdf, 20 * mm, 50 * mm, TA_RIGHT)
 
-        footer = (_('{fontsize_start}Credits number: {fontcolor_start}' \
+        footer = (_(u'{fontsize_start}Credits number: {fontcolor_start}' \
                     '{course_credits}{fontcolor_end} ETCS{fontsize_end}{breakline}' \
                     '{fontsize_start}Hours number: {fontcolor_start}' \
-                    '{course_effort}{fontcolor_end} hours{fontsize_end}{breakline}' \
+                    '{course_effort}{fontcolor_end} hours{fontsize_end}{breakline}{breakline}' \
                     'This degree is given as suitable of {fontcolor_start}UNED{fontcolor_end}' \
                     ' and it does not have the official nature established in ' \
                     '{fontcolor_start}number 30 of the Organic Law 4/2007{fontcolor_end} ' \
                     'that modifies the {fontcolor_start}article 34 of Organic Law 6/2001 ' \
                     'of Universities{fontcolor_end}. The authenticity of this document, ' \
                     'as well as its validity and validity, can be checked through the ' \
-                    '{fontcolor_start}following URL{fontcolor_end}: {cert_url}')).format(
+                    '{fontcolor_start}following URL{fontcolor_end}: ' \
+                    '{link_start}{cert_url}{link_end}')).format(
                         fontsize_start="<font size=10>",
                         fontsize_end="</font>",
                         fontcolor_start="<font color=#00533f>",
@@ -270,6 +286,8 @@ class PDFCertificate(object):
                         course_credits=course_credits,
                         breakline="<br/>",
                         course_effort=course_effort,
+                        link_start='<font color=#0000EE><u><a href="'+certificate_id_url+'">',
+                        link_end='</a></u></font>',
                         cert_url=certificate_id_url
                     )
 
