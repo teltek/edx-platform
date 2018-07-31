@@ -383,7 +383,10 @@ FEATURES = {
     'PDF_LOGO_EXTRA': '',
 
     # PDF certificates fonts extra.
-    'PDF_FONTS_EXTRA': '',
+    'PDF_FONTS_NORMAL': '/edx/app/edxapp/edx-platform/lms/static/certificates/fonts/Fontana/fontana-nd-aa-osf.ttf',
+
+    # PDF certificates fonts extra.
+    'PDF_FONTS_SEMIBOLD': '/edx/app/edxapp/edx-platform/lms/static/certificates/fonts/Fontana/Fontana-ND-Cc-OsF-Semibold.ttf',
 }
 
 # Ignore static asset files on import which match this pattern

@@ -9,6 +9,7 @@ from certificates.api import get_active_web_certificate
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 from opaque_keys.edx.keys import CourseKey
 from xmodule.modulestore.django import modulestore
+from openedx.core.djangoapps.models.course_details import CourseDetails
 from openedx.core.djangoapps.userinfo.models import NationalId
 
 from io import BytesIO
@@ -87,11 +88,7 @@ class PDFCertificate(object):
             if 'course_program_path' in active_configuration:
                 return self.add_course_program(file_buffer, active_configuration['course_program_path'])
         except Exception as exception:
-            error_str = (
-                "Invalid cert: error finding course %s. "
-                "Specific error: %s"
-            )
-            log.error(error_str, self.course_id, str(exception))
+            log.error('Invalid cert: error generating certificate: {0}'.format(exception))
         
         return file_buffer
 
@@ -179,14 +176,21 @@ class PDFCertificate(object):
         course_title_from_cert = active_configuration.get('course_title', '')
         course_name = course_title_from_cert
         course_name = course_title_from_cert if course_title_from_cert else course.display_name
+        course_details = CourseDetails.fetch(course.id)
+        course_effort = course_details.effort if course_details.effort else 25
+        course_credits = active_configuration.get('course_credits', 1.0)
+        certificate_id_url = settings.LMS_ROOT_URL + '/certificates/' + self.verify_uuid
 
-        if settings.FEATURES['PDF_FONTS_EXTRA']:
-            pdfmetrics.registerFont(TTFont('Fontana', settings.FEATURES['PDF_FONTS_EXTRA']))
-            pdfmetrics.registerFont(TTFont('Fontana-Semibold', settings.FEATURES['PDF_FONTS_EXTRA_2']))
-            pdfmetrics.registerFontFamily('Fontana', normal='Fontana', bold='Fontana-Semibold')
-            self.pdf.setFont('Fontana', 18)
 
-        first_line = (_(u'{bold_start}NATIONAL UNIVERSITY OF DISTANCE EDUCATION{bold_end}')).format(bold_start="<strong>", bold_end="</strong>")
+        pdfmetrics.registerFont(TTFont('Fontana', settings.FEATURES['PDF_FONTS_NORMAL']))
+        pdfmetrics.registerFont(TTFont('Fontana-Semibold', settings.FEATURES['PDF_FONTS_SEMIBOLD']))
+        pdfmetrics.registerFontFamily('Fontana', normal='Fontana', bold='Fontana-Semibold')
+        self.pdf.setFont('Fontana', 18)
+
+        first_line = (_(u'{strong_start}NATIONAL UNIVERSITY OF DISTANCE EDUCATION{strong_end}')).format(
+            strong_start="<strong>",
+            strong_end="</strong>"
+        )
         paragraph_text = (_('The Rector of the National University of Distance Education,' \
                             '{breakline}considering that{breakline}{breakline}' \
                             '{studentstyle_start}{student_name}{studentstyle_end}{breakline}' \
@@ -194,8 +198,9 @@ class PDFCertificate(object):
                             'has successfully finished the UNED Abierta course{breakline}{breakline}' \
                             '{coursestyle_start}{course_title}{coursestyle_end}{breakline}{breakline}' \
                             'According to the program on the back of this document,' \
-                            '{breakline}issues the present{breakline}' \
-                            '{certificatestyle_start}CERTIFICATE OF USE{certificatestyle_end}{breakline}' \
+                            '{breakline}issues the present{breakline}{strong_start}' \
+                            '{certificatestyle_start}CERTIFICATE OF USE{certificatestyle_end}' \
+                            '{strong_end}{breakline}' \
                             '{date}')).format(
                                 studentstyle_start="<font size=20 color=#c49838>",
                                 studentstyle_end="</font>",
@@ -207,16 +212,38 @@ class PDFCertificate(object):
                                 breakline="<br/><br/>",
                                 certificatestyle_start="<font size=18>",
                                 certificatestyle_end="</font>",
+                                strong_start="<strong>",
+                                strong_end="</strong>",
                                 date=now.strftime('%d %B %Y')
                             )
-        rector_title = (_('{color_start}The Rector of the UNED,{color_end}')).format(color_start="<font color=#c49838>", color_end="</font>")
-        rector_name = (_('{bold_start}Alejandro Tiana Ferrer{bold_end}')).format(bold_start="<b>", bold_end="</b>")
-        footer = (_('Credits number: {course_credits} ETCS{breakline}Hours number: {course_effort} hours{breakline}This degree is given as suitable of UNED and it does not have the official nature established in number 30 of the Organic Law 4/2007 that modifies the article 34 of Organic Law 6/2001 of Universities{breakline}* The authenticity of this document, as well as its validity and validity, can be checked through the following URL: {cert_url}')).format(course_credits=1.0, breakline="<br/>", course_effort=25, cert_url='https://example.com')
-        course_effort_line = (_('Hours number: {course_effort} hours')).format(course_effort=25)
-        law_line = _('This degree is given as suitable of UNED and it does not have the official nature established in number 30 of the Organic Law 4/2007 that modifies the article 34 of Organic Law 6/2001 of Universities')
-        auth_line = (_('* The authenticity of this document, as well as its validity and validity, can be checked through the following URL: {cert_url}')).format(cert_url='https://example.com')
-
-        title = first_line
+        rector_title = (_('{color_start}The Rector of the UNED,{color_end}')).format(
+            color_start="<font color=#c49838>",
+            color_end="</font>"
+        )
+        rector_name = (_('{strong_start}Alejandro Tiana Ferrer{strong_end}')).format(
+            strong_start="<strong>",
+            strong_end="</strong>"
+        )
+        footer = (_('{fontsize_start}Credits number: {fontcolor_start}' \
+                    '{course_credits}{fontcolor_end} ETCS{fontsize_end}{breakline}' \
+                    '{fontsize_start}Hours number: {fontcolor_start}' \
+                    '{course_effort}{fontcolor_end} hours{fontsize_end}{breakline}' \
+                    'This degree is given as suitable of {fontcolor_start}UNED{fontcolor_end}' \
+                    ' and it does not have the official nature established in ' \
+                    '{fontcolor_start}number 30 of the Organic Law 4/2007{fontcolor_end} ' \
+                    'that modifies the {fontcolor_start}article 34 of Organic Law 6/2001 ' \
+                    'of Universities{fontcolor_end}. The authenticity of this document, ' \
+                    'as well as its validity and validity, can be checked through the ' \
+                    '{fontcolor_start}following URL{fontcolor_end}: {cert_url}')).format(
+                        fontsize_start="<font size=10>",
+                        fontsize_end="</font>",
+                        fontcolor_start="<font color=#00533f>",
+                        fontcolor_end="</font>",
+                        course_credits=course_credits,
+                        breakline="<br/>",
+                        course_effort=course_effort,
+                        cert_url=certificate_id_url
+                    )
 
         WIDTH = 210  # width in mm (A4)
         HEIGHT = 297  # hight in mm (A4)
@@ -224,7 +251,7 @@ class PDFCertificate(object):
         RIGHT_INDENT = 49  # mm from the right side for the CERTIFICATE
 
         style = ParagraphStyle('title', alignment=TA_CENTER, fontSize=18, fontName="Fontana")
-        paragraph = Paragraph(title, style)
+        paragraph = Paragraph(first_line, style)
         paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
         paragraph.drawOn(self.pdf, 20 * mm, 240 * mm, TA_CENTER)
 
