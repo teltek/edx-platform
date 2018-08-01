@@ -126,3 +126,15 @@ security@edx.org.
 
 .. _individual contributor agreement: http://open.edx.org/sites/default/files/wysiwyg/individual-contributor-agreement.pdf
 .. _CONTRIBUTING: https://github.com/edx/edx-platform/blob/master/CONTRIBUTING.rst
+
+
+Installing PDF Requirements
+---------------------------
+
+Install PyPDF2 library:
+
+```
+sudo -H -u edxapp bash
+source /edx/app/edxapp/edxapp_env
+pip install -r requirements/edx/pdf.txt
+```
