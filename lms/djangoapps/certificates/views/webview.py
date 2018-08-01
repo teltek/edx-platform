@@ -48,6 +48,10 @@ from certificates.models import (
     CertificateHtmlViewConfiguration,
     CertificateSocialNetworks)
 
+from certificates.pdf import PDFCertificate
+from io import BytesIO
+from django.utils.translation import get_language_from_request
+
 log = logging.getLogger(__name__)
 
 
@@ -116,6 +120,7 @@ def _update_certificate_context(context, user_certificate, platform_name):
     # Override the defaults with any mode-specific static values
     context['certificate_id_number'] = user_certificate.verify_uuid
     context['certificate_id_url'] = settings.LMS_ROOT_URL + '/certificates/' + user_certificate.verify_uuid
+    context['certificate_print_id_url'] = settings.LMS_ROOT_URL + '/certificates/print/' + user_certificate.verify_uuid
     context['certificate_verify_url'] = "{prefix}{uuid}{suffix}".format(
         prefix=context.get('certificate_verify_url_prefix'),
         uuid=user_certificate.verify_uuid,
@@ -520,6 +525,41 @@ def render_cert_by_uuid(request, certificate_uuid):
         raise Http404
 
 
+@handle_500(
+    template_path="certificates/server-error.html",
+    test_func=lambda request: request.GET.get('preview', None)
+)
+def render_pdf_cert_by_uuid(request, certificate_uuid):
+    """
+    This public view generates a PDF representation of the specified certificate
+    """
+    try:
+        certificate = GeneratedCertificate.objects.get(verify_uuid=certificate_uuid)
+        language = get_language_from_request(request, check_path=False)
+        pdf_buffer = BytesIO()
+        output_writer = PDFCertificate(
+            verify_uuid=certificate.verify_uuid,
+            course_id=unicode(certificate.course_id),
+            user_id=certificate.user_id,
+            mode=certificate.mode
+        ).generate_pdf(pdf_buffer)
+    except GeneratedCertificate.DoesNotExist:
+        raise Http404
+    except Exception as err:
+        log.error('exception: {}'.format(err))
+        raise err
+
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="Certificate'+certificate.verify_uuid+'.pdf"'
+
+    pdf_stream = BytesIO()
+    output_writer.write(pdf_stream)
+    pdf_value = pdf_stream.getvalue()
+    pdf_stream.close()
+    response.write(pdf_value)
+
+    return response
+    
 @handle_500(
     template_path="certificates/server-error.html",
     test_func=lambda request: request.GET.get('preview', None)

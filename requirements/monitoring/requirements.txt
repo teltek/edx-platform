@@ -15,3 +15,4 @@
 -r ../edx/edx-private.txt
 -r ../edx/paver.txt
 -r ../edx/post.txt
+-r ../edx/pdf.txt

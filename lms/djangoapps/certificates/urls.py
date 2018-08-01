@@ -45,4 +45,11 @@ urlpatterns = patterns(
     url(r'search', views.search_certificates, name="search"),
     url(r'regenerate', views.regenerate_certificate_for_user, name="regenerate_certificate_for_user"),
     url(r'generate', views.generate_certificate_for_user, name="generate_certificate_for_user"),
+
+    # Certificates HTML view end point to PRINT TO PDF certs by certificate_uuid
+    url(
+        r'^print/(?P<certificate_uuid>[0-9a-f]{32})$',
+        views.render_pdf_cert_by_uuid,
+        name='render_pdf_cert_by_uuid'
+    ),
 )
