@@ -26,4 +26,14 @@ $(function() {
 	    $('#message_price').remove();
 	}
     });
+    $('.field-mode_slug').each(function(e){
+	var value = $(this).text();
+	if (value == 'audit') {
+	    $(this).text('Gratuito');
+	} else if (value == 'honor') {
+	    $(this).text('Credencial');
+	} else if (value == 'verified') {
+	    $(this).text('Certificado');
+	}
+    });
 });
