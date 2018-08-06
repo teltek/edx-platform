@@ -33,18 +33,18 @@ define(['jquery', 'underscore', 'gettext', 'js/views/baseview', 'common/js/compo
                             that.$el.append(menu.render().el);
                         }
                     );
-		// PUMUKIT2
-		var pumukit2Model = {
-			type: 'pumukit2',
-			templates: {0:{'category': 'pumukit2', 'display_name': 'pumukit2', 'is_common': false, 'boilerplate_name': null}},
-			display_name: 'Pumukit2'
-		};
-		var viewP, menuP;
-		viewP = new AddXBlockButton({model: pumukit2Model});
-		that.$el.find('.new-component-type').append(viewP.render().el);
-		menuP = new AddXBlockMenu({model: pumukit2Model});
-		that.$el.append(menuP.render().el);
-		// end pumukit2
+                    // PUMUKIT2
+                    var pumukit2Model = {
+                        type: 'pumukit2',
+                        templates: {0:{'category': 'pumukit2', 'display_name': 'pumukit2', 'is_common': false, 'boilerplate_name': null}},
+                        display_name: 'Pumukit2'
+                    };
+                    var viewP, menuP;
+                    viewP = new AddXBlockButton({model: pumukit2Model});
+                    that.$el.find('.new-component-type').append(viewP.render().el);
+                    menuP = new AddXBlockMenu({model: pumukit2Model});
+                    that.$el.append(menuP.render().el);
+                    // end pumukit2
                 }
             },
 
