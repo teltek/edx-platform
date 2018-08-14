@@ -25,7 +25,7 @@
       <div class="instruction">
         <%- gettext( "You can now enter your payment information and complete your enrollment." ) %>
         <% if ( courseModeSlug === 'verified') { %>
-          <%- gettext( "In order to obtain a Certificate, you need to introduce your National Identity Number." ) %>
+          <%- gettext( "In order to obtain a Certificate, you need to introduce your National Identity Number and pay." ) %>
 	<% } %>
       </div>
     <% } %>

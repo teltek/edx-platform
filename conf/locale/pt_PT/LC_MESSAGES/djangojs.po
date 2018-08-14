@@ -9068,10 +9068,10 @@ msgstr "Introduza o seu Número de Identidade Nacional."
 #: lms/templates/verify_student/make_payment_step.underscore
 msgid ""
 "In order to obtain a Certificate, you need to introduce your "
-"National Identity Number."
+"National Identity Number and pay."
 msgstr ""
 "Para obter um certificado, você precisa apresentar o seu "
-"Número de Identidade Nacional."
+"Número de Identidade Nacional e pagar."
 
 #: lms/templates/verify_student/make_payment_step.underscore
 msgid "National Identity Number *"
