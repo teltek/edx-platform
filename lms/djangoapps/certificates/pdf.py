@@ -17,7 +17,7 @@ from io import BytesIO
 from PIL import Image
 from reportlab.pdfgen.canvas import Canvas
 from reportlab.lib.enums import TA_LEFT, TA_CENTER, TA_RIGHT
-from reportlab.lib.pagesizes import letter
+from reportlab.lib.pagesizes import A4
 from reportlab.lib import colors
 from reportlab.lib.units import mm
 from reportlab.lib.styles import getSampleStyleSheet
@@ -76,7 +76,7 @@ class PDFCertificate(object):
             course_key = CourseKey.from_string(self.course_id)
             course = modulestore().get_course(course_key)
             active_configuration = get_active_web_certificate(course)
-            self.pdf = Canvas(file_buffer, pagesize=letter)
+            self.pdf = Canvas(file_buffer, pagesize=A4)
             if course and active_configuration:
                 y_pos = self.draw_logos(course_key)
                 y_pos = self.add_text(course, active_configuration, y_pos)
