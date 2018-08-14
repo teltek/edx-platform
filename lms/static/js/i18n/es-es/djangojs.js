@@ -553,7 +553,7 @@
     "Image must be in PNG format.": "la imagen debe estar en formato PNG", 
     "Import YouTube Transcript": "Importar los subt\u00edtulos de YouTube", 
     "In Progress": "En progreso", 
-    "In order to obtain a Certificate, you need to introduce your National Identity Number.": "Para obtener un Certificado, es necesario que introduzca el n\u00famero de su Documento Nacional de Identidad.", 
+    "In order to obtain a Certificate, you need to introduce your National Identity Number and pay.": "Para obtener un Certificado, es necesario que introduzcas tu DNI y realices el pago.", 
     "Incorrect url format.": "Formato de URL incorrecto.", 
     "Individual Exceptions": "Excepciones individuales", 
     "Inheriting Student Visibility": "Heredando la visibilidad de los alumnos", 

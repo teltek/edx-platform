@@ -9157,10 +9157,10 @@ msgstr ""
 #: lms/templates/verify_student/make_payment_step.underscore
 msgid ""
 "In order to obtain a Certificate, you need to introduce your "
-"National Identity Number."
+"National Identity Number and pay."
 msgstr ""
-"Para obtener un Certificado, es necesario que introduzca "
-"el número de su Documento Nacional de Identidad."
+"Para obtener un Certificado, es necesario que introduzcas "
+"tu DNI y realices el pago."
 
 #: lms/templates/verify_student/make_payment_step.underscore
 msgid "National Identity Number *"

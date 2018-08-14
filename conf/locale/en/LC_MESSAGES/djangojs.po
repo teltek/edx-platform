@@ -9262,7 +9262,7 @@ msgstr ""
 #: lms/templates/verify_student/make_payment_step.underscore
 msgid ""
 "In order to obtain a Certificate, you need to introduce your "
-"National Identity Number."
+"National Identity Number and pay."
 msgstr ""
 
 #: lms/templates/verify_student/make_payment_step.underscore

@@ -470,7 +470,7 @@
     "Image Upload Error": "Erro ao carregar a imagem", 
     "Image must be in PNG format.": "A imagem dever\u00e1 ser em formato PNG.", 
     "In Progress": "Em progresso", 
-    "In order to obtain a Certificate, you need to introduce your National Identity Number.": "Para obter um certificado, voc\u00ea precisa apresentar o seu N\u00famero de Identidade Nacional.", 
+    "In order to obtain a Certificate, you need to introduce your National Identity Number and pay.": "Para obter um certificado, voc\u00ea precisa apresentar o seu N\u00famero de Identidade Nacional e pagar.", 
     "Inheriting Student Visibility": "Visibilidade inerente do Estudante", 
     "Insert Hyperlink": "Inserir link", 
     "Insert Image (upload file or type URL)": "Inserir imagem (carregue ficheiro ou escreva URL)", 
