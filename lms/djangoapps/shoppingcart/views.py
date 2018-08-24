@@ -684,7 +684,7 @@ def postpay_callback(request):
             request.session['attempting_upgrade'] = False
 
         verify_flow_redirect = _get_verify_flow_redirect(result['order'])
-        if verify_flow_redirect is not None and not (is_honor and settings.FEATURES.get('SHOW_RECEIPT_FOR_HONOR', True)):
+        if verify_flow_redirect is not None and not (is_honor and settings.FEATURES.get('SHOW_RECEIPT_FOR_HONOR', True)) and not settings.FEATURES.get('AUTOMATIC_VERIFY_STUDENT_IDENTITY_FOR_TESTING'):
             return verify_flow_redirect
 
         # Otherwise, send the user to the receipt page
