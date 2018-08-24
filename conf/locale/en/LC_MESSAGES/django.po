@@ -4621,6 +4621,27 @@ msgid ""
 "{platform_name}"
 msgstr ""
 
+#. Translators:  This text is bound to the HTML 'title' element of the page
+#. and appears in the browser title bar
+#: lms/djangoapps/certificates/views/webview.py
+#, python-brace-format
+msgid ""
+"{accreditation_title} for course {course_title} for student {user_fullname} | "
+"{platform_name}"
+msgstr ""
+
+#: lms/djangoapps/certificates/views/webview.py
+msgid "Accreditation"
+msgstr ""
+
+#: lms/djangoapps/certificates/views/webview.py
+msgid "Credential"
+msgstr ""
+
+#: lms/djangoapps/certificates/views/webview.py
+msgid "Certificate"
+msgstr ""
+
 #. Translators:  This text fragment appears after the student's name
 #. (displayed in a large font) on the certificate
 #. screen.  The text describes the accomplishment represented by the
