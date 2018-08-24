@@ -546,7 +546,7 @@ def render_pdf_cert_by_uuid(request, certificate_uuid):
     except GeneratedCertificate.DoesNotExist:
         raise Http404
     except Exception as err:
-        log.error('exception: {}'.format(err))
+        log.error('Exception in render_pdf_cert_by_uuid: {}'.format(err), exc_info=True)
         raise err
 
     response = HttpResponse(content_type='application/pdf')

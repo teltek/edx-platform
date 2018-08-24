@@ -71,7 +71,6 @@ class PDFCertificate(object):
         """
         Generates PDF file with Certificate
         """
-
         try:
             course_key = CourseKey.from_string(self.course_id)
             course = modulestore().get_course(course_key)
@@ -82,27 +81,39 @@ class PDFCertificate(object):
                 y_pos = self.add_text(course, active_configuration, y_pos)
             self.pdf.showPage()
             self.pdf.save()
-            if 'course_program_path' in active_configuration:
-                return self.add_course_program(file_buffer, active_configuration['course_program_path'])
+            output_writer = self.get_output_writer(file_buffer)
+            if 'course_program_path' in active_configuration and active_configuration['course_program_path']:
+                return self.add_course_program(output_writer, active_configuration['course_program_path'])
         except Exception as exception:
             log.error('Invalid cert: error generating certificate: {0}'.format(exception))
+            raise exception
         
-        return file_buffer
+        return output_writer
 
-    def add_course_program(self, pdf_buffer, relative_path):
+
+    def get_output_writer(self, pdf_buffer):
+        """
+        Generates the output writer from the
+        pdf_buffer to print the PDF
+        """
+        pdf_buffer.seek(0)
+        new_pdf = PdfFileReader(pdf_buffer)
+        output_writer = PdfFileWriter()
+        page = new_pdf.getPage(0)
+        output_writer.addPage(page)
+
+        return output_writer
+
+
+    def add_course_program(self, output_writer, relative_path):
         """
         Adds Course Program PDF File to the Certificate
         """
         if not relative_path:
-            return pdf_buffer
-        pdf_buffer.seek(0)
-        new_pdf = PdfFileReader(pdf_buffer)
+            return output_writer
         asset_key = StaticContent.get_asset_key_from_path(self.course_id, relative_path)
         content = AssetManager.find(asset_key, as_stream=True)
         existing_pdf = PdfFileReader(content._stream)
-        output_writer = PdfFileWriter()
-        page = new_pdf.getPage(0)
-        output_writer.addPage(page)
         output_writer.appendPagesFromReader(existing_pdf)
 
         return output_writer
