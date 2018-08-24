@@ -144,7 +144,13 @@ def _update_certificate_context(context, user_certificate, platform_name):
     )
 
     # Translators:  This text is bound to the HTML 'title' element of the page and appears in the browser title bar
-    context['document_title'] = _("Credential for course {course_title} for student {user_fullname} | {platform_name}").format(
+    accreditation_title = _(u"Accreditation")
+    if user_certificate.mode == 'honor':
+        accreditation_title = _(u"Credential")
+    elif user_certificate.mode == 'verified':
+        accreditation_title = _(u"Certificate")
+    context['document_title'] = _("{accreditation_title} for course {course_title} for student {user_fullname} | {platform_name}").format(
+        accreditation_title=accreditation_title,
         course_title=context['accomplishment_copy_course_name'],
         user_fullname=context['accomplishment_copy_name'],
         platform_name=platform_name
