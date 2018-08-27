@@ -4006,6 +4006,14 @@ msgstr "O nome do certificado é obrigatório."
 msgid "Signatory field(s) has invalid data."
 msgstr "O campo(s) Emissor possui dados inválidos."
 
+#: cms/static/js/certificates/models/certificate.js
+msgid "Certificate course credits cannot be empty."
+msgstr ""
+
+#: cms/static/js/certificates/models/certificate.js
+msgid "Certificate course credits must be a number."
+msgstr ""
+
 #: cms/static/js/certificates/views/certificate_details.js
 msgid "Edit this certificate?"
 msgstr "Gostaria de editar este certificado?"

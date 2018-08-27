@@ -242,6 +242,8 @@
     "Certificate Name": "Nombre del certificado", 
     "Certificate Signatories": "Firmantes Certificados", 
     "Certificate Signatory Configuration": "Configuraci\u00f3n de firma de certificado", 
+    "Certificate course credits cannot be empty.": "Los cr\u00e9ditos del curso para el certificado no pueden estar vac\u00edos.", 
+    "Certificate course credits must be a number.": "Los cr\u00e9ditos del curso para el certificado deben ser un n\u00famero.", 
     "Certificate name is required.": "El nombre del certificado es obligatorio", 
     "Change": "Cambiar", 
     "Change Manually": "Cambiar manualmente", 
