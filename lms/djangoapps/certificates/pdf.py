@@ -31,6 +31,7 @@ from PyPDF2 import PdfFileWriter, PdfFileReader
 from xmodule.assetstore.assetmgr import AssetManager
 from xmodule.contentstore.content import StaticContent
 
+import re
 import datetime
 import pytz
 from util.date_utils import strftime_localized
@@ -185,8 +186,12 @@ class PDFCertificate(object):
         course_name = course_title_from_cert
         course_name = course_title_from_cert if course_title_from_cert else course.display_name
         course_details = CourseDetails.fetch(course.id)
-        course_effort = course_details.effort if course_details.effort else 25
-        course_credits = active_configuration.get('course_credits', 1.0)
+        course_effort_field = course_details.effort if course_details.effort else 25
+        course_effort = re.findall('\d+', str(course_effort_field))
+        course_effort = course_effort[0]
+        course_credits_field = active_configuration.get('course_credits', 1.0)
+        course_credits = re.findall('\d+', str(course_credits_field))
+        course_credits = course_credits[0]
         certificate_id_url = settings.LMS_ROOT_URL + '/certificates/' + self.verify_uuid
 
         pdfmetrics.registerFont(TTFont('Fontana', settings.FEATURES['PDF_FONTS_NORMAL']))
@@ -276,7 +281,7 @@ class PDFCertificate(object):
         paragraph.drawOn(self.pdf, 20 * mm, 50 * mm, TA_RIGHT)
 
         footer = (_(u'{fontsize_start}Credits number: {fontcolor_start}' \
-                    '{course_credits}{fontcolor_end} ETCS{fontsize_end}{breakline}' \
+                    '{course_credits}{fontcolor_end} ECTS{fontsize_end}{breakline}' \
                     '{fontsize_start}Hours number: {fontcolor_start}' \
                     '{course_effort}{fontcolor_end} hours{fontsize_end}{breakline}{breakline}' \
                     'This degree is given as suitable of {fontcolor_start}UNED{fontcolor_end}' \
