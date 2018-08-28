@@ -7,6 +7,7 @@ from django.core.urlresolvers import reverse
 from django.http import Http404
 from django.views.decorators.http import require_http_methods
 from django.contrib.staticfiles.storage import staticfiles_storage
+from django.core.serializers.json import DjangoJSONEncoder
 
 from badges.utils import badges_enabled
 from edxmako.shortcuts import render_to_response, marketing_link
@@ -15,6 +16,7 @@ from openedx.core.djangoapps.user_api.errors import UserNotFound, UserNotAuthori
 from openedx.core.djangoapps.user_api.preferences.api import get_user_preferences
 from student.models import User
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
+from certificates.models import GeneratedCertificate
 
 import logging
 
@@ -68,13 +70,9 @@ def learner_notes_context(request, profile_username, user_is_staff):
     """
     profile_user = User.objects.get(username=profile_username)
     logged_in_user = request.user
-
     own_profile = (logged_in_user.username == profile_username)
-
     account_settings_data = get_account_settings(request, [profile_username])[0]
-
     preferences_data = get_user_preferences(profile_user, profile_username)
-
     context = {
         'data': {
             'profile_user_id': profile_user.id,
@@ -99,5 +97,6 @@ def learner_notes_context(request, profile_username, user_is_staff):
 
     if badges_enabled():
         context['data']['badges_api_url'] = reverse("badges_api:user_assertions", kwargs={'username': profile_username})
+        context['data']['certificates_api_url'] = reverse("certificates:user_certificates_list", kwargs={'username': profile_username})
 
     return context

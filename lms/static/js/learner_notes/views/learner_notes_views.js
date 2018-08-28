@@ -47,8 +47,13 @@
                         tabs = [
                             {
                                 view: this.options.badgeListContainer,
-                                title: gettext('Accomplishments'),
+                                title: gettext('Badges'),
                                 url: 'accomplishments'
+                            },
+			    {
+                                view: this.options.certificateListContainer,
+                                title: gettext('Credentials and Certificates'),
+                                url: 'certificates'
                             }
                         ];
 
@@ -57,6 +62,12 @@
                             self.options.badgeListContainer.render();
                         }).error(function() {
                             self.options.badgeListContainer.renderError();
+                        });
+			// Build the certificates Tab and fill with data
+                        this.options.certificateListContainer.collection.fetch().done(function() {
+                            self.options.certificateListContainer.render();
+                        }).error(function() {
+                            self.options.certificateListContainer.renderError();
                         });
 
                         this.tabbedView = new TabbedView({
@@ -73,7 +84,7 @@
                             Backbone.history.start();
                             this.firstRender = false;
                             // Load from history.
-                            this.router.navigate((Backbone.history.getFragment() || 'about_me'), {trigger: true});
+                            this.router.navigate((Backbone.history.getFragment() || 'accomplishments'), {trigger: true});
                         } else {
                             // Restart the router so the tab will be brought up anew.
                             Backbone.history.stop();

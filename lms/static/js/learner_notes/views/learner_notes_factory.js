@@ -14,12 +14,14 @@
         'js/learner_notes/views/learner_notes_views',
         'js/student_profile/models/badges_model',
         'js/student_profile/views/badge_list_container',
+        'js/learner_notes/models/certificates_model',
+        'js/learner_notes/views/certificate_list_container',
         'js/student_account/views/account_settings_fields',
         'js/views/message_banner',
         'string_utils'
     ], function(gettext, $, _, Backbone, Logger, PagingCollection, AccountSettingsModel, AccountPreferencesModel,
                  FieldsView, LearnerNotesFieldsView, LearnerNotesView, BadgeModel, BadgeListContainer,
-                 AccountSettingsFieldViews, MessageBannerView) {
+                 CertificateModel, CertificateListContainer, AccountSettingsFieldViews, MessageBannerView) {
         return function(options) {
             var learnerNotesElement = $('.wrapper-profile');
 
@@ -66,13 +68,34 @@
                 }
             });
 
+            var CertificateCollection = PagingCollection.extend({
+                queryParams: {
+                    currentPage: 'current_page'
+                }
+            });
+            var certificateCollection = new CertificateCollection();
+            certificateCollection.url = options.certificates_api_url;
+
+            var certificateListContainer = new CertificateListContainer({
+                'attributes': {'class': 'certificate-set-display'},
+                'collection': certificateCollection,
+                'find_courses_url': options.find_courses_url,
+                'ownProfile': options.own_profile,
+                'certificateMeta': {
+                    'certificates_logo': options.certificates_logo,
+                    'backpack_ui_img': options.backpack_ui_img,
+                    'certificates_icon': options.certificates_icon
+                }
+            });
+
             var learnerNotesView = new LearnerNotesView({
                 el: learnerNotesElement,
                 ownProfile: options.own_profile,
                 has_preferences_access: options.has_preferences_access,
                 accountSettingsModel: accountSettingsModel,
                 preferencesModel: accountPreferencesModel,
-                badgeListContainer: badgeListContainer
+                badgeListContainer: badgeListContainer,
+                certificateListContainer: certificateListContainer
             });
 
             var getProfileVisibility = function() {
@@ -97,7 +120,8 @@
                 accountSettingsModel: accountSettingsModel,
                 accountPreferencesModel: accountPreferencesModel,
                 learnerNotesView: learnerNotesView,
-                badgeListContainer: badgeListContainer
+                badgeListContainer: badgeListContainer,
+                certificateListContainer: certificateListContainer
             };
         };
     });
