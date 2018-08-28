@@ -76,11 +76,7 @@
             });
 
             var getProfileVisibility = function() {
-                if (options.has_preferences_access) {
-                    return accountPreferencesModel.get('account_privacy');
-                } else {
-                    return accountSettingsModel.get('profile_is_public') ? 'all_users' : 'private';
-                }
+                return 'all_users';
             };
 
             var showLearnerNotesView = function() {
@@ -95,11 +91,6 @@
                 learnerNotesView.render();
             };
 
-            if (options.has_preferences_access) {
-                if (accountSettingsModel.get('requires_parental_consent')) {
-                    accountPreferencesModel.set('account_privacy', 'private');
-                }
-            }
             showLearnerNotesView();
 
             return {

@@ -6,7 +6,6 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.core.urlresolvers import reverse
 from django.http import Http404
 from django.views.decorators.http import require_http_methods
-from django_countries import countries
 from django.contrib.staticfiles.storage import staticfiles_storage
 
 from badges.utils import badges_enabled
@@ -85,14 +84,9 @@ def learner_notes_context(request, profile_username, user_is_staff):
             'preferences_api_url': reverse('preferences_api', kwargs={'username': profile_username}),
             'preferences_data': preferences_data,
             'account_settings_data': account_settings_data,
-            'profile_image_upload_url': reverse('profile_image_upload', kwargs={'username': profile_username}),
-            'profile_image_remove_url': reverse('profile_image_remove', kwargs={'username': profile_username}),
-            'profile_image_max_bytes': settings.PROFILE_IMAGE_MAX_BYTES,
-            'profile_image_min_bytes': settings.PROFILE_IMAGE_MIN_BYTES,
             'account_settings_page_url': reverse('account_settings'),
             'has_preferences_access': (logged_in_user.username == profile_username or user_is_staff),
             'own_profile': own_profile,
-            'country_options': list(countries),
             'find_courses_url': marketing_link('COURSES'),
             'language_options': settings.ALL_LANGUAGES,
             'badges_logo': staticfiles_storage.url('certificates/images/backpack-logo.png'),

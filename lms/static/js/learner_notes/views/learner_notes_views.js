@@ -11,7 +11,6 @@
                 initialize: function(options) {
                     this.options = _.extend({}, options);
                     _.bindAll(this, 'showFullProfile', 'render', 'renderFields', 'showLoadingError');
-                    this.listenTo(this.options.preferencesModel, 'change:' + 'account_privacy', this.render);
                     var Router = Backbone.Router.extend({
                         routes: {':accomplishments': 'loadTab'}
                     });
@@ -23,11 +22,7 @@
                 template: _.template(learnerNotesTemplate),
 
                 showFullProfile: function() {
-                    if (this.options.ownProfile) {
-                        return this.options.preferencesModel.get('account_privacy') === 'all_users';
-                    } else {
-                        return this.options.accountSettingsModel.get('profile_is_public');
-                    }
+                    return true;
                 },
 
                 setActiveTab: function(tab) {
