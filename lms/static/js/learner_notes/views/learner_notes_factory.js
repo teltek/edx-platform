@@ -11,7 +11,7 @@
         'js/student_account/models/user_preferences_model',
         'js/views/fields',
         'js/learner_notes/views/learner_notes_fields',
-        'js/learner_notes/views/learner_notes_view',
+        'js/learner_notes/views/learner_notes_views',
         'js/student_profile/models/badges_model',
         'js/student_profile/views/badge_list_container',
         'js/student_account/views/account_settings_fields',
