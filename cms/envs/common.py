@@ -1089,6 +1089,16 @@ for app_name in OPTIONAL_APPS:
             continue
     INSTALLED_APPS += (app_name,)
 
+
+MEDIA_ROOT = '/edx/var/edxapp/media/'
+############################ ORA 2 ############################################
+# By default, don't use a file prefix
+ORA2_FILE_PREFIX = None
+ORA2_FILEUPLOAD_BACKEND = 'filesystem'
+ORA2_FILEUPLOAD_CACHE_NAME = 'staticfiles'
+ORA2_FILEUPLOAD_ROOT = os.path.join(MEDIA_ROOT, 'ora2-upload/')
+
+
 ### ADVANCED_SECURITY_CONFIG
 # Empty by default
 ADVANCED_SECURITY_CONFIG = {}
