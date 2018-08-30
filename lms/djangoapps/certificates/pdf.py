@@ -270,7 +270,7 @@ class PDFCertificate(object):
         paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
         paragraph.drawOn(self.pdf, 20 * mm, 60 * mm, TA_RIGHT)
 
-        rector_name = (_(u'{strong_start}Alejandro Tiana Ferrer{strong_end}')).format(
+        rector_name = (_(u'{strong_start}Ricardo Mairal{strong_end}')).format(
             strong_start="<strong>",
             strong_end="</strong>"
         )
