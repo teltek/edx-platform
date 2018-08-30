@@ -5,6 +5,7 @@ from ratelimitbackend import admin
 
 from cms.djangoapps.contentstore.views.program import ProgramAuthoringView, ProgramsIdTokenView
 from cms.djangoapps.contentstore.views.organization import OrganizationListView
+from openassessment.fileupload.urls import urlpatterns as oraurlpatterns
 
 admin.autodiscover()
 
@@ -209,4 +210,8 @@ handler500 = 'contentstore.views.render_500'
 urlpatterns += (
     url(r'^404$', handler404),
     url(r'^500$', handler500),
+)
+
+urlpatterns += (
+    url(r'^openassessment/storage', include(oraurlpatterns)),
 )
