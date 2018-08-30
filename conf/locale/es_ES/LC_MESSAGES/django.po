@@ -25210,3 +25210,11 @@ msgstr ""
 "vigencia y validez, puede ser comprobado mediante la"
 " {fontcolor_start}siguiente URL{fontcolor_end}: "
 "{link_start}{cert_url}{link_end}"
+
+#: lms/templates/certificates/server-preview.html
+msgid "Not allowed to print certificate in preview mode."
+msgstr "No está permitido imprimir el certificado en vista previa."
+
+#: lms/templates/certificates/server-preview.html
+msgid "You're not allowed to print a certificate in preview mode."
+msgstr "No tiene permitido imprimir el certificado en vista previa."

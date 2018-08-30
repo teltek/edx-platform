@@ -25169,3 +25169,11 @@ msgid ""
 "{fontcolor_start}following URL{fontcolor_end}: "
 "{link_start}{cert_url}{link_end}"
 msgstr ""
+
+#: lms/templates/certificates/server-preview.html
+msgid "Not allowed to print certificate in preview mode."
+msgstr ""
+
+#: lms/templates/certificates/server-preview.html
+msgid "You're not allowed to print a certificate in preview mode."
+msgstr ""

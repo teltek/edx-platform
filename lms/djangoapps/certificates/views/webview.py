@@ -109,7 +109,7 @@ def get_certificate_description(mode, certificate_type, platform_name):
     return certificate_type_description
 
 
-def _update_certificate_context(context, user_certificate, platform_name):
+def _update_certificate_context(context, user_certificate, platform_name, preview_mode):
     """
     Build up the certificate web view context using the provided values
     (Helper method to keep the view clean)
@@ -120,7 +120,10 @@ def _update_certificate_context(context, user_certificate, platform_name):
     # Override the defaults with any mode-specific static values
     context['certificate_id_number'] = user_certificate.verify_uuid
     context['certificate_id_url'] = settings.LMS_ROOT_URL + '/certificates/' + user_certificate.verify_uuid
-    context['certificate_print_id_url'] = settings.LMS_ROOT_URL + '/certificates/print/' + user_certificate.verify_uuid
+    if preview_mode:
+        context['certificate_print_id_url'] = settings.LMS_ROOT_URL + '/certificates/print/' + user_certificate.verify_uuid + '?preview=' + preview_mode
+    else:
+        context['certificate_print_id_url'] = settings.LMS_ROOT_URL + '/certificates/print/' + user_certificate.verify_uuid
     context['certificate_verify_url'] = "{prefix}{uuid}{suffix}".format(
         prefix=context.get('certificate_verify_url_prefix'),
         uuid=user_certificate.verify_uuid,
@@ -544,6 +547,10 @@ def render_pdf_cert_by_uuid(request, certificate_uuid):
     This public view generates a PDF representation of the specified certificate
     """
     try:
+        preview_mode = request.GET.get('preview', None)
+        if preview_mode:
+            # certificate is being preview from studio and printed
+            return render_to_response('certificates/server-preview.html')
         certificate = GeneratedCertificate.objects.get(verify_uuid=certificate_uuid)
         language = get_language_from_request(request, check_path=False)
         pdf_buffer = BytesIO()
@@ -656,7 +663,7 @@ def render_html_view(request, user_id, course_id):
     _update_social_context(request, context, course, user, user_certificate, platform_name)
 
     # Append/Override the existing view context values with certificate specific values
-    _update_certificate_context(context, user_certificate, platform_name)
+    _update_certificate_context(context, user_certificate, platform_name, preview_mode)
 
     # Append badge info
     _update_badge_context(context, course, user)
