@@ -1,0 +1,13 @@
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">${_("Not allowed to print certificate in preview mode.")}</%block>
+
+<section class="outside-app">
+    <h1>
+        ${_(u"Not allowed to print certificate in preview mode.")}
+    </h1>
+    <div>
+        <p>${_("You're not allowed to print a certificate in preview mode.")}</p>
+    </div>
+</section>
