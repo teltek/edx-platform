@@ -60,12 +60,13 @@ class PDFCertificate(object):
         self.second_page_start_y_pos = ''
         self.first_page_available_height = ''
 
-        self.logo_path = configuration_helpers.get_value("PDF_RECEIPT_LOGO_PATH", settings.PDF_RECEIPT_LOGO_PATH)
+        self.logo_path = settings.FEATURES.get("PDF_LOGO_MAIN", "")
         self.cobrand_logo_path = settings.FEATURES.get("PDF_LOGO_EXTRA", "")
         self.brand_logo_height = configuration_helpers.get_value(
             "PDF_RECEIPT_LOGO_HEIGHT_MM", settings.PDF_RECEIPT_LOGO_HEIGHT_MM
         ) * mm
         self.cobrand_logo_height = 12 * mm
+        self.rector_fullname = settings.FEATURES.get("PDF_RECTOR_FULLNAME", "")
 
 
     def generate_pdf(self, file_buffer):
@@ -270,15 +271,17 @@ class PDFCertificate(object):
         paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
         paragraph.drawOn(self.pdf, 20 * mm, 60 * mm, TA_RIGHT)
 
-        rector_name = (_(u'{strong_start}Ricardo Mairal{strong_end}')).format(
-            strong_start="<strong>",
-            strong_end="</strong>"
-        )
+        if self.rector_fullname:
+            rector_name = (_(u'{strong_start}{rector_fullname}{strong_end}')).format(
+                strong_start="<strong>",
+                rector_fullname=self.rector_fullname,
+                strong_end="</strong>"
+            )
 
-        style = ParagraphStyle('rectorname', alignment=TA_RIGHT, fontSize=12, fontName="Fontana")
-        paragraph = Paragraph(rector_name, style)
-        paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
-        paragraph.drawOn(self.pdf, 20 * mm, 50 * mm, TA_RIGHT)
+            style = ParagraphStyle('rectorname', alignment=TA_RIGHT, fontSize=12, fontName="Fontana")
+            paragraph = Paragraph(rector_name, style)
+            paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
+            paragraph.drawOn(self.pdf, 20 * mm, 50 * mm, TA_RIGHT)
 
         footer = (_(u'{fontsize_start}Credits number: {fontcolor_start}' \
                     '{course_credits}{fontcolor_end} ECTS{fontsize_end}{breakline}' \
