@@ -8,7 +8,7 @@ from rest_framework.generics import GenericAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-from certificates.models import GeneratedCertificate
+from certificates.models import GeneratedCertificate, CertificateStatuses
 from .serializers import CertificateClassSerializer
 
 from lms.djangoapps.certificates.api import get_certificate_for_user
@@ -170,13 +170,7 @@ class UserCertificatesList(generics.ListAPIView):
             "results": [
                 {
                     "certificate_class": {
-                        "slug": "special_award",
-                        "issuing_component": "openedx__course",
-                        "display_name": "Very Special Award",
                         "course_id": "course-v1:edX+DemoX+Demo_Course",
-                        "description": "Awarded for people who did something incredibly special",
-                        "criteria": "Do something incredibly special.",
-                        "image": "http://example.com/media/certificate_classes/certificates/special_xdpqpBv_9FYOZwN.png"
                     },
                     "image_url": "http://certificates.example.com/media/issued/cd75b69fc1c979fcc1697c8403da2bdf.png",
                     "assertion_url": "http://certificates.example.com/public/assertions/07020647-e772-44dd-98b7-d13d34335ca6"
@@ -206,7 +200,7 @@ class UserCertificatesList(generics.ListAPIView):
         Get all certificates for the username specified.
         """
         try:
-            return GeneratedCertificate.objects.filter(user__username=self.kwargs['username'], status=GeneratedCertificate.downloadable)
+            return GeneratedCertificate.objects.filter(user__username=self.kwargs['username'], status=CertificateStatuses.downloadable)
         except GeneratedCertificate.DoesNotExist:
             pass
 

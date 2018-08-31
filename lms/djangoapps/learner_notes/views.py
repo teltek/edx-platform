@@ -97,6 +97,6 @@ def learner_notes_context(request, profile_username, user_is_staff):
 
     if badges_enabled():
         context['data']['badges_api_url'] = reverse("badges_api:user_assertions", kwargs={'username': profile_username})
-        context['data']['certificates_api_url'] = reverse("certificates:user_certificates_list", kwargs={'username': profile_username})
+        context['data']['certificates_api_url'] = reverse("certificates_api:v0:certificates:user_certificates_list", kwargs={'username': profile_username})
 
     return context

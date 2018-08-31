@@ -1,19 +1,12 @@
 <div class="badge-image-container">
-  <img class="badge" src="<%- image_url %>" alt=""/>
 </div>
 <div class="badge-details">
-  <div class="badge-name"><%- certificate_class.display_name %></div>
-  <p class="badge-description"><%- certificate_class.description %></p>
+  <div class="badge-name"><%- certificate_class.course_id %></div>
+  <p class="badge-description"><%- certificate_class.verify_uuid %></p>
   <% if (ownProfile) { %>
     <button class="share-button">
       <div class="share-icon-container">
-        <img class="icon icon-mozillaopenbadges" src="<%- certificateMeta.certificates_icon %>" alt="<%-
-          interpolate(
-            // Translators: display_name is the name of an OpenBadges award.
-            gettext('Share your "%(display_name)s" award'),
-            {'display_name': certificate_class.display_name},
-            true
-          )%>">
+        <p>Add link or copy and share button</p>
       </div>
       <div class="share-prefix" aria-hidden="true"><%- gettext("Share") %></div>
     </div>
