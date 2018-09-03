@@ -1,20 +1,34 @@
-<div class="badge-image-container">
+<div class="certificate-image-container">
+  <img class="certificate" src="<%- image_url %>" alt=""/>
 </div>
-<div class="badge-details">
-  <div class="badge-name"><%- certificate_class.course_id %></div>
-  <p class="badge-description"><%- certificate_class.verify_uuid %></p>
-  <% if (ownProfile) { %>
-    <button class="share-button">
-      <div class="share-icon-container">
-        <p>Add link or copy and share button</p>
-      </div>
-      <div class="share-prefix" aria-hidden="true"><%- gettext("Share") %></div>
-    </div>
-  <% } %>
-  <div class="badge-date-stamp">
+<div class="certificate-details">
+  <div class="certificate-name"><%- display_name %></div>
+  <p class="certificate-description">
     <%-
       interpolate(
-        // Translators: Date stamp for earned badges. Example: Earned December 3, 2015.
+        gettext('Completed the course "%(display_name)s" (%(mode)s)'),
+        {'display_name': display_name, 'mode': mode},
+        true
+      )
+    %></p>
+  <a class="share-prefix-certificate" target="_blank" href="/certificates/<%- verify_uuid %>">
+    <button class="share-button">
+      <div class="share-icon-container">
+          <img class="icon icon-mozillaopenbadges" src="<%- certificateMeta.certificates_icon %>" alt="<%-
+            interpolate(
+              // Translators: display_name is the name of an OpenBadges award.
+              gettext('Share your "%(display_name)s" award'),
+              {'display_name': display_name},
+              true
+            )%>">
+      </div>
+      <div class="share-prefix" aria-hidden="true"><%- gettext("Share") %></div>
+    </button>
+  </a>
+  <div class="certificate-date-stamp">
+    <%-
+      interpolate(
+        // Translators: Date stamp for earned certificates. Example: Earned December 3, 2015.
         gettext('Earned %(created)s.'),
         {created: created.format('LL')},
         true

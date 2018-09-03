@@ -82,9 +82,9 @@
                 'find_courses_url': options.find_courses_url,
                 'ownProfile': options.own_profile,
                 'certificateMeta': {
-                    'certificates_logo': options.certificates_logo,
+                    'certificates_logo': options.badges_logo,
                     'backpack_ui_img': options.backpack_ui_img,
-                    'certificates_icon': options.certificates_icon
+                    'certificates_icon': options.badges_icon
                 }
             });
 
