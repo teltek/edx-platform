@@ -4,13 +4,12 @@
 <div class="certificate-details">
   <div class="certificate-name"><%- display_name %></div>
   <p class="certificate-description">
-    <%-
-      interpolate(
-        gettext('Completed the course "%(display_name)s" (%(mode)s)'),
-        {'display_name': display_name, 'mode': mode},
-        true
-      )
-    %></p>
+    <%- gettext('Your final grade:') %> <%- interpolate(
+      gettext("%(grade)s%."),
+      {grade: grade*100},
+      true
+     )%>
+  </p>
   <a class="share-prefix-certificate" target="_blank" href="/certificates/<%- verify_uuid %>">
     <button class="share-button">
       <div class="share-icon-container">
@@ -18,7 +17,7 @@
             interpolate(
               // Translators: display_name is the name of an OpenBadges award.
               gettext('Share your "%(display_name)s" award'),
-              {'display_name': display_name},
+              {display_name: display_name},
               true
             )%>">
       </div>

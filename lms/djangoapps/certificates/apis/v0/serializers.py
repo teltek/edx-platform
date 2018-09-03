@@ -15,7 +15,7 @@ class CertificateClassSerializer(serializers.ModelSerializer):
 
     class Meta(object):
         model = GeneratedCertificate
-        fields = ('course_id', 'verify_uuid', 'mode', 'created_date', 'image_url', 'display_name')
+        fields = ('course_id', 'verify_uuid', 'mode', 'grade', 'created_date', 'image_url', 'display_name')
 
     def get_image_url(self, certificate):
         course_overview = CourseOverview.get_from_id(certificate.course_id)
