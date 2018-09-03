@@ -584,6 +584,13 @@ urlpatterns += (
         name='learner_profile',
     ),
 
+    # Learner notes
+    url(
+        r'^notes/(?P<username>[\w.@+-]+)$',
+        'learner_notes.views.learner_notes',
+        name='learner_notes',
+    ),
+
     # Student Notes
     url(
         r'^courses/{}/edxnotes'.format(
