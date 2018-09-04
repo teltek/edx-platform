@@ -132,33 +132,19 @@ class UserCertificatesList(generics.ListAPIView):
 
         Body comprised of a list of objects with the following fields:
 
-        * certificate_class: The certificate class the assertion was awarded for. Represented as an object
+        * generated_certificate: The generated certificate of student and course. Represented as an object
           with the following fields:
-            * slug: The identifier for the certificate class
-            * issuing_component: The software component responsible for issuing this certificate.
-            * display_name: The display name of the certificate.
             * course_id: The course key of the course this certificate is scoped to, or null if it isn't scoped to a course.
-            * description: A description of the award and its significance.
-            * criteria: A description of what is needed to obtain this award.
-            * image_url: A URL to the icon image used to represent this award.
-        * image_url: The baked assertion image derived from the certificate_class icon-- contains metadata about the award
-          in its headers.
-        * assertion_url: The URL to the OpenCertificates CertificateAssertion object, for verification by compatible tools
-          and software.
-
-    ** Params **
-
-        * slug (optional): The identifier for a particular certificate class to filter by.
-        * issuing_component (optional): The issuing component for a particular certificate class to filter by
-          (requires slug to have been specified, or this will be ignored.) If slug is provided and this is not,
-          assumes the issuing_component should be empty.
-        * course_id (optional): Returns assertions that were awarded as part of a particular course. If slug is
-          provided, and this field is not specified, assumes that the target certificate has an empty course_id field.
-          '*' may be used to get all certificates with the specified slug, issuing_component combination across all courses.
+            * verify_uuid: The unique hashed string that identifies this generated certificate.
+            * mode: The enrollment mode of student in course.
+            * grade: The final grade of the student in the course.
+            * created_date: The date the certificate was created.
+            * image_url: A URL to the icon image used to represent this award, the course image.
+            * display_name: The display name of the course.
 
     ** Returns **
 
-        * 200 on success, with a list of Certificate Assertion objects.
+        * 200 on success, with a list of Generated Certificate objects.
         * 403 if a user who does not have permission to masquerade as
           another user specifies a username other than their own.
         * 404 if the specified user does not exist
@@ -169,11 +155,13 @@ class UserCertificatesList(generics.ListAPIView):
             "num_pages": 1,
             "results": [
                 {
-                    "certificate_class": {
-                        "course_id": "course-v1:edX+DemoX+Demo_Course",
-                    },
+                    "course_id": "course-v1:edX+DemoX+Demo_Course",
+                    "verify_uuid": "3df0b2f277e24356bb016f8cddbd8d83",
+                    "mode": "honor",
+                    "grade": "0.83",
+                    "created_date": "2018-08-06 15:42:37",
                     "image_url": "http://certificates.example.com/media/issued/cd75b69fc1c979fcc1697c8403da2bdf.png",
-                    "assertion_url": "http://certificates.example.com/public/assertions/07020647-e772-44dd-98b7-d13d34335ca6"
+                    "display_name": "Course of Applied Informatics",
                 },
             ...
             ]

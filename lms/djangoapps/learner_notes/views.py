@@ -48,8 +48,8 @@ def learner_notes(request, username):
             'learner_notes/learner_notes.html',
             learner_notes_context(request, username, request.user.is_staff)
         )
-    except (UserNotAuthorized, UserNotFound, ObjectDoesNotExist):
-        log.error('there was an exception')
+    except (UserNotAuthorized, UserNotFound, ObjectDoesNotExist) as excep:
+        log.error('There was an exception: {0}'.format(excep))
         raise Http404
 
 
