@@ -126,7 +126,7 @@ class UserCertificatesList(generics.ListAPIView):
 
     ** Example Requests **
 
-        GET /api/certificates/v1/user/{username}/list
+        GET /api/certificates/v0/certificates/{username}/list
 
     ** Response Values **
 
