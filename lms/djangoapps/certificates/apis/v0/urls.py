@@ -19,6 +19,12 @@ CERTIFICATES_URLS = patterns(
         ),
         views.CertificatesDetailView.as_view(), name='detail'
     ),
+    url(
+        r'^{username}/list/$'.format(
+            username=settings.USERNAME_PATTERN
+        ),
+        views.UserCertificatesList.as_view(), name='user_certificates_list'
+    ),
 )
 
 urlpatterns = patterns(

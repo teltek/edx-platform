@@ -19,6 +19,9 @@ from ..models import PersistentCourseGrade
 from .subsection_grade import SubsectionGradeFactory
 from ..transformer import GradesTransformer
 
+from django.dispatch import receiver
+from openedx.core.djangoapps.signals.signals import COURSE_PASS_GRADE
+from badges.events.course_complete import course_badge_check
 
 log = getLogger(__name__)
 
@@ -416,3 +419,12 @@ class CourseGradeFactory(object):
         has access to the course.
         """
         return len(course_structure) > 0
+
+
+@receiver(COURSE_PASS_GRADE, sender=CourseGradeFactory)
+# pylint: disable=unused-argument
+def create_course_badge(sender, user, course_key, status, **kwargs):
+    """
+    Standard signal hook to create course badges when a certificate has been generated.
+    """
+    course_badge_check(user, course_key)
