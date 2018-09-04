@@ -29,6 +29,14 @@ from ..new.course_grade import CourseGradeFactory
 from ..scores import weighted_score
 from ..tasks import recalculate_subsection_grade_v2
 
+from django.contrib.auth.models import User
+from xmodule.modulestore.django import modulestore
+from certificates.models import CertificateStatuses
+from opaque_keys.edx.keys import CourseKey
+from student.models import CourseEnrollment
+from openedx.core.djangoapps.signals.signals import COURSE_PASS_GRADE
+from lms.djangoapps.courseware.views.views import is_course_passed
+
 log = getLogger(__name__)
 
 PROBLEM_SUBMITTED_EVENT_TYPE = 'edx.grades.problem.submitted'
@@ -191,6 +199,31 @@ def enqueue_subsection_update(sender, **kwargs):  # pylint: disable=unused-argum
             getattr(result, 'id', 'N/A'),
         )
     )
+    _check_full_grade(kwargs['user_id'], kwargs['course_id'])
+
+
+def _check_full_grade(user_id, course_id):
+    """
+    Checks the full grade of a student in a course.
+    In case badges are enabled and the student has
+    passed the course, fires the correspondant signal.
+    """
+    student = User.objects.get(id=user_id)
+    store = modulestore()
+    course_key = CourseKey.from_string(course_id)
+    course = store.get_course(course_key, depth=0)
+    course_grade = CourseGradeFactory().create(student, course)
+    grade_summary = course_grade.summary
+    passed = is_course_passed(course, grade_summary)
+    if passed:
+        enrollment = CourseEnrollment.get_enrollment(student, course.id)
+        COURSE_PASS_GRADE.send_robust(
+            sender=CourseGradeFactory,
+            user=student,
+            course_key=course.id,
+            mode=enrollment.mode,
+            status=CertificateStatuses.downloadable,
+        )
 
 
 @receiver(SUBSECTION_SCORE_CHANGED)

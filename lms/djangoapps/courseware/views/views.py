@@ -96,6 +96,8 @@ from xmodule.x_module import STUDENT_VIEW
 from ..entrance_exams import user_must_complete_entrance_exam
 from ..module_render import get_module_for_descriptor, get_module, get_module_by_usage_id
 
+from openedx.core.djangoapps.signals.signals import COURSE_PASS_GRADE
+
 log = logging.getLogger("edx.courseware")
 
 
@@ -758,6 +760,16 @@ def _progress(request, course_key, student_id):
     # checking certificate generation configuration
     enrollment_mode, is_active = CourseEnrollment.enrollment_mode_for_user(student, course_key)
 
+    passed = is_course_passed(course, grade_summary)
+    if passed:
+        COURSE_PASS_GRADE.send_robust(
+            sender=CourseGradeFactory,
+            user=student,
+            course_key=course.id,
+            mode=enrollment_mode,
+            status=CertificateStatuses.downloadable,
+        )
+
     context = {
         'course': course,
         'courseware_summary': courseware_summary,
@@ -765,7 +777,7 @@ def _progress(request, course_key, student_id):
         'grade_summary': grade_summary,
         'staff_access': staff_access,
         'student': student,
-        'passed': is_course_passed(course, grade_summary),
+        'passed': passed,
         'credit_course_requirements': _credit_course_requirements(course_key, student),
         'certificate_data': _get_cert_data(student, course, course_key, is_active, enrollment_mode),
         'enrollment_mode': enrollment_mode
