@@ -17,19 +17,6 @@
                     'class': 'certificate-display'
                 },
                 template: _.template(certificateTemplate),
-                events: {
-                    'click .share-button': 'createModal'
-                },
-                createModal: function() {
-                    var modal = new ShareModalView({
-                        model: new Backbone.Model(this.context),
-                        shareButton: this.shareButton
-                    });
-                    modal.$el.hide();
-                    modal.render();
-                    $('body').append(modal.$el);
-                    modal.$el.fadeIn('short', 'swing', _.bind(modal.ready, modal));
-                },
                 render: function() {
                     this.$el.html(this.template(this.context));
                     this.shareButton = this.$el.find('.share-button');

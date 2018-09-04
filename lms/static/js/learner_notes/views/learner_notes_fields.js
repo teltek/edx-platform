@@ -11,7 +11,6 @@
             render: function() {
                 this._super();
                 this.showNotificationMessage();
-                this.updateFieldValue();
                 return this;
             },
 
@@ -24,10 +23,6 @@
                     HtmlUtils.HTML('</a>')
                 );
 		this._super('');
-            },
-
-            updateFieldValue: function() {
-		console.log('delete');
             }
         });
 
