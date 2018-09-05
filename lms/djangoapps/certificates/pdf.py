@@ -62,10 +62,8 @@ class PDFCertificate(object):
 
         self.logo_path = settings.FEATURES.get("PDF_LOGO_MAIN", "")
         self.cobrand_logo_path = settings.FEATURES.get("PDF_LOGO_EXTRA", "")
-        self.brand_logo_height = configuration_helpers.get_value(
-            "PDF_RECEIPT_LOGO_HEIGHT_MM", settings.PDF_RECEIPT_LOGO_HEIGHT_MM
-        ) * mm
-        self.cobrand_logo_height = 12 * mm
+        self.brand_logo_height = 20 * mm
+        self.cobrand_logo_height = 15 * mm
         self.rector_fullname = settings.FEATURES.get("PDF_RECTOR_FULLNAME", "")
 
 
@@ -142,7 +140,7 @@ class PDFCertificate(object):
         horizontal_padding_from_border = self.margin + 9 * mm
         vertical_padding_from_border = 11 * mm
         img_y_pos = self.page_height - (
-            self.margin + vertical_padding_from_border + max(self.cobrand_logo_height, self.brand_logo_height)
+            self.margin + vertical_padding_from_border + min(self.cobrand_logo_height, self.brand_logo_height)
         )
 
         # Left aligned brand logo
@@ -155,8 +153,9 @@ class PDFCertificate(object):
                     horizontal_padding_from_border,
                     img_y_pos,
                     img_width,
-                    self.cobrand_logo_height,
-                    mask='auto'
+                    self.brand_logo_height,
+                    mask='auto',
+                    preserveAspectRatio=True,
                 )
 
         # Right Aligned cobrand logo
@@ -170,7 +169,8 @@ class PDFCertificate(object):
                     img_y_pos,
                     img_width,
                     self.cobrand_logo_height,
-                    mask='auto'
+                    mask='auto',
+                    preserveAspectRatio=True,
                 )
 
         return img_y_pos - self.min_clearance
