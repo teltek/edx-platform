@@ -7480,7 +7480,7 @@ msgstr ""
 
 #: openedx/features/learner_profile/static/learner_profile/templates/share_modal.underscore
 msgid "Share on Mozilla Backpack"
-msgstr ""
+msgstr "Compartilhe na mochila do Mozilla"
 
 #: openedx/features/learner_profile/static/learner_profile/templates/share_modal.underscore
 msgid ""
@@ -7488,6 +7488,9 @@ msgid ""
 "Backpack account. Complete the following steps to add your certificate to "
 "Backpack."
 msgstr ""
+"Para compartilhar seu certificado no Mozilla Backpack, é necessário ter uma "
+"conta Backpack. Complete os passos abaixo para adicionar seu certificado ao "
+"Backpack. "
 
 #: openedx/features/learner_profile/static/learner_profile/templates/share_modal.underscore
 #, python-format
@@ -7495,6 +7498,31 @@ msgid ""
 "Create a %(link_start)sMozilla Backpack%(link_end)s account, or log in to "
 "your existing account"
 msgstr ""
+"Crie uma conta %(link_start)sMozilla Backpack%(link_end)s ou faça o login na"
+" sua conta atual."
+
+#: lms/templates/student_profile/share_modal.underscore
+msgid "Share on Badgr"
+msgstr "Compartilhe na mochila do Badgr"
+
+#: lms/templates/student_profile/share_modal.underscore
+msgid ""
+"To share your certificate on Badgr, you must first have a "
+"Backpack account. Complete the following steps to add your certificate to "
+"Backpack."
+msgstr ""
+"Para compartilhar seu certificado no Badgr Backpack, é necessário ter uma "
+"conta Backpack. Complete os passos abaixo para adicionar seu certificado ao "
+"Backpack. "
+
+#: lms/templates/student_profile/share_modal.underscore
+#, python-format
+msgid ""
+"Create a %(link_start)sBadgr Backpack%(link_end)s account, or log in to "
+"your existing account"
+msgstr ""
+"Crie uma conta %(link_start)sBadgr Backpack%(link_end)s ou faça o login na"
+" sua conta atual."
 
 #: openedx/features/learner_profile/static/learner_profile/templates/share_modal.underscore
 #, python-format
