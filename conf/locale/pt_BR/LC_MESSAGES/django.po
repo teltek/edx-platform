@@ -15206,6 +15206,15 @@ msgstr ""
 " de ID esteja correto. Se você tem certeza de que a URL ou número de ID "
 "estão corretos, contate o suporte."
 
+#: lms/templates/certificates/course_complete.html
+msgid "Course Completion"
+msgstr ""
+
+#: lms/templates/certificates/course_complete.html
+msgid ""
+"User '{user_fullname}' has completed the course '{course_title}'."
+msgstr ""
+
 #: lms/templates/certificates/server-error.html
 msgid "Invalid Certificate Configuration."
 msgstr "Configuração do certificado inválida"

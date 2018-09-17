@@ -52,6 +52,9 @@ from certificates.pdf import PDFCertificate
 from io import BytesIO
 from django.utils.translation import get_language_from_request
 
+from lms.djangoapps.grades.new.course_grade import CourseGradeFactory
+from lms.djangoapps.courseware.views.views import is_course_passed
+
 log = logging.getLogger(__name__)
 
 
@@ -598,6 +601,7 @@ def render_html_view(request, user_id, course_id):
     context = {}
     _update_context_with_basic_info(context, course_id, platform_name, configuration)
     invalid_template_path = 'certificates/invalid.html'
+    course_completion_template_path = 'certificates/course_complete.html'
 
     # Kick the user back to the "Invalid" screen if the feature is disabled
     if not has_html_certificates_enabled(course_id):
@@ -626,6 +630,15 @@ def render_html_view(request, user_id, course_id):
     # Load user's certificate
     user_certificate = _get_user_certificate(request, user, course_key, course, preview_mode)
     if not user_certificate:
+        if 'evidence_visit' in request.GET:
+            course_grade = CourseGradeFactory().create(user, course)
+            passed = is_course_passed(course, course_grade.summary)
+            if passed:
+                context_course_title = course.display_name
+                context['course_title'] = context_course_title
+                user_fullname = user.profile.name
+                context['user_fullname'] = user_fullname
+                return render_to_response(course_completion_template_path, context)
         log.info(
             "Invalid cert: User %d does not have eligible cert for %s.",
             user_id,

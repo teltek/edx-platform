@@ -15360,6 +15360,16 @@ msgid ""
 "If you are sure that the URL or ID number is correct, contact support."
 msgstr ""
 
+#: lms/templates/certificates/course_complete.html
+msgid "Course Completion"
+msgstr "Finalización de curso"
+
+#: lms/templates/certificates/course_complete.html
+msgid ""
+"User '{user_fullname}' has completed the course '{course_title}'."
+msgstr ""
+"El usuario '{user_fullname}' ha completado el curso '{course_title}'."
+
 #: lms/templates/certificates/server-error.html
 msgid "Invalid Certificate Configuration."
 msgstr "Configuración del certificado inválida."
