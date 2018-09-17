@@ -26,7 +26,7 @@ class CertificateClassSerializer(serializers.ModelSerializer):
             course_overview = CourseOverview.get_from_id(certificate.course_id)
             return course_overview.image_urls['small']
         except Exception as excep:
-            log.warning('There was an exception on get course overview: {0}'.format(excep.message))
+            pass
         return 'ImageNotFound'
 
     def get_display_name(self, certificate):
@@ -34,5 +34,5 @@ class CertificateClassSerializer(serializers.ModelSerializer):
             course_overview = CourseOverview.get_from_id(certificate.course_id)
             return course_overview.display_name
         except Exception as excep:
-            log.warning('There was an exception on get course overview: {0}'.format(excep.message))
+            pass
         return 'Course Not Found'
