@@ -4490,6 +4490,18 @@ msgstr ""
 msgid "Completed the course \"{course_name}\" ({course_mode})"
 msgstr ""
 
+#: lms/djangoapps/badges/events/course_complete.py
+#, python-brace-format
+msgid ""
+"Completed the course \"{course_name}\" ({start_date} - "
+"{end_date})"
+msgstr ""
+
+#: lms/djangoapps/badges/events/course_complete.py
+#, python-brace-format
+msgid "Completed the course \"{course_name}\""
+msgstr ""
+
 #: lms/djangoapps/badges/models.py
 msgid "The badge image must be square."
 msgstr "Ihr Bild für das Abzeichen muss quadratisch sein."

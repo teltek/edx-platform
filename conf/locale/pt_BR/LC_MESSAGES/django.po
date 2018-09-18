@@ -5073,6 +5073,20 @@ msgstr ""
 msgid "Completed the course \"{course_name}\" ({course_mode})"
 msgstr "Concluído o curso \"{course_name}\" ({course_mode})"
 
+#: lms/djangoapps/badges/events/course_complete.py
+#, python-brace-format
+msgid ""
+"Completed the course \"{course_name}\" ({start_date} - "
+"{end_date})"
+msgstr ""
+"Concluído o curso \"{course_name}\" ({start_date} - "
+"{end_date})"
+
+#: lms/djangoapps/badges/events/course_complete.py
+#, python-brace-format
+msgid "Completed the course \"{course_name}\""
+msgstr "Concluído o curso \"{course_name}\""
+
 #: lms/djangoapps/badges/models.py
 msgid "The badge image must be square."
 msgstr "A imagem do emblema deve ser quadrada."

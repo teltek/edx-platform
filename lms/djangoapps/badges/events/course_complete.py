@@ -39,16 +39,14 @@ def badge_description(course, mode):
     Returns a description for the earned badge.
     """
     if course.end:
-        return _(u'Completed the course "{course_name}" ({course_mode}, {start_date} - {end_date})').format(
+        return _(u'Completed the course "{course_name}" ({start_date} - {end_date})').format(
             start_date=course.start.date(),
             end_date=course.end.date(),
             course_name=course.display_name,
-            course_mode=mode,
         )
     else:
-        return _(u'Completed the course "{course_name}" ({course_mode})').format(
+        return _(u'Completed the course "{course_name}"').format(
             course_name=course.display_name,
-            course_mode=mode,
         )
 
 
