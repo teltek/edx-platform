@@ -1,4 +1,11 @@
 <div class="sr-is-focusable sr-<%= type %>-view" tabindex="-1"></div>
 <div class="<%= type %>-paging-header"></div>
+<div class="<%= type %>-paging-subheader">
+    <div class="search-tools listing-tools">
+        <span class="search-count listing-count">
+	    <%- gettext("For already done past courses, if the badge is not shown, please visit the progress page of the course. If the badge still does not appear in this section, the course may be not configured to give badges.") %>
+        </span>
+    </div>
+</div>
 <div class="<%= type %>-list cards-list"></div>
 <div class="<%= type %>-paging-footer"></div>

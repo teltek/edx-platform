@@ -7718,6 +7718,14 @@ msgstr "Compartilhar"
 msgid "Earned %(created)s."
 msgstr "%(created)s conquistados."
 
+#: lms/templates/student_profile/badge_list.underscore
+msgid ""
+"For already done past courses, if the badge is not shown, "
+"please visit the progress page of the course. If the badge "
+"still does not appear in this section, the course may be "
+"not configured to give badges."
+msgstr ""
+
 #: openedx/features/learner_profile/static/learner_profile/templates/badge_placeholder.underscore
 msgid "What's Your Next Accomplishment?"
 msgstr "Qual sua próxima realização?"

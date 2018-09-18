@@ -7285,6 +7285,14 @@ msgstr ""
 msgid "Earned %(created)s."
 msgstr ""
 
+#: lms/templates/student_profile/badge_list.underscore
+msgid ""
+"For already done past courses, if the badge is not shown, "
+"please visit the progress page of the course. If the badge "
+"still does not appear in this section, the course may be "
+"not configured to give badges."
+msgstr ""
+
 #: lms/templates/student_profile/badge_placeholder.underscore
 msgid "What's Your Next Accomplishment?"
 msgstr ""
