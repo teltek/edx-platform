@@ -634,6 +634,7 @@ def render_html_view(request, user_id, course_id):
             course_grade = CourseGradeFactory().create(user, course)
             passed = is_course_passed(course, course_grade.summary)
             if passed:
+                context['document_title'] = _("Course End")
                 context_course_title = course.display_name
                 context['course_title'] = context_course_title
                 user_fullname = user.profile.name
