@@ -143,7 +143,7 @@ class UserBadgeAssertions(generics.ListAPIView):
                 check_image = requests.head(url=assertion.image_url, timeout=2500, allow_redirects=True)
                 if check_image.status_code == 200:
                     ids_to_include.append(assertion.id)
-                    queryset = queryset.filter(id__in=ids_to_include)
+            queryset = queryset.filter(id__in=ids_to_include)
         except Exception:
             pass
 
