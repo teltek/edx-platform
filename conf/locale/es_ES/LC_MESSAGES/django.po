@@ -5095,11 +5095,27 @@ msgid ""
 "Completed the course \"{course_name}\" ({course_mode}, {start_date} - "
 "{end_date})"
 msgstr ""
+"Completó el curso  \"{course_name}\" ({course_mode}, {start_date} - "
+"{end_date})"
 
 #: lms/djangoapps/badges/events/course_complete.py
 #, python-brace-format
 msgid "Completed the course \"{course_name}\" ({course_mode})"
+msgstr "Completó el curso \"{course_name}\" ({course_mode})"
+
+#: lms/djangoapps/badges/events/course_complete.py
+#, python-brace-format
+msgid ""
+"Completed the course \"{course_name}\" ({start_date} - "
+"{end_date})"
 msgstr ""
+"Completó el curso  \"{course_name}\" ({start_date} - "
+"{end_date})"
+
+#: lms/djangoapps/badges/events/course_complete.py
+#, python-brace-format
+msgid "Completed the course \"{course_name}\""
+msgstr "Completó el curso \"{course_name}\""
 
 #: lms/djangoapps/badges/models.py
 msgid "The badge image must be square."
