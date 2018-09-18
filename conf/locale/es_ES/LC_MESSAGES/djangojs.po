@@ -7484,6 +7484,18 @@ msgstr ""
 msgid "Earned %(created)s."
 msgstr ""
 
+#: lms/templates/student_profile/badge_list.underscore
+msgid ""
+"For already done past courses, if the badge is not shown, "
+"please visit the progress page of the course. If the badge "
+"still does not appear in this section, the course may be "
+"not configured to give badges."
+msgstr ""
+"Para cursos pasados ya realizados, si la insignia no se "
+"muestra, por favor visite la página de progreso del curso."
+" Si la insignia sigue sin mostrarse, es posible que el curso"
+" no esté configurado para generar insignias."
+
 #: openedx/features/learner_profile/static/learner_profile/templates/badge_placeholder.underscore
 msgid "What's Your Next Accomplishment?"
 msgstr ""

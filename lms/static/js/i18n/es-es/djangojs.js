@@ -500,6 +500,7 @@
     "Find discussions": "Buscar conversaciones", 
     "Follow": "Seguir", 
     "Following": "Siguiendo", 
+    "For already done past courses, if the badge is not shown, please visit the progress page of the course. If the badge still does not appear in this section, the course may be not configured to give badges.": "Para cursos pasados ya realizados, si la insignia no se muestra, por favor visite la p\u00e1gina de progreso del curso. Si la insignia sigue sin mostrarse, es posible que el curso no est\u00e9 configurado para generar insignias.", 
     "Forgot password?": "\u00bfHas olvidado tu contrase\u00f1a?", 
     "Frequently Asked Questions": "Pregunas frecuentemente formuladas", 
     "Full Name": "Nombre completo", 
