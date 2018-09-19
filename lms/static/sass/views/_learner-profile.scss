@@ -375,6 +375,13 @@
                     padding-bottom: $baseline;
                     line-height: 1.5em;
                 }
+                .badge-description.badge {
+                    padding-bottom: 0em;
+                    margin-top: 0em;
+                }
+                .badge-description.badge.grade {
+                    padding-bottom: $baseline;;
+                }
                 .badge-date-stamp,
                 .certificate-date-stamp {
                     @extend %t-copy-sub1;

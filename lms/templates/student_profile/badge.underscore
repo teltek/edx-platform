@@ -3,7 +3,8 @@
 </div>
 <div class="badge-details">
   <div class="badge-name"><%- badge_class.display_name %></div>
-  <p class="badge-description"><%- badge_class.description %></p>
+  <p class="badge-description badge"><%- badge_class.description %></p>
+  <p class="badge-description badge grade"><%- interpolate(gettext('Grade: %(grade)s'), {'grade': grade}, true) %></p>
   <% if (ownProfile) { %>
     <button class="share-button">
       <div class="share-icon-container">

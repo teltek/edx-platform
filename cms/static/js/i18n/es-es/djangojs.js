@@ -515,6 +515,7 @@
     "Grace period must be specified in HH:MM format.": "El per\u00edodo de gracia se ha de expresar en un formato HH:MM", 
     "Grade": "Nota", 
     "Grade as:": "Calificar como:", 
+    "Grade: %(grade)s": "Nota: %(grade)s", 
     "Graded as:": "Calificado como:", 
     "Grading": "Calificaciones", 
     "Group %s": "Grupo %s", 
