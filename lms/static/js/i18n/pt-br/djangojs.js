@@ -649,6 +649,7 @@
     "Grace period must be specified in HH:MM format.": "O prazo de toler\u00e2ncia deve ser especificado no formato HH:MM. ", 
     "Grade": "Nota", 
     "Grade as:": "Avaliar como:", 
+    "Grade: %(grade)s": "Nota: %(grade)s", 
     "Graded as:": "Avaliado como:", 
     "Grading": "Avaliando", 
     "Group": "Grupo", 

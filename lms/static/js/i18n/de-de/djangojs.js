@@ -472,6 +472,7 @@
     "Grace period must be specified in HH:MM format.": "Abgabefrist muss im HH:MM Format festgelegt werden.", 
     "Grade": "Note", 
     "Grade as:": "Benote als:", 
+    "Grade: %(grade)s": "Note: %(grade)s", 
     "Graded as:": "Benotet als:", 
     "Grading": "Bewertung", 
     "Group %s": "Gruppe %s", 

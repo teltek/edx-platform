@@ -438,6 +438,7 @@
     "Go to Dashboard": "V\u00e1 ao Painel de Instrumentos", 
     "Grace period must be specified in HH:MM format.": "O prazo de toler\u00e2ncia deve ser especificado no formato HH:MM. ", 
     "Grade": "Nota", 
+    "Grade: %(grade)s": "Nota: %(grade)s", 
     "Graded as:": "Avaliado como:", 
     "Grading": "Avalia\u00e7\u00e3o", 
     "Group": "Grupo", 

@@ -7484,6 +7484,11 @@ msgstr ""
 msgid "Earned %(created)s."
 msgstr ""
 
+#: lms/templates/student_profile/badge.underscore
+#, python-format
+msgid "Grade: %(grade)s"
+msgstr "Nota: %(grade)s"
+
 #: lms/templates/student_profile/badge_list.underscore
 msgid ""
 "For already done past courses, if the badge is not shown, "
