@@ -21919,6 +21919,8 @@ msgstr ""
 msgid ""
 "National Id not given. You need to specify your National Identity Number."
 msgstr ""
+"Nationale Id nicht gegeben. Sie müssen Ihre nationale "
+"Identitätsnummer angeben."
 
 #: openedx/core/djangoapps/userinfo/views.py:34
 #: openedx/core/djangoapps/userinfo/views.py:44
@@ -21926,11 +21928,13 @@ msgstr ""
 msgid ""
 "Error on saving National Id '{national_id}' of user '{username}': {exception}"
 msgstr ""
+"Fehler beim Speichern der nationalen ID '{national_id}' des "
+"Benutzers '{username}': {exception}"
 
 #: openedx/core/djangoapps/userinfo/views.py:42
 #, python-brace-format
 msgid "Already saved with value '{national_id}'."
-msgstr ""
+msgstr "Bereits gespeichert mit '{national_id}'."
 
 #: lms/djangoapps/certificates/pdf.py
 #, python-brace-format
@@ -21938,6 +21942,7 @@ msgid ""
 "{strong_start}NATIONAL UNIVERSITY OF DISTANCE "
 "EDUCATION{strong_end}"
 msgstr ""
+"{strong_start}NATIONALE FERNUNIVERSITÄT{strong_end}"
 
 #: lms/djangoapps/certificates/pdf.py
 #, python-brace-format
@@ -21950,6 +21955,13 @@ msgid ""
 "{breakline}has successfully finished the UNED "
 "Abierta course"
 msgstr ""
+"Der Rektor der Nationalen Fernuniversität "
+"{breakline}ist der Auffassung dass{breakline}"
+"{breakline}{studentstyle_start}{student_name}"
+"{studentstyle_end}{breakline}mit nationaler "
+"Identitätsnummer: {student_national_id}{breakline}"
+"{breakline}UNED Abierta Kurserfolgreich "
+"abgeschlossen hat"
 
 #: lms/djangoapps/certificates/pdf.py
 #, python-brace-format
@@ -21960,12 +21972,18 @@ msgid ""
 "CERTIFICATE OF USE{certificatestyle_end}{strong_end}"
 "{breakline}{breakline}{fontdate_start}{date}{fontdate_end}"
 msgstr ""
+"Den entsprechend dem auf der Rückseite dieses "
+"Dokuments Programm,{breakline}und erteilt diese"
+"{breakline}{breakline}{strong_start}"
+"{certificatestyle_start}BESCHEINIGUNG"
+"{certificatestyle_end}{strong_end}{breakline}"
+"{breakline}{fontdate_start}{date}{fontdate_end}"
 
 #: lms/djangoapps/certificates/pdf.py
 #, python-brace-format
 msgid ""
 "{color_start}The Rector of the UNED,{color_end}"
-msgstr ""
+msgstr "{color_start}Der UNED Rektor,{color_end}"
 
 #: lms/djangoapps/certificates/pdf.py
 #, python-brace-format
@@ -21983,11 +22001,23 @@ msgid ""
 "{fontcolor_start}following URL{fontcolor_end}: "
 "{link_start}{cert_url}{link_end}"
 msgstr ""
+"{fontsize_start}Kreditnummer: {fontcolor_start}"
+"{course_credits}{fontcolor_end} ECTS{fontsize_end}{breakline}"
+"{fontsize_start}Stunden Nummer: {fontcolor_start}"
+"{course_effort}{fontcolor_end} Stunden{fontsize_end}{breakline}{breakline}"
+"Dieser Grad wird als {fontcolor_start}UNED{fontcolor_end} geeignet "
+"angegeben und hat nicht die in {fontcolor_start}Nummer 30 des "
+"Organgesetzes eingerichtete offizielle Natur 4/2007{fontcolor_end}, "
+"die den {fontcolor_start}Artikel 34 des Organgesetzes ändert"
+"6/2001 von Universitäten{fontcolor_end}. Die Authentizität dieses "
+"Dokuments sowie seine Gültigkeit kann über die {fontcolor_start}"
+"folgende URL{fontcolor_end} überprüft werden: "
+"{link_start}{cert_url}{link_end}"
 
 #: lms/templates/certificates/server-preview.html
 msgid "Not allowed to print certificate in preview mode."
-msgstr ""
+msgstr "DAS ZERTIFIKAT IN DER VORSCHAU ZU DRUCKEN IST NICHT ZULÄSSIG."
 
 #: lms/templates/certificates/server-preview.html
 msgid "You're not allowed to print a certificate in preview mode."
-msgstr ""
+msgstr "Das Zertifikat in der Vorschau zu drucken ist nicht zulässig."
