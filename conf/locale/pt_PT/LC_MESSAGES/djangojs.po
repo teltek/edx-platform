@@ -3557,6 +3557,22 @@ msgid "Professional Education"
 msgstr "Educação profissional"
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
+msgid "Upgrade to obtain a Credential,"
+msgstr ""
+
+#: lms/static/js/verify_student/views/make_payment_step_view.js
+msgid "Obtain a Credential,"
+msgstr ""
+
+#: lms/static/js/verify_student/views/make_payment_step_view.js
+msgid "Upgrade to obtain a Certificate,"
+msgstr ""
+
+#: lms/static/js/verify_student/views/make_payment_step_view.js
+msgid "Obtain a Certificate,"
+msgstr ""
+
+#: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Verified Certificate upgrade"
 msgstr "Optar pelo Certificado Verificado "
 
