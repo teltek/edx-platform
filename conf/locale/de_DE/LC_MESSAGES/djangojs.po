@@ -9867,56 +9867,64 @@ msgstr "Nutze aktuelles Transkript"
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Introduce your National Identify Number."
-msgstr ""
+msgstr "Stellen Sie Ihre nationale Identifizierungsnummer vor."
 
 #: lms/templates/verify_student/make_payment_step.underscore
 msgid ""
 "In order to obtain a Certificate, you need to introduce your "
 "National Identity Number and pay."
 msgstr ""
+"Um ein Zertifikat zu erhalten, müssen Sie Ihre "
+"Identitätsnummer einführen und bezahlen."
 
 #: lms/templates/verify_student/make_payment_step.underscore
 msgid "National Identity Number *"
-msgstr ""
+msgstr "Nationale Identitätsnummer *"
 
 #: cms/templates/js/certificate-details.underscore
 #: cms/templates/js/certificate-editor.underscore
 msgid "Course Program"
-msgstr ""
+msgstr "Kursprogramm"
 
 #: cms/static/js/certificates/views/certificate_editor.js
 msgid "Upload course program."
-msgstr ""
+msgstr "Kurs-Programm hochladen."
 
 #: cms/static/js/certificates/views/certificate_editor.js
 msgid "File must be in PDF format."
-msgstr ""
+msgstr "Die Datei muss im PDF-Format vorliegen."
 
 #: cms/templates/js/certificate-editor.underscore
 msgid "Course Program Override"
-msgstr ""
+msgstr "Kursprogramm überschreiben"
 
 #: cms/templates/js/certificate-editor.underscore
 msgid ""
 "Upload a PDF file with the program of the Course "
 "to display on certificates. Leave blank to not use it."
 msgstr ""
+"Laden Sie eine PDF-Datei mit dem Programm des Kurses "
+"hoch, um sie auf Zertifikaten anzuzeigen. Leer "
+"lassen, um es nicht zu benutzen."
 
 #: cms/templates/js/certificate-details.underscore
 #: cms/templates/js/certificate-editor.underscore
 msgid "Course Credits"
-msgstr ""
+msgstr "Kursnachweise"
 
 #: cms/templates/js/certificate-editor.underscore
 msgid "Course credits"
-msgstr ""
+msgstr "Gutschriften"
 
 #: cms/templates/js/certificate-editor.underscore
 msgid "Course Credits Override"
-msgstr ""
+msgstr "Kurs-Credits überschreiben"
 
 #: cms/templates/js/certificate-editor.underscore
 msgid ""
 "Specify an alternative to the official course "
 "credits number to display on certificates."
 msgstr ""
+"Geben Sie eine Alternative zur offiziellen "
+"Kurspunktzahl an, die auf dem Zertifikat "
+"angezeigt werden soll."
