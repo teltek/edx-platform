@@ -25272,6 +25272,8 @@ msgid ""
 "{strong_start}NATIONAL UNIVERSITY OF DISTANCE "
 "EDUCATION{strong_end}"
 msgstr ""
+"{strong_start}UNIVERSIDADE NACIONAL DE ENSINO "
+"À DISTÂNCIA{strong_end}"
 
 #: lms/djangoapps/certificates/pdf.py
 #, python-brace-format
@@ -25284,6 +25286,12 @@ msgid ""
 "{breakline}has successfully finished the UNED "
 "Abierta course"
 msgstr ""
+"O Reitor da Universidade Nacional de Ensino à "
+"Distância,{breakline}declara que{breakline}"
+"{breakline}{studentstyle_start}{student_name}"
+"{studentstyle_end}{breakline}com o seguinte "
+"número de cidadão: {student_national_id}{breakline}"
+"{breakline}concluiu o Curso da UNED Aberta."
 
 #: lms/djangoapps/certificates/pdf.py
 #, python-brace-format
@@ -25294,12 +25302,18 @@ msgid ""
 "CERTIFICATE OF USE{certificatestyle_end}{strong_end}"
 "{breakline}{breakline}{fontdate_start}{date}{fontdate_end}"
 msgstr ""
+"De acordo com o programa especificado no verso "
+"deste documento,{breakline}emite o seguinte{breakline}"
+"{breakline}{strong_start}{certificatestyle_start}"
+"CERTIFICADO{certificatestyle_end}{strong_end}"
+"{breakline}{breakline}{fontdate_start}{date}{fontdate_end}"
 
 #: lms/djangoapps/certificates/pdf.py
 #, python-brace-format
 msgid ""
 "{color_start}The Rector of the UNED,{color_end}"
 msgstr ""
+"{color_start}O Reitor da UNED,{color_end}"
 
 #: lms/djangoapps/certificates/pdf.py
 #, python-brace-format
@@ -25317,11 +25331,25 @@ msgid ""
 "{fontcolor_start}following URL{fontcolor_end}: "
 "{link_start}{cert_url}{link_end}"
 msgstr ""
+"{fontsize_start}Número de Créditos: {fontcolor_start}"
+"{course_credits}{fontcolor_end} ECTS{fontsize_end}{breakline}"
+"{fontsize_start}Número de horas: {fontcolor_start}"
+"{course_effort}{fontcolor_end} horas{fontsize_end}{breakline}{breakline}"
+"As horas deste curso estão de acordo com os parâmetros da "
+"{fontcolor_start}UNED{fontcolor_end} e não possuem a natureza oficial "
+"estabelecida no {fontcolor_start}número 30 do Decreto Lei 4/2007"
+"{fontcolor_end} que modifica o {fontcolor_start}artigo 34 do decreto "
+"lei 6/2001 das Universidades{fontcolor_end}. A autenticidade deste "
+"documento, assim como a sua validade, podem ser verificadas no "
+"{fontcolor_start}seguinte URL{fontcolor_end}: "
+"{link_start}{cert_url}{link_end}"
 
 #: lms/templates/certificates/server-preview.html
 msgid "Not allowed to print certificate in preview mode."
-msgstr ""
+msgstr "Não é permitido imprimir certificado no modo de visualização."
 
 #: lms/templates/certificates/server-preview.html
 msgid "You're not allowed to print a certificate in preview mode."
 msgstr ""
+"Você não tem permissão para imprimir um certificado no modo de "
+"visualização."
