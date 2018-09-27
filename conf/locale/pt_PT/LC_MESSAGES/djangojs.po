@@ -3562,11 +3562,11 @@ msgstr ""
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Obtain a Credential,"
-msgstr ""
+msgstr "Atualização para obtenção da Credencial,"
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Upgrade to obtain a Certificate,"
-msgstr ""
+msgstr "Atualização para obtenção do Certificado,"
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Obtain a Certificate,"
@@ -7180,12 +7180,13 @@ msgstr ""
 
 #: lms/templates/verify_student/make_payment_step.underscore
 msgid "You are upgrading your enrollment for: {courseName}"
-msgstr ""
+msgstr "Está a melhorar a sua inscrição em: {courseName}"
 
 #: lms/templates/verify_student/make_payment_step.underscore
 msgid ""
 "You can now enter your payment information and complete your enrollment."
 msgstr ""
+"Agora pode inserir o modo de pagamento e completar o seu registo."
 
 #: lms/templates/verify_student/make_payment_step.underscore
 msgid ""
