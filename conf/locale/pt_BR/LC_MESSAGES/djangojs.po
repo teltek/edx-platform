@@ -3641,11 +3641,11 @@ msgstr ""
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Obtain a Credential,"
-msgstr ""
+msgstr "Atualização para obtenção da Credencial,"
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Upgrade to obtain a Certificate,"
-msgstr ""
+msgstr "Atualização para obtenção do Certificado,"
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Obtain a Certificate,"
