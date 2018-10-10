@@ -25180,7 +25180,7 @@ msgstr ""
 "De acordo com o programa especificado no verso "
 "deste documento,{breakline}emite o seguinte{breakline}"
 "{breakline}{strong_start}{certificatestyle_start}"
-"CERTIFICADO{certificatestyle_end}{strong_end}"
+"CERTIFICADO DE UTILIZAÇÃO{certificatestyle_end}{strong_end}"
 "{breakline}{breakline}{fontdate_start}{date}{fontdate_end}"
 
 #: lms/djangoapps/certificates/pdf.py

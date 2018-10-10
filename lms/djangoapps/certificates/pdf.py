@@ -6,7 +6,7 @@ from django.utils.translation import ugettext as _
 from django.utils.translation import get_language_from_request
 
 from certificates.api import get_active_web_certificate
-from certificates.models import CertificateTemplate
+from certificates.models import CertificateTemplate, GeneratedCertificate
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 from opaque_keys.edx.keys import CourseKey
 from xmodule.modulestore.django import modulestore
@@ -180,7 +180,7 @@ class PDFCertificate(object):
         """
         Prints all text to PDF file.
         """
-        now = datetime.datetime.now(pytz.UTC)
+        date = self._get_certificate_date()
         user = User.objects.get(id=self.user_id)
         user_fullname = user.profile.name
         course_title_from_cert = active_configuration.get('course_title', '')
@@ -254,7 +254,7 @@ class PDFCertificate(object):
                                 strong_end="</strong>",
                                 fontdate_start="<font size=8>",
                                 fontdate_end="</font>",
-                                date=strftime_localized(now, '%d %B %Y')
+                                date=date
                             )
         style = ParagraphStyle('according', alignment=TA_CENTER, fontSize=12, fontName="Fontana", leading=10)
         paragraph = Paragraph(according_text, style)
@@ -330,3 +330,17 @@ class PDFCertificate(object):
         if template:
             return True
         return False
+
+    def _get_certificate_date(self):
+        try:
+            course_key = CourseKey.from_string(self.course_id)
+            user_certificate = GeneratedCertificate.objects.get(user=self.user_id, course_id=course_key)
+            date = user_certificate.modified_date
+        except Exception:
+            date = datetime.datetime.now(pytz.UTC)
+
+        return _('{month} {day}, {year}').format(
+            month=strftime_localized(date, "%B"),
+            day=date.day,
+            year=date.year
+        )
