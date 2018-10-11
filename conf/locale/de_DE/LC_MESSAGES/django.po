@@ -4899,6 +4899,8 @@ msgid ""
 "{accreditation_title} for course {course_title} for student {user_fullname} | "
 "{platform_name}"
 msgstr ""
+"{accreditation_title} für den Kurs {course_title} für den Schüler "
+"{user_fullname} | {platform_name}"
 
 #: lms/djangoapps/certificates/views/webview.py
 msgid "Accreditation"
