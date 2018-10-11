@@ -4744,7 +4744,7 @@ msgstr ""
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Upgrade to obtain a Certificate,"
-msgstr ""
+msgstr "Upgrade, um ein Zertifikat zu erhalten,"
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Obtain a Certificate,"
@@ -7780,6 +7780,11 @@ msgid ""
 "still does not appear in this section, the course may be "
 "not configured to give badges."
 msgstr ""
+"Für bereits durchgeführte Kurse, wenn das Badge nicht "
+"angezeigt wird, besuchen Sie bitte die Fortschrittsseite "
+"des Kurses. Wenn das Badge in dieser Stelle immer noch "
+"nicht angezeigt wird, ist der Kurs möglicherweise nicht "
+"für das Ausstellen von Badges konfiguriert."
 
 #: lms/templates/student_profile/badge_placeholder.underscore
 msgid "What's Your Next Accomplishment?"
@@ -8211,6 +8216,11 @@ msgstr ""
 #: lms/templates/verify_student/make_payment_step.underscore
 msgid "price"
 msgstr "Preis"
+
+#: lms/templates/verify_student/make_payment_step.underscore
+msgid "I accept the {anchorStart}Terms of Service{anchorEnd} *"
+msgstr ""
+"Ich akzeptiere die {anchorStart} Nutzungsbedingungen {anchorEnd} *"
 
 #: lms/templates/verify_student/make_payment_step_ab_testing.underscore
 msgid "Account Not Activated"
