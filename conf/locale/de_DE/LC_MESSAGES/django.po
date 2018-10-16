@@ -14027,6 +14027,14 @@ msgstr ""
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid ""
+"Get credentials without identity verification to emphasize the knowledge and"
+" aptitudes you get in this course."
+msgstr ""
+"Erhalten Sie Credentiale ohne Identitätsüberprüfung um Ihre im Kurs "
+"erworbenen neuen Kenntnisse und Fähigkeiten bekannt zu geben."
+
+#: lms/templates/dashboard/_dashboard_course_listing.html
+msgid ""
 "Pursue a {cert_name_long} to highlight the knowledge and skills you gain in "
 "this course."
 msgstr ""
