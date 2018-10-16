@@ -4736,11 +4736,11 @@ msgstr "Berufsausbildung"
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Upgrade to obtain a Credential,"
-msgstr ""
+msgstr "Upgrade, um ein Credential zu erhalten,"
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Obtain a Credential,"
-msgstr ""
+msgstr "Credential erhalten,"
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Upgrade to obtain a Certificate,"
@@ -4748,7 +4748,7 @@ msgstr "Upgrade, um ein Zertifikat zu erhalten,"
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Obtain a Certificate,"
-msgstr ""
+msgstr "Zertifikat erhalten"
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Verified Certificate upgrade"
