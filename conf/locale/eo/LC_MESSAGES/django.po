@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2018-07-02 05:55+0000\n"
-"PO-Revision-Date: 2018-07-02 05:55:39.490020\n"
+"POT-Creation-Date: 2018-11-27 13:29+0100\n"
+"PO-Revision-Date: 2018-11-27 12:29:06.823490\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "Language: eo\n"
@@ -2932,6 +2932,10 @@ msgstr "Ànswér ÌD Ⱡ'σяєм ιρѕυм ∂σł#"
 #: common/lib/xmodule/xmodule/capa_module.py
 msgid "Question"
 msgstr "Qüéstïön Ⱡ'σяєм ιρѕυм ∂#"
+
+#: common/lib/xmodule/xmodule/capa_module.py
+msgid "Correct Answer"
+msgstr "Çörréçt Ànswér Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт#"
 
 #: common/lib/xmodule/xmodule/conditional_module.py
 msgid "Conditional"
