@@ -572,6 +572,24 @@ def is_course_blocked(request, redeemed_registration_codes, course_key):
 
 @login_required
 @ensure_csrf_cookie
+def dashboardstudio(request):
+    """
+    Provides the CMS dashboard view
+
+    Arguments:
+        request: The request object.
+
+    Returns:
+        The studio home response.
+
+    """
+    page = 'home'
+    redirect_url = u"//{}/{}".format(settings.CMS_BASE, page)
+    return redirect(redirect_url)
+
+
+@login_required
+@ensure_csrf_cookie
 def dashboard(request):
     """
     Provides the LMS dashboard view
