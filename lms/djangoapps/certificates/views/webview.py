@@ -555,6 +555,9 @@ def render_pdf_cert_by_uuid(request, certificate_uuid):
             # certificate is being preview from studio and printed
             return render_to_response('certificates/server-preview.html')
         certificate = GeneratedCertificate.objects.get(verify_uuid=certificate_uuid)
+        if certificate.mode != 'verified':
+            # pdf is only for verified certficates (not for credentials)
+            raise Http404
         language = get_language_from_request(request, check_path=False)
         pdf_buffer = BytesIO()
         output_writer = PDFCertificate(
@@ -579,7 +582,7 @@ def render_pdf_cert_by_uuid(request, certificate_uuid):
     response.write(pdf_value)
 
     return response
-    
+
 @handle_500(
     template_path="certificates/server-error.html",
     test_func=lambda request: request.GET.get('preview', None)
