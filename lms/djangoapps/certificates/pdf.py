@@ -1,3 +1,4 @@
+
 import logging
 
 from django.conf import settings
@@ -62,10 +63,12 @@ class PDFCertificate(object):
 
         self.logo_path = settings.FEATURES.get("PDF_LOGO_MAIN", "")
         self.cobrand_logo_path = settings.FEATURES.get("PDF_LOGO_EXTRA", "")
+        self.cobrand_logo_key = "mapfre" #TODO make generic
         self.brand_logo_height = 20 * mm
         self.cobrand_logo_height = 15 * mm
+        self.signature_height = 290 * mm
         self.rector_fullname = settings.FEATURES.get("PDF_RECTOR_FULLNAME", "")
-
+        self.rector_signature = settings.FEATURES.get("PDF_RECTOR_SIGNATURE", "")
 
     def generate_pdf(self, file_buffer):
         """
@@ -142,7 +145,6 @@ class PDFCertificate(object):
         img_y_pos = self.page_height - (
             self.margin + vertical_padding_from_border + min(self.cobrand_logo_height, self.brand_logo_height)
         )
-
         # Left aligned brand logo
         if self.logo_path:
             logo_img = self.load_image(self.logo_path)
@@ -169,6 +171,24 @@ class PDFCertificate(object):
                     img_y_pos,
                     img_width,
                     self.cobrand_logo_height,
+                    mask='auto',
+                    preserveAspectRatio=True,
+                )
+
+        # Signature image
+        y_pos = self.page_height - (self.margin + vertical_padding_from_border + self.signature_height)
+        y_pos = -90 * mm
+        log.info("{0} {1} {2} {3} ".format(self.page_height , self.margin, vertical_padding_from_border, self.signature_height))
+        if self.rector_signature:
+            rector_sign_img = self.load_image(self.rector_signature)
+            if rector_sign_img:
+                img_width = float(rector_sign_img.size[0]) / (float(rector_sign_img.size[1]) / self.cobrand_logo_height)
+                self.pdf.drawImage(
+                    rector_sign_img.filename,
+                    self.page_width - (horizontal_padding_from_border + img_width + 4 * mm),
+                    y_pos,
+                    img_width,
+                    self.signature_height,
                     mask='auto',
                     preserveAspectRatio=True,
                 )
@@ -214,7 +234,7 @@ class PDFCertificate(object):
         paragraph = Paragraph(first_line, style)
         paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
         paragraph.drawOn(self.pdf, 20 * mm, 240 * mm, TA_CENTER)
-
+        
         paragraph_text = (_(u'The Rector of the National University of Distance Education,' \
                             '{breakline}considering that{breakline}{breakline}' \
                             '{studentstyle_start}{student_name}{studentstyle_end}{breakline}' \
@@ -268,8 +288,8 @@ class PDFCertificate(object):
 
         style = ParagraphStyle('rectortitle', alignment=TA_RIGHT, fontSize=10,fontName="Fontana")
         paragraph = Paragraph(rector_title, style)
-        paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
-        paragraph.drawOn(self.pdf, 20 * mm, 60 * mm, TA_RIGHT)
+        paragraph.wrapOn(self.pdf, 160 * mm, HEIGHT * mm)
+        paragraph.drawOn(self.pdf, 20 * mm, 65 * mm, TA_RIGHT)
 
         if self.rector_fullname:
             rector_name = (_(u'{strong_start}{rector_fullname}{strong_end}')).format(
@@ -280,13 +300,15 @@ class PDFCertificate(object):
 
             style = ParagraphStyle('rectorname', alignment=TA_RIGHT, fontSize=12, fontName="Fontana")
             paragraph = Paragraph(rector_name, style)
-            paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
-            paragraph.drawOn(self.pdf, 20 * mm, 50 * mm, TA_RIGHT)
-
-        footer = (_(u'{fontsize_start}Credits number: {fontcolor_start}' \
-                    '{course_credits}{fontcolor_end} ECTS{fontsize_end}{breakline}' \
-                    '{fontsize_start}Hours number: {fontcolor_start}' \
-                    '{course_effort}{fontcolor_end} hours{fontsize_end}{breakline}{breakline}' \
+            paragraph.wrapOn(self.pdf, 160 * mm, HEIGHT * mm)
+            paragraph.drawOn(self.pdf, 20 * mm, 45 * mm, TA_RIGHT)
+            
+        footer = (_(u'{fontsize_start}Hours number: {fontcolor_start}' \
+                    '{course_effort}{fontcolor_end} hours{fontsize_end}{breakline}' \
+                    '{fontsize_start}UNED, in agreement with the Commission for Regional Study' \
+                    'Centres, Students, Employment and Culture, delegated by the Government' \
+                    'Council, accredits this course as {fontcolor_start}' \
+                    '{course_credits}{fontcolor_end} ECTS credit*{fontsize_end}{breakline}{breakline}' \
                     'This degree is given as suitable of {fontcolor_start}UNED{fontcolor_end}' \
                     ' and it does not have the official nature established in ' \
                     '{fontcolor_start}number 30 of the Organic Law 4/2007{fontcolor_end} ' \
@@ -294,7 +316,9 @@ class PDFCertificate(object):
                     'of Universities{fontcolor_end}. The authenticity of this document, ' \
                     'as well as its validity and validity, can be checked through the ' \
                     '{fontcolor_start}following URL{fontcolor_end}: ' \
-                    '{link_start}{cert_url}{link_end}')).format(
+                    '{link_start}{cert_url}{link_end}{breakline}' \
+                    '* ECTS credits: recognizable as credits for cultural university activities ' \
+                    'in UNED degrees and those of universities and centers with reciprocal agreements')).format(
                         fontsize_start="<font size=10>",
                         fontsize_end="</font>",
                         fontcolor_start="<font color=#00533f>",
@@ -317,6 +341,7 @@ class PDFCertificate(object):
     def add_cobrand_logo(self, course_key):
         """
         Checks if this course has a specific template.
+        TODO
         """
         if not self.cobrand_logo_path:
             return False
@@ -327,7 +352,7 @@ class PDFCertificate(object):
                 mode=self.mode,
                 is_active=True
             )
-        if template:
+        if template and (self.cobrand_logo_key in str(template).lower() or self.cobrand_logo_key in str(course_key).lower()):
             return True
         return False
 
