@@ -512,14 +512,20 @@ def certificate_status_for_student(student, course_id):
             'mode': generated_certificate.mode,
             'uuid': generated_certificate.verify_uuid,
         }
+        user_is_whitelisted = CertificateWhitelist.objects.filter(
+            user=student, course_id=course_id, whitelist=True
+        ).exists()
         if generated_certificate.grade:
             cert_status['grade'] = generated_certificate.grade
 
         if generated_certificate.mode == 'audit':
             course_mode_slugs = [mode.slug for mode in CourseMode.modes_for_course(course_id)]
+            if user_is_whitelisted:
+                cert_status['download_url'] = generated_certificate.download_url
+                return cert_status
             # Short term fix to make sure old audit users with certs still see their certs
             # only do this if there if no honor mode
-            if 'honor' not in course_mode_slugs:
+            elif 'honor' not in course_mode_slugs:
                 cert_status['status'] = CertificateStatuses.auditing
                 return cert_status
 
