@@ -340,7 +340,7 @@ class PDFCertificate(object):
     def add_cobrand_logo(self, course_key):
         """
         Checks if this course has a specific template.
-        TODO
+        TODO generic cobrand 
         """
         if not self.cobrand_logo_path:
             return False
@@ -351,7 +351,7 @@ class PDFCertificate(object):
                 mode=self.mode,
                 is_active=True
             )
-        if template and (self.cobrand_logo_key in str(template).lower() or self.cobrand_logo_key in str(course_key).lower()):
+        if template and (self.cobrand_logo_key in str(template).lower() or self.cobrand_logo_key in str(course_key).lower()): #TODO change logic for generic cobrand and template
             return True
         return False
 
