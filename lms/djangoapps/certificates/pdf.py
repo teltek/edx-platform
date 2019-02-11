@@ -177,8 +177,7 @@ class PDFCertificate(object):
 
         # Signature image
         y_pos = self.page_height - (self.margin + vertical_padding_from_border + self.signature_height)
-        y_pos = -90 * mm
-        log.info("{0} {1} {2} {3} ".format(self.page_height , self.margin, vertical_padding_from_border, self.signature_height))
+        y_pos = -85 * mm
         if self.rector_signature:
             rector_sign_img = self.load_image(self.rector_signature)
             if rector_sign_img:
@@ -289,7 +288,7 @@ class PDFCertificate(object):
         style = ParagraphStyle('rectortitle', alignment=TA_RIGHT, fontSize=10,fontName="Fontana")
         paragraph = Paragraph(rector_title, style)
         paragraph.wrapOn(self.pdf, 160 * mm, HEIGHT * mm)
-        paragraph.drawOn(self.pdf, 20 * mm, 65 * mm, TA_RIGHT)
+        paragraph.drawOn(self.pdf, 20 * mm, 70 * mm, TA_RIGHT)
 
         if self.rector_fullname:
             rector_name = (_(u'{strong_start}{rector_fullname}{strong_end}')).format(
@@ -301,7 +300,7 @@ class PDFCertificate(object):
             style = ParagraphStyle('rectorname', alignment=TA_RIGHT, fontSize=12, fontName="Fontana")
             paragraph = Paragraph(rector_name, style)
             paragraph.wrapOn(self.pdf, 160 * mm, HEIGHT * mm)
-            paragraph.drawOn(self.pdf, 20 * mm, 45 * mm, TA_RIGHT)
+            paragraph.drawOn(self.pdf, 20 * mm, 50 * mm, TA_RIGHT)
             
         footer = (_(u'{fontsize_start}Hours number: {fontcolor_start}' \
                     '{course_effort}{fontcolor_end} hours{fontsize_end}{breakline}' \
