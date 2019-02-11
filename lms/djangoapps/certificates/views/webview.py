@@ -555,8 +555,9 @@ def render_pdf_cert_by_uuid(request, certificate_uuid):
             # certificate is being preview from studio and printed
             return render_to_response('certificates/server-preview.html')
         certificate = GeneratedCertificate.objects.get(verify_uuid=certificate_uuid)
-        if certificate.mode != 'verified':
+        if certificate.mode not in ['verified', 'audit']:
             # pdf is only for verified certficates (not for credentials)
+            # and audit (free courses with exception certificate)
             raise Http404
         language = get_language_from_request(request, check_path=False)
         pdf_buffer = BytesIO()
