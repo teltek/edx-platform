@@ -1,6 +1,7 @@
 """
 API views for badges
 """
+import requests
 from opaque_keys import InvalidKeyError
 from opaque_keys.edx.keys import CourseKey
 from rest_framework import generics
@@ -135,4 +136,15 @@ class UserBadgeAssertions(generics.ListAPIView):
                 badge_class__slug=self.request.query_params['slug'],
                 badge_class__issuing_component=self.request.query_params.get('issuing_component', '')
             )
+
+        try:
+            ids_to_include = []
+            for assertion in queryset:
+                check_image = requests.head(url=assertion.image_url, timeout=2500, allow_redirects=True)
+                if check_image.status_code == 200:
+                    ids_to_include.append(assertion.id)
+            queryset = queryset.filter(id__in=ids_to_include)
+        except Exception:
+            pass
+
         return queryset

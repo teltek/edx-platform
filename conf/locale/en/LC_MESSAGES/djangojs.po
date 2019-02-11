@@ -4601,6 +4601,14 @@ msgstr ""
 msgid "Signatory field(s) has invalid data."
 msgstr ""
 
+#: cms/static/js/certificates/models/certificate.js
+msgid "Certificate course credits cannot be empty."
+msgstr ""
+
+#: cms/static/js/certificates/models/certificate.js
+msgid "Certificate course credits must be a number."
+msgstr ""
+
 #: cms/static/js/certificates/views/certificate_details.js
 msgid "Edit this certificate?"
 msgstr ""
@@ -7277,6 +7285,19 @@ msgstr ""
 msgid "Earned %(created)s."
 msgstr ""
 
+#: lms/templates/student_profile/badge.underscore
+#, python-format
+msgid "Grade: %(grade)s"
+msgstr ""
+
+#: lms/templates/student_profile/badge_list.underscore
+msgid ""
+"For already done past courses, if the badge is not shown, "
+"please visit the progress page of the course. If the badge "
+"still does not appear in this section, the course may be "
+"not configured to give badges."
+msgstr ""
+
 #: lms/templates/student_profile/badge_placeholder.underscore
 msgid "What's Your Next Accomplishment?"
 msgstr ""
@@ -7316,6 +7337,24 @@ msgstr ""
 #, python-format
 msgid ""
 "Create a %(link_start)sMozilla Backpack%(link_end)s account, or log in to "
+"your existing account"
+msgstr ""
+
+#: lms/templates/student_profile/share_modal.underscore
+msgid "Share on Badgr"
+msgstr ""
+
+#: lms/templates/student_profile/share_modal.underscore
+msgid ""
+"To share your certificate on Badgr, you must first have a "
+"Backpack account. Complete the following steps to add your certificate to "
+"Backpack."
+msgstr ""
+
+#: lms/templates/student_profile/share_modal.underscore
+#, python-format
+msgid ""
+"Create a %(link_start)sBadgr Backpack%(link_end)s account, or log in to "
 "your existing account"
 msgstr ""
 
@@ -9253,4 +9292,60 @@ msgstr ""
 
 #: cms/templates/js/video/transcripts/messages/transcripts-use-existing.underscore
 msgid "Use Current Transcript"
+msgstr ""
+
+#: lms/static/js/verify_student/views/make_payment_step_view.js
+msgid "Introduce your National Identify Number."
+msgstr ""
+
+#: lms/templates/verify_student/make_payment_step.underscore
+msgid ""
+"In order to obtain a Certificate, you need to introduce your "
+"National Identity Number and pay."
+msgstr ""
+
+#: lms/templates/verify_student/make_payment_step.underscore
+msgid "National Identity Number *"
+msgstr ""
+
+#: cms/templates/js/certificate-details.underscore
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course Program"
+msgstr ""
+
+#: cms/static/js/certificates/views/certificate_editor.js
+msgid "Upload course program."
+msgstr ""
+
+#: cms/static/js/certificates/views/certificate_editor.js
+msgid "File must be in PDF format."
+msgstr ""
+
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course Program Override"
+msgstr ""
+
+#: cms/templates/js/certificate-editor.underscore
+msgid ""
+"Upload a PDF file with the program of the Course "
+"to display on certificates. Leave blank to not use it."
+msgstr ""
+
+#: cms/templates/js/certificate-details.underscore
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course Credits"
+msgstr ""
+
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course credits"
+msgstr ""
+
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course Credits Override"
+msgstr ""
+
+#: cms/templates/js/certificate-editor.underscore
+msgid ""
+"Specify an alternative to the official course "
+"credits number to display on certificates."
 msgstr ""

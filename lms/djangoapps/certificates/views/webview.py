@@ -25,6 +25,7 @@ from opaque_keys.edx.keys import CourseKey
 from openedx.core.lib.courses import course_image_url
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 from openedx.core.djangoapps.models.course_details import CourseDetails
+from openedx.core.djangoapps.userinfo.models import NationalId
 from student.models import LinkedInAddToProfileConfiguration
 from util import organizations_helpers as organization_api
 from util.date_utils import strftime_localized
@@ -46,6 +47,13 @@ from certificates.models import (
     CertificateStatuses,
     CertificateHtmlViewConfiguration,
     CertificateSocialNetworks)
+
+from certificates.pdf import PDFCertificate
+from io import BytesIO
+from django.utils.translation import get_language_from_request
+
+from lms.djangoapps.grades.new.course_grade import CourseGradeFactory
+from lms.djangoapps.courseware.views.views import is_course_passed
 
 log = logging.getLogger(__name__)
 
@@ -104,7 +112,7 @@ def get_certificate_description(mode, certificate_type, platform_name):
     return certificate_type_description
 
 
-def _update_certificate_context(context, user_certificate, platform_name):
+def _update_certificate_context(context, user_certificate, platform_name, preview_mode):
     """
     Build up the certificate web view context using the provided values
     (Helper method to keep the view clean)
@@ -115,6 +123,10 @@ def _update_certificate_context(context, user_certificate, platform_name):
     # Override the defaults with any mode-specific static values
     context['certificate_id_number'] = user_certificate.verify_uuid
     context['certificate_id_url'] = settings.LMS_ROOT_URL + '/certificates/' + user_certificate.verify_uuid
+    if preview_mode:
+        context['certificate_print_id_url'] = settings.LMS_ROOT_URL + '/certificates/print/' + user_certificate.verify_uuid + '?preview=' + preview_mode
+    else:
+        context['certificate_print_id_url'] = settings.LMS_ROOT_URL + '/certificates/print/' + user_certificate.verify_uuid
     context['certificate_verify_url'] = "{prefix}{uuid}{suffix}".format(
         prefix=context.get('certificate_verify_url_prefix'),
         uuid=user_certificate.verify_uuid,
@@ -138,7 +150,13 @@ def _update_certificate_context(context, user_certificate, platform_name):
     )
 
     # Translators:  This text is bound to the HTML 'title' element of the page and appears in the browser title bar
-    context['document_title'] = _("Credential for course {course_title} for student {user_fullname} | {platform_name}").format(
+    accreditation_title = _(u"Accreditation")
+    if user_certificate.mode == 'honor':
+        accreditation_title = _(u"Credential")
+    elif user_certificate.mode == 'verified':
+        accreditation_title = _(u"Certificate")
+    context['document_title'] = _("{accreditation_title} for course {course_title} for student {user_fullname} | {platform_name}").format(
+        accreditation_title=accreditation_title,
         course_title=context['accomplishment_copy_course_name'],
         user_fullname=context['accomplishment_copy_name'],
         platform_name=platform_name
@@ -334,6 +352,7 @@ def _update_context_with_user_info(context, user, user_certificate):
     context['accomplishment_user_id'] = user.id
     context['accomplishment_copy_name'] = user_fullname
     context['accomplishment_copy_username'] = user.username
+    context['accomplishment_copy_national_id'] = NationalId.get_national_id_from_user(user=user)
 
     context['accomplishment_more_title'] = _("More Information About {user_name}'s Certificate:").format(
         user_name=user_fullname
@@ -478,9 +497,13 @@ def _update_badge_context(context, course, user):
     """
     badge = None
     if badges_enabled() and course.issue_badges:
-        badges = get_completion_badge(course.location.course_key, user).get_for_user(user)
-        if badges:
-            badge = badges[0]
+        badge_class = get_completion_badge(course.location.course_key, user)
+        if not badge_class:
+            log.warning('Update badge content: Visit to evidence URL for badge, but badges not configured for course "%s"', course.location.course_key)
+        else:
+            badges = badge_class.get_for_user(user)
+            if badges:
+                badge = badges[0]
     context['badge'] = badge
 
 
@@ -522,6 +545,49 @@ def render_cert_by_uuid(request, certificate_uuid):
     template_path="certificates/server-error.html",
     test_func=lambda request: request.GET.get('preview', None)
 )
+def render_pdf_cert_by_uuid(request, certificate_uuid):
+    """
+    This public view generates a PDF representation of the specified certificate
+    """
+    try:
+        preview_mode = request.GET.get('preview', None)
+        if preview_mode:
+            # certificate is being preview from studio and printed
+            return render_to_response('certificates/server-preview.html')
+        certificate = GeneratedCertificate.objects.get(verify_uuid=certificate_uuid)
+        if certificate.mode not in ['verified', 'audit']:
+            # pdf is only for verified certficates (not for credentials)
+            # and audit (free courses with exception certificate)
+            raise Http404
+        language = get_language_from_request(request, check_path=False)
+        pdf_buffer = BytesIO()
+        output_writer = PDFCertificate(
+            verify_uuid=certificate.verify_uuid,
+            course_id=unicode(certificate.course_id),
+            user_id=certificate.user_id,
+            mode=certificate.mode
+        ).generate_pdf(pdf_buffer)
+    except GeneratedCertificate.DoesNotExist:
+        raise Http404
+    except Exception as err:
+        log.error('Exception in render_pdf_cert_by_uuid: {}'.format(err), exc_info=True)
+        raise err
+
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="Certificate'+certificate.verify_uuid+'.pdf"'
+
+    pdf_stream = BytesIO()
+    output_writer.write(pdf_stream)
+    pdf_value = pdf_stream.getvalue()
+    pdf_stream.close()
+    response.write(pdf_value)
+
+    return response
+
+@handle_500(
+    template_path="certificates/server-error.html",
+    test_func=lambda request: request.GET.get('preview', None)
+)
 def render_html_view(request, user_id, course_id):
     """
     This public view generates an HTML representation of the specified user and course
@@ -539,6 +605,7 @@ def render_html_view(request, user_id, course_id):
     context = {}
     _update_context_with_basic_info(context, course_id, platform_name, configuration)
     invalid_template_path = 'certificates/invalid.html'
+    course_completion_template_path = 'certificates/course_complete.html'
 
     # Kick the user back to the "Invalid" screen if the feature is disabled
     if not has_html_certificates_enabled(course_id):
@@ -567,6 +634,16 @@ def render_html_view(request, user_id, course_id):
     # Load user's certificate
     user_certificate = _get_user_certificate(request, user, course_key, course, preview_mode)
     if not user_certificate:
+        if 'evidence_visit' in request.GET:
+            course_grade = CourseGradeFactory().create(user, course)
+            passed = is_course_passed(course, course_grade.summary)
+            if passed:
+                context['document_title'] = _("Course End")
+                context_course_title = course.display_name
+                context['course_title'] = context_course_title
+                user_fullname = user.profile.name
+                context['user_fullname'] = user_fullname
+                return render_to_response(course_completion_template_path, context)
         log.info(
             "Invalid cert: User %d does not have eligible cert for %s.",
             user_id,
@@ -604,7 +681,7 @@ def render_html_view(request, user_id, course_id):
     _update_social_context(request, context, course, user, user_certificate, platform_name)
 
     # Append/Override the existing view context values with certificate specific values
-    _update_certificate_context(context, user_certificate, platform_name)
+    _update_certificate_context(context, user_certificate, platform_name, preview_mode)
 
     # Append badge info
     _update_badge_context(context, course, user)

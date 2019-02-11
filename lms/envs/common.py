@@ -378,6 +378,21 @@ FEATURES = {
 
     # Whether to show receipt for honor mode after purchased.
     'SHOW_RECEIPT_FOR_HONOR': True,
+
+    # PDF certificates main logo.
+    'PDF_LOGO_MAIN': '',
+
+    # PDF certificates logo extra.
+    'PDF_LOGO_EXTRA': '',
+
+    # PDF Rector fullname.
+    'PDF_RECTOR_FULLNAME': '',
+
+    # PDF certificates fonts extra.
+    'PDF_FONTS_NORMAL': '/edx/app/edxapp/edx-platform/lms/static/certificates/fonts/Fontana/fontana-nd-aa-osf.ttf',
+
+    # PDF certificates fonts extra.
+    'PDF_FONTS_SEMIBOLD': '/edx/app/edxapp/edx-platform/lms/static/certificates/fonts/Fontana/Fontana-ND-Cc-OsF-Semibold.ttf',
 }
 
 # Ignore static asset files on import which match this pattern
@@ -1746,6 +1761,7 @@ REQUIRE_JS_PATH_OVERRIDES = {
     'js/courseware/toggle_element_visibility': 'js/courseware/toggle_element_visibility.js',
     'js/student_account/logistration_factory': 'js/student_account/logistration_factory.js',
     'js/student_profile/views/learner_profile_factory': 'js/student_profile/views/learner_profile_factory.js',
+    'js/learner_notes/views/learner_notes_factory': 'js/learner_notes/views/learner_notes_factory.js',
     'js/courseware/courseware_factory': 'js/courseware/courseware_factory.js',
     'js/groups/views/cohorts_dashboard_factory': 'js/groups/views/cohorts_dashboard_factory.js',
     'draggabilly': 'js/vendor/draggabilly.js'
@@ -2167,6 +2183,9 @@ INSTALLED_APPS = (
 
     # Unusual migrations
     'database_fixups',
+
+    # UserInfo
+    'openedx.core.djangoapps.userinfo',
 )
 
 ######################### CSRF #########################################
@@ -3057,3 +3076,9 @@ COURSE_ENROLLMENT_MODES = {
     "credit": {"slug": "credit", "display_name": _("Credit"), "min_price": 0},
     "honor": {"slug": "honor", "display_name": _("Honor"), "min_price": 0},
 }
+SLUG_PATTERN = ''
+for slug in COURSE_ENROLLMENT_MODES.keys():
+    SLUG_PATTERN += slug + '|'
+SLUG_PATTERN = SLUG_PATTERN[:-1]
+MODE_SLUG_PATTERN = r'(?:\/(?P<mode_slug>(slug_pattern)))?'
+COURSE_MODE_SLUG_PATTERN = MODE_SLUG_PATTERN.replace('slug_pattern', SLUG_PATTERN)

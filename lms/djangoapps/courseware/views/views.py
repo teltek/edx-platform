@@ -96,6 +96,8 @@ from xmodule.x_module import STUDENT_VIEW
 from ..entrance_exams import user_must_complete_entrance_exam
 from ..module_render import get_module_for_descriptor, get_module, get_module_by_usage_id
 
+from openedx.core.djangoapps.signals.signals import COURSE_PASS_GRADE
+
 log = logging.getLogger("edx.courseware")
 
 
@@ -103,7 +105,7 @@ log = logging.getLogger("edx.courseware")
 # credit and verified modes.
 REQUIREMENTS_DISPLAY_MODES = CourseMode.CREDIT_MODES + [CourseMode.VERIFIED]
 
-CertData = namedtuple("CertData", ["cert_status", "title", "msg", "download_url", "cert_web_view_url"])
+CertData = namedtuple("CertData", ["cert_status", "title", "msg", "download_url", "cert_web_view_url", "cert_mode"])
 
 
 def user_groups(user):
@@ -758,6 +760,16 @@ def _progress(request, course_key, student_id):
     # checking certificate generation configuration
     enrollment_mode, is_active = CourseEnrollment.enrollment_mode_for_user(student, course_key)
 
+    passed = is_course_passed(course, grade_summary)
+    if passed:
+        COURSE_PASS_GRADE.send_robust(
+            sender=CourseGradeFactory,
+            user=student,
+            course_key=course.id,
+            mode=enrollment_mode,
+            status=CertificateStatuses.downloadable,
+        )
+
     context = {
         'course': course,
         'courseware_summary': courseware_summary,
@@ -765,7 +777,7 @@ def _progress(request, course_key, student_id):
         'grade_summary': grade_summary,
         'staff_access': staff_access,
         'student': student,
-        'passed': is_course_passed(course, grade_summary),
+        'passed': passed,
         'credit_course_requirements': _credit_course_requirements(course_key, student),
         'certificate_data': _get_cert_data(student, course, course_key, is_active, enrollment_mode),
         'enrollment_mode': enrollment_mode
@@ -797,7 +809,8 @@ def _get_cert_data(student, course, course_key, is_active, enrollment_mode):
             _('Congratulations, you meet the requirements to receive a payment accreditation!'),
             _('You can keep working to get a better score, or pay to get an accreditation. Update your course registration form in your panel and get a payment accreditation.'),
             download_url=None,
-            cert_web_view_url=None
+            cert_web_view_url=None,
+            cert_mode=CourseMode.AUDIT
         )
 
     show_generate_cert_btn = (
@@ -808,13 +821,16 @@ def _get_cert_data(student, course, course_key, is_active, enrollment_mode):
     if not show_generate_cert_btn:
         return None
 
+    cert_mode = certs_api.get_certificate_mode(student, course_key)
+
     if certs_api.is_certificate_invalid(student, course_key):
         return CertData(
             CertificateStatuses.invalidated,
             _('Your accreditation has been invalidated'),
             _('Please contact your course team if you have any questions.'),
             download_url=None,
-            cert_web_view_url=None
+            cert_web_view_url=None,
+            cert_mode=cert_mode
         )
 
     cert_downloadable_status = certs_api.certificate_downloadable_status(student, course_key)
@@ -828,7 +844,7 @@ def _get_cert_data(student, course, course_key, is_active, enrollment_mode):
                 cert_web_view_url = certs_api.get_certificate_url(
                     course_id=course_key, uuid=cert_downloadable_status['uuid']
                 )
-                return CertData(cert_status, title, msg, download_url=None, cert_web_view_url=cert_web_view_url)
+                return CertData(cert_status, title, msg, download_url=None, cert_web_view_url=cert_web_view_url, cert_mode=cert_mode)
             else:
                 return CertData(
                     CertificateStatuses.generating,
@@ -838,11 +854,12 @@ def _get_cert_data(student, course, course_key, is_active, enrollment_mode):
                         "to it will appear here and on your Dashboard when it is ready."
                     ),
                     download_url=None,
-                    cert_web_view_url=None
+                    cert_web_view_url=None,
+                    cert_mode=cert_mode
                 )
 
         return CertData(
-            cert_status, title, msg, download_url=cert_downloadable_status['download_url'], cert_web_view_url=None
+            cert_status,title, msg, download_url=cert_downloadable_status['download_url'], cert_web_view_url=None, cert_mode=cert_mode
         )
 
     if cert_downloadable_status['is_generating']:
@@ -854,7 +871,8 @@ def _get_cert_data(student, course, course_key, is_active, enrollment_mode):
                 "it will appear here and on your Dashboard when it is ready."
             ),
             download_url=None,
-            cert_web_view_url=None
+            cert_web_view_url=None,
+            cert_mode=cert_mode
         )
 
     # If the learner is in verified modes and the student did not have
@@ -872,7 +890,8 @@ def _get_cert_data(student, course, course_key, is_active, enrollment_mode):
                 'verified identity.'
             ).format(platform_name=platform_name),
             download_url=None,
-            cert_web_view_url=None
+            cert_web_view_url=None,
+            cert_mode=cert_mode
         )
 
     return CertData(
@@ -880,7 +899,8 @@ def _get_cert_data(student, course, course_key, is_active, enrollment_mode):
         _('Congratulations, you qualified for an accreditation!'),
         _('You can keep working for a higher grade, or request your accreditation now.'),
         download_url=None,
-        cert_web_view_url=None
+        cert_web_view_url=None,
+        cert_mode=cert_mode
     )
 
 
@@ -1183,7 +1203,6 @@ def generate_user_cert(request, course_id):
         HttpResponse: 200 on success, 400 if a new certificate cannot be generated.
 
     """
-
     if not request.user.is_authenticated():
         log.info(u"Anon user trying to generate certificate for %s", course_id)
         return HttpResponseBadRequest(
@@ -1218,6 +1237,59 @@ def generate_user_cert(request, course_id):
         certs_api.generate_user_certificates(student, course.id, course=course, generation_mode='self')
         _track_successful_certificate_generation(student.id, course.id)
         return HttpResponse()
+
+# Grades can potentially be written - if so, let grading manage the transaction.
+@transaction.non_atomic_requests
+@require_POST
+def regenerate_user_cert(request, course_id):
+    """Regenerat a certificate for the user.
+
+    Certificate generation is allowed if:
+    * The user has passed the course, and
+    * The user does already have a completed certificate.
+
+    Note that if an error occurs during certificate generation
+    (for example, if the queue is down), then we simply mark the
+    certificate generation task status as "error" and re-run
+    the task with a management command.  To students, the certificate
+    will appear to be "generating" until it is re-run.
+
+    Args:
+        request (HttpRequest): The POST request to this view.
+        course_id (unicode): The identifier for the course.
+
+    Returns:
+        HttpResponse: 200 on success, 400 if a new certificate cannot be generated.
+
+    """
+    if not request.user.is_authenticated():
+        log.info(u"Anon user trying to generate certificate for %s", course_id)
+        return HttpResponseBadRequest(
+            _('You must be signed in to {platform_name} to create a certificate.').format(
+                platform_name=configuration_helpers.get_value('PLATFORM_NAME', settings.PLATFORM_NAME)
+            )
+        )
+
+    student = request.user
+    course_key = CourseKey.from_string(course_id)
+
+    course = modulestore().get_course(course_key, depth=2)
+    if not course:
+        return HttpResponseBadRequest(_("Course is not valid"))
+
+    if not is_course_passed(course, None, student, request):
+        return HttpResponseBadRequest(_("Your certificate will be available when you pass the course."))
+
+    certificate_status = certs_api.certificate_downloadable_status(student, course.id)
+
+    if certificate_status["is_downloadable"]:
+        certs_api.regenerate_user_certificates(student, course.id, course=course)
+        _track_successful_certificate_generation(student.id, course.id)
+        return HttpResponse()
+    elif certificate_status["is_generating"]:
+        return HttpResponseBadRequest(_("Certificate is being created."))
+    else:
+        return HttpResponseBadRequest(_("Certificate is not created."))
 
 
 def _track_successful_certificate_generation(user_id, course_id):  # pylint: disable=invalid-name

@@ -584,6 +584,13 @@ urlpatterns += (
         name='learner_profile',
     ),
 
+    # Learner notes
+    url(
+        r'^notes/(?P<username>[\w.@+-]+)$',
+        'learner_notes.views.learner_notes',
+        name='learner_notes',
+    ),
+
     # Student Notes
     url(
         r'^courses/{}/edxnotes'.format(
@@ -634,6 +641,13 @@ urlpatterns += (
         ),
         'courseware.views.views.generate_user_cert',
         name='generate_user_cert',
+    ),
+    url(
+        r'^courses/{}/regenerate_user_cert'.format(
+            settings.COURSE_ID_PATTERN,
+        ),
+        'courseware.views.views.regenerate_user_cert',
+        name='regenerate_user_cert',
     ),
 )
 
@@ -964,3 +978,8 @@ if settings.FEATURES.get('ENABLE_FINANCIAL_ASSISTANCE_FORM'):
             name='submit_financial_assistance_request'
         )
     )
+
+# URLs for managing userinfo
+urlpatterns += (
+    url(r'^userinfo/', include('openedx.core.djangoapps.userinfo.urls', namespace='userinfo')),
+)

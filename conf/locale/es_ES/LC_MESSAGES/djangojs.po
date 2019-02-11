@@ -3861,6 +3861,16 @@ msgstr "El nombre del certificado es obligatorio"
 msgid "Signatory field(s) has invalid data."
 msgstr "El/Los campo(s) de firma no son válidos."
 
+#: cms/static/js/certificates/models/certificate.js
+msgid "Certificate course credits cannot be empty."
+msgstr ""
+"Los créditos del curso para el certificado no pueden estar vacíos."
+
+#: cms/static/js/certificates/models/certificate.js
+msgid "Certificate course credits must be a number."
+msgstr ""
+"Los créditos del curso para el certificado deben ser un número."
+
 #: cms/static/js/certificates/views/certificate_details.js
 msgid "Edit this certificate?"
 msgstr "¿Modificar este certificado?"
@@ -7474,6 +7484,23 @@ msgstr ""
 msgid "Earned %(created)s."
 msgstr ""
 
+#: lms/templates/student_profile/badge.underscore
+#, python-format
+msgid "Grade: %(grade)s"
+msgstr "Nota: %(grade)s"
+
+#: lms/templates/student_profile/badge_list.underscore
+msgid ""
+"For already done past courses, if the badge is not shown, "
+"please visit the progress page of the course. If the badge "
+"still does not appear in this section, the course may be "
+"not configured to give badges."
+msgstr ""
+"Para cursos pasados ya realizados, si la insignia no se "
+"muestra, por favor visite la página de progreso del curso."
+" Si la insignia sigue sin mostrarse, es posible que el curso"
+" no esté configurado para generar insignias."
+
 #: openedx/features/learner_profile/static/learner_profile/templates/badge_placeholder.underscore
 msgid "What's Your Next Accomplishment?"
 msgstr ""
@@ -7496,7 +7523,7 @@ msgstr ""
 
 #: openedx/features/learner_profile/static/learner_profile/templates/share_modal.underscore
 msgid "Share on Mozilla Backpack"
-msgstr ""
+msgstr "Comparte en Mozilla Backpack"
 
 #: openedx/features/learner_profile/static/learner_profile/templates/share_modal.underscore
 msgid ""
@@ -7504,6 +7531,9 @@ msgid ""
 "Backpack account. Complete the following steps to add your certificate to "
 "Backpack."
 msgstr ""
+"Para compartir tu certificado en Mozilla Backpack, primero debes tener "
+"una cuenta Backpack. Completa los siguientes pasos para añadir tu "
+"certificado a Backpack."
 
 #: openedx/features/learner_profile/static/learner_profile/templates/share_modal.underscore
 #, python-format
@@ -7511,6 +7541,31 @@ msgid ""
 "Create a %(link_start)sMozilla Backpack%(link_end)s account, or log in to "
 "your existing account"
 msgstr ""
+"Crea una cuenta en %(link_start)sMozilla Backpack%(link_end)s, o accede "
+"con tu cuenta existente"
+
+#: lms/templates/student_profile/share_modal.underscore
+msgid "Share on Badgr"
+msgstr "Comparte en Badgr"
+
+#: lms/templates/student_profile/share_modal.underscore
+msgid ""
+"To share your certificate on Badgr, you must first have a "
+"Backpack account. Complete the following steps to add your certificate to "
+"Backpack."
+msgstr ""
+"Para compartir tu certificado en Badgr Backpack, primero debes tener "
+"una cuenta Backpack. Completa los siguientes pasos para añadir tu "
+"certificado a Backpack."
+
+#: lms/templates/student_profile/share_modal.underscore
+#, python-format
+msgid ""
+"Create a %(link_start)sBadgr Backpack%(link_end)s account, or log in to "
+"your existing account"
+msgstr ""
+"Crea una cuenta en %(link_start)sBadgr Backpack%(link_end)s, o accede "
+"con tu cuenta existente"
 
 #: openedx/features/learner_profile/static/learner_profile/templates/share_modal.underscore
 #, python-format
@@ -9148,3 +9203,68 @@ msgstr ""
 #: cms/templates/js/video/transcripts/messages/transcripts-use-existing.underscore
 msgid "Use Current Transcript"
 msgstr "Usar transcripción actual"
+
+#: lms/static/js/verify_student/views/make_payment_step_view.js
+msgid "Introduce your National Identify Number."
+msgstr ""
+"Introduzca su Documento Nacional de Identidad."
+
+#: lms/templates/verify_student/make_payment_step.underscore
+msgid ""
+"In order to obtain a Certificate, you need to introduce your "
+"National Identity Number and pay."
+msgstr ""
+"Para obtener un Certificado, es necesario que introduzcas "
+"tu DNI y realices el pago."
+
+#: lms/templates/verify_student/make_payment_step.underscore
+msgid "National Identity Number *"
+msgstr "Documento Nacional de Identidad *"
+
+#: cms/templates/js/certificate-details.underscore
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course Program"
+msgstr "Programa del curso"
+
+#: cms/static/js/certificates/views/certificate_editor.js
+msgid "Upload course program."
+msgstr "Sube el programa del curso."
+
+#: cms/static/js/certificates/views/certificate_editor.js
+msgid "File must be in PDF format."
+msgstr "El archivo debe ser en formato PDF."
+
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course Program Override"
+msgstr "Sobreescribir el programa del curso"
+
+#: cms/templates/js/certificate-editor.underscore
+msgid ""
+"Upload a PDF file with the program of the Course "
+"to display on certificates. Leave blank to not use it."
+msgstr ""
+"Sube un archivo PDF con el programa del curso para "
+"mostrarlo en el certificado. Déjalo en blanco para no "
+"usarlo."
+
+#: cms/templates/js/certificate-details.underscore
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course Credits"
+msgstr "Créditos del curso"
+
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course credits"
+msgstr "Créditos del curso"
+
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course Credits Override"
+msgstr "Sobreescribir los créditos del curso"
+
+#: cms/templates/js/certificate-editor.underscore
+msgid ""
+"Specify an alternative to the official course "
+"credits number to display on certificates."
+msgstr ""
+"Especifica una alternativa al número de créditos "
+"oficiales del curso para mostrar en el certificado."
+

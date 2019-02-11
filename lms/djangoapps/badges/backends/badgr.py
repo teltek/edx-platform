@@ -45,6 +45,13 @@ class BadgrBackend(BadgeBackend):
         """
         return "{}/badges".format(self._base_url)
 
+    @lazy
+    def _badges_list_url(self):
+        """
+        URL for generating a new Badge specification
+        """
+        return "{}/badges".format(self._base_url)
+
     def _badge_url(self, slug):
         """
         Get the URL for a course's badge in a given mode.
@@ -92,27 +99,41 @@ class BadgrBackend(BadgeBackend):
         """
         Create the badge class on Badgr.
         """
-        image = badge_class.image
-        # We don't want to bother validating the file any further than making sure we can detect its MIME type,
-        # for HTTP. The Badgr-Server should tell us if there's anything in particular wrong with it.
-        content_type, __ = mimetypes.guess_type(image.name)
-        if not content_type:
-            raise ValueError(
-                u"Could not determine content-type of image! Make sure it is a properly named .png file. "
-                u"Filename was: {}".format(image.name)
+        try:
+            badge_class.image.open()
+            image = badge_class.image
+            # We don't want to bother validating the file any further than making sure we can detect its MIME type,
+            # for HTTP. The Badgr-Server should tell us if there's anything in particular wrong with it.
+            content_type, __ = mimetypes.guess_type(image.name)
+            if not content_type:
+                raise ValueError(
+                    u"Could not determine content-type of image! Make sure it is a properly named .png file. "
+                    u"Filename was: {}".format(image.name)
+                )
+            files = {'image': (image.name, image, content_type)}
+            data = {
+                'name': badge_class.display_name,
+                'criteria': badge_class.criteria,
+                'slug': self._slugify(badge_class),
+                'description': badge_class.description,
+            }
+            result = requests.post(
+                self._badge_create_url, headers=self._get_headers(), data=data, files=files,
+                timeout=settings.BADGR_TIMEOUT
             )
-        files = {'image': (image.name, image, content_type)}
-        data = {
-            'name': badge_class.display_name,
-            'criteria': badge_class.criteria,
-            'slug': self._slugify(badge_class),
-            'description': badge_class.description,
-        }
-        result = requests.post(
-            self._badge_create_url, headers=self._get_headers(), data=data, files=files,
-            timeout=settings.BADGR_TIMEOUT
-        )
-        self._log_if_raised(result, data)
+            badge_class.image.close()
+            self._log_if_raised(result, data)
+        except Exception as e:
+            LOGGER.error('Error on post badge_class info with slug "{0}" to Badgr Server : {1}'.format(badge_class.slug, e))
+        try:
+            result_json = result.json()
+            if 'slug' in result_json:
+                badgr_server_slug = result_json['slug']
+                badge_class.badgr_server_slug = badgr_server_slug
+                badge_class.save()
+        except Exception as excep:
+            LOGGER.error('Error on saving Badgr Server Slug of badge_class slug "{0}" with response json "{1}" : {2}'.format(badge_class.slug, result.json(), excep))
+
 
     def _send_assertion_created_event(self, user, assertion):
         """
@@ -122,6 +143,7 @@ class BadgrBackend(BadgeBackend):
             'edx.badge.assertion.created', {
                 'user_id': user.id,
                 'badge_slug': assertion.badge_class.slug,
+                'badge_badgr_server_slug': assertion.badge_class.badgr_server_slug,
                 'badge_name': assertion.badge_class.display_name,
                 'issuing_component': assertion.badge_class.issuing_component,
                 'course_id': unicode(assertion.badge_class.course_id),
@@ -142,7 +164,7 @@ class BadgrBackend(BadgeBackend):
             'evidence': evidence_url,
         }
         response = requests.post(
-            self._assertion_url(self._slugify(badge_class)), headers=self._get_headers(), data=data,
+            self._assertion_url(badge_class.badgr_server_slug), headers=self._get_headers(), data=data,
             timeout=settings.BADGR_TIMEOUT
         )
         self._log_if_raised(response, data)
@@ -162,21 +184,50 @@ class BadgrBackend(BadgeBackend):
         """
         return {'Authorization': 'Token {}'.format(settings.BADGR_API_TOKEN)}
 
+    def _check_created_badges(self, badge_class):
+        result = requests.get(
+            self._badges_list_url, headers=self._get_headers(),
+            timeout=settings.BADGR_TIMEOUT
+        )
+        self._log_if_raised(result, {})
+        try:
+            result_json = result.json()
+            for server_badge_class in result_json:
+                same_criteria = False
+                if 'criteria_url' in server_badge_class:
+                    if server_badge_class['criteria_url'] == badge_class.criteria:
+                        same_criteria = True
+                    if same_criteria and 'slug' in server_badge_class:
+                        badge_class.badgr_server_slug = server_badge_class['slug']
+                        badge_class.save()
+                        return True
+        except Exception as excep:
+            LOGGER.error('Error on checking Badge Classes: {0}'.format(excep))
+
+        return False
+
     def _ensure_badge_created(self, badge_class):
         """
         Verify a badge has been created for this badge class, and create it if not.
         """
-        slug = self._slugify(badge_class)
+        slug = badge_class.badgr_server_slug
         if slug in BadgrBackend.badges:
             return
         response = requests.get(self._badge_url(slug), headers=self._get_headers(), timeout=settings.BADGR_TIMEOUT)
         if response.status_code != 200:
-            self._create_badge(badge_class)
+            assigned = False
+            if badge_class.criteria:
+                assigned = self._check_created_badges(badge_class)
+            if not assigned:
+                self._create_badge(badge_class)
         BadgrBackend.badges.append(slug)
 
     def award(self, badge_class, user, evidence_url=None):
         """
         Make sure the badge class has been created on the backend, and then award the badge class to the user.
         """
-        self._ensure_badge_created(badge_class)
-        return self._create_assertion(badge_class, user, evidence_url)
+        try:
+            self._ensure_badge_created(badge_class)
+            return self._create_assertion(badge_class, user, evidence_url)
+        except Exception as e:
+            LOGGER.error('Exception on awarding user "{user}". Error: {e}'.format(user=user, e=e))

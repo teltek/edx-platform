@@ -306,7 +306,9 @@
         }
     }
 
-    .badge-paging-header {
+    .badge-paging-header,
+    .badge-paging-subheader,
+    .certificate-paging-header {
         padding-top: $baseline;
     }
 
@@ -314,31 +316,39 @@
         @extend %page-content-nav;
     }
 
-    .badge-set-display {
+    .badge-set-display,
+    .certificate-set-display {
         @extend .container;
         padding: 0 0;
 
-        .badge-list {
+        .badge-list,
+        .certificate-list {
             // We're using a div instead of ul for accessibility, so we have to match the style
             // used by ul.
             margin: 1em 0;
             padding: 0 0 0 40px;
         }
 
-        .badge-display {
+        .badge-display,
+        .certificate-display {
             width: 50%;
             display: inline-block;
             vertical-align: top;
             padding: 2em 0;
-            .badge-image-container {
+            .badge-image-container,
+            .certificate-image-container {
                 padding-right: $baseline;
                 margin-left: 1em;
                 width: 20%;
                 vertical-align: top;
                 display: inline-block;
-                img.badge {
+                img.badge,
+                img.certificate {
                     width: 100%;
                 }
+                img.certificate {
+		    max-height: 50px;
+		}
                 .accomplishment-placeholder {
                     border: 4px dotted $gray-l4;
                     border-radius: 50%;
@@ -347,22 +357,33 @@
                     padding-bottom: 100%;
                 }
             }
-            .badge-details {
+            .badge-details,
+            .certificate-details {
                 @extend %t-copy-sub1;
                 @extend %t-regular;
                 max-width: 70%;
                 display: inline-block;
                 color: $gray-d1;
-                .badge-name {
+                .badge-name,
+                .certificate-name {
                     @extend %t-strong;
                     @extend %t-copy-base;
                     color: $gray-d3;
                 }
-                .badge-description {
+                .badge-description,
+                .certificate-description {
                     padding-bottom: $baseline;
                     line-height: 1.5em;
                 }
-                .badge-date-stamp{
+                .badge-description.badge {
+                    padding-bottom: 0em;
+                    margin-top: 0em;
+                }
+                .badge-description.badge.grade {
+                    padding-bottom: $baseline;;
+                }
+                .badge-date-stamp,
+                .certificate-date-stamp {
                     @extend %t-copy-sub1;
                 }
                 .find-button-container {
@@ -372,6 +393,9 @@
                     border-radius: 5px;
                     font-weight: bold;
                     color: $blue-s3;
+                }
+                .share-prefix-certificate {
+		    color: #323232;
                 }
                 .share-button {
                     @extend %t-action3;
@@ -406,7 +430,8 @@
                 }
             }
         }
-        .badge-placeholder {
+        .badge-placeholder,
+        .certificate-placeholder {
             background-color: $gray-l7;
             box-shadow: inset 0 0 4px 0 $gray-l4;
         }

@@ -4222,6 +4222,18 @@ msgstr ""
 msgid "Completed the course \"{course_name}\" ({course_mode})"
 msgstr ""
 
+#: lms/djangoapps/badges/events/course_complete.py
+#, python-brace-format
+msgid ""
+"Completed the course \"{course_name}\" ({start_date} - "
+"{end_date})"
+msgstr ""
+
+#: lms/djangoapps/badges/events/course_complete.py
+#, python-brace-format
+msgid "Completed the course \"{course_name}\""
+msgstr ""
+
 #: lms/djangoapps/badges/models.py
 msgid "The badge image must be square."
 msgstr ""
@@ -4619,6 +4631,27 @@ msgstr ""
 msgid ""
 "Credential for course {course_title} for student {user_fullname} | "
 "{platform_name}"
+msgstr ""
+
+#. Translators:  This text is bound to the HTML 'title' element of the page
+#. and appears in the browser title bar
+#: lms/djangoapps/certificates/views/webview.py
+#, python-brace-format
+msgid ""
+"{accreditation_title} for course {course_title} for student {user_fullname} | "
+"{platform_name}"
+msgstr ""
+
+#: lms/djangoapps/certificates/views/webview.py
+msgid "Accreditation"
+msgstr ""
+
+#: lms/djangoapps/certificates/views/webview.py
+msgid "Credential"
+msgstr ""
+
+#: lms/djangoapps/certificates/views/webview.py
+msgid "Certificate"
 msgstr ""
 
 #. Translators:  This text fragment appears after the student's name
@@ -12640,6 +12673,15 @@ msgid ""
 "We cannot find a certificate with this URL or ID number. If you are trying "
 "to validate a certificate, make sure that the URL or ID number is correct. "
 "If you are sure that the URL or ID number is correct, contact support."
+msgstr ""
+
+#: lms/templates/certificates/course_complete.html
+msgid "Course Completion"
+msgstr ""
+
+#: lms/templates/certificates/course_complete.html
+msgid ""
+"User '{user_fullname}' has completed the course '{course_title}'."
 msgstr ""
 
 #: lms/templates/certificates/server-error.html
@@ -20926,4 +20968,85 @@ msgstr ""
 msgid ""
 "A new revision was created: Merge between Revision #%(r1)d and Revision "
 "#%(r2)d"
+msgstr ""
+
+#: openedx/core/djangoapps/userinfo/views.py:26
+msgid ""
+"National Id not given. You need to specify your National Identity Number."
+msgstr ""
+
+#: openedx/core/djangoapps/userinfo/views.py:34
+#: openedx/core/djangoapps/userinfo/views.py:44
+#, python-brace-format
+msgid ""
+"Error on saving National Id '{national_id}' of user '{username}': {exception}"
+msgstr ""
+
+#: openedx/core/djangoapps/userinfo/views.py:42
+#, python-brace-format
+msgid "Already saved with value '{national_id}'."
+msgstr ""
+
+#: lms/djangoapps/certificates/pdf.py
+#, python-brace-format
+msgid ""
+"{strong_start}NATIONAL UNIVERSITY OF DISTANCE "
+"EDUCATION{strong_end}"
+msgstr ""
+
+#: lms/djangoapps/certificates/pdf.py
+#, python-brace-format
+msgid ""
+"The Rector of the National University of Distance "
+"Education,{breakline}considering that{breakline}"
+"{breakline}{studentstyle_start}{student_name}"
+"{studentstyle_end}{breakline}with National "
+"Identity Number: {student_national_id}{breakline}"
+"{breakline}has successfully finished the UNED "
+"Abierta course"
+msgstr ""
+
+#: lms/djangoapps/certificates/pdf.py
+#, python-brace-format
+msgid ""
+"According to the program on the back of this "
+"document,{breakline}issues the present{breakline}"
+"{breakline}{strong_start}{certificatestyle_start}"
+"CERTIFICATE OF USE{certificatestyle_end}{strong_end}"
+"{breakline}{breakline}{fontdate_start}{date}{fontdate_end}"
+msgstr ""
+
+#: lms/djangoapps/certificates/pdf.py
+#, python-brace-format
+msgid ""
+"{color_start}The Rector of the UNED,{color_end}"
+msgstr ""
+
+#: lms/djangoapps/certificates/pdf.py
+#, python-brace-format
+msgid ""
+"{fontsize_start}Hours number: {fontcolor_start}"
+"{course_effort}{fontcolor_end} hours{fontsize_end}{breakline}"
+"{fontsize_start}UNED, in agreement with the Commission for Regional Study"
+"Centres, Students, Employment and Culture, delegated by the Government"
+"Council, accredits this course as {fontcolor_start}"
+"{course_credits}{fontcolor_end} ECTS credit*{fontsize_end}{breakline}{breakline}"
+"This degree is given as suitable of {fontcolor_start}UNED{fontcolor_end}"
+" and it does not have the official nature established in "
+"{fontcolor_start}number 30 of the Organic Law 4/2007{fontcolor_end} "
+"that modifies the {fontcolor_start}article 34 of Organic Law 6/2001 "
+"of Universities{fontcolor_end}. The authenticity of this document, "
+"as well as its validity and validity, can be checked through the "
+"{fontcolor_start}following URL{fontcolor_end}: "
+"{link_start}{cert_url}{link_end}{breakline}"
+"* ECTS credits: recognizable as credits for cultural university activities "
+"in UNED degrees and those of universities and centers with reciprocal agreements"
+msgstr ""
+
+#: lms/templates/certificates/server-preview.html
+msgid "Not allowed to print certificate in preview mode."
+msgstr ""
+
+#: lms/templates/certificates/server-preview.html
+msgid "You're not allowed to print a certificate in preview mode."
 msgstr ""

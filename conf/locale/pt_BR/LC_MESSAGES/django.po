@@ -5073,6 +5073,20 @@ msgstr ""
 msgid "Completed the course \"{course_name}\" ({course_mode})"
 msgstr "Concluído o curso \"{course_name}\" ({course_mode})"
 
+#: lms/djangoapps/badges/events/course_complete.py
+#, python-brace-format
+msgid ""
+"Completed the course \"{course_name}\" ({start_date} - "
+"{end_date})"
+msgstr ""
+"Concluído o curso \"{course_name}\" ({start_date} - "
+"{end_date})"
+
+#: lms/djangoapps/badges/events/course_complete.py
+#, python-brace-format
+msgid "Completed the course \"{course_name}\""
+msgstr "Concluído o curso \"{course_name}\""
+
 #: lms/djangoapps/badges/models.py
 msgid "The badge image must be square."
 msgstr "A imagem do emblema deve ser quadrada."
@@ -5519,6 +5533,40 @@ msgid ""
 msgstr ""
 "Este é um certificado válido {platform_name} para {user_name} que participou"
 " no {partner_short_name} {course_number}"
+
+#. Translators:  This text is bound to the HTML 'title' element of the page
+#. and appears in the browser title bar
+#: lms/djangoapps/certificates/views/webview.py
+#, python-brace-format
+msgid ""
+"Credential for course {course_title} for student {user_fullname} | "
+"{platform_name}"
+msgstr ""
+"Credencial do curso {course_title} para o aluno {user_fullname} | "
+"{platform_name}"
+
+#. Translators:  This text is bound to the HTML 'title' element of the page
+#. and appears in the browser title bar
+#: lms/djangoapps/certificates/views/webview.py
+#, python-brace-format
+msgid ""
+"{accreditation_title} for course {course_title} for student {user_fullname} | "
+"{platform_name}"
+msgstr ""
+"{accreditation_title} do curso {course_title} para o aluno {user_fullname} | "
+"{platform_name}"
+
+#: lms/djangoapps/certificates/views/webview.py
+msgid "Accreditation"
+msgstr "Acreditação"
+
+#: lms/djangoapps/certificates/views/webview.py
+msgid "Credential"
+msgstr "Credencial"
+
+#: lms/djangoapps/certificates/views/webview.py
+msgid "Certificate"
+msgstr "Certificado"
 
 #. Translators:  This text is bound to the HTML 'title' element of the page
 #. and appears in the browser title bar
@@ -15171,6 +15219,15 @@ msgstr ""
 "está tentando validar um certificado, certifique-se de que a URL ou o número"
 " de ID esteja correto. Se você tem certeza de que a URL ou número de ID "
 "estão corretos, contate o suporte."
+
+#: lms/templates/certificates/course_complete.html
+msgid "Course Completion"
+msgstr ""
+
+#: lms/templates/certificates/course_complete.html
+msgid ""
+"User '{user_fullname}' has completed the course '{course_title}'."
+msgstr ""
 
 #: lms/templates/certificates/server-error.html
 msgid "Invalid Certificate Configuration."
@@ -25062,3 +25119,120 @@ msgid ""
 msgstr ""
 "Uma nova revisão foi criada: combinar entre Revisão #%(r1)d e Revisão "
 "#%(r2)d"
+
+#: openedx/core/djangoapps/userinfo/views.py:26
+msgid ""
+"National Id not given. You need to specify your National Identity Number."
+msgstr ""
+"ID nacional não dado. Você precisa especificar "
+"o seu Número de Identidade Nacional."
+
+#: openedx/core/djangoapps/userinfo/views.py:34
+#: openedx/core/djangoapps/userinfo/views.py:44
+#, python-brace-format
+msgid ""
+"Error on saving National Id '{national_id}' of user '{username}': {exception}"
+msgstr ""
+"Erro ao salvar o ID nacional '{national_id}' do "
+"usuário '{username}': {exception}"
+
+#: openedx/core/djangoapps/userinfo/views.py:42
+#, python-brace-format
+msgid "Already saved with value '{national_id}'."
+msgstr "Já foi salvo com o valor '{national_id}'."
+
+#: lms/djangoapps/certificates/pdf.py
+#, python-brace-format
+msgid ""
+"{strong_start}NATIONAL UNIVERSITY OF DISTANCE "
+"EDUCATION{strong_end}"
+msgstr ""
+"{strong_start}UNIVERSIDADE NACIONAL DE ENSINO "
+"À DISTÂNCIA{strong_end}"
+
+#: lms/djangoapps/certificates/pdf.py
+#, python-brace-format
+msgid ""
+"The Rector of the National University of Distance "
+"Education,{breakline}considering that{breakline}"
+"{breakline}{studentstyle_start}{student_name}"
+"{studentstyle_end}{breakline}with National "
+"Identity Number: {student_national_id}{breakline}"
+"{breakline}has successfully finished the UNED "
+"Abierta course"
+msgstr ""
+"O Reitor da Universidade Nacional de Ensino à "
+"Distância,{breakline}declara que{breakline}"
+"{breakline}{studentstyle_start}{student_name}"
+"{studentstyle_end}{breakline}com o seguinte "
+"número de cidadão: {student_national_id}{breakline}"
+"{breakline}concluiu o Curso da UNED Aberta."
+
+#: lms/djangoapps/certificates/pdf.py
+#, python-brace-format
+msgid ""
+"According to the program on the back of this "
+"document,{breakline}issues the present{breakline}"
+"{breakline}{strong_start}{certificatestyle_start}"
+"CERTIFICATE OF USE{certificatestyle_end}{strong_end}"
+"{breakline}{breakline}{fontdate_start}{date}{fontdate_end}"
+msgstr ""
+"De acordo com o programa especificado no verso "
+"deste documento,{breakline}emite o seguinte{breakline}"
+"{breakline}{strong_start}{certificatestyle_start}"
+"CERTIFICADO DE UTILIZAÇÃO{certificatestyle_end}{strong_end}"
+"{breakline}{breakline}{fontdate_start}{date}{fontdate_end}"
+
+#: lms/djangoapps/certificates/pdf.py
+#, python-brace-format
+msgid ""
+"{color_start}The Rector of the UNED,{color_end}"
+msgstr ""
+"{color_start}O Reitor da UNED,{color_end}"
+
+#: lms/djangoapps/certificates/pdf.py
+#, python-brace-format
+msgid ""
+"{fontsize_start}Hours number: {fontcolor_start}"
+"{course_effort}{fontcolor_end} hours{fontsize_end}{breakline}"
+"{fontsize_start}UNED, in agreement with the Commission for Regional Study"
+"Centres, Students, Employment and Culture, delegated by the Government"
+"Council, accredits this course as {fontcolor_start}"
+"{course_credits}{fontcolor_end} ECTS credit*{fontsize_end}{breakline}{breakline}"
+"This degree is given as suitable of {fontcolor_start}UNED{fontcolor_end}"
+" and it does not have the official nature established in "
+"{fontcolor_start}number 30 of the Organic Law 4/2007{fontcolor_end} "
+"that modifies the {fontcolor_start}article 34 of Organic Law 6/2001 "
+"of Universities{fontcolor_end}. The authenticity of this document, "
+"as well as its validity and validity, can be checked through the "
+"{fontcolor_start}following URL{fontcolor_end}: "
+"{link_start}{cert_url}{link_end}{breakline}"
+"* ECTS credits: recognizable as credits for cultural university activities "
+"in UNED degrees and those of universities and centers with reciprocal agreements"
+msgstr ""
+"{fontsize_start}Número de horas: {fontcolor_start}"
+"{course_effort}{fontcolor_end} horas{fontsize_end}{breakline}"
+"{fontsize_start}A UNED, por acordo da Comissão de Centros Associados,"
+" Estudantes, Emprego e Cultura, delegada do Conselho de Governo,"
+" reconhece para este curso  {fontcolor_start}"
+"{course_credits}{fontcolor_end} créditos ECTS*{fontsize_end}{breakline}{breakline}"
+"As horas deste curso estão de acordo com os parâmetros da "
+"{fontcolor_start}UNED{fontcolor_end} e não possuem a natureza oficial "
+"estabelecida no {fontcolor_start}número 30 do Decreto Lei 4/2007"
+"{fontcolor_end} que modifica o {fontcolor_start}artigo 34 do decreto "
+"lei 6/2001 das Universidades{fontcolor_end}. A autenticidade deste "
+"documento, assim como a sua validade, podem ser verificadas no "
+"{fontcolor_start}seguinte URL{fontcolor_end}: "
+"{link_start}{cert_url}{link_end}{breakline}"
+"* Créditos ECTS: reconhecidos como créditos pelas atividades universitárias culturais "
+"nos graus da UNED e das universidades e centros com acordo de reconhecimento mútuo."
+
+#: lms/templates/certificates/server-preview.html
+msgid "Not allowed to print certificate in preview mode."
+msgstr "Não é permitido imprimir certificado no modo de visualização."
+
+#: lms/templates/certificates/server-preview.html
+msgid "You're not allowed to print a certificate in preview mode."
+msgstr ""
+"Você não tem permissão para imprimir um certificado no modo de "
+"visualização."

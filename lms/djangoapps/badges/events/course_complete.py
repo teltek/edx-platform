@@ -12,6 +12,8 @@ from badges.models import CourseCompleteImageConfiguration, BadgeClass, BadgeAss
 from badges.utils import site_prefix, requires_badges_enabled
 from xmodule.modulestore.django import modulestore
 
+from course_modes.models import CourseMode
+
 LOGGER = logging.getLogger(__name__)
 
 
@@ -39,16 +41,14 @@ def badge_description(course, mode):
     Returns a description for the earned badge.
     """
     if course.end:
-        return _(u'Completed the course "{course_name}" ({course_mode}, {start_date} - {end_date})').format(
+        return _(u'Completed the course "{course_name}" ({start_date} - {end_date})').format(
             start_date=course.start.date(),
             end_date=course.end.date(),
             course_name=course.display_name,
-            course_mode=mode,
         )
     else:
-        return _(u'Completed the course "{course_name}" ({course_mode})').format(
+        return _(u'Completed the course "{course_name}"').format(
             course_name=course.display_name,
-            course_mode=mode,
         )
 
 
@@ -80,7 +80,8 @@ def get_completion_badge(course_id, user):
     ).order_by('-is_active')
     if not badge_classes:
         return None
-    mode = badge_classes[0].mode
+    # NOTE: Force only one badge per user and course
+    mode = CourseMode.AUDIT
     course = modulestore().get_course(course_id)
     if not course.issue_badges:
         return None

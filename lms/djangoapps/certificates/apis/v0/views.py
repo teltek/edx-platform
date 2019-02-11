@@ -3,9 +3,13 @@ import logging
 
 from opaque_keys import InvalidKeyError
 from opaque_keys.edx.keys import CourseKey
+from rest_framework import generics
 from rest_framework.generics import GenericAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+
+from certificates.models import GeneratedCertificate, CertificateStatuses
+from .serializers import CertificateClassSerializer
 
 from lms.djangoapps.certificates.api import get_certificate_for_user
 from openedx.core.lib.api import (
@@ -112,3 +116,81 @@ class CertificatesDetailView(GenericAPIView):
                 "grade": user_cert.get('grade')
             }
         )
+
+
+class UserCertificatesList(generics.ListAPIView):
+    """
+    ** Use cases **
+
+        Request a list of certificate for a user, optionally constrained to a course.
+
+    ** Example Requests **
+
+        GET /api/certificates/v0/certificates/{username}/list
+
+    ** Response Values **
+
+        Body comprised of a list of objects with the following fields:
+
+        * generated_certificate: The generated certificate of student and course. Represented as an object
+          with the following fields:
+            * course_id: The course key of the course this certificate is scoped to, or null if it isn't scoped to a course.
+            * verify_uuid: The unique hashed string that identifies this generated certificate.
+            * mode: The enrollment mode of student in course.
+            * grade: The final grade of the student in the course.
+            * created_date: The date the certificate was created.
+            * image_url: A URL to the icon image used to represent this award, the course image.
+            * display_name: The display name of the course.
+
+    ** Returns **
+
+        * 200 on success, with a list of Generated Certificate objects.
+        * 403 if a user who does not have permission to masquerade as
+          another user specifies a username other than their own.
+        * 404 if the specified user does not exist
+
+        {
+            "count": 7,
+            "previous": null,
+            "num_pages": 1,
+            "results": [
+                {
+                    "course_id": "course-v1:edX+DemoX+Demo_Course",
+                    "verify_uuid": "3df0b2f277e24356bb016f8cddbd8d83",
+                    "mode": "honor",
+                    "grade": "0.83",
+                    "created_date": "2018-08-06 15:42:37",
+                    "image_url": "http://certificates.example.com/media/issued/cd75b69fc1c979fcc1697c8403da2bdf.png",
+                    "display_name": "Course of Applied Informatics",
+                },
+            ...
+            ]
+        }
+    """
+    serializer_class = CertificateClassSerializer
+    authentication_classes = (
+        authentication.OAuth2AuthenticationAllowInactiveUser,
+        authentication.SessionAuthenticationAllowInactiveUser
+    )
+    permission_classes = (
+        IsAuthenticated,
+        permissions.IsUserInUrlOrStaff
+    )
+
+    def filter_queryset(self, queryset):
+        """
+        Return most recent to least recent certificate.
+        """
+        return queryset.order_by('-created_date')
+
+    def get_queryset(self):
+        """
+        Get all certificates for the username specified.
+        """
+        try:
+            return GeneratedCertificate.objects.filter(user__username=self.kwargs['username'], status=CertificateStatuses.downloadable)
+        except GeneratedCertificate.DoesNotExist:
+            pass
+
+        return None
+

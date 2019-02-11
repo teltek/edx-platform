@@ -30,7 +30,7 @@ from certificates.models import (
     certificate_status_for_student,
 )
 from certificates.queue import XQueueCertInterface
-
+from course_modes.models import CourseMode
 
 log = logging.getLogger("edx.certificate")
 MODES = GeneratedCertificate.MODES
@@ -609,3 +609,22 @@ def get_certificate_footer_context():
         data.update({'company_about_url': about})
 
     return data
+
+
+def get_certificate_mode(student, course_key):
+    """
+    Gets generated certificate mode.
+
+    Arguments:
+        student (user object): logged-in user
+        course_key (CourseKey): The course identifier.
+
+    Returns:
+        CourseMode.slug
+    """
+    mode = None
+    certificate = GeneratedCertificate.certificate_for_student(student, course_key)
+    if certificate is not None:
+        mode = certificate.mode
+
+    return mode

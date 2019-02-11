@@ -62,7 +62,7 @@ from util.date_utils import get_default_time_display
 from util.db import outer_atomic
 from xmodule.modulestore.django import modulestore
 from django.contrib.staticfiles.storage import staticfiles_storage
-
+from openedx.core.djangoapps.userinfo.models import NationalId
 
 log = logging.getLogger(__name__)
 
@@ -209,7 +209,8 @@ class PayAndVerifyView(View):
         self, request, course_id,
         always_show_payment=False,
         current_step=None,
-        message=FIRST_TIME_VERIFY_MSG
+        message=FIRST_TIME_VERIFY_MSG,
+        mode_slug=None
     ):
         """
         Render the payment and verification flow.
@@ -280,7 +281,7 @@ class PayAndVerifyView(View):
         #
         # Nonetheless, for the time being we continue to make the really ugly assumption
         # that at some point there was a paid course mode we can query for the price.
-        relevant_course_mode = self._get_paid_mode(course_key)
+        relevant_course_mode = self._get_paid_mode(course_key, mode_slug)
 
         # If we can find a relevant course mode, then log that we're entering the flow
         # Otherwise, this course does not support payment/verification, so respond with a 404.
@@ -347,11 +348,14 @@ class PayAndVerifyView(View):
             course_key,
             user_is_trying_to_pay,
             request.user,
-            sku_to_use
+            sku_to_use,
+            mode_slug
         )
         if redirect_response is not None:
             return redirect_response
 
+        always_show_payment, mode_difference_price = self._get_difference_price(request.user, course_key, mode_slug, relevant_course_mode, already_paid, always_show_payment)
+        national_identity_number = self._get_national_identity_number(request.user)
         display_steps = self._display_steps(
             always_show_payment,
             already_verified,
@@ -431,13 +435,15 @@ class PayAndVerifyView(View):
             'capture_sound': staticfiles_storage.url("audio/camera_capture.wav"),
             'nav_hidden': True,
             'is_ab_testing': 'begin-flow' in request.path,
+            'mode_difference_price': mode_difference_price,
+            'national_identity_number': national_identity_number
         }
 
         return render_to_response("verify_student/pay_and_verify.html", context)
 
     def _redirect_if_necessary(
             self, message, already_verified, already_paid, is_enrolled, course_key,  # pylint: disable=bad-continuation
-            user_is_trying_to_pay, user, sku  # pylint: disable=bad-continuation
+            user_is_trying_to_pay, user, sku, mode_slug  # pylint: disable=bad-continuation
     ):
         """Redirect the user to a more appropriate page if necessary.
 
@@ -472,8 +478,10 @@ class PayAndVerifyView(View):
         """
         url = None
         course_kwargs = {'course_id': unicode(course_key)}
+        course_slug_kwargs = {'course_id': unicode(course_key), 'mode_slug': mode_slug}
+        enrollment_mode, is_active = CourseEnrollment.enrollment_mode_for_user(user, course_key)
 
-        if already_verified and already_paid:
+        if already_verified and already_paid and mode_slug and mode_slug == enrollment_mode:
             # If they've already paid and verified, there's nothing else to do,
             # so redirect them to the dashboard.
             if message != self.PAYMENT_CONFIRMATION_MSG:
@@ -483,18 +491,20 @@ class PayAndVerifyView(View):
                 # If the user is already enrolled but hasn't yet paid,
                 # then the "upgrade" messaging is more appropriate.
                 if not already_paid:
-                    url = reverse('verify_student_upgrade_and_verify', kwargs=course_kwargs)
+                    url = reverse('verify_student_upgrade_and_verify', kwargs=course_slug_kwargs)
+                elif already_paid and mode_slug and mode_slug != enrollment_mode:
+                    url = reverse('verify_student_start_flow', kwargs=course_slug_kwargs)
             else:
                 # If the user is NOT enrolled, then send him/her
                 # to the first time verification page.
-                url = reverse('verify_student_start_flow', kwargs=course_kwargs)
+                url = reverse('verify_student_start_flow', kwargs=course_slug_kwargs)
         elif message == self.UPGRADE_MSG:
             if is_enrolled:
-                if already_paid:
+                if already_paid and mode_slug and mode_slug == enrollment_mode:
                     # If the student has paid, but not verified, redirect to the verification flow.
                     url = reverse('verify_student_verify_now', kwargs=course_kwargs)
             else:
-                url = reverse('verify_student_start_flow', kwargs=course_kwargs)
+                url = reverse('verify_student_start_flow', kwargs=course_slug_kwargs)
 
         if user_is_trying_to_pay and user.is_active and not already_paid:
             # If the user is trying to pay, has activated their account, and the ecommerce service
@@ -507,7 +517,7 @@ class PayAndVerifyView(View):
         if url is not None:
             return redirect(url)
 
-    def _get_paid_mode(self, course_key):
+    def _get_paid_mode(self, course_key, mode_slug=None):
         """
         Retrieve the paid course mode for a course.
 
@@ -516,6 +526,7 @@ class PayAndVerifyView(View):
 
         Arguments:
             course_key (CourseKey): The location of the course.
+            mode_slug (String): The mode slug if given.
 
         Returns:
             CourseMode tuple
@@ -523,6 +534,9 @@ class PayAndVerifyView(View):
         """
         # Retrieve all the modes at once to reduce the number of database queries
         all_modes, unexpired_modes = CourseMode.all_and_unexpired_modes_for_courses([course_key])
+        for mode in all_modes[course_key]:
+            if mode_slug == mode.slug:
+                return mode
 
         # Retrieve the first mode that matches the following criteria:
         #  * Unexpired
@@ -625,6 +639,9 @@ class PayAndVerifyView(View):
         Returns:
             datetime object in string format
         """
+        if settings.FEATURES.get('AUTOMATIC_VERIFY_STUDENT_IDENTITY_FOR_TESTING'):
+            return ''
+
         photo_verifications = SoftwareSecurePhotoVerification.verification_valid_or_pending(user)
         # return 'expiration_datetime' of latest photo verification if found,
         # otherwise implicitly return ''
@@ -698,6 +715,34 @@ class PayAndVerifyView(View):
                 'deadline': deadline_datetime
             }
             return render_to_response("verify_student/missed_deadline.html", context)
+
+    def _get_difference_price(self, user, course_key, mode_slug, relevant_course_mode, already_paid, always_show_payment):
+        """
+        Respond with some error messaging if the deadline has passed.
+
+        Arguments:
+            user: Request user
+            course_key: The course key the user is trying to enroll in.
+            mode_slug: Course Mode slug the user is trying to enroll in.
+            relevant_course_mode: Course Mode the user is trying to enroll in.
+
+        Returns: always_show_payment, mode_difference_price
+        """
+        mode_difference_price = 0
+        enrollment_mode, is_active = CourseEnrollment.enrollment_mode_for_user(user, course_key)
+        if already_paid and mode_slug and enrollment_mode and mode_slug != enrollment_mode and mode_slug != CourseMode.AUDIT:
+            enrollment_course_mode = CourseMode.objects.get(mode_slug=enrollment_mode, course_id=course_key)
+            if enrollment_course_mode.min_price < relevant_course_mode.min_price:
+                always_show_payment = True
+                mode_difference_price = relevant_course_mode.min_price - enrollment_course_mode.min_price
+
+        return always_show_payment, mode_difference_price
+
+    def _get_national_identity_number(self, user):
+        national_id = NationalId.get_from_user(user)
+        if national_id:
+            return national_id.national_id
+        return ''
 
 
 def checkout_with_ecommerce_service(user, course_key, course_mode, processor):
@@ -781,9 +826,16 @@ def create_order(request):
         return HttpResponseBadRequest(_("Selected price is not valid number."))
 
     current_mode = None
+    mode_slug = request.POST['slug']
     sku = request.POST.get('sku', None)
 
-    if sku:
+    if mode_slug:
+        try:
+            current_mode = CourseMode.objects.get(mode_slug=mode_slug,course_id=course_id)
+        except CourseMode.DoesNotExist:
+            log.exception(u'Failed to find CourseMode with slug [%s].', mode_slug)
+
+    if not current_mode and sku:
         try:
             current_mode = CourseMode.objects.get(sku=sku)
         except CourseMode.DoesNotExist:
@@ -807,7 +859,14 @@ def create_order(request):
         amount = current_mode.min_price
 
     if amount < current_mode.min_price:
-        return HttpResponseBadRequest(_("No selected price or selected price is below minimum."))
+        bad_request = True
+        enrollment_mode, is_active = CourseEnrollment.enrollment_mode_for_user(request.user, course_id)
+        if enrollment_mode:
+            enrollment_course_mode = CourseMode.objects.get(mode_slug=enrollment_mode, course_id=course_id)
+            if enrollment_course_mode.min_price < current_mode.min_price:
+                bad_request = False
+        if bad_request:
+            return HttpResponseBadRequest(_("No selected price or selected price is below minimum."))
 
     if current_mode.sku:
         # if request.POST doesn't contain 'processor' then the service's default payment processor will be used.

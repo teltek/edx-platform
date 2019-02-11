@@ -18,6 +18,8 @@ define([
             defaults: {
                 // Metadata fields currently displayed in web forms
                 course_title: '',
+                course_program_path: '',
+                course_credits: 1.0,
 
                 // Metadata fields not currently displayed in web forms
                 name: 'Name of the certificate',
@@ -87,6 +89,18 @@ define([
                         attributes: {signatories: attrs.signatories.models}
                     };
                 }
+		if (!attrs.course_credits.trim()) {
+                    return {
+                        message: gettext('Certificate course credits cannot be empty.'),
+                        attributes: {course_credits: true}
+                    };
+		}
+		if (isNaN(attrs.course_credits)) {
+                    return {
+                        message: gettext('Certificate course credits must be a number.'),
+                        attributes: {course_credits: true}
+                    };
+		}
             },
 
             reset: function() {

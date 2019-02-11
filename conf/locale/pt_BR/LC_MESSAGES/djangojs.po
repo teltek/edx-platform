@@ -3636,6 +3636,22 @@ msgid "Professional Education"
 msgstr "Educação Profissional"
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
+msgid "Upgrade to obtain a Credential,"
+msgstr ""
+
+#: lms/static/js/verify_student/views/make_payment_step_view.js
+msgid "Obtain a Credential,"
+msgstr "Atualização para obtenção da Credencial,"
+
+#: lms/static/js/verify_student/views/make_payment_step_view.js
+msgid "Upgrade to obtain a Certificate,"
+msgstr "Atualização para obtenção do Certificado,"
+
+#: lms/static/js/verify_student/views/make_payment_step_view.js
+msgid "Obtain a Certificate,"
+msgstr ""
+
+#: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Verified Certificate upgrade"
 msgstr "Atualização do certificado verificado"
 
@@ -4005,6 +4021,14 @@ msgstr "O nome do certificado é obrigatório."
 #: cms/static/js/certificates/models/certificate.js
 msgid "Signatory field(s) has invalid data."
 msgstr "O campo(s) Emissor possui dados inválidos."
+
+#: cms/static/js/certificates/models/certificate.js
+msgid "Certificate course credits cannot be empty."
+msgstr ""
+
+#: cms/static/js/certificates/models/certificate.js
+msgid "Certificate course credits must be a number."
+msgstr ""
 
 #: cms/static/js/certificates/views/certificate_details.js
 msgid "Edit this certificate?"
@@ -7710,6 +7734,19 @@ msgstr "Compartilhar"
 msgid "Earned %(created)s."
 msgstr "%(created)s conquistados."
 
+#: lms/templates/student_profile/badge.underscore
+#, python-format
+msgid "Grade: %(grade)s"
+msgstr "Nota: %(grade)s"
+
+#: lms/templates/student_profile/badge_list.underscore
+msgid ""
+"For already done past courses, if the badge is not shown, "
+"please visit the progress page of the course. If the badge "
+"still does not appear in this section, the course may be "
+"not configured to give badges."
+msgstr ""
+
 #: openedx/features/learner_profile/static/learner_profile/templates/badge_placeholder.underscore
 msgid "What's Your Next Accomplishment?"
 msgstr "Qual sua próxima realização?"
@@ -7751,6 +7788,29 @@ msgid ""
 "your existing account"
 msgstr ""
 "Crie uma conta %(link_start)sMozilla Backpack%(link_end)s ou faça o login na"
+" sua conta atual."
+
+#: lms/templates/student_profile/share_modal.underscore
+msgid "Share on Badgr"
+msgstr "Compartilhe na mochila do Badgr"
+
+#: lms/templates/student_profile/share_modal.underscore
+msgid ""
+"To share your certificate on Badgr, you must first have a "
+"Backpack account. Complete the following steps to add your certificate to "
+"Backpack."
+msgstr ""
+"Para compartilhar seu certificado no Badgr Backpack, é necessário ter uma "
+"conta Backpack. Complete os passos abaixo para adicionar seu certificado ao "
+"Backpack. "
+
+#: lms/templates/student_profile/share_modal.underscore
+#, python-format
+msgid ""
+"Create a %(link_start)sBadgr Backpack%(link_end)s account, or log in to "
+"your existing account"
+msgstr ""
+"Crie uma conta %(link_start)sBadgr Backpack%(link_end)s ou faça o login na"
 " sua conta atual."
 
 #: openedx/features/learner_profile/static/learner_profile/templates/share_modal.underscore
@@ -9416,3 +9476,66 @@ msgstr ""
 #: cms/templates/js/video/transcripts/messages/transcripts-use-existing.underscore
 msgid "Use Current Transcript"
 msgstr "Usar a Transcrição Atual"
+
+#: lms/static/js/verify_student/views/make_payment_step_view.js
+msgid "Introduce your National Identify Number."
+msgstr "Introduza o seu Número de Identidade Nacional."
+
+#: lms/templates/verify_student/make_payment_step.underscore
+msgid ""
+"In order to obtain a Certificate, you need to introduce your "
+"National Identity Number and pay."
+msgstr ""
+"Para obter um certificado, você precisa apresentar o seu "
+"Número de Identidade Nacional e pagar."
+
+#: lms/templates/verify_student/make_payment_step.underscore
+msgid "National Identity Number *"
+msgstr "Número de Identidade Nacional *"
+
+#: cms/templates/js/certificate-details.underscore
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course Program"
+msgstr "Programa do Curso"
+
+#: cms/static/js/certificates/views/certificate_editor.js
+msgid "Upload course program."
+msgstr "Carregar programa de curso."
+
+#: cms/static/js/certificates/views/certificate_editor.js
+msgid "File must be in PDF format."
+msgstr "O arquivo deve estar no formato PDF."
+
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course Program Override"
+msgstr "Substituição do programa do curso"
+
+#: cms/templates/js/certificate-editor.underscore
+msgid ""
+"Upload a PDF file with the program of the Course "
+"to display on certificates. Leave blank to not use it."
+msgstr ""
+"Carregue um arquivo PDF com o programa do Curso "
+"para exibir em certificados. Deixe em branco para não "
+"usá-lo."
+
+#: cms/templates/js/certificate-details.underscore
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course Credits"
+msgstr "Créditos do curso"
+
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course credits"
+msgstr "Créditos do curso"
+
+#: cms/templates/js/certificate-editor.underscore
+msgid "Course Credits Override"
+msgstr "Substituição de créditos do curso"
+
+#: cms/templates/js/certificate-editor.underscore
+msgid ""
+"Specify an alternative to the official course "
+"credits number to display on certificates."
+msgstr ""
+"Especifique uma alternativa ao número oficial de "
+"créditos do curso para exibir em certificados."

@@ -774,8 +774,19 @@ class OrderItem(TimeStampedModel):
         course_key = getattr(self, 'course_id', None)
         if course_key:
             course = get_course_by_id(course_key, depth=0)
-            return _(u'Credential for course {course_name}').format(
-                course_name=course.display_name_with_default_escaped)
+            try:
+                certificateitem = CertificateItem.objects.get(orderitem_ptr_id=self.id)
+                if certificateitem:
+                    valid_modes = CourseMode.modes_for_course_dict(certificateitem.course_id)
+                    if certificateitem.mode in valid_modes:
+                        mode_info = valid_modes[certificateitem.mode]
+                        return _(u'{mode_name} for course {course_name}').format(
+                            mode_name = mode_info.name,
+                            course_name=course.display_name_with_default_escaped)
+            except Exception as exception:
+                log.error('Error in getting mode name: {0}'.format(exception))
+                return _(u'Acreditation for course {course_name}').format(
+                    course_name=course.display_name_with_default_escaped)
         else:
             raise Exception(
                 "Not Implemented. OrderItems that are not Course specific should have"
@@ -2014,9 +2025,10 @@ class CertificateItem(OrderItem):
             path = reverse('verify_student_verify_now', kwargs={'course_id': unicode(self.course_id)})
             verification_url = "http://{domain}{path}".format(domain=domain, path=path)
 
-            verification_reminder = _(
-                "If you haven't verified your identity yet, please start the verification process ({verification_url})."
-            ).format(verification_url=verification_url)
+            if not settings.FEATURES['AUTOMATIC_VERIFY_STUDENT_IDENTITY_FOR_TESTING']:
+                verification_reminder = _(
+                    "If you haven't verified your identity yet, please start the verification process ({verification_url})."
+                ).format(verification_url=verification_url)
 
         if is_professional_mode_verified:
             refund_reminder_msg = _("You can unenroll in the course and receive a full refund for 2 days after the "
