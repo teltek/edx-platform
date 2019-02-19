@@ -233,8 +233,10 @@ class PDFCertificate(object):
         paragraph = Paragraph(first_line, style)
         paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
         paragraph.drawOn(self.pdf, 20 * mm, 240 * mm, TA_CENTER)
-        
-        paragraph_text = (_(u'The Rector of the National University of Distance Education,' \
+
+        student_national_id=NationalId.get_national_id_from_user(user=user)
+        if student_national_id:
+            paragraph_text = (_(u'The Rector of the National University of Distance Education,' \
                             '{breakline}considering that{breakline}{breakline}' \
                             '{studentstyle_start}{student_name}{studentstyle_end}{breakline}' \
                             'with National Identity Number: {student_national_id}{breakline}{breakline}' \
@@ -245,6 +247,16 @@ class PDFCertificate(object):
                                 student_national_id=NationalId.get_national_id_from_user(user=user),
                                 breakline="<br/><br/>",
                             )
+        else:
+            paragraph_text = (_(u'The Rector of the National University of Distance Education,' \
+            '{breakline}considering that{breakline}{breakline}' \
+            '{studentstyle_start}{student_name}{studentstyle_end}{breakline}{breakline}' \
+            'has successfully finished the UNED Abierta course')).format(
+            studentstyle_start="<font size=20 color=#c49838>",
+            studentstyle_end="</font>",
+            student_name=user_fullname.upper(),
+            breakline="<br/><br/>",
+            )
         style = ParagraphStyle('paragraph', alignment=TA_CENTER, fontSize=12, fontName="Fontana", leading=10)
         paragraph = Paragraph(paragraph_text, style)
         paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
