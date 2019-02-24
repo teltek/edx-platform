@@ -21976,6 +21976,21 @@ msgstr ""
 #: lms/djangoapps/certificates/pdf.py
 #, python-brace-format
 msgid ""
+"The Rector of the National University of Distance Education,"
+"{breakline}considering that{breakline}{breakline}"
+"{studentstyle_start}{student_name}{studentstyle_end}{breakline}{breakline}"
+"has successfully finished the UNED Abierta course"
+msgstr ""
+"Der Rektor der Nationalen Fernuniversität "
+"{breakline}ist der Auffassung dass{breakline}"
+"{breakline}{studentstyle_start}{student_name}"
+"{studentstyle_end}{breakline}{breakline}"
+"{breakline}UNED Abierta Kurserfolgreich "
+"abgeschlossen hat"
+
+#: lms/djangoapps/certificates/pdf.py
+#, python-brace-format
+msgid ""
 "According to the program on the back of this "
 "document,{breakline}issues the present{breakline}"
 "{breakline}{strong_start}{certificatestyle_start}"
