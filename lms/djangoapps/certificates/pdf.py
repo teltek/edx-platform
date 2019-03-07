@@ -234,8 +234,11 @@ class PDFCertificate(object):
         paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
         paragraph.drawOn(self.pdf, 20 * mm, 240 * mm, TA_CENTER)
 
+        # TTK-20520: Workaround. Don't show national id in courses with free certificates
+        course_id_free =["course-v1:UNED+MOONLITE_II_001+2018","course-v1:UNED+MOONLITE_I_001+2018"]
+
         student_national_id=NationalId.get_national_id_from_user(user=user)
-        if student_national_id:
+        if student_national_id and not(self.course_id in course_id_free):
             paragraph_text = (_(u'The Rector of the National University of Distance Education,' \
                             '{breakline}considering that{breakline}{breakline}' \
                             '{studentstyle_start}{student_name}{studentstyle_end}{breakline}' \
