@@ -897,7 +897,6 @@ def _get_cert_data(student, course, course_key, is_active, enrollment_mode):
     return CertData(
         CertificateStatuses.requesting,
         _('Congratulations, you qualified for an accreditation!'),
-        _('You can keep working for a higher grade, or request your accreditation now.'),
         download_url=None,
         cert_web_view_url=None,
         cert_mode=cert_mode
