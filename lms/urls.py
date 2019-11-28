@@ -990,6 +990,9 @@ urlpatterns += [
     url(r'^request_certificate$', certificates_views.request_certificate,
         name='request_certificate'),
 
+    # Identity Number required for certificates
+    url(r'^save_identification','extrainfo.views.set_national_id'),
+
     # REST APIs
     url(r'^api/certificates/',
         include('lms.djangoapps.certificates.apis.urls', namespace='certificates_api')),
