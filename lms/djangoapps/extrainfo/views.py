@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.http import (
             HttpResponse, HttpResponseBadRequest, HttpResponseForbidden
 )
-from .models import NationalId
+from extrainfo.models import NationalId
 
 logger = logging.getLogger(__name__)
 
