@@ -45,6 +45,7 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
 from openedx.core.lib.courses import course_image_url
 from openedx.core.djangoapps.certificates.api import display_date_for_certificate, certificates_viewable_for_course
 from student.models import LinkedInAddToProfileConfiguration
+from extrainfo.models import NationalId
 from util import organizations_helpers as organization_api
 from util.date_utils import strftime_localized
 from util.views import handle_500
@@ -300,7 +301,7 @@ def _update_social_context(request, context, course, user, user_certificate, pla
         )
 
 
-def _update_context_with_user_info(context, user, user_certificate):
+def _update_context_with_user_info(context, user, user_certificate, national_id):
     """
     Updates context dictionary with user related info.
     """
@@ -310,6 +311,7 @@ def _update_context_with_user_info(context, user, user_certificate):
     context['accomplishment_user_id'] = user.id
     context['accomplishment_copy_name'] = user_fullname
     context['accomplishment_copy_username'] = user.username
+    context['accomplishment_user_national_id'] = national_id
 
     context['accomplishment_more_title'] = _("More Information About {user_name}'s Certificate:").format(
         user_name=user_fullname
@@ -478,6 +480,17 @@ def render_cert_by_uuid(request, certificate_uuid):
         raise Http404
 
 
+def _get_user_national_id(user, preview_mode):
+    try:
+        national_id = NationalId.objects.get(user = user.id)
+        return national_id.get_national_id()
+    except NationalId.DoesNotExist:
+        if preview_mode:
+            national_id = "123456789-AA"
+            return national_id
+        raise
+
+
 @handle_500(
     template_path="certificates/server-error.html",
     test_func=lambda request: request.GET.get('preview', None)
@@ -495,6 +508,18 @@ def render_html_view(request, user_id, course_id):
     preview_mode = request.GET.get('preview', None)
     platform_name = configuration_helpers.get_value("platform_name", settings.PLATFORM_NAME)
     configuration = CertificateHtmlViewConfiguration.get_config()
+
+    # Get National number
+    try:
+        national_id = _get_user_national_id(user, preview_mode)
+
+    except:
+        log.error(
+            "Invalid cert: User %s does not have national identity number.",
+            user_id,
+        )
+        return _render_invalid_certificate(course_id,
+                                           platform_name, configuration)
 
     # Kick the user back to the "Invalid" screen if the feature is disabled globally
     if not settings.FEATURES.get('CERTIFICATES_HTML_VIEW', False):
@@ -586,7 +611,7 @@ def render_html_view(request, user_id, course_id):
         context.update(catalog_data)
 
         # Append user info
-        _update_context_with_user_info(context, user, user_certificate)
+        _update_context_with_user_info(context, user, user_certificate, national_id)
 
         # Append social sharing info
         _update_social_context(request, context, course, user, user_certificate, platform_name)
