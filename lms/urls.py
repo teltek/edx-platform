@@ -26,6 +26,7 @@ from lms.djangoapps.instructor.views import coupons as instructor_coupons_views
 from lms.djangoapps.instructor.views import instructor_dashboard as instructor_dashboard_views
 from lms.djangoapps.instructor.views import registration_codes as instructor_registration_codes_views
 from lms.djangoapps.instructor_task import views as instructor_task_views
+from lms.djangoapps.extrainfo import views as national_id_views
 from lms_migration import migrate as lms_migrate_views
 from notes import views as notes_views
 from notification_prefs import views as notification_prefs_views
@@ -991,7 +992,7 @@ urlpatterns += [
         name='request_certificate'),
 
     # Identity Number required for certificates
-    url(r'^save_identification','extrainfo.views.set_national_id'),
+    url(r'^save_identification','national_id_views.set_national_id'),
 
     # REST APIs
     url(r'^api/certificates/',
