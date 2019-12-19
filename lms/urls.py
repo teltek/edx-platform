@@ -992,7 +992,7 @@ urlpatterns += [
         name='request_certificate'),
 
     # Identity Number required for certificates
-    url(r'^save_identification','national_id_views.set_national_id'),
+    url(r'^save_identification',national_id_views.set_national_id),
 
     # REST APIs
     url(r'^api/certificates/',
