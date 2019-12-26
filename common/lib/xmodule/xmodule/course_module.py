@@ -284,6 +284,12 @@ class CourseFields(object):
         scope=Scope.settings,
         deprecated=True  # Deprecated because someone would not edit this value within Studio.
     )
+    effort = Integer(
+        help=_("Enter the number of hours in total to complete the course."),
+        default=25,
+        display_name=_("Course Estimated Effort"),
+        scope=Scope.settings
+    )
     tabs = CourseTabList(help="List of tabs to enable in this course", scope=Scope.settings, default=[])
     end_of_course_survey_url = String(
         display_name=_("Course Survey URL"),

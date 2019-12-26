@@ -107,6 +107,20 @@ define(['jquery', 'underscore', 'gettext', 'common/js/components/utils/view_util
                         self.toggleSaveButton(false);
                     }
                 });
+                var $effort = $(self.selectors.effort);
+                $effort.on('keyup', function() {
+                    var error = self.validateRequiredField($effort.val());
+                    if(!(parseInt($effort.val())==$effort.val()) && error==''){
+                        error = gettext('Please use only integer numbers in this field.');
+                        self.setFieldInErr($effort.parent(), error);
+                        self.toggleSaveButton(false);
+                    }
+                    self.validateTotalKeyLength();
+                    self.setFieldInErr($effort.parent(), error);
+                    if (!self.validateFilledFields()){
+                        self.toggleSaveButton(false);
+                    }
+                });
             };
 
             return {

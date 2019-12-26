@@ -7,6 +7,7 @@ define(['domReady', 'jquery', 'underscore', 'js/utils/cancel_on_escape', 'js/vie
             org: '.new-course-org',
             number: '.new-course-number',
             run: '.new-course-run',
+            effort: '.new-course-effort',
             save: '.new-course-save',
             errorWrapper: '.create-course .wrap-error',
             errorMessage: '#course_creation_error',
@@ -51,12 +52,14 @@ define(['domReady', 'jquery', 'underscore', 'js/utils/cancel_on_escape', 'js/vie
             var org = $newCourseForm.find('.new-course-org').val();
             var number = $newCourseForm.find('.new-course-number').val();
             var run = $newCourseForm.find('.new-course-run').val();
+            var effort = $newCourseForm.find('.new-course-effort').val();
 
             var course_info = {
                 org: org,
                 number: number,
                 display_name: display_name,
-                run: run
+                run: run,
+                effort: effort
             };
 
             analytics.track('Created a Course', course_info);

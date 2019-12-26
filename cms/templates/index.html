@@ -112,6 +112,15 @@ from openedx.core.djangolib.js_utils import (
                   )}</span>
                   <span class="tip tip-error is-hiding" id="tip-error-new-course-run"></span>
                 </li>
+                <li class="field text required" id="field-estimated-effort">
+                  <label for="new-estimated-effort">${_("Estimated effort")}</label>
+                  <input class="new-estimated-effort" id="new-estimated-effort" type="text" name="new-estimated-effort" required placeholder="${_('e.g. 20')}" />
+                  <span class="tip" id="tip-new-estimated-effort">${Text(_("The estimated effort in hours the students will have to dedicate to the full course. {strong_start}Note: Only integer numbers are allowed and it cannot be changed.{strong_end}")).format(
+                      strong_start=HTML('<strong>'),
+                      strong_end=HTML('</strong>'),
+                  )}</span>
+                  <span class="tip tip-error is-hiding" id="tip-error-new-course-run"></span>
+                </li>
               </ol>
 
             </fieldset>

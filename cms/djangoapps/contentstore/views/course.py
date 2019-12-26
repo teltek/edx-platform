@@ -784,6 +784,9 @@ def _create_or_rerun_course(request):
         start = request.json.get('start', CourseFields.start.default)
         run = request.json.get('run')
 
+        # new time effort field
+        effort = request.json.get('effort')
+
         # allow/disable unicode characters in course_id according to settings
         if not settings.FEATURES.get('ALLOW_UNICODE_COURSE_ID'):
             if _has_non_ascii_characters(org) or _has_non_ascii_characters(course) or _has_non_ascii_characters(run):
@@ -792,7 +795,7 @@ def _create_or_rerun_course(request):
                     status=400
                 )
 
-        fields = {'start': start}
+        fields = {'start': start, 'effort': effort}
         if display_name is not None:
             fields['display_name'] = display_name
 
