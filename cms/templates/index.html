@@ -115,7 +115,7 @@ from openedx.core.djangolib.js_utils import (
                 <li class="field text required" id="field-course-effort">
                   <label for="new-course-effort">${_("Estimated effort")}</label>
                   <input class="new-course-effort" id="new-course-effort" type="text" name="new-course-effort" required placeholder="${_('e.g. 20')}" />
-                  <span class="tip" id="tip-new-course-effort">${Text(_("The estimated effort in hours the students will have to dedicate to the full course. {strong_start}Note: Only integer numbers are allowed and it cannot be changed.{strong_end}")).format(
+                  <span class="tip" id="tip-new-course-effort">${Text(_("The estimated effort in hours the students will have to dedicate to the full course. You can changed it in Advanced Settings. {strong_start}Note: Only integer numbers are allowed.{strong_end}")).format(
                       strong_start=HTML('<strong>'),
                       strong_end=HTML('</strong>'),
                   )}</span>
