@@ -511,18 +511,6 @@ def render_html_view(request, user_id, course_id):
     platform_name = configuration_helpers.get_value("platform_name", settings.PLATFORM_NAME)
     configuration = CertificateHtmlViewConfiguration.get_config()
 
-    # Get National number
-    try:
-        national_id = _get_user_national_id(user, preview_mode)
-
-    except:
-        log.error(
-            "Invalid cert: User %s does not have national identity number.",
-            user_id,
-        )
-        return _render_invalid_certificate(course_id,
-                                           platform_name, configuration)
-
     # Kick the user back to the "Invalid" screen if the feature is disabled globally
     if not settings.FEATURES.get('CERTIFICATES_HTML_VIEW', False):
         return _render_invalid_certificate(course_id, platform_name, configuration)
@@ -550,6 +538,19 @@ def render_html_view(request, user_id, course_id):
             user_id,
         )
         return _render_invalid_certificate(course_id, platform_name, configuration)
+
+    # Get National number
+    try:
+        national_id = _get_user_national_id(user, preview_mode)
+
+    except Exception as e:
+        log.error(e)
+        log.error(
+            "Invalid cert: User %s does not have national identity number.",
+            user_id,
+        )
+        return _render_invalid_certificate(course_id,
+                                           platform_name, configuration)
 
     # Load user's certificate
     user_certificate = _get_user_certificate(request, user, course_key, course, preview_mode)
