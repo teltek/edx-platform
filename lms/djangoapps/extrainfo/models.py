@@ -28,3 +28,7 @@ class NationalId(models.Model):
         self.user = user
         self.national_id = identification
         self.save()
+
+
+    def __unicode__(self):
+        return self.user.username
