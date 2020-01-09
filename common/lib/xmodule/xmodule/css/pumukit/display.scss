@@ -1,0 +1,27 @@
+& {
+    margin-bottom: 30px;
+    }
+
+.is-hidden {
+  display: none;
+  }
+
+$pumukit-grey: #646464;
+
+$pumukit-serif-font: 'Crimson Text';
+
+h9 {
+  color: $pumukit-grey;
+  font: italic 1em/1em $pumukit-serif-font;
+  letter-spacing: 0.2px;
+  margin-bottom: 0px;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+}
+.course-content.pumukit {
+  padding-bottom: 0px!important;
+}
+
+.course-content.pumukit .pumukit.iframe {
+  margin-bottom: -125px!important;
+}

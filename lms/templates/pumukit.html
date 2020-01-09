@@ -1,0 +1,13 @@
+% if two_titles:
+<h2>${alternative_video_title}</h2>
+% if video_title is not UNDEFINED and video_title is not None and video_title is not "Pumukit":
+<h9>${video_title}</h9>
+% endif
+% elif video_title is not UNDEFINED and video_title is not None and video_title is not "Pumukit":
+<h2>${video_title}</h2>
+% endif
+<div class="course-content pumukit" style="display:inline-table;">
+  <div id="pumukit_${id}" class="pumukit iframe">
+    ${video_iframe}
+  </div>
+</div>

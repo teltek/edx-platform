@@ -139,3 +139,6 @@ dist
 
 # Visual Studio Code
 .vscode
+
+### To include Pumukit hardcoded
+!common/lib/xmodule/XModule.egg-info
