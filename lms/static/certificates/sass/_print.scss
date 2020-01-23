@@ -16,6 +16,7 @@
 // page set up - only available to modern browsers now
 @page {
   size : landscape;
+  margin: 0;
 }
 
 @media print {
@@ -73,7 +74,7 @@
 
   body {
     height: auto;
-    margin: spacing-vertical(mid-large) spacing-vertical(mid-small) 0 spacing-vertical(mid-small) !important;
+    margin: spacing-vertical(mid-small) spacing-vertical(mid-small) 0 spacing-vertical(mid-small) !important;
     padding: 0;
   }
 
@@ -101,9 +102,13 @@
   .wrapper-about,
   .wrapper-footer,
   .wrapper-header,
+  .su-footer,
+  .su-header,
+  .cert-first-level,
   .wrapper-introduction,
   .accomplishment-metadata-title,
   .accomplishment-metadata .accomplishment-recipient,
+  .wrapper-accomplishment-metadata, 
   .deco-corner,
   .accomplishment-date .label {
     @extend %print-hide;
@@ -111,8 +116,7 @@
 
   // remove layout wrappers' padding
   .wrapper-introduction,
-  .wrapper-accomplishment-rendering,
-  .wrapper-accomplishment-metadata {
+  .wrapper-accomplishment-rendering{
     @extend %print-layout-wrapper;
   }
 }
@@ -179,6 +183,14 @@
     line-height: line-height(small);
   }
 
+  .logo-certificate{
+    max-height: 100px !important;
+    max-width: 100px !important;
+    height: 100px !important;
+    width: 100px !important;
+    border: none !important;
+  }
+
   .copy-micro {
     font-size: font-size(xx-small);
     line-height: line-height(x-small);
@@ -193,18 +205,22 @@
     top: 0 !important;
     border: rem(1) solid palette(grayscale, back);
     border-top: rem(2) solid $cert-base-color;
-    box-shadow: none;
-    padding: spacing-vertical(small) spacing-horizontal(mid-large);
+    box-shadow: none !important;
+    padding: spacing-vertical(small) spacing-horizontal(small);
 
 
     .accomplishment-type {
-      margin-top: -(spacing-vertical(mid-large));
+      margin-top: -(spacing-vertical(small));
     }
 
     .accomplishment-type-symbol {
       @include size(rem(75));
 
       border: none !important;
+      max-height: 100px;
+      max-width: 100px;
+      height: 100px;
+      width: 100px;
     }
 
     .wrapper-statement-and-signatories {
@@ -214,14 +230,23 @@
     .accomplishment-statement {
       @extend %print-rendering-section;
 
-      @include span(8);
+      padding-top: 10px !important;
+      padding-bottom: 5px !important;
 
-      margin: 0 auto;
+    }
+
+    .accomplishment-course{
+	font-size: 1rem !important;
+    }
+
+    .accomplishment-recipient{
+	font-size: 1.8rem !important;
     }
 
     .accomplishment-summary,
     .accomplishment-statement-detail {
       margin-bottom: spacing-vertical(mid-small);
+      font-size: 0.8rem !important;
     }
 
     .wrapper-orgs::after {
@@ -256,11 +281,9 @@
       }
 
       .signatory-signature {
-        height: spacing-vertical(small);
+        height: 5.25rem;
         max-width: 100%;
         margin-top: 0;
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
       }
 
       .signatory-name {
@@ -276,6 +299,13 @@
         .signatory {
           @include span(2);
         }
+      }
+
+      .logo-footer{
+	max-height: 73px !important;
+	max-width: 115px !important;
+	width: 115px !important;
+	height: 73px !important;
       }
     }
   }
