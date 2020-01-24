@@ -1,39 +1,39 @@
 # #-#-#-#-#  django-partial.po (0.1a)  #-#-#-#-#
 # edX translation file.
-# Copyright (C) 2018 EdX
+# Copyright (C) 2020 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2018.
+# EdX Team <info@edx.org>, 2020.
 #
 # #-#-#-#-#  django-studio.po (0.1a)  #-#-#-#-#
 # edX translation file.
-# Copyright (C) 2018 EdX
+# Copyright (C) 2020 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2018.
+# EdX Team <info@edx.org>, 2020.
 #
 # #-#-#-#-#  mako.po (0.1a)  #-#-#-#-#
 # edX translation file
-# Copyright (C) 2018 edX
+# Copyright (C) 2020 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2018.
+# EdX Team <info@edx.org>, 2020.
 #
 # #-#-#-#-#  mako-studio.po (0.1a)  #-#-#-#-#
 # edX translation file
-# Copyright (C) 2018 edX
+# Copyright (C) 2020 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2018.
+# EdX Team <info@edx.org>, 2020.
 #
 # #-#-#-#-#  wiki.po (0.1a)  #-#-#-#-#
 # edX translation file
-# Copyright (C) 2018 edX
+# Copyright (C) 2020 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2018.
+# EdX Team <info@edx.org>, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2018-11-27 13:29+0100\n"
-"PO-Revision-Date: 2018-11-27 12:29:06.823490\n"
+"POT-Creation-Date: 2020-01-24 21:18+0100\n"
+"PO-Revision-Date: 2020-01-24 20:18:35.521591\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "Language: en\n"
@@ -2593,6 +2593,14 @@ msgstr ""
 #: common/lib/xmodule/xmodule/course_module.py
 #: common/lib/xmodule/xmodule/modulestore/inheritance.py
 msgid "Enter the method by which this course is edited (\"XML\" or \"Studio\")."
+msgstr ""
+
+#: common/lib/xmodule/xmodule/course_module.py
+msgid "Enter the number of hours in total to complete the course."
+msgstr ""
+
+#: common/lib/xmodule/xmodule/course_module.py
+msgid "Course Estimated Effort"
 msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
@@ -21056,6 +21064,21 @@ msgid ""
 "The term in which your course will run. {strong_start}Note: This is part of "
 "your course URL, so no spaces or special characters are allowed and it "
 "cannot be changed.{strong_end}"
+msgstr ""
+
+#: cms/templates/index.html
+msgid "Estimated effort"
+msgstr ""
+
+#: cms/templates/index.html
+msgid "e.g. 20"
+msgstr ""
+
+#: cms/templates/index.html
+msgid ""
+"The estimated effort in hours the students will have to dedicate to the full"
+" course. You can changed it in Advanced Settings. {strong_start}Note: Only "
+"integer numbers are allowed.{strong_end}"
 msgstr ""
 
 #: cms/templates/index.html

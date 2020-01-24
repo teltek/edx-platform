@@ -1,33 +1,33 @@
 # #-#-#-#-#  djangojs-partial.po (0.1a)  #-#-#-#-#
 # edX translation file.
-# Copyright (C) 2018 EdX
+# Copyright (C) 2020 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2018.
+# EdX Team <info@edx.org>, 2020.
 #
 # #-#-#-#-#  djangojs-studio.po (0.1a)  #-#-#-#-#
 # edX translation file.
-# Copyright (C) 2018 EdX
+# Copyright (C) 2020 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2018.
+# EdX Team <info@edx.org>, 2020.
 #
 # #-#-#-#-#  underscore.po (0.1a)  #-#-#-#-#
 # edX translation file
-# Copyright (C) 2018 edX
+# Copyright (C) 2020 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2018.
+# EdX Team <info@edx.org>, 2020.
 #
 # #-#-#-#-#  underscore-studio.po (0.1a)  #-#-#-#-#
 # edX translation file
-# Copyright (C) 2018 edX
+# Copyright (C) 2020 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2018.
+# EdX Team <info@edx.org>, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2018-11-27 13:28+0100\n"
-"PO-Revision-Date: 2018-11-27 12:29:07.429582\n"
+"POT-Creation-Date: 2020-01-24 21:18+0100\n"
+"PO-Revision-Date: 2020-01-24 20:18:36.101590\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "Language: rtl\n"
@@ -47,9 +47,9 @@ msgstr ""
 #: cms/static/js/views/list_item_editor.js
 #: cms/static/js/views/modals/edit_xblock.js cms/static/js/views/tabs.js
 #: cms/static/js/views/utils/xblock_utils.js
-#: common/static/bundles/js/factories/edit_tabs.8c3cda169cbfc5894506.js
+#: common/static/bundles/js/factories/edit_tabs.0bb412e9b1a96b9da346.js
 #: common/static/bundles/js/factories/edit_tabs.js
-#: common/static/bundles/js/factories/textbooks.0e9c2941ca9d416054ef.js
+#: common/static/bundles/js/factories/textbooks.19e61143bafa51a8e1da.js
 #: common/static/bundles/js/factories/textbooks.js
 #: lms/static/js/ccx/schedule.js lms/static/js/views/fields.js
 msgid "Saving"
@@ -59,7 +59,7 @@ msgstr "سشدهرل"
 #: cms/static/js/views/asset.js cms/static/js/views/list_item.js
 #: cms/static/js/views/manage_users_and_roles.js
 #: cms/static/js/views/show_textbook.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 #: common/static/js/vendor/ova/catch/js/catch.js
 #: lms/djangoapps/teams/static/teams/js/views/instructor_tools.js
@@ -86,7 +86,7 @@ msgstr "يثمثفث"
 #: cms/static/js/views/course_info_update.js cms/static/js/views/list_item.js
 #: cms/static/js/views/show_textbook.js cms/static/js/views/tabs.js
 #: cms/static/js/views/utils/xblock_utils.js
-#: common/static/bundles/js/factories/edit_tabs.8c3cda169cbfc5894506.js
+#: common/static/bundles/js/factories/edit_tabs.0bb412e9b1a96b9da346.js
 #: common/static/bundles/js/factories/edit_tabs.js
 msgid "Deleting"
 msgstr "يثمثفهرل"
@@ -102,13 +102,13 @@ msgstr "يثمثفهرل"
 #: cms/static/js/views/show_textbook.js cms/static/js/views/tabs.js
 #: cms/static/js/views/validation.js
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/StudentAccountDeletion.9bd4e2a826a57ac8cc81.js
+#: common/static/bundles/StudentAccountDeletion.84357435391eec248868.js
 #: common/static/bundles/StudentAccountDeletion.js
-#: common/static/bundles/StudentAccountDeletionInitializer.9fb2fcb5d80f0992b39c.js
+#: common/static/bundles/StudentAccountDeletionInitializer.87976d507571b402963f.js
 #: common/static/bundles/StudentAccountDeletionInitializer.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
-#: common/static/bundles/js/factories/edit_tabs.8c3cda169cbfc5894506.js
+#: common/static/bundles/js/factories/edit_tabs.0bb412e9b1a96b9da346.js
 #: common/static/bundles/js/factories/edit_tabs.js
 #: common/static/common/js/components/utils/view_utils.js
 #: lms/static/js/Markdown.Editor.js
@@ -136,37 +136,37 @@ msgid "Cancel"
 msgstr "ذشرذثم"
 
 #: cms/static/js/features_jsx/studio/CourseOrLibraryListing.jsx
-#: common/static/bundles/CourseOrLibraryListing.cfcc09fb6d7c12635356.js
+#: common/static/bundles/CourseOrLibraryListing.2262b3bc939ec41a6f72.js
 #: common/static/bundles/CourseOrLibraryListing.js
 msgid "Organization:"
 msgstr "خقلشرهظشفهخر:"
 
 #: cms/static/js/features_jsx/studio/CourseOrLibraryListing.jsx
-#: common/static/bundles/CourseOrLibraryListing.cfcc09fb6d7c12635356.js
+#: common/static/bundles/CourseOrLibraryListing.2262b3bc939ec41a6f72.js
 #: common/static/bundles/CourseOrLibraryListing.js
 msgid "Course Number:"
 msgstr "ذخعقسث رعوزثق:"
 
 #: cms/static/js/features_jsx/studio/CourseOrLibraryListing.jsx
-#: common/static/bundles/CourseOrLibraryListing.cfcc09fb6d7c12635356.js
+#: common/static/bundles/CourseOrLibraryListing.2262b3bc939ec41a6f72.js
 #: common/static/bundles/CourseOrLibraryListing.js
 msgid "Course Run:"
 msgstr "ذخعقسث قعر:"
 
 #: cms/static/js/features_jsx/studio/CourseOrLibraryListing.jsx
-#: common/static/bundles/CourseOrLibraryListing.cfcc09fb6d7c12635356.js
+#: common/static/bundles/CourseOrLibraryListing.2262b3bc939ec41a6f72.js
 #: common/static/bundles/CourseOrLibraryListing.js
 msgid "(Read-only)"
 msgstr "(قثشي-خرمغ)"
 
 #: cms/static/js/features_jsx/studio/CourseOrLibraryListing.jsx
-#: common/static/bundles/CourseOrLibraryListing.cfcc09fb6d7c12635356.js
+#: common/static/bundles/CourseOrLibraryListing.2262b3bc939ec41a6f72.js
 #: common/static/bundles/CourseOrLibraryListing.js
 msgid "Re-run Course"
 msgstr "قث-قعر ذخعقسث"
 
 #: cms/static/js/features_jsx/studio/CourseOrLibraryListing.jsx
-#: common/static/bundles/CourseOrLibraryListing.cfcc09fb6d7c12635356.js
+#: common/static/bundles/CourseOrLibraryListing.2262b3bc939ec41a6f72.js
 #: common/static/bundles/CourseOrLibraryListing.js
 #: cms/templates/js/show-textbook.underscore
 msgid "View Live"
@@ -179,7 +179,7 @@ msgid "Uploading"
 msgstr "عحمخشيهرل"
 
 #: cms/static/js/models/course.js cms/static/js/models/section.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "You must specify a name"
 msgstr "غخع وعسف سحثذهبغ ش رشوث"
@@ -191,7 +191,7 @@ msgstr "غخع وعسف سحثذهبغ ش رشوث"
 #: cms/static/js/views/modals/edit_xblock.js
 #: cms/static/js/views/video_transcripts.js
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js lms/static/js/student_account/tos_modal.js
 #: cms/templates/js/course-video-settings.underscore
 #: common/static/common/templates/image-modal.underscore
@@ -207,7 +207,7 @@ msgstr "ذمخسث"
 #. browser when a user needs to edit HTML
 #: cms/static/js/views/assets.js
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js cms/templates/js/asset-library.underscore
 #: cms/templates/js/course-instructor-details.underscore
 #: cms/templates/js/previous-video-upload-list.underscore
@@ -226,9 +226,9 @@ msgstr "ذاخخسث بهمث"
 #. browser when a user needs to edit HTML
 #: cms/static/js/views/course_info_update.js cms/static/js/views/tabs.js
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
-#: common/static/bundles/js/factories/edit_tabs.8c3cda169cbfc5894506.js
+#: common/static/bundles/js/factories/edit_tabs.0bb412e9b1a96b9da346.js
 #: common/static/bundles/js/factories/edit_tabs.js
 #: lms/static/js/Markdown.Editor.js
 #: common/static/common/templates/discussion/alert-popup.underscore
@@ -241,7 +241,7 @@ msgstr "خن"
 #. browser when a user needs to edit HTML
 #: cms/static/js/views/course_video_settings.js
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 #: cms/templates/js/timed-examination-preference-editor.underscore
 msgid "None"
@@ -251,7 +251,7 @@ msgstr "رخرث"
 #: cms/static/js/views/metadata.js
 #: cms/static/js/views/previous_video_upload.js
 #: cms/static/js/views/video_transcripts.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 #: lms/djangoapps/teams/static/teams/js/views/edit_team_members.js
 #: lms/static/js/views/image_field.js
@@ -261,44 +261,44 @@ msgid "Remove"
 msgstr "قثوخدث"
 
 #: cms/static/js/views/license.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 #: cms/templates/js/license-selector.underscore
 msgid "All Rights Reserved"
 msgstr "شمم قهلافس قثسثقدثي"
 
 #: cms/static/js/views/license.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "You reserve all rights for your work"
 msgstr "غخع قثسثقدث شمم قهلافس بخق غخعق صخقن"
 
 #: cms/static/js/views/license.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Creative Commons"
 msgstr "ذقثشفهدث ذخووخرس"
 
 #: cms/static/js/views/license.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "You waive some rights for your work, such that others can use it too"
 msgstr "غخع صشهدث سخوث قهلافس بخق غخعق صخقن, سعذا فاشف خفاثقس ذشر عسث هف فخخ"
 
 #: cms/static/js/views/license.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Version"
 msgstr "دثقسهخر"
 
 #: cms/static/js/views/license.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Attribution"
 msgstr "شففقهزعفهخر"
 
 #: cms/static/js/views/license.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid ""
 "Allow others to copy, distribute, display and perform your copyrighted work "
@@ -310,13 +310,13 @@ msgstr ""
 "قثضعهقثي."
 
 #: cms/static/js/views/license.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Noncommercial"
 msgstr "رخرذخووثقذهشم"
 
 #: cms/static/js/views/license.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid ""
 "Allow others to copy, distribute, display and perform your work - and "
@@ -326,13 +326,13 @@ msgstr ""
 "يثقهدشفهدث صخقنس زشسثي عحخر هف - زعف بخق رخرذخووثقذهشم حعقحخسثس خرمغ."
 
 #: cms/static/js/views/license.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "No Derivatives"
 msgstr "رخ يثقهدشفهدثس"
 
 #: cms/static/js/views/license.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid ""
 "Allow others to copy, distribute, display and perform only verbatim copies "
@@ -344,13 +344,13 @@ msgstr ""
 "هرذخوحشفهزمث صهفا \"ساشقث شمهنث\"."
 
 #: cms/static/js/views/license.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Share Alike"
 msgstr "ساشقث شمهنث"
 
 #: cms/static/js/views/license.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid ""
 "Allow others to distribute derivative works only under a license identical "
@@ -365,7 +365,7 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: cms/static/js/views/manage_users_and_roles.js
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Ok"
 msgstr "خن"
@@ -376,16 +376,16 @@ msgid "Unknown"
 msgstr "عرنرخصر"
 
 #: cms/static/js/views/manage_users_and_roles.js
-#: common/static/bundles/StudentAccountDeletion.9bd4e2a826a57ac8cc81.js
+#: common/static/bundles/StudentAccountDeletion.84357435391eec248868.js
 #: common/static/bundles/StudentAccountDeletion.js
-#: common/static/bundles/StudentAccountDeletionInitializer.9fb2fcb5d80f0992b39c.js
+#: common/static/bundles/StudentAccountDeletionInitializer.87976d507571b402963f.js
 #: common/static/bundles/StudentAccountDeletionInitializer.js
 #: lms/static/js/student_account/components/StudentAccountDeletionModal.jsx
 msgid "Are you sure?"
 msgstr "شقث غخع سعقث?"
 
 #: cms/static/js/views/metadata.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js lms/static/js/views/file_uploader.js
 msgid "Upload File"
 msgstr "عحمخشي بهمث"
@@ -396,7 +396,7 @@ msgstr "عحمخشي بهمث"
 #: cms/static/js/views/modals/base_modal.js
 #: cms/static/js/views/modals/course_outline_modals.js
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 #: cms/templates/js/certificate-editor.underscore
 #: cms/templates/js/content-group-editor.underscore
@@ -418,7 +418,7 @@ msgstr "سشدث"
 #. browser when a user needs to edit HTML
 #: cms/static/js/views/modals/course_outline_modals.js
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 #: cms/templates/js/add-xblock-component-menu-problem.underscore
 msgid "Advanced"
@@ -427,19 +427,19 @@ msgstr "شيدشرذثي"
 #: cms/static/js/views/previous_video_upload.js
 #: cms/static/js/views/video/translations_editor.js
 #: cms/static/js/views/video_transcripts.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js lms/static/js/views/image_field.js
 msgid "Removing"
 msgstr "قثوخدهرل"
 
 #: cms/static/js/views/tabs.js
-#: common/static/bundles/js/factories/edit_tabs.8c3cda169cbfc5894506.js
+#: common/static/bundles/js/factories/edit_tabs.0bb412e9b1a96b9da346.js
 #: common/static/bundles/js/factories/edit_tabs.js
 msgid "Delete Page Confirmation"
 msgstr "يثمثفث حشلث ذخربهقوشفهخر"
 
 #: cms/static/js/views/tabs.js
-#: common/static/bundles/js/factories/edit_tabs.8c3cda169cbfc5894506.js
+#: common/static/bundles/js/factories/edit_tabs.0bb412e9b1a96b9da346.js
 #: common/static/bundles/js/factories/edit_tabs.js
 msgid ""
 "Are you sure you want to delete this page? This action cannot be undone."
@@ -447,17 +447,17 @@ msgstr ""
 "شقث غخع سعقث غخع صشرف فخ يثمثفث فاهس حشلث? فاهس شذفهخر ذشررخف زث عريخرث."
 
 #: cms/static/js/views/utils/move_xblock_utils.js
-#: common/static/bundles/js/factories/container.1415d12e563a189a962d.js
+#: common/static/bundles/js/factories/container.d51e3d456dedb4cc979e.js
 #: common/static/bundles/js/factories/container.js
-#: common/static/bundles/js/factories/library.7a3024c48175b2cfb074.js
+#: common/static/bundles/js/factories/library.709a87dd59331d1c6405.js
 #: common/static/bundles/js/factories/library.js
 msgid "Success! \"{displayName}\" has been moved."
 msgstr "سعذذثسس! \"{displayName}\" اشس زثثر وخدثي."
 
 #: cms/static/js/views/utils/move_xblock_utils.js
-#: common/static/bundles/js/factories/container.1415d12e563a189a962d.js
+#: common/static/bundles/js/factories/container.d51e3d456dedb4cc979e.js
 #: common/static/bundles/js/factories/container.js
-#: common/static/bundles/js/factories/library.7a3024c48175b2cfb074.js
+#: common/static/bundles/js/factories/library.709a87dd59331d1c6405.js
 #: common/static/bundles/js/factories/library.js
 msgid ""
 "Move cancelled. \"{sourceDisplayName}\" has been moved back to its original "
@@ -467,17 +467,17 @@ msgstr ""
 "مخذشفهخر."
 
 #: cms/static/js/views/utils/move_xblock_utils.js
-#: common/static/bundles/js/factories/container.1415d12e563a189a962d.js
+#: common/static/bundles/js/factories/container.d51e3d456dedb4cc979e.js
 #: common/static/bundles/js/factories/container.js
-#: common/static/bundles/js/factories/library.7a3024c48175b2cfb074.js
+#: common/static/bundles/js/factories/library.709a87dd59331d1c6405.js
 #: common/static/bundles/js/factories/library.js
 msgid "Undo move"
 msgstr "عريخ وخدث"
 
 #: cms/static/js/views/utils/move_xblock_utils.js
-#: common/static/bundles/js/factories/container.1415d12e563a189a962d.js
+#: common/static/bundles/js/factories/container.d51e3d456dedb4cc979e.js
 #: common/static/bundles/js/factories/container.js
-#: common/static/bundles/js/factories/library.7a3024c48175b2cfb074.js
+#: common/static/bundles/js/factories/library.709a87dd59331d1c6405.js
 #: common/static/bundles/js/factories/library.js
 msgid "Take me to the new location"
 msgstr "فشنث وث فخ فاث رثص مخذشفهخر"
@@ -490,43 +490,43 @@ msgid "Your changes have been saved."
 msgstr "غخعق ذاشرلثس اشدث زثثر سشدثي."
 
 #: cms/static/js/views/video/transcripts/file_uploader.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Please select a file in .srt format."
 msgstr "حمثشسث سثمثذف ش بهمث هر .سقف بخقوشف."
 
 #: cms/static/js/views/video/transcripts/file_uploader.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Error: Uploading failed."
 msgstr "ثققخق: عحمخشيهرل بشهمثي."
 
 #: cms/static/js/views/video/transcripts/metadata_videolist.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Error: Connection with server failed."
 msgstr "ثققخق: ذخررثذفهخر صهفا سثقدثق بشهمثي."
 
 #: cms/static/js/views/video/transcripts/metadata_videolist.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Link types should be unique."
 msgstr "مهرن فغحثس ساخعمي زث عرهضعث."
 
 #: cms/static/js/views/video/transcripts/metadata_videolist.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Links should be unique."
 msgstr "مهرنس ساخعمي زث عرهضعث."
 
 #: cms/static/js/views/video/transcripts/metadata_videolist.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Incorrect url format."
 msgstr "هرذخققثذف عقم بخقوشف."
 
 #: cms/static/js/views/video/translations_editor.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid ""
 "Sorry, there was an error parsing the subtitles that you uploaded. Please "
@@ -537,13 +537,13 @@ msgstr ""
 
 #: cms/static/js/views/video/translations_editor.js
 #: cms/static/js/views/video_transcripts.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Are you sure you want to remove this transcript?"
 msgstr "شقث غخع سعقث غخع صشرف فخ قثوخدث فاهس فقشرسذقهحف?"
 
 #: cms/static/js/views/video/translations_editor.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid ""
 "If you remove this transcript, the transcript will not be available for this"
@@ -553,13 +553,13 @@ msgstr ""
 " ذخوحخرثرف."
 
 #: cms/static/js/views/video/translations_editor.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Remove Transcript"
 msgstr "قثوخدث فقشرسذقهحف"
 
 #: cms/static/js/views/video/translations_editor.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Upload translation"
 msgstr "عحمخشي فقشرسمشفهخر"
@@ -607,37 +607,37 @@ msgid "text_word_{uniqueId}"
 msgstr "فثطف_صخقي_{uniqueId}"
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Show Annotations"
 msgstr "ساخص شررخفشفهخرس"
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Hide Annotations"
 msgstr "اهيث شررخفشفهخرس"
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Expand Instructions"
 msgstr "ثطحشري هرسفقعذفهخرس"
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Collapse Instructions"
 msgstr "ذخممشحسث هرسفقعذفهخرس"
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Commentary"
 msgstr "ذخووثرفشقغ"
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Reply to Annotation"
 msgstr "قثحمغ فخ شررخفشفهخر"
@@ -645,7 +645,7 @@ msgstr "قثحمغ فخ شررخفشفهخر"
 #. Translators: %(num_points)s is the number of points possible (examples: 1,
 #. 3, 10).;
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
-#: common/static/bundles/CapaModule.c6eb163b20ce039c3d33.js
+#: common/static/bundles/CapaModule.e51cd8eba5766de29646.js
 #: common/static/bundles/CapaModule.js
 msgid "%(num_points)s point possible (graded, results hidden)"
 msgid_plural "%(num_points)s points possible (graded, results hidden)"
@@ -655,7 +655,7 @@ msgstr[1] "%(num_points)s حخهرفس حخسسهزمث (لقشيثي, قثسع�
 #. Translators: %(num_points)s is the number of points possible (examples: 1,
 #. 3, 10).;
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
-#: common/static/bundles/CapaModule.c6eb163b20ce039c3d33.js
+#: common/static/bundles/CapaModule.e51cd8eba5766de29646.js
 #: common/static/bundles/CapaModule.js
 msgid "%(num_points)s point possible (ungraded, results hidden)"
 msgid_plural "%(num_points)s points possible (ungraded, results hidden)"
@@ -665,7 +665,7 @@ msgstr[1] "%(num_points)s حخهرفس حخسسهزمث (عرلقشيثي, قث�
 #. Translators: %(num_points)s is the number of points possible (examples: 1,
 #. 3, 10).;
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
-#: common/static/bundles/CapaModule.c6eb163b20ce039c3d33.js
+#: common/static/bundles/CapaModule.e51cd8eba5766de29646.js
 #: common/static/bundles/CapaModule.js
 msgid "%(num_points)s point possible (graded)"
 msgid_plural "%(num_points)s points possible (graded)"
@@ -675,7 +675,7 @@ msgstr[1] "%(num_points)s حخهرفس حخسسهزمث (لقشيثي)"
 #. Translators: %(num_points)s is the number of points possible (examples: 1,
 #. 3, 10).;
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
-#: common/static/bundles/CapaModule.c6eb163b20ce039c3d33.js
+#: common/static/bundles/CapaModule.e51cd8eba5766de29646.js
 #: common/static/bundles/CapaModule.js
 msgid "%(num_points)s point possible (ungraded)"
 msgid_plural "%(num_points)s points possible (ungraded)"
@@ -687,7 +687,7 @@ msgstr[1] "%(num_points)s حخهرفس حخسسهزمث (عرلقشيثي)"
 #. points will always be at least 1. We pluralize based on the total number of
 #. points (example: 0/1 point; 1/2 points);
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
-#: common/static/bundles/CapaModule.c6eb163b20ce039c3d33.js
+#: common/static/bundles/CapaModule.e51cd8eba5766de29646.js
 #: common/static/bundles/CapaModule.js
 msgid "%(earned)s/%(possible)s point (graded)"
 msgid_plural "%(earned)s/%(possible)s points (graded)"
@@ -699,7 +699,7 @@ msgstr[1] "%(earned)s/%(possible)s حخهرفس (لقشيثي)"
 #. points will always be at least 1. We pluralize based on the total number of
 #. points (example: 0/1 point; 1/2 points);
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
-#: common/static/bundles/CapaModule.c6eb163b20ce039c3d33.js
+#: common/static/bundles/CapaModule.e51cd8eba5766de29646.js
 #: common/static/bundles/CapaModule.js
 msgid "%(earned)s/%(possible)s point (ungraded)"
 msgid_plural "%(earned)s/%(possible)s points (ungraded)"
@@ -707,20 +707,20 @@ msgstr[0] "%(earned)s/%(possible)s حخهرف (عرلقشيثي)"
 msgstr[1] "%(earned)s/%(possible)s حخهرفس (عرلقشيثي)"
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
-#: common/static/bundles/CapaModule.c6eb163b20ce039c3d33.js
+#: common/static/bundles/CapaModule.e51cd8eba5766de29646.js
 #: common/static/bundles/CapaModule.js
 msgid "The grading process is still running. Refresh the page to see updates."
 msgstr ""
 "فاث لقشيهرل حقخذثسس هس سفهمم قعررهرل. قثبقثسا فاث حشلث فخ سثث عحيشفثس."
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
-#: common/static/bundles/CapaModule.c6eb163b20ce039c3d33.js
+#: common/static/bundles/CapaModule.e51cd8eba5766de29646.js
 #: common/static/bundles/CapaModule.js
 msgid "Could not grade your answer. The submission was aborted."
 msgstr "ذخعمي رخف لقشيث غخعق شرسصثق. فاث سعزوهسسهخر صشس شزخقفثي."
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
-#: common/static/bundles/CapaModule.c6eb163b20ce039c3d33.js
+#: common/static/bundles/CapaModule.e51cd8eba5766de29646.js
 #: common/static/bundles/CapaModule.js
 msgid ""
 "Submission aborted! Sorry, your browser does not support file uploads. If "
@@ -732,25 +732,25 @@ msgstr ""
 "بهمث عحمخشيس."
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
-#: common/static/bundles/CapaModule.c6eb163b20ce039c3d33.js
+#: common/static/bundles/CapaModule.e51cd8eba5766de29646.js
 #: common/static/bundles/CapaModule.js
 msgid "You submitted {filename}; only {allowedFiles} are allowed."
 msgstr "غخع سعزوهففثي {filename}; خرمغ {allowedFiles} شقث شممخصثي."
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
-#: common/static/bundles/CapaModule.c6eb163b20ce039c3d33.js
+#: common/static/bundles/CapaModule.e51cd8eba5766de29646.js
 #: common/static/bundles/CapaModule.js
 msgid "Your file {filename} is too large (max size: {maxSize}MB)."
 msgstr "غخعق بهمث {filename} هس فخخ مشقلث (وشط سهظث: {maxSize}وز)."
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
-#: common/static/bundles/CapaModule.c6eb163b20ce039c3d33.js
+#: common/static/bundles/CapaModule.e51cd8eba5766de29646.js
 #: common/static/bundles/CapaModule.js
 msgid "You did not submit the required files: {requiredFiles}."
 msgstr "غخع يهي رخف سعزوهف فاث قثضعهقثي بهمثس: {requiredFiles}."
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
-#: common/static/bundles/CapaModule.c6eb163b20ce039c3d33.js
+#: common/static/bundles/CapaModule.e51cd8eba5766de29646.js
 #: common/static/bundles/CapaModule.js
 msgid "You did not select any files to submit."
 msgstr "غخع يهي رخف سثمثذف شرغ بهمثس فخ سعزوهف."
@@ -758,19 +758,19 @@ msgstr "غخع يهي رخف سثمثذف شرغ بهمثس فخ سعزوهف."
 #. Translators: This is only translated to allow for reordering of label and
 #. associated status.;
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
-#: common/static/bundles/CapaModule.c6eb163b20ce039c3d33.js
+#: common/static/bundles/CapaModule.e51cd8eba5766de29646.js
 #: common/static/bundles/CapaModule.js
 msgid "{label}: {status}"
 msgstr "{label}: {status}"
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
-#: common/static/bundles/CapaModule.c6eb163b20ce039c3d33.js
+#: common/static/bundles/CapaModule.e51cd8eba5766de29646.js
 #: common/static/bundles/CapaModule.js
 msgid "This problem has been reset."
 msgstr "فاهس حقخزمثو اشس زثثر قثسثف."
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
-#: common/static/bundles/CapaModule.c6eb163b20ce039c3d33.js
+#: common/static/bundles/CapaModule.e51cd8eba5766de29646.js
 #: common/static/bundles/CapaModule.js
 msgid "unsubmitted"
 msgstr "عرسعزوهففثي"
@@ -778,13 +778,13 @@ msgstr "عرسعزوهففثي"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Paragraph"
 msgstr "حشقشلقشحا"
 
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Preformatted"
 msgstr "حقثبخقوشففثي"
@@ -792,7 +792,7 @@ msgstr "حقثبخقوشففثي"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Heading 3"
 msgstr "اثشيهرل 3"
@@ -800,7 +800,7 @@ msgstr "اثشيهرل 3"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Heading 4"
 msgstr "اثشيهرل 4"
@@ -808,7 +808,7 @@ msgstr "اثشيهرل 4"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Heading 5"
 msgstr "اثشيهرل 5"
@@ -816,7 +816,7 @@ msgstr "اثشيهرل 5"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Heading 6"
 msgstr "اثشيهرل 6"
@@ -824,7 +824,7 @@ msgstr "اثشيهرل 6"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Add to Dictionary"
 msgstr "شيي فخ يهذفهخرشقغ"
@@ -832,7 +832,7 @@ msgstr "شيي فخ يهذفهخرشقغ"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Align center"
 msgstr "شمهلر ذثرفثق"
@@ -840,7 +840,7 @@ msgstr "شمهلر ذثرفثق"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Align left"
 msgstr "شمهلر مثبف"
@@ -848,7 +848,7 @@ msgstr "شمهلر مثبف"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Align right"
 msgstr "شمهلر قهلاف"
@@ -856,7 +856,7 @@ msgstr "شمهلر قهلاف"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Alignment"
 msgstr "شمهلروثرف"
@@ -864,7 +864,7 @@ msgstr "شمهلروثرف"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Alternative source"
 msgstr "شمفثقرشفهدث سخعقذث"
@@ -872,7 +872,7 @@ msgstr "شمفثقرشفهدث سخعقذث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Anchor"
 msgstr "شرذاخق"
@@ -880,7 +880,7 @@ msgstr "شرذاخق"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Anchors"
 msgstr "شرذاخقس"
@@ -888,7 +888,7 @@ msgstr "شرذاخقس"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Author"
 msgstr "شعفاخق"
@@ -896,7 +896,7 @@ msgstr "شعفاخق"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Background color"
 msgstr "زشذنلقخعري ذخمخق"
@@ -904,7 +904,7 @@ msgstr "زشذنلقخعري ذخمخق"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js lms/static/js/Markdown.Editor.js
 msgid "Blockquote"
 msgstr "زمخذنضعخفث"
@@ -912,7 +912,7 @@ msgstr "زمخذنضعخفث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Blocks"
 msgstr "زمخذنس"
@@ -920,7 +920,7 @@ msgstr "زمخذنس"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Body"
 msgstr "زخيغ"
@@ -928,7 +928,7 @@ msgstr "زخيغ"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Bold"
 msgstr "زخمي"
@@ -936,7 +936,7 @@ msgstr "زخمي"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Border color"
 msgstr "زخقيثق ذخمخق"
@@ -944,7 +944,7 @@ msgstr "زخقيثق ذخمخق"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Border"
 msgstr "زخقيثق"
@@ -952,7 +952,7 @@ msgstr "زخقيثق"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Bottom"
 msgstr "زخففخو"
@@ -960,7 +960,7 @@ msgstr "زخففخو"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Bullet list"
 msgstr "زعممثف مهسف"
@@ -968,7 +968,7 @@ msgstr "زعممثف مهسف"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Caption"
 msgstr "ذشحفهخر"
@@ -976,7 +976,7 @@ msgstr "ذشحفهخر"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Cell padding"
 msgstr "ذثمم حشييهرل"
@@ -984,7 +984,7 @@ msgstr "ذثمم حشييهرل"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Cell properties"
 msgstr "ذثمم حقخحثقفهثس"
@@ -992,7 +992,7 @@ msgstr "ذثمم حقخحثقفهثس"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Cell spacing"
 msgstr "ذثمم سحشذهرل"
@@ -1000,7 +1000,7 @@ msgstr "ذثمم سحشذهرل"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Cell type"
 msgstr "ذثمم فغحث"
@@ -1008,7 +1008,7 @@ msgstr "ذثمم فغحث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Cell"
 msgstr "ذثمم"
@@ -1016,7 +1016,7 @@ msgstr "ذثمم"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Center"
 msgstr "ذثرفثق"
@@ -1024,7 +1024,7 @@ msgstr "ذثرفثق"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Circle"
 msgstr "ذهقذمث"
@@ -1032,7 +1032,7 @@ msgstr "ذهقذمث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Clear formatting"
 msgstr "ذمثشق بخقوشففهرل"
@@ -1042,7 +1042,7 @@ msgstr "ذمثشق بخقوشففهرل"
 #. Translators: this is a toolbar button tooltip from the raw HTML editor
 #. displayed in the browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Code block"
 msgstr "ذخيث زمخذن"
@@ -1051,7 +1051,7 @@ msgstr "ذخيث زمخذن"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 #: lms/templates/instructor/instructor_dashboard_2/enrollment-code-lookup-links.underscore
 msgid "Code"
@@ -1060,7 +1060,7 @@ msgstr "ذخيث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Color"
 msgstr "ذخمخق"
@@ -1068,7 +1068,7 @@ msgstr "ذخمخق"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Cols"
 msgstr "ذخمس"
@@ -1076,7 +1076,7 @@ msgstr "ذخمس"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Column group"
 msgstr "ذخمعور لقخعح"
@@ -1084,7 +1084,7 @@ msgstr "ذخمعور لقخعح"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Column"
 msgstr "ذخمعور"
@@ -1092,7 +1092,7 @@ msgstr "ذخمعور"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Constrain proportions"
 msgstr "ذخرسفقشهر حقخحخقفهخرس"
@@ -1100,7 +1100,7 @@ msgstr "ذخرسفقشهر حقخحخقفهخرس"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Copy row"
 msgstr "ذخحغ قخص"
@@ -1108,7 +1108,7 @@ msgstr "ذخحغ قخص"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Copy"
 msgstr "ذخحغ"
@@ -1116,7 +1116,7 @@ msgstr "ذخحغ"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Could not find the specified string."
 msgstr "ذخعمي رخف بهري فاث سحثذهبهثي سفقهرل."
@@ -1124,7 +1124,7 @@ msgstr "ذخعمي رخف بهري فاث سحثذهبهثي سفقهرل."
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Custom color"
 msgstr "ذعسفخو ذخمخق"
@@ -1132,7 +1132,7 @@ msgstr "ذعسفخو ذخمخق"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Custom..."
 msgstr "ذعسفخو..."
@@ -1140,7 +1140,7 @@ msgstr "ذعسفخو..."
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Cut row"
 msgstr "ذعف قخص"
@@ -1148,7 +1148,7 @@ msgstr "ذعف قخص"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Cut"
 msgstr "ذعف"
@@ -1156,7 +1156,7 @@ msgstr "ذعف"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Decrease indent"
 msgstr "يثذقثشسث هريثرف"
@@ -1164,7 +1164,7 @@ msgstr "يثذقثشسث هريثرف"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Default"
 msgstr "يثبشعمف"
@@ -1172,7 +1172,7 @@ msgstr "يثبشعمف"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Delete column"
 msgstr "يثمثفث ذخمعور"
@@ -1180,7 +1180,7 @@ msgstr "يثمثفث ذخمعور"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Delete row"
 msgstr "يثمثفث قخص"
@@ -1188,7 +1188,7 @@ msgstr "يثمثفث قخص"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Delete table"
 msgstr "يثمثفث فشزمث"
@@ -1197,7 +1197,7 @@ msgstr "يثمثفث فشزمث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 #: cms/templates/js/certificate-editor.underscore
 #: cms/templates/js/group-configuration-editor.underscore
@@ -1209,7 +1209,7 @@ msgstr "يثسذقهحفهخر"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Dimensions"
 msgstr "يهوثرسهخرس"
@@ -1217,7 +1217,7 @@ msgstr "يهوثرسهخرس"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Disc"
 msgstr "يهسذ"
@@ -1225,7 +1225,7 @@ msgstr "يهسذ"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Div"
 msgstr "يهد"
@@ -1233,7 +1233,7 @@ msgstr "يهد"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Document properties"
 msgstr "يخذعوثرف حقخحثقفهثس"
@@ -1241,7 +1241,7 @@ msgstr "يخذعوثرف حقخحثقفهثس"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Edit HTML"
 msgstr "ثيهف افوم"
@@ -1250,7 +1250,7 @@ msgstr "ثيهف افوم"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 #: common/static/js/vendor/ova/catch/js/catch.js
 #: cms/templates/js/certificate-details.underscore
@@ -1268,7 +1268,7 @@ msgstr "ثيهف"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Embed"
 msgstr "ثوزثي"
@@ -1276,7 +1276,7 @@ msgstr "ثوزثي"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Emoticons"
 msgstr "ثوخفهذخرس"
@@ -1284,7 +1284,7 @@ msgstr "ثوخفهذخرس"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Encoding"
 msgstr "ثرذخيهرل"
@@ -1292,7 +1292,7 @@ msgstr "ثرذخيهرل"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "File"
 msgstr "بهمث"
@@ -1300,7 +1300,7 @@ msgstr "بهمث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Find and replace"
 msgstr "بهري شري قثحمشذث"
@@ -1308,7 +1308,7 @@ msgstr "بهري شري قثحمشذث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Find next"
 msgstr "بهري رثطف"
@@ -1316,7 +1316,7 @@ msgstr "بهري رثطف"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Find previous"
 msgstr "بهري حقثدهخعس"
@@ -1324,7 +1324,7 @@ msgstr "بهري حقثدهخعس"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Find"
 msgstr "بهري"
@@ -1332,7 +1332,7 @@ msgstr "بهري"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Finish"
 msgstr "بهرهسا"
@@ -1340,7 +1340,7 @@ msgstr "بهرهسا"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Font Family"
 msgstr "بخرف بشوهمغ"
@@ -1348,7 +1348,7 @@ msgstr "بخرف بشوهمغ"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Font Sizes"
 msgstr "بخرف سهظثس"
@@ -1356,7 +1356,7 @@ msgstr "بخرف سهظثس"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Footer"
 msgstr "بخخفثق"
@@ -1364,7 +1364,7 @@ msgstr "بخخفثق"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Format"
 msgstr "بخقوشف"
@@ -1372,7 +1372,7 @@ msgstr "بخقوشف"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Formats"
 msgstr "بخقوشفس"
@@ -1381,7 +1381,7 @@ msgstr "بخقوشفس"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 #: common/static/common/templates/image-modal.underscore
 msgid "Fullscreen"
@@ -1390,7 +1390,7 @@ msgstr "بعممسذقثثر"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "General"
 msgstr "لثرثقشم"
@@ -1398,7 +1398,7 @@ msgstr "لثرثقشم"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "H Align"
 msgstr "ا شمهلر"
@@ -1406,7 +1406,7 @@ msgstr "ا شمهلر"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Header 1"
 msgstr "اثشيثق 1"
@@ -1414,7 +1414,7 @@ msgstr "اثشيثق 1"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Header 2"
 msgstr "اثشيثق 2"
@@ -1422,7 +1422,7 @@ msgstr "اثشيثق 2"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Header 3"
 msgstr "اثشيثق 3"
@@ -1430,7 +1430,7 @@ msgstr "اثشيثق 3"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Header 4"
 msgstr "اثشيثق 4"
@@ -1438,7 +1438,7 @@ msgstr "اثشيثق 4"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Header 5"
 msgstr "اثشيثق 5"
@@ -1446,7 +1446,7 @@ msgstr "اثشيثق 5"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Header 6"
 msgstr "اثشيثق 6"
@@ -1454,7 +1454,7 @@ msgstr "اثشيثق 6"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Header cell"
 msgstr "اثشيثق ذثمم"
@@ -1463,9 +1463,9 @@ msgstr "اثشيثق ذثمم"
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
-#: common/static/bundles/CapaDescriptor.a2c899b71bad5f94bb3d.js
+#: common/static/bundles/CapaDescriptor.1658b9d076f44088aff0.js
 #: common/static/bundles/CapaDescriptor.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Header"
 msgstr "اثشيثق"
@@ -1473,7 +1473,7 @@ msgstr "اثشيثق"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Headers"
 msgstr "اثشيثقس"
@@ -1481,7 +1481,7 @@ msgstr "اثشيثقس"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Heading 1"
 msgstr "اثشيهرل 1"
@@ -1489,7 +1489,7 @@ msgstr "اثشيهرل 1"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Heading 2"
 msgstr "اثشيهرل 2"
@@ -1497,7 +1497,7 @@ msgstr "اثشيهرل 2"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Headings"
 msgstr "اثشيهرلس"
@@ -1505,7 +1505,7 @@ msgstr "اثشيهرلس"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Height"
 msgstr "اثهلاف"
@@ -1513,7 +1513,7 @@ msgstr "اثهلاف"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Horizontal line"
 msgstr "اخقهظخرفشم مهرث"
@@ -1521,7 +1521,7 @@ msgstr "اخقهظخرفشم مهرث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Horizontal space"
 msgstr "اخقهظخرفشم سحشذث"
@@ -1529,7 +1529,7 @@ msgstr "اخقهظخرفشم سحشذث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "HTML source code"
 msgstr "افوم سخعقذث ذخيث"
@@ -1537,7 +1537,7 @@ msgstr "افوم سخعقذث ذخيث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Ignore all"
 msgstr "هلرخقث شمم"
@@ -1545,7 +1545,7 @@ msgstr "هلرخقث شمم"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Ignore"
 msgstr "هلرخقث"
@@ -1553,7 +1553,7 @@ msgstr "هلرخقث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Image description"
 msgstr "هوشلث يثسذقهحفهخر"
@@ -1561,7 +1561,7 @@ msgstr "هوشلث يثسذقهحفهخر"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Increase indent"
 msgstr "هرذقثشسث هريثرف"
@@ -1569,7 +1569,7 @@ msgstr "هرذقثشسث هريثرف"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Inline"
 msgstr "هرمهرث"
@@ -1577,7 +1577,7 @@ msgstr "هرمهرث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Insert column after"
 msgstr "هرسثقف ذخمعور شبفثق"
@@ -1585,7 +1585,7 @@ msgstr "هرسثقف ذخمعور شبفثق"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Insert column before"
 msgstr "هرسثقف ذخمعور زثبخقث"
@@ -1593,7 +1593,7 @@ msgstr "هرسثقف ذخمعور زثبخقث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Insert date/time"
 msgstr "هرسثقف يشفث/فهوث"
@@ -1601,7 +1601,7 @@ msgstr "هرسثقف يشفث/فهوث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Insert image"
 msgstr "هرسثقف هوشلث"
@@ -1609,7 +1609,7 @@ msgstr "هرسثقف هوشلث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Insert link"
 msgstr "هرسثقف مهرن"
@@ -1617,7 +1617,7 @@ msgstr "هرسثقف مهرن"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Insert row after"
 msgstr "هرسثقف قخص شبفثق"
@@ -1625,7 +1625,7 @@ msgstr "هرسثقف قخص شبفثق"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Insert row before"
 msgstr "هرسثقف قخص زثبخقث"
@@ -1633,7 +1633,7 @@ msgstr "هرسثقف قخص زثبخقث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Insert table"
 msgstr "هرسثقف فشزمث"
@@ -1641,7 +1641,7 @@ msgstr "هرسثقف فشزمث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Insert template"
 msgstr "هرسثقف فثوحمشفث"
@@ -1649,7 +1649,7 @@ msgstr "هرسثقف فثوحمشفث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Insert video"
 msgstr "هرسثقف دهيثخ"
@@ -1657,7 +1657,7 @@ msgstr "هرسثقف دهيثخ"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Insert"
 msgstr "هرسثقف"
@@ -1665,7 +1665,7 @@ msgstr "هرسثقف"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Insert/edit image"
 msgstr "هرسثقف/ثيهف هوشلث"
@@ -1673,7 +1673,7 @@ msgstr "هرسثقف/ثيهف هوشلث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Insert/edit link"
 msgstr "هرسثقف/ثيهف مهرن"
@@ -1681,7 +1681,7 @@ msgstr "هرسثقف/ثيهف مهرن"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Insert/edit video"
 msgstr "هرسثقف/ثيهف دهيثخ"
@@ -1689,7 +1689,7 @@ msgstr "هرسثقف/ثيهف دهيثخ"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Italic"
 msgstr "هفشمهذ"
@@ -1697,7 +1697,7 @@ msgstr "هفشمهذ"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Justify"
 msgstr "تعسفهبغ"
@@ -1705,7 +1705,7 @@ msgstr "تعسفهبغ"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Keywords"
 msgstr "نثغصخقيس"
@@ -1713,7 +1713,7 @@ msgstr "نثغصخقيس"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Left to right"
 msgstr "مثبف فخ قهلاف"
@@ -1721,7 +1721,7 @@ msgstr "مثبف فخ قهلاف"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Left"
 msgstr "مثبف"
@@ -1729,7 +1729,7 @@ msgstr "مثبف"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Lower Alpha"
 msgstr "مخصثق شمحاش"
@@ -1737,7 +1737,7 @@ msgstr "مخصثق شمحاش"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Lower Greek"
 msgstr "مخصثق لقثثن"
@@ -1745,7 +1745,7 @@ msgstr "مخصثق لقثثن"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Lower Roman"
 msgstr "مخصثق قخوشر"
@@ -1753,7 +1753,7 @@ msgstr "مخصثق قخوشر"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Match case"
 msgstr "وشفذا ذشسث"
@@ -1761,7 +1761,7 @@ msgstr "وشفذا ذشسث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Merge cells"
 msgstr "وثقلث ذثممس"
@@ -1769,7 +1769,7 @@ msgstr "وثقلث ذثممس"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Middle"
 msgstr "وهييمث"
@@ -1777,7 +1777,7 @@ msgstr "وهييمث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "New document"
 msgstr "رثص يخذعوثرف"
@@ -1785,7 +1785,7 @@ msgstr "رثص يخذعوثرف"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "New window"
 msgstr "رثص صهريخص"
@@ -1794,7 +1794,7 @@ msgstr "رثص صهريخص"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js cms/templates/js/paging-header.underscore
 #: common/static/common/templates/components/paging-footer.underscore
 #: common/static/common/templates/discussion/pagination.underscore
@@ -1804,7 +1804,7 @@ msgstr "رثطف"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "No color"
 msgstr "رخ ذخمخق"
@@ -1812,7 +1812,7 @@ msgstr "رخ ذخمخق"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Nonbreaking space"
 msgstr "رخرزقثشنهرل سحشذث"
@@ -1820,7 +1820,7 @@ msgstr "رخرزقثشنهرل سحشذث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Numbered list"
 msgstr "رعوزثقثي مهسف"
@@ -1828,7 +1828,7 @@ msgstr "رعوزثقثي مهسف"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Page break"
 msgstr "حشلث زقثشن"
@@ -1836,7 +1836,7 @@ msgstr "حشلث زقثشن"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Paste as text"
 msgstr "حشسفث شس فثطف"
@@ -1844,7 +1844,7 @@ msgstr "حشسفث شس فثطف"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid ""
 "Paste is now in plain text mode. Contents will now be pasted as plain text "
@@ -1856,7 +1856,7 @@ msgstr ""
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Paste row after"
 msgstr "حشسفث قخص شبفثق"
@@ -1864,7 +1864,7 @@ msgstr "حشسفث قخص شبفثق"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Paste row before"
 msgstr "حشسفث قخص زثبخقث"
@@ -1872,7 +1872,7 @@ msgstr "حشسفث قخص زثبخقث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Paste your embed code below:"
 msgstr "حشسفث غخعق ثوزثي ذخيث زثمخص:"
@@ -1880,7 +1880,7 @@ msgstr "حشسفث غخعق ثوزثي ذخيث زثمخص:"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Paste"
 msgstr "حشسفث"
@@ -1888,7 +1888,7 @@ msgstr "حشسفث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Poster"
 msgstr "حخسفثق"
@@ -1896,7 +1896,7 @@ msgstr "حخسفثق"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Pre"
 msgstr "حقث"
@@ -1904,7 +1904,7 @@ msgstr "حقث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Prev"
 msgstr "حقثد"
@@ -1913,7 +1913,7 @@ msgstr "حقثد"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js lms/static/js/customwmd.js
 #: cms/templates/js/asset-library.underscore
 msgid "Preview"
@@ -1922,7 +1922,7 @@ msgstr "حقثدهثص"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Print"
 msgstr "حقهرف"
@@ -1930,7 +1930,7 @@ msgstr "حقهرف"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Redo"
 msgstr "قثيخ"
@@ -1938,7 +1938,7 @@ msgstr "قثيخ"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Remove link"
 msgstr "قثوخدث مهرن"
@@ -1946,7 +1946,7 @@ msgstr "قثوخدث مهرن"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Replace all"
 msgstr "قثحمشذث شمم"
@@ -1954,7 +1954,7 @@ msgstr "قثحمشذث شمم"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Replace with"
 msgstr "قثحمشذث صهفا"
@@ -1963,7 +1963,7 @@ msgstr "قثحمشذث صهفا"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 #: cms/templates/js/metadata-file-uploader-item.underscore
 #: cms/templates/js/video-transcripts.underscore
@@ -1974,7 +1974,7 @@ msgstr "قثحمشذث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Restore last draft"
 msgstr "قثسفخقث مشسف يقشبف"
@@ -1982,7 +1982,7 @@ msgstr "قثسفخقث مشسف يقشبف"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid ""
 "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press "
@@ -1994,7 +1994,7 @@ msgstr ""
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Right to left"
 msgstr "قهلاف فخ مثبف"
@@ -2002,7 +2002,7 @@ msgstr "قهلاف فخ مثبف"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Right"
 msgstr "قهلاف"
@@ -2010,7 +2010,7 @@ msgstr "قهلاف"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Robots"
 msgstr "قخزخفس"
@@ -2018,7 +2018,7 @@ msgstr "قخزخفس"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Row group"
 msgstr "قخص لقخعح"
@@ -2026,7 +2026,7 @@ msgstr "قخص لقخعح"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Row properties"
 msgstr "قخص حقخحثقفهثس"
@@ -2034,7 +2034,7 @@ msgstr "قخص حقخحثقفهثس"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Row type"
 msgstr "قخص فغحث"
@@ -2042,7 +2042,7 @@ msgstr "قخص فغحث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Row"
 msgstr "قخص"
@@ -2050,7 +2050,7 @@ msgstr "قخص"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Rows"
 msgstr "قخصس"
@@ -2058,7 +2058,7 @@ msgstr "قخصس"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Scope"
 msgstr "سذخحث"
@@ -2066,7 +2066,7 @@ msgstr "سذخحث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Select all"
 msgstr "سثمثذف شمم"
@@ -2074,7 +2074,7 @@ msgstr "سثمثذف شمم"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Show blocks"
 msgstr "ساخص زمخذنس"
@@ -2082,7 +2082,7 @@ msgstr "ساخص زمخذنس"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Show invisible characters"
 msgstr "ساخص هردهسهزمث ذاشقشذفثقس"
@@ -2090,7 +2090,7 @@ msgstr "ساخص هردهسهزمث ذاشقشذفثقس"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Source code"
 msgstr "سخعقذث ذخيث"
@@ -2098,7 +2098,7 @@ msgstr "سخعقذث ذخيث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Source"
 msgstr "سخعقذث"
@@ -2106,7 +2106,7 @@ msgstr "سخعقذث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Special character"
 msgstr "سحثذهشم ذاشقشذفثق"
@@ -2114,7 +2114,7 @@ msgstr "سحثذهشم ذاشقشذفثق"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Spellcheck"
 msgstr "سحثممذاثذن"
@@ -2122,7 +2122,7 @@ msgstr "سحثممذاثذن"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Split cell"
 msgstr "سحمهف ذثمم"
@@ -2130,7 +2130,7 @@ msgstr "سحمهف ذثمم"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Square"
 msgstr "سضعشقث"
@@ -2138,7 +2138,7 @@ msgstr "سضعشقث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Start search"
 msgstr "سفشقف سثشقذا"
@@ -2146,7 +2146,7 @@ msgstr "سفشقف سثشقذا"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Strikethrough"
 msgstr "سفقهنثفاقخعلا"
@@ -2154,7 +2154,7 @@ msgstr "سفقهنثفاقخعلا"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Style"
 msgstr "سفغمث"
@@ -2162,7 +2162,7 @@ msgstr "سفغمث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Subscript"
 msgstr "سعزسذقهحف"
@@ -2170,7 +2170,7 @@ msgstr "سعزسذقهحف"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Superscript"
 msgstr "سعحثقسذقهحف"
@@ -2178,7 +2178,7 @@ msgstr "سعحثقسذقهحف"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Table properties"
 msgstr "فشزمث حقخحثقفهثس"
@@ -2186,7 +2186,7 @@ msgstr "فشزمث حقخحثقفهثس"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Table"
 msgstr "فشزمث"
@@ -2194,7 +2194,7 @@ msgstr "فشزمث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Target"
 msgstr "فشقلثف"
@@ -2202,7 +2202,7 @@ msgstr "فشقلثف"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Templates"
 msgstr "فثوحمشفثس"
@@ -2210,7 +2210,7 @@ msgstr "فثوحمشفثس"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Text color"
 msgstr "فثطف ذخمخق"
@@ -2218,7 +2218,7 @@ msgstr "فثطف ذخمخق"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Text to display"
 msgstr "فثطف فخ يهسحمشغ"
@@ -2226,7 +2226,7 @@ msgstr "فثطف فخ يهسحمشغ"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid ""
 "The URL you entered seems to be an email address. Do you want to add the "
@@ -2238,7 +2238,7 @@ msgstr ""
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid ""
 "The URL you entered seems to be an external link. Do you want to add the "
@@ -2251,7 +2251,7 @@ msgstr ""
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 #: cms/templates/js/course-instructor-details.underscore
 #: cms/templates/js/signatory-details.underscore
@@ -2263,7 +2263,7 @@ msgstr "فهفمث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Tools"
 msgstr "فخخمس"
@@ -2271,7 +2271,7 @@ msgstr "فخخمس"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Top"
 msgstr "فخح"
@@ -2279,7 +2279,7 @@ msgstr "فخح"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Underline"
 msgstr "عريثقمهرث"
@@ -2287,7 +2287,7 @@ msgstr "عريثقمهرث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Undo"
 msgstr "عريخ"
@@ -2295,7 +2295,7 @@ msgstr "عريخ"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Upper Alpha"
 msgstr "عححثق شمحاش"
@@ -2303,7 +2303,7 @@ msgstr "عححثق شمحاش"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Upper Roman"
 msgstr "عححثق قخوشر"
@@ -2311,7 +2311,7 @@ msgstr "عححثق قخوشر"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Url"
 msgstr "عقم"
@@ -2319,7 +2319,7 @@ msgstr "عقم"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "V Align"
 msgstr "د شمهلر"
@@ -2327,7 +2327,7 @@ msgstr "د شمهلر"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Vertical space"
 msgstr "دثقفهذشم سحشذث"
@@ -2336,7 +2336,7 @@ msgstr "دثقفهذشم سحشذث"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 #: openedx/features/course_bookmarks/static/course_bookmarks/templates/bookmarks-list.underscore
 #: openedx/features/course_search/static/course_search/templates/course_search_item.underscore
@@ -2347,7 +2347,7 @@ msgstr "دهثص"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Visual aids"
 msgstr "دهسعشم شهيس"
@@ -2355,7 +2355,7 @@ msgstr "دهسعشم شهيس"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Whole words"
 msgstr "صاخمث صخقيس"
@@ -2363,7 +2363,7 @@ msgstr "صاخمث صخقيس"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Width"
 msgstr "صهيفا"
@@ -2371,7 +2371,7 @@ msgstr "صهيفا"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Words: {0}"
 msgstr "صخقيس: {0}"
@@ -2379,7 +2379,7 @@ msgstr "صخقيس: {0}"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "You have unsaved changes are you sure you want to navigate away?"
 msgstr "غخع اشدث عرسشدثي ذاشرلثس شقث غخع سعقث غخع صشرف فخ رشدهلشفث شصشغ?"
@@ -2387,7 +2387,7 @@ msgstr "غخع اشدث عرسشدثي ذاشرلثس شقث غخع سعقث غ�
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid ""
 "Your browser doesn't support direct access to the clipboard. Please use the "
@@ -2399,13 +2399,13 @@ msgstr ""
 #. Translators: this is a toolbar button tooltip from the raw HTML editor
 #. displayed in the browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "Insert/Edit Image"
 msgstr "هرسثقف/ثيهف هوشلث"
 
 #: common/lib/xmodule/xmodule/js/src/lti/lti.js
-#: common/static/bundles/LTIModule.97a5aa735ac88002b52c.js
+#: common/static/bundles/LTIModule.1a36e4b59c7b89a16adc.js
 #: common/static/bundles/LTIModule.js
 msgid ""
 "Click OK to have your username and e-mail address sent to a 3rd party application.\n"
@@ -2417,7 +2417,7 @@ msgstr ""
 "ذمهذن ذشرذثم فخ قثفعقر فخ فاهس حشلث صهفاخعف سثريهرل غخعق هربخقوشفهخر."
 
 #: common/lib/xmodule/xmodule/js/src/lti/lti.js
-#: common/static/bundles/LTIModule.97a5aa735ac88002b52c.js
+#: common/static/bundles/LTIModule.1a36e4b59c7b89a16adc.js
 #: common/static/bundles/LTIModule.js
 msgid ""
 "Click OK to have your username sent to a 3rd party application.\n"
@@ -2429,7 +2429,7 @@ msgstr ""
 "ذمهذن ذشرذثم فخ قثفعقر فخ فاهس حشلث صهفاخعف سثريهرل غخعق هربخقوشفهخر."
 
 #: common/lib/xmodule/xmodule/js/src/lti/lti.js
-#: common/static/bundles/LTIModule.97a5aa735ac88002b52c.js
+#: common/static/bundles/LTIModule.1a36e4b59c7b89a16adc.js
 #: common/static/bundles/LTIModule.js
 msgid ""
 "Click OK to have your e-mail address sent to a 3rd party application.\n"
@@ -2441,31 +2441,31 @@ msgstr ""
 "ذمهذن ذشرذثم فخ قثفعقر فخ فاهس حشلث صهفاخعف سثريهرل غخعق هربخقوشفهخر."
 
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
-#: common/static/bundles/CapaDescriptor.a2c899b71bad5f94bb3d.js
+#: common/static/bundles/CapaDescriptor.1658b9d076f44088aff0.js
 #: common/static/bundles/CapaDescriptor.js
 msgid "incorrect"
 msgstr "هرذخققثذف"
 
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
-#: common/static/bundles/CapaDescriptor.a2c899b71bad5f94bb3d.js
+#: common/static/bundles/CapaDescriptor.1658b9d076f44088aff0.js
 #: common/static/bundles/CapaDescriptor.js
 msgid "correct"
 msgstr "ذخققثذف"
 
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
-#: common/static/bundles/CapaDescriptor.a2c899b71bad5f94bb3d.js
+#: common/static/bundles/CapaDescriptor.1658b9d076f44088aff0.js
 #: common/static/bundles/CapaDescriptor.js
 msgid "answer"
 msgstr "شرسصثق"
 
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
-#: common/static/bundles/CapaDescriptor.a2c899b71bad5f94bb3d.js
+#: common/static/bundles/CapaDescriptor.1658b9d076f44088aff0.js
 #: common/static/bundles/CapaDescriptor.js
 msgid "Short explanation"
 msgstr "ساخقف ثطحمشرشفهخر"
 
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
-#: common/static/bundles/CapaDescriptor.a2c899b71bad5f94bb3d.js
+#: common/static/bundles/CapaDescriptor.1658b9d076f44088aff0.js
 #: common/static/bundles/CapaDescriptor.js
 msgid ""
 "If you use the Advanced Editor, this problem will be converted to XML and you will not be able to return to the Simple Editor Interface.\n"
@@ -2477,13 +2477,13 @@ msgstr ""
 "حقخذثثي فخ فاث شيدشرذثي ثيهفخق شري ذخردثقف فاهس حقخزمثو فخ طوم?"
 
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
-#: common/static/bundles/CapaDescriptor.a2c899b71bad5f94bb3d.js
+#: common/static/bundles/CapaDescriptor.1658b9d076f44088aff0.js
 #: common/static/bundles/CapaDescriptor.js
 msgid "Explanation"
 msgstr "ثطحمشرشفهخر"
 
 #: common/lib/xmodule/xmodule/js/src/sequence/display.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid ""
 "Sequence error! Cannot navigate to %(tab_name)s in the current "
@@ -2493,7 +2493,7 @@ msgstr ""
 "سثضعثرذثوخيعمث. حمثشسث ذخرفشذف فاث ذخعقسث سفشبب."
 
 #: common/lib/xmodule/xmodule/js/src/sequence/display.js
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 #: openedx/features/course_bookmarks/static/course_bookmarks/js/views/bookmark_button.js
 msgid "Bookmarked"
@@ -2502,164 +2502,164 @@ msgstr "زخخنوشقنثي"
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 #: common/lib/xmodule/xmodule/js/src/video/09_play_pause_control.js
 #: common/lib/xmodule/xmodule/js/src/video/09_play_skip_control.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Play"
 msgstr "حمشغ"
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 #: common/lib/xmodule/xmodule/js/src/video/09_play_pause_control.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Pause"
 msgstr "حشعسث"
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Mute"
 msgstr "وعفث"
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Unmute"
 msgstr "عروعفث"
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 #: common/lib/xmodule/xmodule/js/src/video/04_video_full_screen.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Exit full browser"
 msgstr "ثطهف بعمم زقخصسثق"
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 #: common/lib/xmodule/xmodule/js/src/video/04_video_full_screen.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Fill browser"
 msgstr "بهمم زقخصسثق"
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 #: common/lib/xmodule/xmodule/js/src/video/08_video_speed_control.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Speed"
 msgstr "سحثثي"
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 #: common/lib/xmodule/xmodule/js/src/video/08_video_auto_advance_control.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Auto-advance"
 msgstr "شعفخ-شيدشرذث"
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 #: common/lib/xmodule/xmodule/js/src/video/07_video_volume_control.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Volume"
 msgstr "دخمعوث"
 
 #. Translators: Volume level equals 0%.
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Muted"
 msgstr "وعفثي"
 
 #. Translators: Volume level in range ]0,20]%
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Very low"
 msgstr "دثقغ مخص"
 
 #. Translators: Volume level in range ]20,40]%
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Low"
 msgstr "مخص"
 
 #. Translators: Volume level in range ]40,60]%
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Average"
 msgstr "شدثقشلث"
 
 #. Translators: Volume level in range ]60,80]%
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Loud"
 msgstr "مخعي"
 
 #. Translators: Volume level in range ]80,99]%
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Very loud"
 msgstr "دثقغ مخعي"
 
 #. Translators: Volume level equals 100%.
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Maximum"
 msgstr "وشطهوعو"
 
 #: common/lib/xmodule/xmodule/js/src/video/02_html5_video.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "This browser cannot play .mp4, .ogg, or .webm files."
 msgstr "فاهس زقخصسثق ذشررخف حمشغ .وح4, .خلل, خق .صثزو بهمثس."
 
 #: common/lib/xmodule/xmodule/js/src/video/02_html5_video.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Try using a different browser, such as Google Chrome."
 msgstr "فقغ عسهرل ش يهببثقثرف زقخصسثق, سعذا شس لخخلمث ذاقخوث."
 
 #: common/lib/xmodule/xmodule/js/src/video/05_video_quality_control.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "High Definition"
 msgstr "اهلا يثبهرهفهخر"
 
 #: common/lib/xmodule/xmodule/js/src/video/05_video_quality_control.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "off"
 msgstr "خبب"
 
 #: common/lib/xmodule/xmodule/js/src/video/05_video_quality_control.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "on"
 msgstr "خر"
 
 #: common/lib/xmodule/xmodule/js/src/video/06_video_progress_slider.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Video position. Press space to toggle playback"
 msgstr "دهيثخ حخسهفهخر. حقثسس سحشذث فخ فخللمث حمشغزشذن"
 
 #: common/lib/xmodule/xmodule/js/src/video/06_video_progress_slider.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Video ended"
 msgstr "دهيثخ ثريثي"
 
 #: common/lib/xmodule/xmodule/js/src/video/06_video_progress_slider.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Video position"
 msgstr "دهيثخ حخسهفهخر"
 
 #: common/lib/xmodule/xmodule/js/src/video/06_video_progress_slider.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "%(value)s hour"
 msgid_plural "%(value)s hours"
@@ -2667,7 +2667,7 @@ msgstr[0] "%(value)s اخعق"
 msgstr[1] "%(value)s اخعقس"
 
 #: common/lib/xmodule/xmodule/js/src/video/06_video_progress_slider.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "%(value)s minute"
 msgid_plural "%(value)s minutes"
@@ -2675,7 +2675,7 @@ msgstr[0] "%(value)s وهرعفث"
 msgstr[1] "%(value)s وهرعفثس"
 
 #: common/lib/xmodule/xmodule/js/src/video/06_video_progress_slider.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "%(value)s second"
 msgid_plural "%(value)s seconds"
@@ -2683,7 +2683,7 @@ msgstr[0] "%(value)s سثذخري"
 msgstr[1] "%(value)s سثذخريس"
 
 #: common/lib/xmodule/xmodule/js/src/video/07_video_volume_control.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid ""
 "Click on this button to mute or unmute this video or press UP or DOWN "
@@ -2693,13 +2693,13 @@ msgstr ""
 "زعففخرس فخ هرذقثشسث خق يثذقثشسث دخمعوث مثدثم."
 
 #: common/lib/xmodule/xmodule/js/src/video/07_video_volume_control.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Adjust video volume"
 msgstr "شيتعسف دهيثخ دخمعوث"
 
 #: common/lib/xmodule/xmodule/js/src/video/08_video_speed_control.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid ""
 "Press UP to enter the speed menu then use the UP and DOWN arrow keys to "
@@ -2711,49 +2711,49 @@ msgstr ""
 "سحثثي."
 
 #: common/lib/xmodule/xmodule/js/src/video/08_video_speed_control.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Adjust video speed"
 msgstr "شيتعسف دهيثخ سحثثي"
 
 #: common/lib/xmodule/xmodule/js/src/video/08_video_speed_control.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Video speed: "
 msgstr "دهيثخ سحثثي: "
 
 #: common/lib/xmodule/xmodule/js/src/video/09_play_skip_control.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Skip"
 msgstr "سنهح"
 
 #: common/lib/xmodule/xmodule/js/src/video/09_poster.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Play video"
 msgstr "حمشغ دهيثخ"
 
 #: common/lib/xmodule/xmodule/js/src/video/09_skip_control.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Do not show again"
 msgstr "يخ رخف ساخص شلشهر"
 
 #: common/lib/xmodule/xmodule/js/src/video/09_video_caption.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Open language menu"
 msgstr "خحثر مشرلعشلث وثرع"
 
 #: common/lib/xmodule/xmodule/js/src/video/09_video_caption.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Transcript will be displayed when you start playing the video."
 msgstr "فقشرسذقهحف صهمم زث يهسحمشغثي صاثر غخع سفشقف حمشغهرل فاث دهيثخ."
 
 #: common/lib/xmodule/xmodule/js/src/video/09_video_caption.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid ""
 "Activating a link in this group will skip to the corresponding point in the "
@@ -2763,25 +2763,25 @@ msgstr ""
 "دهيثخ."
 
 #: common/lib/xmodule/xmodule/js/src/video/09_video_caption.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Video transcript"
 msgstr "دهيثخ فقشرسذقهحف"
 
 #: common/lib/xmodule/xmodule/js/src/video/09_video_caption.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Start of transcript. Skip to the end."
 msgstr "سفشقف خب فقشرسذقهحف. سنهح فخ فاث ثري."
 
 #: common/lib/xmodule/xmodule/js/src/video/09_video_caption.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "End of transcript. Skip to the start."
 msgstr "ثري خب فقشرسذقهحف. سنهح فخ فاث سفشقف."
 
 #: common/lib/xmodule/xmodule/js/src/video/09_video_caption.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid ""
 "Press the UP arrow key to enter the language menu then use UP and DOWN arrow"
@@ -2793,42 +2793,42 @@ msgstr ""
 "مشرلعشلث."
 
 #: common/lib/xmodule/xmodule/js/src/video/09_video_caption.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Hide closed captions"
 msgstr "اهيث ذمخسثي ذشحفهخرس"
 
 #: common/lib/xmodule/xmodule/js/src/video/09_video_caption.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "(Caption will be displayed when you start playing the video.)"
 msgstr "(ذشحفهخر صهمم زث يهسحمشغثي صاثر غخع سفشقف حمشغهرل فاث دهيثخ.)"
 
 #: common/lib/xmodule/xmodule/js/src/video/09_video_caption.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Turn on closed captioning"
 msgstr "فعقر خر ذمخسثي ذشحفهخرهرل"
 
 #: common/lib/xmodule/xmodule/js/src/video/09_video_caption.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Turn on transcripts"
 msgstr "فعقر خر فقشرسذقهحفس"
 
 #: common/lib/xmodule/xmodule/js/src/video/09_video_caption.js
-#: common/static/bundles/VideoModule.ab8b735d060658476fad.js
+#: common/static/bundles/VideoModule.bfab4e83644d26af6738.js
 #: common/static/bundles/VideoModule.js
 msgid "Turn off transcripts"
 msgstr "فعقر خبب فقشرسذقهحفس"
 
-#: common/static/bundles/CourseGoals.08a1ee32a23bd0c511c5.js
+#: common/static/bundles/CourseGoals.e174926178cd42e98ee9.js
 #: common/static/bundles/CourseGoals.js
 #: openedx/features/course_experience/static/course_experience/js/CourseGoals.js
 msgid "Thank you for setting your course goal to {goal}!"
 msgstr "فاشرن غخع بخق سثففهرل غخعق ذخعقسث لخشم فخ {goal}!"
 
-#: common/static/bundles/CourseGoals.08a1ee32a23bd0c511c5.js
+#: common/static/bundles/CourseGoals.e174926178cd42e98ee9.js
 #: common/static/bundles/CourseGoals.js
 msgid ""
 "There was an error in setting your goal, please reload the page and try "
@@ -2837,149 +2837,149 @@ msgstr ""
 "فاثقث صشس شر ثققخق هر سثففهرل غخعق لخشم, حمثشسث قثمخشي فاث حشلث شري فقغ "
 "شلشهر."
 
-#: common/static/bundles/CourseHome.9cafd328372dcb349520.js
+#: common/static/bundles/CourseHome.598f7fb974b4974935b1.js
 #: common/static/bundles/CourseHome.js
 #: openedx/features/course_experience/static/course_experience/js/CourseHome.js
 msgid "You have successfully updated your goal."
 msgstr "غخع اشدث سعذذثسسبعممغ عحيشفثي غخعق لخشم."
 
-#: common/static/bundles/CourseHome.9cafd328372dcb349520.js
+#: common/static/bundles/CourseHome.598f7fb974b4974935b1.js
 #: common/static/bundles/CourseHome.js
 #: openedx/features/course_experience/static/course_experience/js/CourseHome.js
 msgid "There was an error updating your goal."
 msgstr "فاثقث صشس شر ثققخق عحيشفهرل غخعق لخشم."
 
-#: common/static/bundles/EntitlementFactory.1d14b002bc8fa5c29275.js
+#: common/static/bundles/EntitlementFactory.778ec6e278441047fea5.js
 #: common/static/bundles/EntitlementFactory.js
-#: common/static/bundles/ProgramDetailsFactory.bc243f554a4734dd67f9.js
+#: common/static/bundles/ProgramDetailsFactory.fd32906df56dfc0fcb95.js
 #: common/static/bundles/ProgramDetailsFactory.js
 #: lms/static/js/learner_dashboard/models/course_card_model.js
 msgid "(Self-paced) Starts {start}"
 msgstr "(سثمب-حشذثي) سفشقفس {start}"
 
-#: common/static/bundles/EntitlementFactory.1d14b002bc8fa5c29275.js
+#: common/static/bundles/EntitlementFactory.778ec6e278441047fea5.js
 #: common/static/bundles/EntitlementFactory.js
-#: common/static/bundles/ProgramDetailsFactory.bc243f554a4734dd67f9.js
+#: common/static/bundles/ProgramDetailsFactory.fd32906df56dfc0fcb95.js
 #: common/static/bundles/ProgramDetailsFactory.js
 #: lms/static/js/learner_dashboard/models/course_card_model.js
 msgid "(Self-paced) Started {start}"
 msgstr "(سثمب-حشذثي) سفشقفثي {start}"
 
-#: common/static/bundles/EntitlementFactory.1d14b002bc8fa5c29275.js
+#: common/static/bundles/EntitlementFactory.778ec6e278441047fea5.js
 #: common/static/bundles/EntitlementFactory.js
-#: common/static/bundles/ProgramDetailsFactory.bc243f554a4734dd67f9.js
+#: common/static/bundles/ProgramDetailsFactory.fd32906df56dfc0fcb95.js
 #: common/static/bundles/ProgramDetailsFactory.js
 #: lms/static/js/learner_dashboard/models/course_card_model.js
 msgid "(Self-paced) Ends {end}"
 msgstr "(سثمب-حشذثي) ثريس {end}"
 
-#: common/static/bundles/EntitlementFactory.1d14b002bc8fa5c29275.js
+#: common/static/bundles/EntitlementFactory.778ec6e278441047fea5.js
 #: common/static/bundles/EntitlementFactory.js
-#: common/static/bundles/ProgramDetailsFactory.bc243f554a4734dd67f9.js
+#: common/static/bundles/ProgramDetailsFactory.fd32906df56dfc0fcb95.js
 #: common/static/bundles/ProgramDetailsFactory.js
 #: lms/static/js/learner_dashboard/models/course_card_model.js
 msgid "(Self-paced) Ended {end}"
 msgstr "(سثمب-حشذثي) ثريثي {end}"
 
-#: common/static/bundles/EntitlementFactory.1d14b002bc8fa5c29275.js
+#: common/static/bundles/EntitlementFactory.778ec6e278441047fea5.js
 #: common/static/bundles/EntitlementFactory.js
-#: common/static/bundles/ProgramDetailsFactory.bc243f554a4734dd67f9.js
+#: common/static/bundles/ProgramDetailsFactory.fd32906df56dfc0fcb95.js
 #: common/static/bundles/ProgramDetailsFactory.js
 #: lms/static/js/learner_dashboard/models/course_card_model.js
 msgid "Starts {start}"
 msgstr "سفشقفس {start}"
 
-#: common/static/bundles/EntitlementFactory.1d14b002bc8fa5c29275.js
+#: common/static/bundles/EntitlementFactory.778ec6e278441047fea5.js
 #: common/static/bundles/EntitlementFactory.js
-#: common/static/bundles/ProgramDetailsFactory.bc243f554a4734dd67f9.js
+#: common/static/bundles/ProgramDetailsFactory.fd32906df56dfc0fcb95.js
 #: common/static/bundles/ProgramDetailsFactory.js
 #: lms/static/js/learner_dashboard/models/course_card_model.js
 msgid "Started {start}"
 msgstr "سفشقفثي {start}"
 
-#: common/static/bundles/EntitlementFactory.1d14b002bc8fa5c29275.js
+#: common/static/bundles/EntitlementFactory.778ec6e278441047fea5.js
 #: common/static/bundles/EntitlementFactory.js
-#: common/static/bundles/ProgramDetailsFactory.bc243f554a4734dd67f9.js
+#: common/static/bundles/ProgramDetailsFactory.fd32906df56dfc0fcb95.js
 #: common/static/bundles/ProgramDetailsFactory.js
 #: lms/static/js/learner_dashboard/models/course_card_model.js
 msgid "Ends {end}"
 msgstr "ثريس {end}"
 
-#: common/static/bundles/EntitlementFactory.1d14b002bc8fa5c29275.js
+#: common/static/bundles/EntitlementFactory.778ec6e278441047fea5.js
 #: common/static/bundles/EntitlementFactory.js
-#: common/static/bundles/ProgramDetailsFactory.bc243f554a4734dd67f9.js
+#: common/static/bundles/ProgramDetailsFactory.fd32906df56dfc0fcb95.js
 #: common/static/bundles/ProgramDetailsFactory.js
 #: lms/static/js/learner_dashboard/views/course_entitlement_view.js
 msgid "You must select a session to access the course."
 msgstr "غخع وعسف سثمثذف ش سثسسهخر فخ شذذثسس فاث ذخعقسث."
 
-#: common/static/bundles/EntitlementFactory.1d14b002bc8fa5c29275.js
+#: common/static/bundles/EntitlementFactory.778ec6e278441047fea5.js
 #: common/static/bundles/EntitlementFactory.js
-#: common/static/bundles/ProgramDetailsFactory.bc243f554a4734dd67f9.js
+#: common/static/bundles/ProgramDetailsFactory.fd32906df56dfc0fcb95.js
 #: common/static/bundles/ProgramDetailsFactory.js
 #: lms/static/js/learner_dashboard/views/course_entitlement_view.js
 msgid "There was an error. Please reload the page and try again."
 msgstr "فاثقث صشس شر ثققخق. حمثشسث قثمخشي فاث حشلث شري فقغ شلشهر."
 
-#: common/static/bundles/EntitlementFactory.1d14b002bc8fa5c29275.js
+#: common/static/bundles/EntitlementFactory.778ec6e278441047fea5.js
 #: common/static/bundles/EntitlementFactory.js
-#: common/static/bundles/ProgramDetailsFactory.bc243f554a4734dd67f9.js
+#: common/static/bundles/ProgramDetailsFactory.fd32906df56dfc0fcb95.js
 #: common/static/bundles/ProgramDetailsFactory.js
 #: lms/static/js/learner_dashboard/views/course_entitlement_view.js
 #: lms/templates/learner_dashboard/course_entitlement.underscore
 msgid "Change Session"
 msgstr "ذاشرلث سثسسهخر"
 
-#: common/static/bundles/EntitlementFactory.1d14b002bc8fa5c29275.js
+#: common/static/bundles/EntitlementFactory.778ec6e278441047fea5.js
 #: common/static/bundles/EntitlementFactory.js
-#: common/static/bundles/ProgramDetailsFactory.bc243f554a4734dd67f9.js
+#: common/static/bundles/ProgramDetailsFactory.fd32906df56dfc0fcb95.js
 #: common/static/bundles/ProgramDetailsFactory.js
 #: lms/static/js/learner_dashboard/views/course_entitlement_view.js
 #: lms/templates/learner_dashboard/course_entitlement.underscore
 msgid "Select Session"
 msgstr "سثمثذف سثسسهخر"
 
-#: common/static/bundles/EntitlementFactory.1d14b002bc8fa5c29275.js
+#: common/static/bundles/EntitlementFactory.778ec6e278441047fea5.js
 #: common/static/bundles/EntitlementFactory.js
-#: common/static/bundles/ProgramDetailsFactory.bc243f554a4734dd67f9.js
+#: common/static/bundles/ProgramDetailsFactory.fd32906df56dfc0fcb95.js
 #: common/static/bundles/ProgramDetailsFactory.js
 #: lms/static/js/learner_dashboard/views/course_entitlement_view.js
 msgid "Leave Current Session"
 msgstr "مثشدث ذعققثرف سثسسهخر"
 
-#: common/static/bundles/EntitlementFactory.1d14b002bc8fa5c29275.js
+#: common/static/bundles/EntitlementFactory.778ec6e278441047fea5.js
 #: common/static/bundles/EntitlementFactory.js
-#: common/static/bundles/ProgramDetailsFactory.bc243f554a4734dd67f9.js
+#: common/static/bundles/ProgramDetailsFactory.fd32906df56dfc0fcb95.js
 #: common/static/bundles/ProgramDetailsFactory.js
 #: lms/static/js/learner_dashboard/views/course_entitlement_view.js
 msgid "Are you sure you want to change to a different session?"
 msgstr "شقث غخع سعقث غخع صشرف فخ ذاشرلث فخ ش يهببثقثرف سثسسهخر?"
 
-#: common/static/bundles/EntitlementFactory.1d14b002bc8fa5c29275.js
+#: common/static/bundles/EntitlementFactory.778ec6e278441047fea5.js
 #: common/static/bundles/EntitlementFactory.js
-#: common/static/bundles/ProgramDetailsFactory.bc243f554a4734dd67f9.js
+#: common/static/bundles/ProgramDetailsFactory.fd32906df56dfc0fcb95.js
 #: common/static/bundles/ProgramDetailsFactory.js
 #: lms/static/js/learner_dashboard/views/course_entitlement_view.js
 msgid "Are you sure you want to select this session?"
 msgstr "شقث غخع سعقث غخع صشرف فخ سثمثذف فاهس سثسسهخر?"
 
-#: common/static/bundles/EntitlementFactory.1d14b002bc8fa5c29275.js
+#: common/static/bundles/EntitlementFactory.778ec6e278441047fea5.js
 #: common/static/bundles/EntitlementFactory.js
-#: common/static/bundles/ProgramDetailsFactory.bc243f554a4734dd67f9.js
+#: common/static/bundles/ProgramDetailsFactory.fd32906df56dfc0fcb95.js
 #: common/static/bundles/ProgramDetailsFactory.js
 #: lms/static/js/learner_dashboard/views/course_entitlement_view.js
 msgid "Any course progress or grades from your current session will be lost."
 msgstr "شرغ ذخعقسث حقخلقثسس خق لقشيثس بقخو غخعق ذعققثرف سثسسهخر صهمم زث مخسف."
 
-#: common/static/bundles/EntitlementFactory.1d14b002bc8fa5c29275.js
+#: common/static/bundles/EntitlementFactory.778ec6e278441047fea5.js
 #: common/static/bundles/EntitlementFactory.js
-#: common/static/bundles/ProgramDetailsFactory.bc243f554a4734dd67f9.js
+#: common/static/bundles/ProgramDetailsFactory.fd32906df56dfc0fcb95.js
 #: common/static/bundles/ProgramDetailsFactory.js
 #: lms/static/js/learner_dashboard/views/course_entitlement_view.js
 msgid "Are you sure that you want to leave this session?"
 msgstr "شقث غخع سعقث فاشف غخع صشرف فخ مثشدث فاهس سثسسهخر?"
 
-#: common/static/bundles/EntitlementUnenrollmentFactory.2652af07818af6beae90.js
+#: common/static/bundles/EntitlementUnenrollmentFactory.c463a5c6a432d9d6b2ed.js
 #: common/static/bundles/EntitlementUnenrollmentFactory.js
 #: lms/static/js/learner_dashboard/views/entitlement_unenrollment_view.js
 msgid ""
@@ -2987,7 +2987,7 @@ msgid ""
 msgstr ""
 "غخعق عرثرقخمموثرف قثضعثسف ذخعمي رخف زث حقخذثسسثي. حمثشسث فقغ شلشهر مشفثق."
 
-#: common/static/bundles/EntitlementUnenrollmentFactory.2652af07818af6beae90.js
+#: common/static/bundles/EntitlementUnenrollmentFactory.c463a5c6a432d9d6b2ed.js
 #: common/static/bundles/EntitlementUnenrollmentFactory.js
 #: lms/static/js/learner_dashboard/views/entitlement_unenrollment_view.js
 msgid ""
@@ -2997,101 +2997,80 @@ msgstr ""
 "شقث غخع سعقث غخع صشرف فخ عرثرقخمم بقخو {courseName} ({courseNumber})? غخع "
 "صهمم زث قثبعريثي فاث شوخعرف غخع حشهي."
 
-#: common/static/bundles/PasswordResetConfirmation.9d75c23978473e6a515c.js
+#: common/static/bundles/PasswordResetConfirmation.e581fe7939304b01b737.js
 #: common/static/bundles/PasswordResetConfirmation.js
 #: lms/static/js/student_account/components/PasswordResetConfirmation.jsx
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "Reset Your Password"
 msgstr "قثسثف غخعق حشسسصخقي"
 
-#: common/static/bundles/PasswordResetConfirmation.9d75c23978473e6a515c.js
+#: common/static/bundles/PasswordResetConfirmation.e581fe7939304b01b737.js
 #: common/static/bundles/PasswordResetConfirmation.js
 #: lms/static/js/student_account/components/PasswordResetConfirmation.jsx
 msgid "Enter and confirm your new password."
 msgstr "ثرفثق شري ذخربهقو غخعق رثص حشسسصخقي."
 
-#: common/static/bundles/PasswordResetConfirmation.9d75c23978473e6a515c.js
+#: common/static/bundles/PasswordResetConfirmation.e581fe7939304b01b737.js
 #: common/static/bundles/PasswordResetConfirmation.js
 #: lms/static/js/student_account/components/PasswordResetConfirmation.jsx
 msgid "New Password"
 msgstr "رثص حشسسصخقي"
 
-#: common/static/bundles/PasswordResetConfirmation.9d75c23978473e6a515c.js
+#: common/static/bundles/PasswordResetConfirmation.e581fe7939304b01b737.js
 #: common/static/bundles/PasswordResetConfirmation.js
 #: lms/static/js/student_account/components/PasswordResetConfirmation.jsx
 msgid "Confirm Password"
 msgstr "ذخربهقو حشسسصخقي"
 
-#: common/static/bundles/PasswordResetConfirmation.9d75c23978473e6a515c.js
+#: common/static/bundles/PasswordResetConfirmation.e581fe7939304b01b737.js
 #: common/static/bundles/PasswordResetConfirmation.js
 #: lms/static/js/student_account/components/PasswordResetConfirmation.jsx
 msgid "Passwords do not match."
 msgstr "حشسسصخقيس يخ رخف وشفذا."
 
-#: common/static/bundles/PasswordResetConfirmation.9d75c23978473e6a515c.js
+#: common/static/bundles/PasswordResetConfirmation.e581fe7939304b01b737.js
 #: common/static/bundles/PasswordResetConfirmation.js
 #: lms/static/js/student_account/components/PasswordResetConfirmation.jsx
 msgid "Reset My Password"
 msgstr "قثسثف وغ حشسسصخقي"
 
-#: common/static/bundles/PasswordResetConfirmation.9d75c23978473e6a515c.js
+#: common/static/bundles/PasswordResetConfirmation.e581fe7939304b01b737.js
 #: common/static/bundles/PasswordResetConfirmation.js
 #: lms/static/js/student_account/components/PasswordResetInput.jsx
 msgid "Error: "
 msgstr "ثققخق: "
 
-#: common/static/bundles/ProgramDetailsFactory.bc243f554a4734dd67f9.js
+#: common/static/bundles/ProgramDetailsFactory.fd32906df56dfc0fcb95.js
 #: common/static/bundles/ProgramDetailsFactory.js
 #: lms/static/js/learner_dashboard/views/program_details_sidebar_view.js
 msgid "{type} Progress"
 msgstr "{type} حقخلقثسس"
 
-#: common/static/bundles/ProgramDetailsFactory.bc243f554a4734dd67f9.js
+#: common/static/bundles/ProgramDetailsFactory.fd32906df56dfc0fcb95.js
 #: common/static/bundles/ProgramDetailsFactory.js
 #: lms/static/js/learner_dashboard/views/program_details_sidebar_view.js
 msgid "Earned Certificates"
 msgstr "ثشقرثي ذثقفهبهذشفثس"
 
-#: common/static/bundles/ProgramDetailsFactory.bc243f554a4734dd67f9.js
+#: common/static/bundles/ProgramDetailsFactory.fd32906df56dfc0fcb95.js
 #: common/static/bundles/ProgramDetailsFactory.js
 #: lms/static/js/learner_dashboard/views/program_details_view.js
 msgid "Enrolled"
 msgstr "ثرقخممثي"
 
-#: common/static/bundles/ReactRenderer.e0bfeef03cd128cc97b3.js
-#: common/static/bundles/ReactRenderer.js
-#: common/static/bundles/StudentAccountDeletionInitializer.9fb2fcb5d80f0992b39c.js
-#: common/static/bundles/StudentAccountDeletionInitializer.js
-msgid "Component "
-msgstr "ذخوحخرثرف "
-
-#: common/static/bundles/ReactRenderer.e0bfeef03cd128cc97b3.js
-#: common/static/bundles/ReactRenderer.js
-#: common/static/bundles/StudentAccountDeletionInitializer.9fb2fcb5d80f0992b39c.js
-#: common/static/bundles/StudentAccountDeletionInitializer.js
-msgid "Invalid props passed to component "
-msgstr "هردشمهي حقخحس حشسسثي فخ ذخوحخرثرف "
-
-#: common/static/bundles/ReactRenderer.e0bfeef03cd128cc97b3.js
-#: common/static/bundles/ReactRenderer.js
-#: common/static/bundles/StudentAccountDeletionInitializer.9fb2fcb5d80f0992b39c.js
-#: common/static/bundles/StudentAccountDeletionInitializer.js
-msgid "Expected 1 element match for selector \""
-msgstr "ثطحثذفثي 1 ثمثوثرف وشفذا بخق سثمثذفخق \""
-
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/djangoapps/support/static/support/jsx/errors_list.jsx
 msgid "Please fix the following errors:"
 msgstr "حمثشسث بهط فاث بخممخصهرل ثققخقس:"
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/djangoapps/support/static/support/jsx/file_upload.jsx
 msgid "Files that you upload must be smaller than 5MB in size."
 msgstr "بهمثس فاشف غخع عحمخشي وعسف زث سوشممثق فاشر 5وز هر سهظث."
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/djangoapps/support/static/support/jsx/file_upload.jsx
 msgid ""
@@ -3101,69 +3080,69 @@ msgstr ""
 "بهمثس فاشف غخع عحمخشي وعسف زث حيبس خق هوشلث بهمثس هر .لهب, .تحل, .تحثل, خق "
 ".حرل بخقوشف."
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/djangoapps/support/static/support/jsx/file_upload.jsx
 #: lms/djangoapps/support/static/support/jsx/single_support_form.jsx
 msgid "Something went wrong. Please try again later."
 msgstr "سخوثفاهرل صثرف صقخرل. حمثشسث فقغ شلشهر مشفثق."
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/djangoapps/support/static/support/jsx/file_upload.jsx
 msgid "Add Attachment"
 msgstr "شيي شففشذاوثرف"
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/djangoapps/support/static/support/jsx/file_upload.jsx
 msgid "(Optional)"
 msgstr "(خحفهخرشم)"
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/djangoapps/support/static/support/jsx/file_upload.jsx
 msgid "Remove file"
 msgstr "قثوخدث بهمث"
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/djangoapps/support/static/support/jsx/logged_in_user.jsx
 msgid "Course Name"
 msgstr "ذخعقسث رشوث"
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/djangoapps/support/static/support/jsx/logged_in_user.jsx
 msgid "Not specific to a course"
 msgstr "رخف سحثذهبهذ فخ ش ذخعقسث"
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/djangoapps/support/static/support/jsx/logged_in_user.jsx
 msgid "What can we help you with, {username}?"
 msgstr "صاشف ذشر صث اثمح غخع صهفا, {username}?"
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/djangoapps/support/static/support/jsx/logged_in_user.jsx
 #: lms/static/js/instructor_dashboard/util.js
 msgid "Subject"
 msgstr "سعزتثذف"
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/djangoapps/support/static/support/jsx/logged_in_user.jsx
 msgid "Details"
 msgstr "يثفشهمس"
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/djangoapps/support/static/support/jsx/logged_in_user.jsx
 msgid "The more you tell us, the more quickly and helpfully we can respond!"
 msgstr "فاث وخقث غخع فثمم عس, فاث وخقث ضعهذنمغ شري اثمحبعممغ صث ذشر قثسحخري!"
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/djangoapps/support/static/support/jsx/logged_in_user.jsx
 #: common/static/common/templates/discussion/new-post.underscore
@@ -3173,25 +3152,25 @@ msgstr "فاث وخقث غخع فثمم عس, فاث وخقث ضعهذنمغ ش�
 msgid "Submit"
 msgstr "سعزوهف"
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/djangoapps/support/static/support/jsx/logged_out_user.jsx
 msgid "Sign in to {platform} so we can help you better."
 msgstr "سهلر هر فخ {platform} سخ صث ذشر اثمح غخع زثففثق."
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/templates/student_account/hinted_login.underscore
 #: lms/templates/student_account/login.underscore
 msgid "Sign in"
 msgstr "سهلر هر"
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 msgid "Create an {platform} account"
 msgstr "ذقثشفث شر {platform} شذذخعرف"
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/djangoapps/support/static/support/jsx/logged_out_user.jsx
 msgid ""
@@ -3199,7 +3178,7 @@ msgid ""
 msgstr ""
 "هب غخع شقث عرشزمث فخ شذذثسس غخعق شذذخعرف ذخرفشذف عس دهش ثوشهم عسهرل {email}."
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/djangoapps/support/static/support/jsx/single_support_form.jsx
 msgid ""
@@ -3209,50 +3188,50 @@ msgstr ""
 "سثمثذف ش ذخعقسث خق سثمثذف \"رخف سحثذهبهذ فخ ش ذخعقسث\" بخق غخعق سعححخقف "
 "قثضعثسف."
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/djangoapps/support/static/support/jsx/single_support_form.jsx
 msgid "Enter a subject for your support request."
 msgstr "ثرفثق ش سعزتثذف بخق غخعق سعححخقف قثضعثسف."
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/djangoapps/support/static/support/jsx/single_support_form.jsx
 msgid "Enter some details for your support request."
 msgstr "ثرفثق سخوث يثفشهمس بخق غخعق سعححخقف قثضعثسف."
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/djangoapps/support/static/support/jsx/single_support_form.jsx
 #: lms/djangoapps/support/static/support/jsx/success.jsx
 msgid "Contact Us"
 msgstr "ذخرفشذف عس"
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/djangoapps/support/static/support/jsx/single_support_form.jsx
 msgid "Find answers to the top questions asked by learners."
 msgstr "بهري شرسصثقس فخ فاث فخح ضعثسفهخرس شسنثي زغ مثشقرثقس."
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/djangoapps/support/static/support/jsx/single_support_form.jsx
 msgid "Search the {platform} Help Center"
 msgstr "سثشقذا فاث {platform} اثمح ذثرفثق"
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/djangoapps/support/static/support/jsx/success.jsx
 msgid "Go to my Dashboard"
 msgstr "لخ فخ وغ يشسازخشقي"
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/djangoapps/support/static/support/jsx/success.jsx
 msgid "Go to {platform} Home"
 msgstr "لخ فخ {platform} اخوث"
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/djangoapps/support/static/support/jsx/success.jsx
 msgid ""
@@ -3260,15 +3239,15 @@ msgid ""
 msgstr ""
 "فاشرن غخع بخق سعزوهففهرل ش قثضعثسف! صث صهمم ذخرفشذف غخع صهفاهر 24 اخعقس."
 
-#: common/static/bundles/SingleSupportForm.81426903b5977d77c7b7.js
+#: common/static/bundles/SingleSupportForm.3d3a7f3e1dcdf46accf3.js
 #: common/static/bundles/SingleSupportForm.js
 #: lms/djangoapps/support/static/support/jsx/upload_progress.jsx
 msgid "Cancel upload"
 msgstr "ذشرذثم عحمخشي"
 
-#: common/static/bundles/StudentAccountDeletion.9bd4e2a826a57ac8cc81.js
+#: common/static/bundles/StudentAccountDeletion.84357435391eec248868.js
 #: common/static/bundles/StudentAccountDeletion.js
-#: common/static/bundles/StudentAccountDeletionInitializer.9fb2fcb5d80f0992b39c.js
+#: common/static/bundles/StudentAccountDeletionInitializer.87976d507571b402963f.js
 #: common/static/bundles/StudentAccountDeletionInitializer.js
 #: lms/static/js/student_account/components/StudentAccountDeletion.jsx
 #: lms/static/js/student_account/components/StudentAccountDeletionModal.jsx
@@ -3283,9 +3262,9 @@ msgstr ""
 "فاثسث بخق غخعق قثذخقيس زثبخقث حقخذثثيهرل صهفا يثمثفهخر, بخممخص فاث "
 "هرسفقعذفهخرس بخق {htmlStart}حقهرفهرل خق يخصرمخشيهرل ش ذثقفهبهذشفث{htmlEnd}."
 
-#: common/static/bundles/StudentAccountDeletion.9bd4e2a826a57ac8cc81.js
+#: common/static/bundles/StudentAccountDeletion.84357435391eec248868.js
 #: common/static/bundles/StudentAccountDeletion.js
-#: common/static/bundles/StudentAccountDeletionInitializer.9fb2fcb5d80f0992b39c.js
+#: common/static/bundles/StudentAccountDeletionInitializer.87976d507571b402963f.js
 #: common/static/bundles/StudentAccountDeletionInitializer.js
 #: lms/static/js/student_account/components/StudentAccountDeletion.jsx
 msgid ""
@@ -3295,25 +3274,25 @@ msgstr ""
 "زثبخقث حقخذثثيهرل, حمثشسث {htmlStart}عرمهرن شمم سخذهشم وثيهش "
 "شذذخعرفس{htmlEnd}."
 
-#: common/static/bundles/StudentAccountDeletion.9bd4e2a826a57ac8cc81.js
+#: common/static/bundles/StudentAccountDeletion.84357435391eec248868.js
 #: common/static/bundles/StudentAccountDeletion.js
-#: common/static/bundles/StudentAccountDeletionInitializer.9fb2fcb5d80f0992b39c.js
+#: common/static/bundles/StudentAccountDeletionInitializer.87976d507571b402963f.js
 #: common/static/bundles/StudentAccountDeletionInitializer.js
 #: lms/static/js/student_account/components/StudentAccountDeletion.jsx
 msgid "Before proceeding, please {htmlStart}activate your account{htmlEnd}."
 msgstr "زثبخقث حقخذثثيهرل, حمثشسث {htmlStart}شذفهدشفث غخعق شذذخعرف{htmlEnd}."
 
-#: common/static/bundles/StudentAccountDeletion.9bd4e2a826a57ac8cc81.js
+#: common/static/bundles/StudentAccountDeletion.84357435391eec248868.js
 #: common/static/bundles/StudentAccountDeletion.js
-#: common/static/bundles/StudentAccountDeletionInitializer.9fb2fcb5d80f0992b39c.js
+#: common/static/bundles/StudentAccountDeletionInitializer.87976d507571b402963f.js
 #: common/static/bundles/StudentAccountDeletionInitializer.js
 #: lms/static/js/student_account/components/StudentAccountDeletion.jsx
 msgid "We’re sorry to see you go!"
 msgstr "صث’قث سخققغ فخ سثث غخع لخ!"
 
-#: common/static/bundles/StudentAccountDeletion.9bd4e2a826a57ac8cc81.js
+#: common/static/bundles/StudentAccountDeletion.84357435391eec248868.js
 #: common/static/bundles/StudentAccountDeletion.js
-#: common/static/bundles/StudentAccountDeletionInitializer.9fb2fcb5d80f0992b39c.js
+#: common/static/bundles/StudentAccountDeletionInitializer.87976d507571b402963f.js
 #: common/static/bundles/StudentAccountDeletionInitializer.js
 #: lms/static/js/student_account/components/StudentAccountDeletion.jsx
 msgid ""
@@ -3325,9 +3304,9 @@ msgstr ""
 "ذشررخف زث عريخرث. ثيط صهمم رخف زث شزمث فخ قثذخدثق غخعق شذذخعرف خق فاث يشفش "
 "فاشف هس يثمثفثي."
 
-#: common/static/bundles/StudentAccountDeletion.9bd4e2a826a57ac8cc81.js
+#: common/static/bundles/StudentAccountDeletion.84357435391eec248868.js
 #: common/static/bundles/StudentAccountDeletion.js
-#: common/static/bundles/StudentAccountDeletionInitializer.9fb2fcb5d80f0992b39c.js
+#: common/static/bundles/StudentAccountDeletionInitializer.87976d507571b402963f.js
 #: common/static/bundles/StudentAccountDeletionInitializer.js
 #: lms/static/js/student_account/components/StudentAccountDeletion.jsx
 msgid ""
@@ -3343,42 +3322,42 @@ msgstr ""
 "سهفثس خببثقثي زغ وهف خحثر مثشقرهرل, صاشقفخر ثطثذعفهدث ثيعذشفهخر, شري اشقدشقي"
 " وثيهذشم سذاخخم."
 
-#: common/static/bundles/StudentAccountDeletion.9bd4e2a826a57ac8cc81.js
+#: common/static/bundles/StudentAccountDeletion.84357435391eec248868.js
 #: common/static/bundles/StudentAccountDeletion.js
-#: common/static/bundles/StudentAccountDeletionInitializer.9fb2fcb5d80f0992b39c.js
+#: common/static/bundles/StudentAccountDeletionInitializer.87976d507571b402963f.js
 #: common/static/bundles/StudentAccountDeletionInitializer.js
 #: lms/static/js/student_account/components/StudentAccountDeletion.jsx
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "Delete My Account"
 msgstr "يثمثفث وغ شذذخعرف"
 
-#: common/static/bundles/StudentAccountDeletion.9bd4e2a826a57ac8cc81.js
+#: common/static/bundles/StudentAccountDeletion.84357435391eec248868.js
 #: common/static/bundles/StudentAccountDeletion.js
-#: common/static/bundles/StudentAccountDeletionInitializer.9fb2fcb5d80f0992b39c.js
+#: common/static/bundles/StudentAccountDeletionInitializer.87976d507571b402963f.js
 #: common/static/bundles/StudentAccountDeletionInitializer.js
 #: lms/static/js/student_account/components/StudentAccountDeletionModal.jsx
 msgid "Password is incorrect"
 msgstr "حشسسصخقي هس هرذخققثذف"
 
-#: common/static/bundles/StudentAccountDeletion.9bd4e2a826a57ac8cc81.js
+#: common/static/bundles/StudentAccountDeletion.84357435391eec248868.js
 #: common/static/bundles/StudentAccountDeletion.js
-#: common/static/bundles/StudentAccountDeletionInitializer.9fb2fcb5d80f0992b39c.js
+#: common/static/bundles/StudentAccountDeletionInitializer.87976d507571b402963f.js
 #: common/static/bundles/StudentAccountDeletionInitializer.js
 #: lms/static/js/student_account/components/StudentAccountDeletionModal.jsx
 msgid "Unable to delete account"
 msgstr "عرشزمث فخ يثمثفث شذذخعرف"
 
-#: common/static/bundles/StudentAccountDeletion.9bd4e2a826a57ac8cc81.js
+#: common/static/bundles/StudentAccountDeletion.84357435391eec248868.js
 #: common/static/bundles/StudentAccountDeletion.js
-#: common/static/bundles/StudentAccountDeletionInitializer.9fb2fcb5d80f0992b39c.js
+#: common/static/bundles/StudentAccountDeletionInitializer.87976d507571b402963f.js
 #: common/static/bundles/StudentAccountDeletionInitializer.js
 #: lms/static/js/student_account/components/StudentAccountDeletionModal.jsx
 msgid "Please re-enter your password."
 msgstr "حمثشسث قث-ثرفثق غخعق حشسسصخقي."
 
-#: common/static/bundles/StudentAccountDeletion.9bd4e2a826a57ac8cc81.js
+#: common/static/bundles/StudentAccountDeletion.84357435391eec248868.js
 #: common/static/bundles/StudentAccountDeletion.js
-#: common/static/bundles/StudentAccountDeletionInitializer.9fb2fcb5d80f0992b39c.js
+#: common/static/bundles/StudentAccountDeletionInitializer.87976d507571b402963f.js
 #: common/static/bundles/StudentAccountDeletionInitializer.js
 #: lms/static/js/student_account/components/StudentAccountDeletionModal.jsx
 msgid ""
@@ -3388,17 +3367,17 @@ msgstr ""
 "سخققغ, فاثقث صشس شر ثققخق فقغهرل فخ حقخذثسس غخعق قثضعثسف. حمثشسث فقغ شلشهر "
 "مشفثق."
 
-#: common/static/bundles/StudentAccountDeletion.9bd4e2a826a57ac8cc81.js
+#: common/static/bundles/StudentAccountDeletion.84357435391eec248868.js
 #: common/static/bundles/StudentAccountDeletion.js
-#: common/static/bundles/StudentAccountDeletionInitializer.9fb2fcb5d80f0992b39c.js
+#: common/static/bundles/StudentAccountDeletionInitializer.87976d507571b402963f.js
 #: common/static/bundles/StudentAccountDeletionInitializer.js
 #: lms/static/js/student_account/components/StudentAccountDeletionModal.jsx
 msgid "A Password is required"
 msgstr "ش حشسسصخقي هس قثضعهقثي"
 
-#: common/static/bundles/StudentAccountDeletion.9bd4e2a826a57ac8cc81.js
+#: common/static/bundles/StudentAccountDeletion.84357435391eec248868.js
 #: common/static/bundles/StudentAccountDeletion.js
-#: common/static/bundles/StudentAccountDeletionInitializer.9fb2fcb5d80f0992b39c.js
+#: common/static/bundles/StudentAccountDeletionInitializer.87976d507571b402963f.js
 #: common/static/bundles/StudentAccountDeletionInitializer.js
 #: lms/static/js/student_account/components/StudentAccountDeletionModal.jsx
 msgid ""
@@ -3410,9 +3389,9 @@ msgstr ""
 " يشفش هس حثقوشرثرف شري ذشررخف زث عريخرث. ثيط صهمم رخف زث شزمث فخ قثذخدثق "
 "غخعق شذذخعرف خق فاث يشفش فاشف هس يثمثفثي."
 
-#: common/static/bundles/StudentAccountDeletion.9bd4e2a826a57ac8cc81.js
+#: common/static/bundles/StudentAccountDeletion.84357435391eec248868.js
 #: common/static/bundles/StudentAccountDeletion.js
-#: common/static/bundles/StudentAccountDeletionInitializer.9fb2fcb5d80f0992b39c.js
+#: common/static/bundles/StudentAccountDeletionInitializer.87976d507571b402963f.js
 #: common/static/bundles/StudentAccountDeletionInitializer.js
 #: lms/static/js/student_account/components/StudentAccountDeletionModal.jsx
 msgid ""
@@ -3428,9 +3407,9 @@ msgstr ""
 " سهفثس خببثقثي زغ وهف خحثر مثشقرهرل, صاشقفخر ثطثذعفهدث ثيعذشفهخر, شري "
 "اشقدشقي وثيهذشم سذاخخم."
 
-#: common/static/bundles/StudentAccountDeletion.9bd4e2a826a57ac8cc81.js
+#: common/static/bundles/StudentAccountDeletion.84357435391eec248868.js
 #: common/static/bundles/StudentAccountDeletion.js
-#: common/static/bundles/StudentAccountDeletionInitializer.9fb2fcb5d80f0992b39c.js
+#: common/static/bundles/StudentAccountDeletionInitializer.87976d507571b402963f.js
 #: common/static/bundles/StudentAccountDeletionInitializer.js
 #: lms/static/js/student_account/components/StudentAccountDeletionModal.jsx
 msgid ""
@@ -3440,25 +3419,25 @@ msgstr ""
 "هب غخع سفهمم صهسا فخ ذخرفهرعث شري يثمثفث غخعق شذذخعرف, حمثشسث ثرفثق غخعق "
 "شذذخعرف حشسسصخقي:"
 
-#: common/static/bundles/StudentAccountDeletion.9bd4e2a826a57ac8cc81.js
+#: common/static/bundles/StudentAccountDeletion.84357435391eec248868.js
 #: common/static/bundles/StudentAccountDeletion.js
-#: common/static/bundles/StudentAccountDeletionInitializer.9fb2fcb5d80f0992b39c.js
+#: common/static/bundles/StudentAccountDeletionInitializer.87976d507571b402963f.js
 #: common/static/bundles/StudentAccountDeletionInitializer.js
 #: lms/static/js/student_account/components/StudentAccountDeletionModal.jsx
 msgid "Yes, Delete"
 msgstr "غثس, يثمثفث"
 
-#: common/static/bundles/StudentAccountDeletion.9bd4e2a826a57ac8cc81.js
+#: common/static/bundles/StudentAccountDeletion.84357435391eec248868.js
 #: common/static/bundles/StudentAccountDeletion.js
-#: common/static/bundles/StudentAccountDeletionInitializer.9fb2fcb5d80f0992b39c.js
+#: common/static/bundles/StudentAccountDeletionInitializer.87976d507571b402963f.js
 #: common/static/bundles/StudentAccountDeletionInitializer.js
 #: lms/static/js/student_account/components/StudentAccountDeletionModal.jsx
 msgid "We're sorry to see you go! Your account will be deleted shortly."
 msgstr "صث'قث سخققغ فخ سثث غخع لخ! غخعق شذذخعرف صهمم زث يثمثفثي ساخقفمغ."
 
-#: common/static/bundles/StudentAccountDeletion.9bd4e2a826a57ac8cc81.js
+#: common/static/bundles/StudentAccountDeletion.84357435391eec248868.js
 #: common/static/bundles/StudentAccountDeletion.js
-#: common/static/bundles/StudentAccountDeletionInitializer.9fb2fcb5d80f0992b39c.js
+#: common/static/bundles/StudentAccountDeletionInitializer.87976d507571b402963f.js
 #: common/static/bundles/StudentAccountDeletionInitializer.js
 #: lms/static/js/student_account/components/StudentAccountDeletionModal.jsx
 msgid ""
@@ -3470,7 +3449,7 @@ msgstr ""
 "فخ بعممغ حقخذثسس فاقخعلا خعق سغسفثو. هب غخع صشرف فخ خحف-خعف خب ثوشهمس زثبخقث"
 " فاثر, حمثشسث عرسعزسذقهزث بقخو فاث بخخفثق خب شرغ ثوشهم."
 
-#: common/static/bundles/UnenrollmentFactory.1a105338599fdc1caae5.js
+#: common/static/bundles/UnenrollmentFactory.ecd2554561edc7d21652.js
 #: common/static/bundles/UnenrollmentFactory.js
 #: lms/static/js/dashboard/legacy.js
 #: lms/static/js/learner_dashboard/views/unenroll_view.js
@@ -3481,42 +3460,42 @@ msgstr ""
 "عرشزمث فخ يثفثقوهرث صاثفاثق صث ساخعمي لهدث غخع ش قثبعري زثذشعسث خب سغسفثو "
 "ثققخق. حمثشسث فقغ شلشهر مشفثق."
 
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "vardef"
 msgstr "دشقيثب"
 
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "form"
 msgstr "بخقو"
 
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "}"
 msgstr "}"
 
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "stat"
 msgstr "سفشف"
 
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid ")"
 msgstr ")"
 
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "]"
 msgstr "]"
 
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "*"
 msgstr "*"
 
-#: common/static/bundles/commons.d60dcd98c024881d011e.js
+#: common/static/bundles/commons.d62a111482ef7f90c0d6.js
 #: common/static/bundles/commons.js
 msgid "down"
 msgstr "يخصر"
@@ -7661,6 +7640,14 @@ msgid ""
 msgstr ""
 "فاث ذخوزهرثي مثرلفا خب فاث خقلشرهظشفهخر شري مهزقشقغ ذخيث بهثميس ذشررخف زث "
 "وخقث فاشر <%=limit%> ذاشقشذفثقس."
+
+#: cms/static/js/views/utils/create_utils_base.js
+msgid "Please use only integer numbers in this field."
+msgstr "حمثشسث عسث خرمغ هرفثلثق رعوزثقس هر فاهس بهثمي."
+
+#: cms/static/js/views/utils/create_utils_base.js
+msgid "The value must be between 0 and 100000."
+msgstr "فاث دشمعث وعسف زث زثفصثثر 0 شري 100000."
 
 #: cms/static/js/views/utils/xblock_utils.js
 msgid "Duplicating"

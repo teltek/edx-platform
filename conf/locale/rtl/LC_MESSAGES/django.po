@@ -1,39 +1,39 @@
 # #-#-#-#-#  django-partial.po (0.1a)  #-#-#-#-#
 # edX translation file.
-# Copyright (C) 2018 EdX
+# Copyright (C) 2020 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2018.
+# EdX Team <info@edx.org>, 2020.
 #
 # #-#-#-#-#  django-studio.po (0.1a)  #-#-#-#-#
 # edX translation file.
-# Copyright (C) 2018 EdX
+# Copyright (C) 2020 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2018.
+# EdX Team <info@edx.org>, 2020.
 #
 # #-#-#-#-#  mako.po (0.1a)  #-#-#-#-#
 # edX translation file
-# Copyright (C) 2018 edX
+# Copyright (C) 2020 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2018.
+# EdX Team <info@edx.org>, 2020.
 #
 # #-#-#-#-#  mako-studio.po (0.1a)  #-#-#-#-#
 # edX translation file
-# Copyright (C) 2018 edX
+# Copyright (C) 2020 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2018.
+# EdX Team <info@edx.org>, 2020.
 #
 # #-#-#-#-#  wiki.po (0.1a)  #-#-#-#-#
 # edX translation file
-# Copyright (C) 2018 edX
+# Copyright (C) 2020 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2018.
+# EdX Team <info@edx.org>, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2018-11-27 13:29+0100\n"
-"PO-Revision-Date: 2018-11-27 12:29:06.823490\n"
+"POT-Creation-Date: 2020-01-24 21:18+0100\n"
+"PO-Revision-Date: 2020-01-24 20:18:35.521591\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "Language: rtl\n"
@@ -2777,6 +2777,14 @@ msgstr "ذخعقسث ثيهفخق"
 #: common/lib/xmodule/xmodule/modulestore/inheritance.py
 msgid "Enter the method by which this course is edited (\"XML\" or \"Studio\")."
 msgstr "ثرفثق فاث وثفاخي زغ صاهذا فاهس ذخعقسث هس ثيهفثي (\"طوم\" خق \"سفعيهخ\")."
+
+#: common/lib/xmodule/xmodule/course_module.py
+msgid "Enter the number of hours in total to complete the course."
+msgstr "ثرفثق فاث رعوزثق خب اخعقس هر فخفشم فخ ذخوحمثفث فاث ذخعقسث."
+
+#: common/lib/xmodule/xmodule/course_module.py
+msgid "Course Estimated Effort"
+msgstr "ذخعقسث ثسفهوشفثي ثببخقف"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Course Survey URL"
@@ -23557,6 +23565,24 @@ msgstr ""
 "فاث فثقو هر صاهذا غخعق ذخعقسث صهمم قعر. {strong_start}رخفث: فاهس هس حشقف خب "
 "غخعق ذخعقسث عقم, سخ رخ سحشذثس خق سحثذهشم ذاشقشذفثقس شقث شممخصثي شري هف "
 "ذشررخف زث ذاشرلثي.{strong_end}"
+
+#: cms/templates/index.html
+msgid "Estimated effort"
+msgstr "ثسفهوشفثي ثببخقف"
+
+#: cms/templates/index.html
+msgid "e.g. 20"
+msgstr "ث.ل. 20"
+
+#: cms/templates/index.html
+msgid ""
+"The estimated effort in hours the students will have to dedicate to the full"
+" course. You can changed it in Advanced Settings. {strong_start}Note: Only "
+"integer numbers are allowed.{strong_end}"
+msgstr ""
+"فاث ثسفهوشفثي ثببخقف هر اخعقس فاث سفعيثرفس صهمم اشدث فخ يثيهذشفث فخ فاث بعمم"
+" ذخعقسث. غخع ذشر ذاشرلثي هف هر شيدشرذثي سثففهرلس. {strong_start}رخفث: خرمغ "
+"هرفثلثق رعوزثقس شقث شممخصثي.{strong_end}"
 
 #: cms/templates/index.html
 msgid "Create"
