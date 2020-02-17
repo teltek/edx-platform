@@ -6829,6 +6829,18 @@ msgid "Create an Account"
 msgstr ""
 
 #: lms/templates/student_account/register.underscore
+msgid "Create a new account"
+msgstr "Crear una nueva cuenta"
+
+#: lms/templates/student_account/register.underscore
+msgid "Create your account"
+msgstr "Crear tu cuenta"
+
+#: lms/templates/student_account/register.underscore
+msgid "Already have an account?"
+msgstr "¿Ya tienes cuenta?"
+
+#: lms/templates/student_account/register.underscore
 msgid "Create an account using"
 msgstr "Crea una cuenta empleando"
 

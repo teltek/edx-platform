@@ -7601,6 +7601,16 @@ msgid "Full Name"
 msgstr "Nombre completo"
 
 #: lms/djangoapps/instructor/views/tools.py
+#: lms/djangoapps/instructor_task/tasks_helper/enrollments.py
+#: openedx/core/djangoapps/user_api/api.py cms/templates/register.html
+#: lms/templates/register-form.html lms/templates/register-shib.html
+#: lms/templates/signup_modal.html lms/templates/sysadmin_dashboard.html
+#: themes/stanford-style/lms/templates/register-form.html
+#: themes/stanford-style/lms/templates/register-shib.html
+msgid "Full name"
+msgstr "Nombre completo"
+
+#: lms/djangoapps/instructor/views/tools.py
 msgid "Extended Due Date"
 msgstr "Plazo de entrega ampliado"
 
@@ -11170,13 +11180,31 @@ msgstr ""
 msgid "Public Username"
 msgstr "Identificador público de usuario "
 
+#: lms/templates/register-form.html lms/templates/register-shib.html
+#: lms/templates/signup_modal.html
+#: themes/stanford-style/lms/templates/register-form.html
+#: themes/stanford-style/lms/templates/register-shib.html
+msgid "Public username"
+msgstr "Identificador público de usuario "
+
 #. Translators: These instructions appear on the registration form,
 #. immediately
 #. below a field meant to hold the user's public username.
 #: openedx/core/djangoapps/user_api/api.py
 msgid ""
 "The name that will identify you in your courses. It cannot be changed later."
+msgstr "El nombre que te identificará en tus cursos. No puede cambiarse más tarde."
+
+#. Translators: These instructions appear on the registration form,
+#. immediately
+#. below a field meant to hold the user's public username.
+#: openedx/core/djangoapps/user_api/api.py
+msgid ""
+"The name that will identify you in your courses - {bold_start}(cannot be "
+"changed later){bold_end}"
 msgstr ""
+"El nombre que te identificará en tus cursos. {bold_start}(No puede "
+"cambiarse más tarde.){bold_end}"
 
 #. Translators: This example username is used as a placeholder in
 #. a field on the registration form meant to hold the user's username.
