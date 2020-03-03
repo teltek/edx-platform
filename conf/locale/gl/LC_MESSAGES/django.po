@@ -6947,7 +6947,7 @@ msgstr ""
 
 #: lms/djangoapps/instructor/views/instructor_dashboard.py
 msgid "Instructor"
-msgstr ""
+msgstr "Docente"
 
 #: lms/djangoapps/instructor/views/instructor_dashboard.py
 #, python-brace-format
