@@ -6826,11 +6826,15 @@ msgstr ""
 
 #: lms/templates/student_account/register.underscore
 msgid "Create an Account"
-msgstr ""
+msgstr "Crear una Cuenta"
 
 #: lms/templates/student_account/register.underscore
 msgid "Create a new account"
 msgstr "Crear una nueva cuenta"
+
+#: lms/templates/student_account/register.underscore
+msgid "Required field"
+msgstr "Campo requerido"
 
 #: lms/templates/student_account/register.underscore
 msgid "Create your account"
