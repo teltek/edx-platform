@@ -225,7 +225,8 @@ class CertificateManager(object):
         # Some keys are not required, such as the title override...
         if certificate_data.get('course_title'):
             certificate_response["course_title"] = certificate_data['course_title']
-
+        if certificate_data.get('course_program_path'):
+            certificate_response["course_program_path"] = certificate_data['course_program_path']
         return certificate_response
 
     @staticmethod

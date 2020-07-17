@@ -71,7 +71,8 @@
     overflow: auto;
 
     .course-title-section,
-    .course-number-section {
+    .course-number-section,
+    .course-program-section {
       min-width: 47%;
 
       @include margin-right(2%);
