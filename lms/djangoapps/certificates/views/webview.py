@@ -35,6 +35,7 @@ from lms.djangoapps.certificates.models import (
     CertificateStatuses,
     GeneratedCertificate
 )
+from lms.djangoapps.certificates.pdf import PDFCertificate
 from courseware.access import has_access
 from courseware.courses import get_course_by_id
 from edxmako.shortcuts import render_to_response
@@ -49,6 +50,8 @@ from extrainfo.models import NationalId
 from util import organizations_helpers as organization_api
 from util.date_utils import strftime_localized
 from util.views import handle_500
+
+from io import BytesIO
 
 
 log = logging.getLogger(__name__)
@@ -241,6 +244,10 @@ def _update_course_context(request, context, course, course_key, platform_name):
     context['course_number'] = course_number
     course_effort = course.effort if course.effort else 0
     context['course_effort'] = course_effort
+    course_start_date = course.start.strftime('%d/%m/%Y') if course.start else False
+    context['course_start_date'] = course_start_date
+    course_end_date = course.end.strftime('%d/%m/%Y') if course.end else False
+    context['course_end_date'] = course_end_date
     if context['organization_long_name']:
         # Translators:  This text represents the description of course
         context['accomplishment_copy_course_description'] = _('a course of study offered by {partner_short_name}, '
@@ -491,6 +498,42 @@ def _get_user_national_id(user, preview_mode):
             national_id = "123456789-AA"
             return national_id
         raise
+
+
+@handle_500(
+    template_path="certificates/server-error.html",
+    test_func=lambda request: request.GET.get('preview', None)
+)
+def render_pdf_cert_by_uuid(request, certificate_uuid):
+    """
+    This public view generates a PDF representation of the specified certificate
+    """
+    try:
+        certificate = GeneratedCertificate.objects.get(verify_uuid=certificate_uuid)
+        language = get_language_from_request(request, check_path=False)
+        pdf_buffer = BytesIO()
+        output_writer = PDFCertificate(
+            verify_uuid=certificate.verify_uuid,
+            course_id=unicode(certificate.course_id),
+            user_id=certificate.user_id,
+            mode=certificate.mode
+        ).generate_pdf(pdf_buffer)
+    except GeneratedCertificate.DoesNotExist:
+        raise Http404
+    except Exception as err:
+        log.error('exception: {}'.format(err))
+        raise err
+    
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="Certificate'+certificate.verify_uuid+'.pdf"'
+    
+    pdf_stream = BytesIO()
+    output_writer.write(pdf_stream)
+    pdf_value = pdf_stream.getvalue()
+    pdf_stream.close()
+    response.write(pdf_value)
+    
+    return response
 
 
 @handle_500(

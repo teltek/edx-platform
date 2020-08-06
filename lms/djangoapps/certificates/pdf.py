@@ -11,7 +11,7 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
 from opaque_keys.edx.keys import CourseKey
 from xmodule.modulestore.django import modulestore
 from openedx.core.djangoapps.models.course_details import CourseDetails
-from lms.djangoapps.userinfo.models import NationalId
+from extrainfo.models import NationalId
 
 from io import BytesIO
 from PIL import Image
