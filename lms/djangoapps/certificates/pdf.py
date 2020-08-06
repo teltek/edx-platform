@@ -17,7 +17,7 @@ from io import BytesIO
 from PIL import Image
 from reportlab.pdfgen.canvas import Canvas
 from reportlab.lib.enums import TA_LEFT, TA_CENTER, TA_RIGHT
-from reportlab.lib.pagesizes import A4
+from reportlab.lib.pagesizes import A4, landscape
 from reportlab.lib import colors
 from reportlab.lib.units import mm
 from reportlab.lib.styles import getSampleStyleSheet
@@ -44,32 +44,26 @@ class PDFCertificate(object):
     PDF Generation Class
     """
 
-    def __init__(self, verify_uuid, course_id, user_id, mode):
+    def __init__(self, verify_uuid, course_id, user_id):
         """
         Generates certificate in PDF format.
         """
         self.verify_uuid = verify_uuid
         self.course_id = course_id
         self.user_id = user_id
-        self.mode = mode
         self.pdf = None
         self.margin = 15 * mm
-        self.page_width = 210 * mm
-        self.page_height = 297 * mm
+        self.page_width = 297 * mm
+        self.page_height = 210 * mm
 
         self.min_clearance = 3 * mm
         self.second_page_available_height = ''
         self.second_page_start_y_pos = ''
         self.first_page_available_height = ''
 
-        self.logo_path = settings.FEATURES.get("PDF_LOGO_MAIN", "")
-        self.cobrand_logo_path = settings.FEATURES.get("PDF_LOGO_EXTRA", "")
-        self.cobrand_logo_key = "mapfre"  # TODO make generic
         self.brand_logo_height = 20 * mm
         self.cobrand_logo_height = 15 * mm
         self.signature_height = 290 * mm
-        self.rector_fullname = settings.FEATURES.get("PDF_RECTOR_FULLNAME", "")
-        self.rector_signature = settings.FEATURES.get("PDF_RECTOR_SIGNATURE", "")
 
     def generate_pdf(self, file_buffer):
         """
@@ -79,7 +73,7 @@ class PDFCertificate(object):
             course_key = CourseKey.from_string(self.course_id)
             course = modulestore().get_course(course_key)
             active_configuration = get_active_web_certificate(course)
-            self.pdf = Canvas(file_buffer, pagesize=A4)
+            self.pdf = Canvas(file_buffer, pagesize=landscape(A4))
             if course and active_configuration:
                 y_pos = self.draw_logos(course_key)
                 y_pos = self.add_text(course, active_configuration, y_pos)
@@ -346,24 +340,6 @@ class PDFCertificate(object):
 
         return y_pos
 
-    def add_cobrand_logo(self, course_key):
-        """
-        Checks if this course has a specific template.
-        TODO generic cobrand
-        """
-        if not self.cobrand_logo_path:
-            return False
-        if self.mode and course_key:
-            template = CertificateTemplate.objects.filter(
-                organization_id=None,
-                course_key=course_key,
-                mode=self.mode,
-                is_active=True
-            )
-        if template and (self.cobrand_logo_key in str(template).lower() or self.cobrand_logo_key in str(
-                course_key).lower()):  # TODO change logic for generic cobrand and template
-            return True
-        return False
 
     def _get_certificate_date(self):
         try:
