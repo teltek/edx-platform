@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import logging
 
 from django.conf import settings
@@ -16,7 +18,7 @@ from extrainfo.models import NationalId
 from io import BytesIO
 from PIL import Image
 from reportlab.pdfgen.canvas import Canvas
-from reportlab.lib.enums import TA_LEFT, TA_CENTER, TA_RIGHT
+from reportlab.lib.enums import TA_LEFT, TA_CENTER, TA_RIGHT, TA_JUSTIFY
 from reportlab.lib.pagesizes import A4, landscape
 from reportlab.lib import colors
 from reportlab.lib.units import mm
@@ -61,9 +63,21 @@ class PDFCertificate(object):
         self.second_page_start_y_pos = ''
         self.first_page_available_height = ''
 
-        self.brand_logo_height = 20 * mm
+        self.logo_uvigo = "/edx/app/edxapp/themes/xenero-microsite/lms/static/images/logouniversidadenegro.png"
+        self.logo_xunta = "/edx/app/edxapp/themes/xenero-microsite/lms/static/images/logoxuntasmall.png"
+        self.logo_pacto = "/edx/app/edxapp/themes/xenero-microsite/lms/static/images/logopactoblanco.png"
+        self.logo_ministerio = "/edx/app/edxapp/themes/xenero-microsite/lms/static/images/logoministerio.png"
+        self.logo_xacobeo = "/edx/app/edxapp/themes/xenero-microsite/lms/static/images/xacobeo-positivo.png"
+        self.signature = "/edx/app/edxapp/themes/xenero-microsite/lms/static/images/firma.png"
+        self.brand_logo_height = 15 * mm
         self.cobrand_logo_height = 15 * mm
-        self.signature_height = 290 * mm
+        self.signature_height = 280 * mm
+
+        self.signer_fullname = "Manuel Ramos Cabrer"
+
+        self.font_file = "/edx/app/edxapp/themes/xenero-microsite/lms/static/fonts/Roboto-Light.ttf"
+        self.font_bold_file = "/edx/app/edxapp/themes/xenero-microsite/lms/static/fonts/Roboto-Black.ttf"
+
 
     def generate_pdf(self, file_buffer):
         """
@@ -133,13 +147,13 @@ class PDFCertificate(object):
         Draws logos.
         """
         horizontal_padding_from_border = self.margin + 9 * mm
-        vertical_padding_from_border = 11 * mm
+        vertical_padding_from_border = 5 * mm
         img_y_pos = self.page_height - (
                 self.margin + vertical_padding_from_border + min(self.cobrand_logo_height, self.brand_logo_height)
         )
         # Left aligned brand logo
-        if self.logo_path:
-            logo_img = self.load_image(self.logo_path)
+        if self.logo_uvigo:
+            logo_img = self.load_image(self.logo_uvigo)
             if logo_img:
                 img_width = float(logo_img.size[0]) / (float(logo_img.size[1]) / self.brand_logo_height)
                 self.pdf.drawImage(
@@ -153,33 +167,32 @@ class PDFCertificate(object):
                 )
 
         # Right Aligned cobrand logo
-        if self.add_cobrand_logo(course_key):
-            cobrand_img = self.load_image(self.cobrand_logo_path)
-            if cobrand_img:
-                img_width = float(cobrand_img.size[0]) / (float(cobrand_img.size[1]) / self.cobrand_logo_height)
-                self.pdf.drawImage(
-                    cobrand_img.filename,
-                    self.page_width - (horizontal_padding_from_border + img_width),
-                    img_y_pos,
-                    img_width,
-                    self.cobrand_logo_height,
-                    mask='auto',
-                    preserveAspectRatio=True,
-                )
+        cobrand_img = self.load_image(self.logo_xacobeo)
+        if cobrand_img:
+            img_width = float(cobrand_img.size[0]) / (float(cobrand_img.size[1]) / self.cobrand_logo_height)
+            self.pdf.drawImage(
+                cobrand_img.filename,
+                self.page_width - (horizontal_padding_from_border + img_width),
+                img_y_pos,
+                img_width,
+                self.cobrand_logo_height,
+                mask='auto',
+                preserveAspectRatio=True,
+            )
 
         # Signature image
         y_pos = self.page_height - (self.margin + vertical_padding_from_border + self.signature_height)
         y_pos = -85 * mm
-        if self.rector_signature:
-            rector_sign_img = self.load_image(self.rector_signature)
+        if self.signature:
+            rector_sign_img = self.load_image(self.signature)
             if rector_sign_img:
                 img_width = float(rector_sign_img.size[0]) / (float(rector_sign_img.size[1]) / self.cobrand_logo_height)
                 self.pdf.drawImage(
                     rector_sign_img.filename,
-                    self.page_width - (horizontal_padding_from_border + img_width + 4 * mm),
-                    y_pos,
-                    img_width,
-                    self.signature_height,
+                    horizontal_padding_from_border + img_width - 5 * mm,
+                    y_pos - 4 * mm,
+                    img_width + 10 * mm,
+                    self.signature_height + 10 * mm,
                     mask='auto',
                     preserveAspectRatio=True,
                 )
@@ -197,135 +210,125 @@ class PDFCertificate(object):
         course_name = course_title_from_cert
         course_name = course_title_from_cert if course_title_from_cert else course.display_name
         course_details = CourseDetails.fetch(course.id)
-        course_effort_field = course_details.effort if course_details.effort else 25
-        course_effort = re.findall('\d+', str(course_effort_field))
-        course_effort = course_effort[0]
+        course_effort = course.effort if course.effort else 15
         course_credits_field = active_configuration.get('course_credits', 1.0)
         course_credits = re.findall('\d+', str(course_credits_field))
         course_credits = course_credits[0]
         certificate_id_url = settings.LMS_ROOT_URL + '/certificates/' + self.verify_uuid
 
-        pdfmetrics.registerFont(TTFont('Fontana', settings.FEATURES['PDF_FONTS_NORMAL']))
-        pdfmetrics.registerFont(TTFont('Fontana-Semibold', settings.FEATURES['PDF_FONTS_SEMIBOLD']))
-        pdfmetrics.registerFontFamily('Fontana', normal='Fontana', bold='Fontana-Semibold')
-        self.pdf.setFont('Fontana', 18)
+        pdfmetrics.registerFont(TTFont('Roboto', self.font_file))
+        pdfmetrics.registerFont(TTFont('Roboto-bold', self.font_bold_file))
+        pdfmetrics.registerFontFamily('Roboto', normal='Roboto', bold='Roboto-bold')
+        self.pdf.setFont('Roboto', 18)
 
-        WIDTH = 210  # width in mm (A4)
-        HEIGHT = 297  # hight in mm (A4)
+        WIDTH = 297  # width in mm (A4)
+        HEIGHT = 210  # hight in mm (A4)
         LEFT_INDENT = 49  # mm from the left side to write the text
         RIGHT_INDENT = 49  # mm from the right side for the CERTIFICATE
 
-        first_line = (_(u'{strong_start}NATIONAL UNIVERSITY OF DISTANCE EDUCATION{strong_end}')).format(
-            strong_start="<strong>",
-            strong_end="</strong>"
-        )
 
-        style = ParagraphStyle('title', alignment=TA_CENTER, fontSize=18, fontName="Fontana")
-        paragraph = Paragraph(first_line, style)
-        paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
-        paragraph.drawOn(self.pdf, 20 * mm, 240 * mm, TA_CENTER)
-
-        student_national_id = NationalId.get_national_id_from_user(user=user)
+        try: 
+            student_national_id = NationalId.objects.get(user=user.id).get_national_id()
+        except NationalId.DoesNotExist:
+            if preview_mode:
+                national_id = "123456789-AA"
+                return national_id
+            raise
+        
         if student_national_id:
-            paragraph_text = (_(u'The Rector of the National University of Distance Education,' \
-                                '{breakline}considering that{breakline}{breakline}' \
-                                '{studentstyle_start}{student_name}{studentstyle_end}{breakline}' \
-                                'with National Identity Number: {student_national_id}{breakline}{breakline}' \
-                                'has successfully finished the UNED Abierta course')).format(
-                studentstyle_start="<font size=20 color=#c49838>",
-                studentstyle_end="</font>",
-                student_name=user_fullname.upper(),
-                student_national_id=NationalId.get_national_id_from_user(user=user),
-                breakline="<br/><br/>",
-            )
+            paragraph_text_gal = '{horizontal}{breakline}' \
+                                 'Dona/Don {strong_start}{student_name}{strong_end} con DNI {strong_start}{student_national_id}{strong_end} ' \
+                                 'completou satisfactoriamente o curso {course_title} ({course_effort}) ' \
+                                 'do ITINERARIO FORMATIVO virtual en xénero, organizado pola Unidade de Igualdade '\
+                                'e a Vicerreitoría de Ordenación Académica e Profesorado da Universidade de Vigo, '\
+                                'en modalidade virtual, do'.format(
+                                    student_name=user_fullname.upper(),
+                                    student_national_id=student_national_id,
+                                    course_title=course_name,
+                                    course_effort=course_effort,
+                                    strong_start="<strong>",
+                                    strong_end="</strong>",
+                                    horizontal="<hr>",
+                                    breakline="<br/><br/>",
+                                )
+            paragraph_text_esp = 'Doña/Don {strong_start}{student_name}{strong_end} con DNI {strong_start}{student_national_id}{strong_end} ' \
+                                    'completó satisfactoriamente el curso {course_title} ({course_effort}) ' \
+                                    'del ITINERARIO FORMATIVO virtual en género, organizado por la Unidad de Igualdade '\
+                                    'e a Vicerreitoría de Ordenación Académica e Profesorado da Universidade de Vigo, '\
+                                    'en modalidade virtual, do'.format(
+                                    student_name=user_fullname.upper(),
+                                    student_national_id=student_national_id,
+                                    course_title=course_name,
+                                    course_effort=course_effort,
+                                    strong_start="<strong>",
+                                    strong_end="</strong>",
+                                    breakline="<br/><br/>",
+                                )
+
         else:
             paragraph_text = (_(u'The Rector of the National University of Distance Education,' \
                                 '{breakline}considering that{breakline}{breakline}' \
                                 '{studentstyle_start}{student_name}{studentstyle_end}{breakline}{breakline}' \
                                 'has successfully finished the UNED Abierta course')).format(
-                studentstyle_start="<font size=20 color=#c49838>",
+                studentstyle_start="<font size=24 color=#c49838>",
                 studentstyle_end="</font>",
                 student_name=user_fullname.upper(),
                 breakline="<br/><br/>",
             )
-        style = ParagraphStyle('paragraph', alignment=TA_CENTER, fontSize=12, fontName="Fontana", leading=10)
-        paragraph = Paragraph(paragraph_text, style)
-        paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
-        paragraph.drawOn(self.pdf, 20 * mm, 170 * mm, TA_CENTER)
+        style = ParagraphStyle('paragraph', alignment=TA_JUSTIFY, fontSize=12, fontName="Roboto", leading=15)
+        paragraph = Paragraph(paragraph_text_gal, style)
+        paragraph.wrapOn(self.pdf, 100 * mm, HEIGHT * mm)
+        paragraph.drawOn(self.pdf, 30 * mm, 100 * mm, TA_LEFT)
 
-        course_text = (_(u'{strong_start}{coursestyle_start}{course_title}{coursestyle_end}{strong_end}')).format(
-            coursestyle_start="<font size=24 color=#870d0d>",
-            course_title=course_name,
-            coursestyle_end="</font>",
-            strong_start="<strong>",
-            strong_end="</strong>",
-        )
-        style = ParagraphStyle('course', alignment=TA_CENTER, fontSize=12, fontName="Fontana", leading=24)
-        paragraph = Paragraph(course_text, style)
-        paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
-        paragraph.drawOn(self.pdf, 20 * mm, 135 * mm, TA_CENTER)
+        paragraph = Paragraph(paragraph_text_esp, style)
+        paragraph.wrapOn(self.pdf, 100 * mm, HEIGHT * mm)
+        paragraph.drawOn(self.pdf, 150 * mm, 100 * mm, TA_LEFT)
 
-        according_text = (_(u'According to the program on the back of this document,' \
-                            '{breakline}issues the present{breakline}{breakline}{strong_start}' \
-                            '{certificatestyle_start}CERTIFICATE OF USE{certificatestyle_end}' \
-                            '{strong_end}{breakline}{breakline}{fontdate_start}{date}{fontdate_end}')).format(
-            breakline="<br/><br/>",
-            certificatestyle_start="<font size=20>",
-            certificatestyle_end="</font>",
-            strong_start="<strong>",
-            strong_end="</strong>",
-            fontdate_start="<font size=8>",
-            fontdate_end="</font>",
+        according_text = (_(u'{date}')).format(
             date=date
         )
-        style = ParagraphStyle('according', alignment=TA_CENTER, fontSize=12, fontName="Fontana", leading=10)
+        style = ParagraphStyle('according', alignment=TA_LEFT, fontSize=12, fontName="Roboto", leading=10)
         paragraph = Paragraph(according_text, style)
-        paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
-        paragraph.drawOn(self.pdf, 20 * mm, 90 * mm, TA_CENTER)
+        paragraph.wrapOn(self.pdf, 100 * mm, HEIGHT * mm)
+        paragraph.drawOn(self.pdf, 30 * mm, 90 * mm, TA_CENTER)
 
-        rector_title = (_(u'{color_start}The Rector of the UNED,{color_end}')).format(
-            color_start="<font color=#c49838>",
-            color_end="</font>"
+        paragraph.wrapOn(self.pdf, 100 * mm, HEIGHT * mm)
+        paragraph.drawOn(self.pdf, 150 * mm, 90 * mm, TA_CENTER)
+
+        rector_title = (_(u'{strong_start}Conforme{strong_end}')).format(
+            strong_start="<strong>",
+            strong_end="</strong>"
         )
 
-        style = ParagraphStyle('rectortitle', alignment=TA_RIGHT, fontSize=10, fontName="Fontana")
+        style = ParagraphStyle('rectortitle', alignment=TA_LEFT, fontSize=12, fontName="Roboto")
         paragraph = Paragraph(rector_title, style)
         paragraph.wrapOn(self.pdf, 160 * mm, HEIGHT * mm)
-        paragraph.drawOn(self.pdf, 20 * mm, 70 * mm, TA_RIGHT)
+        paragraph.drawOn(self.pdf, 30 * mm, 70 * mm, TA_LEFT)
 
-        if self.rector_fullname:
-            rector_name = (_(u'{strong_start}{rector_fullname}{strong_end}')).format(
-                strong_start="<strong>",
-                rector_fullname=self.rector_fullname,
-                strong_end="</strong>"
-            )
+        if self.signer_fullname:
+            rector_name = ('{strong_start}{signer_fullname}{strong_end}{breakline} ' \
+                           '{font_start}Vicerreitor De Ordenación Académica e Profesorado{font_end}').format(
+                               strong_start="<strong>",
+                               signer_fullname=self.signer_fullname,
+                               strong_end="</strong>",
+                               font_start="<font size=10>",
+                               font_end="</font>",
+                               breakline="<br/>"
+                           )
 
-            style = ParagraphStyle('rectorname', alignment=TA_RIGHT, fontSize=12, fontName="Fontana")
+            style = ParagraphStyle('rectorname', alignment=TA_CENTER, fontSize=12, fontName="Roboto")
             paragraph = Paragraph(rector_name, style)
-            paragraph.wrapOn(self.pdf, 160 * mm, HEIGHT * mm)
-            paragraph.drawOn(self.pdf, 20 * mm, 50 * mm, TA_RIGHT)
+            paragraph.wrapOn(self.pdf, 80 * mm, HEIGHT * mm)
+            paragraph.drawOn(self.pdf, 20 * mm, 30 * mm, TA_LEFT)
 
-        footer = (_(u'{fontsize_start}Hours number: {fontcolor_start}' \
-                    '{course_effort}{fontcolor_end} hours{fontsize_end}{breakline}' \
-                    '{fontsize_start}UNED, in agreement with the Commission for Regional Study' \
-                    'Centres, Students, Employment and Culture, delegated by the Government' \
-                    'Council, accredits this course as {fontcolor_start}' \
-                    '{course_credits}{fontcolor_end} ECTS credit*{fontsize_end}{breakline}{breakline}' \
-                    'This degree is given as suitable of {fontcolor_start}UNED{fontcolor_end}' \
-                    ' and it does not have the official nature established in ' \
-                    '{fontcolor_start}number 30 of the Organic Law 4/2007{fontcolor_end} ' \
-                    'that modifies the {fontcolor_start}article 34 of Organic Law 6/2001 ' \
-                    'of Universities{fontcolor_end}. The authenticity of this document, ' \
+        footer = (_(u'The authenticity of this document, ' \
                     'as well as its validity and validity, can be checked through the ' \
-                    '{fontcolor_start}following URL{fontcolor_end}: ' \
-                    '{link_start}{cert_url}{link_end}{breakline}' \
-                    '* ECTS credits: recognizable as credits for cultural university activities ' \
-                    'in UNED degrees and those of universities and centers with reciprocal agreements')).format(
+                    'following URL: ' \
+                    '{link_start}{cert_url}{link_end}{breakline}')).format(
             fontsize_start="<font size=10>",
             fontsize_end="</font>",
             fontcolor_start="<font color=#00533f>",
             fontcolor_end="</font>",
-            course_credits=course_credits,
             breakline="<br/>",
             course_effort=course_effort,
             link_start='<font color=#0000EE><u><a href="' + certificate_id_url + '">',
@@ -333,10 +336,31 @@ class PDFCertificate(object):
             cert_url=certificate_id_url
         )
 
-        style = ParagraphStyle('footer', alignment=TA_LEFT, fontSize=8, fontName="Fontana")
+        style = ParagraphStyle('footer', alignment=TA_LEFT, fontSize=8, fontName="Roboto")
         paragraph = Paragraph(footer, style)
-        paragraph.wrapOn(self.pdf, 180 * mm, HEIGHT * mm)
-        paragraph.drawOn(self.pdf, 20 * mm, 10 * mm, TA_LEFT)
+        paragraph.wrapOn(self.pdf, 100 * mm, HEIGHT * mm)
+        paragraph.drawOn(self.pdf, 30 * mm, 10 * mm, TA_LEFT)
+
+        footer_esp = (_(u'The authenticity of this document, ' \
+                    'as well as its validity and validity, can be checked through the ' \
+                    'following URL: ' \
+                    '{link_start}{cert_url}{link_end}{breakline}')).format(
+            fontsize_start="<font size=10>",
+            fontsize_end="</font>",
+            fontcolor_start="<font color=#00533f>",
+            fontcolor_end="</font>",
+            breakline="<br/>",
+            course_effort=course_effort,
+            link_start='<font color=#0000EE><u><a href="' + certificate_id_url + '">',
+            link_end='</a></u></font>',
+            cert_url=certificate_id_url
+        )
+
+        style = ParagraphStyle('footer_esp', alignment=TA_LEFT, fontSize=8, fontName="Roboto")
+        paragraph = Paragraph(footer, style)
+        paragraph.wrapOn(self.pdf, 100 * mm, HEIGHT * mm)
+        paragraph.drawOn(self.pdf, 150 * mm, 10 * mm, TA_LEFT)
+
 
         return y_pos
 

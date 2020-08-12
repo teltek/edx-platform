@@ -499,7 +499,45 @@ def _get_user_national_id(user, preview_mode):
             return national_id
         raise
 
-
+@handle_500(
+        template_path="certificates/server-error.html",
+        test_func=lambda request: request.GET.get('preview', None)
+    )
+def render_pdf_cert_by_uuid(request, certificate_uuid):
+    """
+    This public view generates a PDF representation of the specified certificate
+    """
+    try:
+        preview_mode = request.GET.get('preview', None)
+        if preview_mode:
+            # certificate is being preview from studio and printed
+            return render_to_response('certificates/server-preview.html')
+        certificate = GeneratedCertificate.objects.get(verify_uuid=certificate_uuid)
+        language = get_language_from_request(request, check_path=False)
+        pdf_buffer = BytesIO()
+        output_writer = PDFCertificate(
+            verify_uuid=certificate.verify_uuid,
+            course_id=unicode(certificate.course_id),
+            user_id=certificate.user_id,
+        ).generate_pdf(pdf_buffer)
+    except GeneratedCertificate.DoesNotExist:
+        raise Http404
+    except Exception as err:
+        log.error('Exception in render_pdf_cert_by_uuid: {}'.format(err), exc_info=True)
+        raise err
+    
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="Certificate'+certificate.verify_uuid+'.pdf"'
+    
+    pdf_stream = BytesIO()
+    output_writer.write(pdf_stream)
+    pdf_value = pdf_stream.getvalue()
+    pdf_stream.close()
+    response.write(pdf_value)
+    
+    return response
+                                                        
+                
 @handle_500(
     template_path="certificates/server-error.html",
     test_func=lambda request: request.GET.get('preview', None)
