@@ -17,6 +17,21 @@ class NationalId(models.Model):
         unique=True,
     )
 
+    @classmethod
+    def get_from_user(cls, user):
+        if type(user) == str:
+            try:
+                user = User.objects.get(username=request.user)
+            except Exception:
+                return False
+            try:
+                return cls.objects.get(user=user)
+            except cls.DoesNotExist:
+                return False
+            except Exception as exception:
+                log.error('exception: {}'.format(exception))
+                return False
+
     def get_national_id(self):
         try:
             national_id = self.national_id
@@ -29,6 +44,13 @@ class NationalId(models.Model):
         self.national_id = identification
         self.save()
 
+    @classmethod
+    def get_national_id_from_user(cls, user):
+        national_id = cls.objects.filter(user=user)
+        if national_id:
+            return str(national_id)
+        return False
 
     def __unicode__(self):
         return self.user.username
+

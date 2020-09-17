@@ -44,6 +44,17 @@
                         </p>
                     <% } %>
                 </div>
+                <div class='course-program-section pull-left'>
+                    <p class="actual-course-program">
+                            <span class="certificate-label"><b><%- gettext('Course Program') %>: </b> </span>
+			    <% if (course_program_path != "") { %>
+                              <span class="certificate-value"><%- course_program_path %></span>
+			    <% } else { %>
+                              <span class="certificate-value"></span>
+			    <% } %>
+                    </p>
+                </div>
+
             </div>
         </section>
 
