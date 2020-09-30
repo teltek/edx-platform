@@ -65,15 +65,17 @@ class PDFCertificate(object):
 
         self.logo_uvigo = "/edx/app/edxapp/themes/xenero-microsite/lms/static/images/logouniversidadenegro.png"
         self.logo_xunta = "/edx/app/edxapp/themes/xenero-microsite/lms/static/images/logoxuntasmall.png"
-        self.logo_pacto = "/edx/app/edxapp/themes/xenero-microsite/lms/static/images/logopactoblanco.png"
+        self.logo_pacto = "/edx/app/edxapp/themes/xenero-microsite/lms/static/images/logopactonegro.png"
         self.logo_ministerio = "/edx/app/edxapp/themes/xenero-microsite/lms/static/images/logoministerio.png"
         self.logo_xacobeo = "/edx/app/edxapp/themes/xenero-microsite/lms/static/images/xacobeo-positivo.png"
         self.signature = "/edx/app/edxapp/themes/xenero-microsite/lms/static/images/firma.png"
-        self.brand_logo_height = 15 * mm
-        self.cobrand_logo_height = 15 * mm
+        self.signature_2 = "/edx/app/edxapp/themes/xenero-microsite/lms/static/images/firma_agueda.png"
+        self.brand_logo_height = 12 * mm
+        self.cobrand_logo_height = 12 * mm
         self.signature_height = 280 * mm
 
         self.signer_fullname = "Manuel Ramos Cabrer"
+        self.signer_2_fullname = "Agueda Gómez Suárez"
 
         self.font_file = "/edx/app/edxapp/themes/xenero-microsite/lms/static/fonts/Roboto-Light.ttf"
         self.font_bold_file = "/edx/app/edxapp/themes/xenero-microsite/lms/static/fonts/Roboto-Black.ttf"
@@ -155,7 +157,7 @@ class PDFCertificate(object):
         if self.logo_uvigo:
             logo_img = self.load_image(self.logo_uvigo)
             if logo_img:
-                img_width = float(logo_img.size[0]) / (float(logo_img.size[1]) / self.brand_logo_height)
+                img_width = float(logo_img.size[0] + 3 * mm) / (float(logo_img.size[1] + 3 * mm) / self.brand_logo_height)
                 self.pdf.drawImage(
                     logo_img.filename,
                     horizontal_padding_from_border,
@@ -167,19 +169,52 @@ class PDFCertificate(object):
                 )
 
         # Right Aligned cobrand logo
-        cobrand_img = self.load_image(self.logo_xacobeo)
-        if cobrand_img:
-            img_width = float(cobrand_img.size[0]) / (float(cobrand_img.size[1]) / self.cobrand_logo_height)
-            self.pdf.drawImage(
-                cobrand_img.filename,
-                self.page_width - (horizontal_padding_from_border + img_width),
-                img_y_pos,
-                img_width,
-                self.cobrand_logo_height,
-                mask='auto',
-                preserveAspectRatio=True,
-            )
+        logo_xacobeo = self.load_image(self.logo_xacobeo)
+        logo_xunta = self.load_image(self.logo_xunta)
+        logo_pacto = self.load_image(self.logo_pacto)
+        logo_ministerio = self.load_image(self.logo_ministerio)
 
+        img_width = float(logo_xacobeo.size[0]) / (float(logo_xacobeo.size[1]) / self.cobrand_logo_height)
+        self.pdf.drawImage(
+            logo_xacobeo.filename,
+            self.page_width - (horizontal_padding_from_border + img_width),
+            img_y_pos,
+            img_width,
+            self.cobrand_logo_height,
+            mask='auto',
+            preserveAspectRatio=True,
+        )
+        img_width = float(logo_ministerio.size[0]) / (float(logo_ministerio.size[1]) / self.cobrand_logo_height)
+        self.pdf.drawImage(
+            logo_ministerio.filename,
+            self.page_width - (horizontal_padding_from_border + img_width + 15 * mm),
+            img_y_pos,
+            img_width,
+            self.cobrand_logo_height,
+            mask='auto',
+            preserveAspectRatio=True,
+        )
+        img_width = float(logo_xunta.size[0]) / (float(logo_xunta.size[1]) / self.cobrand_logo_height)
+        self.pdf.drawImage(
+            logo_xunta.filename,
+            self.page_width - (horizontal_padding_from_border + img_width + 75 * mm),
+            img_y_pos,
+            img_width,
+            self.cobrand_logo_height,
+            mask='auto',
+            preserveAspectRatio=True,
+        )
+        img_width = float(logo_pacto.size[0]) / (float(logo_pacto.size[1]) / self.cobrand_logo_height)
+        self.pdf.drawImage(
+            logo_pacto.filename,
+            self.page_width - (horizontal_padding_from_border + img_width + 90 * mm),
+            img_y_pos,
+            img_width,
+            self.cobrand_logo_height,
+            mask='auto',
+            preserveAspectRatio=True,
+        )
+            
         # Signature image
         y_pos = self.page_height - (self.margin + vertical_padding_from_border + self.signature_height)
         y_pos = -85 * mm
@@ -190,7 +225,20 @@ class PDFCertificate(object):
                 self.pdf.drawImage(
                     rector_sign_img.filename,
                     horizontal_padding_from_border + img_width - 5 * mm,
-                    y_pos - 4 * mm,
+                    y_pos - 8 * mm,
+                    img_width + 10 * mm,
+                    self.signature_height + 10 * mm,
+                    mask='auto',
+                    preserveAspectRatio=True,
+                )
+        if self.signature_2:
+            signature_2 = self.load_image(self.signature_2)
+            if signature_2:
+                img_width = float(signature_2.size[0]) / (float(signature_2.size[1]) / self.cobrand_logo_height)
+                self.pdf.drawImage(
+                    signature_2.filename,
+                    horizontal_padding_from_border + img_width + 45 * mm,
+                    y_pos - 8 * mm,
                     img_width + 10 * mm,
                     self.signature_height + 10 * mm,
                     mask='auto',
@@ -307,18 +355,34 @@ class PDFCertificate(object):
 
         if self.signer_fullname:
             rector_name = ('{strong_start}{signer_fullname}{strong_end}{breakline} ' \
-                           '{font_start}Vicerreitor De Ordenación Académica e Profesorado{font_end}').format(
+                           '{font_start}Universidade de Vigo{font_end}').format(
                                strong_start="<strong>",
                                signer_fullname=self.signer_fullname,
                                strong_end="</strong>",
-                               font_start="<font size=10>",
+                               font_start="<font size=8>",
                                font_end="</font>",
                                breakline="<br/>"
                            )
 
             style = ParagraphStyle('rectorname', alignment=TA_CENTER, fontSize=12, fontName="Roboto")
             paragraph = Paragraph(rector_name, style)
-            paragraph.wrapOn(self.pdf, 80 * mm, HEIGHT * mm)
+            paragraph.wrapOn(self.pdf, 60 * mm, HEIGHT * mm - 10 * mm)
+            paragraph.drawOn(self.pdf, 20 * mm, 30 * mm, TA_LEFT)
+            
+        if self.signer_2_fullname:
+            rector_name = ('{strong_start}{signer_2_fullname}{strong_end}{breakline} ' \
+                           '{font_start}Universidade de Vigo{font_end}').format(
+                               strong_start="<strong>",
+                               signer_2_fullname=self.signer_2_fullname,
+                               strong_end="</strong>",
+                               font_start="<font size=8>",
+                               font_end="</font>",
+                               breakline="<br/>"
+                           )
+
+            style = ParagraphStyle('rectorname', alignment=TA_CENTER, fontSize=12, fontName="Roboto")
+            paragraph = Paragraph(rector_name, style)
+            paragraph.wrapOn(self.pdf, 160 * mm, HEIGHT * mm - 10 * mm)
             paragraph.drawOn(self.pdf, 20 * mm, 30 * mm, TA_LEFT)
 
         footer = (_(u'The authenticity of this document, ' \
