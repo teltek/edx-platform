@@ -259,6 +259,8 @@ class PDFCertificate(object):
         course_name = course_title_from_cert if course_title_from_cert else course.display_name
         course_details = CourseDetails.fetch(course.id)
         course_effort = course.effort if course.effort else 15
+        course_start_date = course.start.strftime('%d/%m/%Y') if course.start else False
+        course_end_date = course.end.strftime('%d/%m/%Y') if course.end else False
         course_credits_field = active_configuration.get('course_credits', 1.0)
         course_credits = re.findall('\d+', str(course_credits_field))
         course_credits = course_credits[0]
@@ -286,43 +288,38 @@ class PDFCertificate(object):
         if student_national_id:
             paragraph_text_gal = '{horizontal}{breakline}' \
                                  'Dona/Don {strong_start}{student_name}{strong_end} con DNI {strong_start}{student_national_id}{strong_end} ' \
-                                 'completou satisfactoriamente o curso {course_title} ({course_effort}) ' \
+                                 'completou satisfactoriamente o curso {strong_start}{course_title}{strong_end} ({course_effort} horas) ' \
                                  'do ITINERARIO FORMATIVO virtual en xénero, organizado pola Unidade de Igualdade '\
                                 'e a Vicerreitoría de Ordenación Académica e Profesorado da Universidade de Vigo, '\
-                                'en modalidade virtual, do'.format(
-                                    student_name=user_fullname.upper(),
+                                'en modalidade virtual, do {course_start} ao {course_end}'.format(
+                                    student_name=user_fullname.upper().encode('utf-8'),
                                     student_national_id=student_national_id,
-                                    course_title=course_name,
+                                    course_title=course_name.encode('utf-8'),
                                     course_effort=course_effort,
+                                    course_start=course_start_date,
+                                    course_end=course_end_date,
                                     strong_start="<strong>",
                                     strong_end="</strong>",
                                     horizontal="<hr>",
                                     breakline="<br/><br/>",
                                 )
+
             paragraph_text_esp = 'Doña/Don {strong_start}{student_name}{strong_end} con DNI {strong_start}{student_national_id}{strong_end} ' \
-                                    'completó satisfactoriamente el curso {course_title} ({course_effort}) ' \
+                                    'completó satisfactoriamente el curso {strong_start}{course_title}{strong_end} ({course_effort} horas) ' \
                                     'del ITINERARIO FORMATIVO virtual en género, organizado por la Unidad de Igualdade '\
-                                    'e a Vicerreitoría de Ordenación Académica e Profesorado da Universidade de Vigo, '\
-                                    'en modalidade virtual, do'.format(
-                                    student_name=user_fullname.upper(),
+                                    'y el Vicerrectorado de Ordenación Académica y Profesorado de la Universidad de Vigo, '\
+                                    'en modalidad virtual, del {course_start} al {course_end}'.format(
+                                    student_name=user_fullname.upper().encode('utf-8'),
                                     student_national_id=student_national_id,
-                                    course_title=course_name,
+                                    course_title=course_name.encode('utf-8'),
                                     course_effort=course_effort,
+                                    course_start=course_start_date,
+                                    course_end=course_end_date,
                                     strong_start="<strong>",
                                     strong_end="</strong>",
                                     breakline="<br/><br/>",
                                 )
 
-        else:
-            paragraph_text = (_(u'The Rector of the National University of Distance Education,' \
-                                '{breakline}considering that{breakline}{breakline}' \
-                                '{studentstyle_start}{student_name}{studentstyle_end}{breakline}{breakline}' \
-                                'has successfully finished the UNED Abierta course')).format(
-                studentstyle_start="<font size=24 color=#c49838>",
-                studentstyle_end="</font>",
-                student_name=user_fullname.upper(),
-                breakline="<br/><br/>",
-            )
         style = ParagraphStyle('paragraph', alignment=TA_JUSTIFY, fontSize=12, fontName="Roboto", leading=15)
         paragraph = Paragraph(paragraph_text_gal, style)
         paragraph.wrapOn(self.pdf, 100 * mm, HEIGHT * mm)
